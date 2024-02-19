@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="it">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Blog</title>
+</head>
+
+
+
+<body>
+    <div class="body">
+        <header>
+            <div class="header">
+                <img src="assets/img/logo.svg" alt="Epicode School" width="15%">
+                <p>Epicode - Il blog dei developers</p>
+                <nav>
+                    <ul>
+                        <li><a title="Home" href="javascript:void(0)"><span class="material-symbols-outlined">
+                                    star
+                                </span>Home</a>
+                        </li>
+                        <li><a title="Articoli" href="javascript:void(0)" target="_blank"
+                                rel="nofollow noreferrer"><span class="material-symbols-outlined">
+                                    star
+                                </span>Articoli</a></li>
+                        <li><a title="Job" href="javascript:void(0)"><span class="material-symbols-outlined">
+                                    star
+                                </span>Job</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <article>
+                <h2>Come creare un template per i post</h2>
+                <p class="author"><span class="material-symbols-outlined">edit</span> di Mario Rossi - <span
+                        class="material-symbols-outlined">schedule</span> pubblicato il 25-10-2020</p>
+                <img src="assets/img/HTML5.png" alt="HTML 5">
+                <p>La prima cosa da fare è suddividere in blocchi logici la pagina, identificando le <span
+                        id="partiComuni">parti
+                        comuni</span> da
+                    applicare a
+                    tutte le pagine</p>
+                <p>le varie aree saranno quindi suddivise in:</p>
+                <ul>
+                    <li>Contenuti di intestazione del tag <code>&lt;header&gt;</code></li>
+                    <li>Contenuti centrali variabili del tag <code>&lt;main&gt;</code> (corpo principale)</li>
+                    <li>Contenuti di fine pagina comuni, da inserire nel tag <code>&lt;footer&gt;</code></li>
+                </ul>
+
+                <h2>Formattazione del codice</h2>
+                <p>Il testo dell'articolo dovrà essere formattato per identificare tutte le parti da <strong>selezionare
+                        con
+                        i
+                        CSS</strong>. Perciò i primi passi saranno:</p>
+                <ol>
+                    <li>Progettare su carta il markup finale, assegnando ad ogni specifico testo il tag appropriato</li>
+                    <li>Scrivere l'HTML dai tag esterni a quelli interni e dall'alto verso il basso</li>
+                    <li>Applicare gli stili CSS</li>
+                </ol>
+
+                <p>L'applicazione di stili CSS è cresciuta negli anni fino a raggiungere la diffusione pressochè totale.
+                </p>
+                <table>
+                    <caption>Diffusione dei CSS</caption>
+                    <thead>
+                        <tr>
+                            <th>Anno</th>
+                            <th>&percnt; di utilizzo</th>
+                            <th>Supporto browsers</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>2000</td>
+                            <td>20&percnt;</td>
+                            <td>17&percnt;</td>
+                        </tr>
+                        <tr>
+                            <td>2002</td>
+                            <td>35&percnt;</td>
+                            <td>22&percnt;</td>
+                        </tr>
+                        <tr>
+                            <td>2004</td>
+                            <td>45&percnt;</td>
+                            <td>42&percnt;</td>
+                        </tr>
+                        <tr>
+                            <td>2008</td>
+                            <td>80&percnt;</td>
+                            <td>51&percnt;</td>
+                        </tr>
+                        <tr>
+                            <td>2012</td>
+                            <td>100&percnt;</td>
+                            <td>76&percnt;</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>Un test di validazione potrà essere fatto tramite il <a title="void"
+                        href="https://discord.com/channels/885470062335623198/1196818563139383437/1199342518056263810">tool
+                        online</a> dedicato allo scopo. Una volta ottimizzato il tutto, avremo raggiunto il nostro
+                    obiettivo
+                    ed
+                    essere stati dei veri developers come loro:</p>
+               
+            </article> 
+            <div id="containerNews">
+
+                    <iframe src="https://www.youtube.com/embed/dvOvHXruEDM?si=GBnPH5pv1R_9K--T"
+                        title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
+
+            <section class="news">
+                <h2>Novità</h2>
+                <p>Vuoi rimanere aggiornato su altre novità del blog? Iscriviti alla nostra newsletter:</p>
+                <form method="post" action="javascript:void(0)">
+                    <fieldset>
+                        <input placeholder="Inserisci l'email" type="email" name="email" id="email">
+                        <button type="submit">Iscriviti!</button>
+
+                    </fieldset>
+                </form>
+            </section>
+    </div>
+    <aside>
+        <h2>Articoli Correlati</h2>
+        <article>
+            <a title="void" href="javascript:void(0)">Validare il codice HTML</a>
+            <p><span class="material-symbols-outlined">sell</span>Categoria: develop</p>
+            <p><span class="material-symbols-outlined">calendar_month</span>Data: 18-9-2020</p>
+        </article><article>
+            <a title="void" href="javascript:void(0)">Correggere la sintassi</a>
+            <p><span class="material-symbols-outlined">sell</span>Categoria: develop</p>
+            <p><span class="material-symbols-outlined">calendar_month</span>Data: 16-9-2020</p>
+        </article><article>
+            <a title="void" href="javascript:void(0)">Meno Kb nella pagina</a>
+            <p><span class="material-symbols-outlined">sell</span>Categoria: ottimizzazione</p>
+            <p><span class="material-symbols-outlined">calendar_month</span>Data: 30-9-2020</p>
+        </article>
+    </aside>
+    </main>
+    <footer>
+        <p>Blog Epicode &copy; 2021</p>
+        <address>Testata online di Mario Rossi, registrata con prot. n.213/2018 - Via Luigi Einaudi 2 - Milano.
+            P.IVA
+            00112233. <a title="mail" href="mailto:example@example.com">info@epicode.school</a></address>
+    </footer>
+    </div>
+
+    <div class="uno"></div>
+    <div class="due"></div>
+
+    <!--     <img src="assets/img/layout-articolo.png" alt="">
+ -->
+</body>
+
+
+</html>
