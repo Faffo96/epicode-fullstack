@@ -1,0 +1,220 @@
+body {
+    font-family: 'opensans', Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+    color: #393d41;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'montserrat', Arial, Helvetica, sans-serif;
+    color: #25a2c3;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.main>* {
+    padding: 6%;
+}
+
+#bw:checked ~ .body > *:not(.body_cite) {
+    background-color: black;
+    color: white;
+}
+
+#bw:checked ~ .body .main_primoEle p {
+    color: rgb(0, 0, 0);
+}
+
+#bw:checked ~ .body .main_articles article {
+    border: 1px solid rgba(128, 128, 128, 0.271);
+}
+
+  .icon-label {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] {
+    display: none;
+  }
+
+  .bw, .bw_icon {
+    font-size: 2rem;
+}
+
+/*! Header */
+
+.header {
+    background-color: black;
+    padding: 6% 6% 4% 6%;
+}
+
+.header img {
+    width: 35%;
+}
+
+/*! Main */
+
+/* Primo elemento */
+
+.main_primoEle {
+    background: url('../images/banner.jpg');
+    background-position: center;
+    background-size: cover;
+
+}
+
+.main_primoEle h1 {
+    text-transform: capitalize;
+}
+
+.main_primoEle div {
+    margin: 50px auto 30px auto;
+}
+
+.main_primoEle div a {
+    text-transform: uppercase;
+    background-color: #f04c2f;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-family: 'montserrat', Arial, Helvetica, sans-serif;
+    padding: 20px 50px;
+    text-decoration: none;
+}
+
+/* Info */
+
+.main_info div img {
+    border-radius: 100%;
+}
+
+/* Cite */
+
+.main_cite,
+.main_cite h2 {
+    background-color: #e22d0e;
+    color: white;
+}
+
+.main_cite blockquote cite,
+.main_cite blockquote cite span {
+    display: block;
+}
+
+.main_cite blockquote {
+    font-style: italic;
+}
+
+.main_cite blockquote cite,
+.main_cite blockquote cite span {
+    font-style: normal;
+}
+
+.main_cite blockquote cite {
+    font-size: xx-large;
+    padding-top: 13%;
+}
+
+.main_cite blockquote cite span {
+    font-size: medium;
+}
+
+/* Articles */
+
+.main_articles article {
+    border: 1px solid #dee1e3;
+    margin-bottom: 10%;
+    padding-bottom: 7%;
+}
+
+.main_articles article img {
+    width: 100%;
+}
+
+/*! Footer */
+.footer {
+    padding: 8%;
+}
+
+.footer address div {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.576);
+}
+
+.footer,
+.footer address div a,
+.footer address div p {
+    background-color: #25a2c3;
+    color: rgba(255, 255, 255, 0.576);
+    font-style: normal;
+    display: block;
+}
+
+.footer h2 {
+    color: white;
+    font-style: normal;
+}
+
+.footer hr {
+    width: 60%;
+}
+
+.footer p a {
+    color: rgba(255, 255, 255, 0.576);
+}
+
+.footer address div p {
+    font-size: small;
+    display: inline;
+}
+
+/* Icone */
+
+.icon,
+.footer address div a {
+    display: inline;
+}
+
+.icon {
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Font
+Body: #393d41 – 1.2rem – Open Sans – interlinea 1.65
+Headings: #25a2c3 – Montserrat (bold) – interlinea 1.5
+Footer: #c8e7f0
+Footer Heading: white
+Footer link: #c8e7f0
+
+Colori sfondo
+Header: black
+Pulsante: #f04c2f – Montserrat (bold) – bold
+Testimonianze: #e22d0e
+Footer: #25a2c3
+
+Bordi
+Bordo schede: #dee1e3
+ */

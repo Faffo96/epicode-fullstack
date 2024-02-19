@@ -1,0 +1,164 @@
+.body {
+    background-image: url('../img/sfondo.png');
+    font-family: "Roboto", sans-serif;
+}
+ main {
+    background-color: white;
+    margin: 20px;
+    padding: 17px;
+    box-shadow: 0px 2px 5px 4px rgba(176,176,176,0.75);
+ }
+
+.header {
+    text-align: center;
+    background: linear-gradient(0deg, rgba(3,109,134,1) 0%, rgba(0,156,194,1) 100%);
+    margin: 20px;
+    padding: 17px;
+    box-shadow: 0px 2px 5px 4px rgba(176,176,176,0.75);
+}
+
+.header nav ul{
+    list-style-type: none;
+}
+
+.header img {
+    width: 50%;
+}
+
+.header p, .header nav ul li a {
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.header nav ul li a span {
+    font-size: xx-small;
+}
+
+.header nav ul {
+    padding: 0;
+    margin-bottom: 0;
+}
+
+.author {
+    color: rgb(152, 151, 151);
+}
+
+li code {
+    background-color: rgba(214, 212, 212, 0.73);
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+article:first-child p:last-child span, article p strong {
+    color: #a33088;
+    font-weight: 600;
+}
+
+caption {
+    font-weight: bold;
+    font-style: italic;
+}
+
+th {
+    font-weight: normal;
+    color: white;
+    background-color: #416ccd;
+    padding: 20px;
+}
+
+td {
+    text-align: center;
+    padding: 20px;
+    border-bottom: 1px solid rgba(214, 212, 212, 0.73);
+}
+
+tr:nth-child(even) {
+    border-bottom: 1px solid;
+    background-color: rgba(238, 236, 236, 0.73);
+}
+
+table {
+    border-collapse: collapse;
+}
+
+a {
+    color: #38b5d8;
+    font-weight: bold;
+}
+
+article p {
+    line-height: 1.7;
+}
+
+iframe {
+    width: 480px;
+    height: 250px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    border-radius: 20px;
+}
+
+.news, aside article {
+    padding: 17px;
+    background-color: rgba(238, 236, 236, 0.73);
+}
+
+.news h2 {
+    width: 100px;
+    margin: 0 auto;
+
+}
+
+fieldset {
+    width: 320px;
+    margin: 0 auto;
+    border: 0;
+}
+
+fieldset button {
+    background-color: #416ccd;
+    color: white;
+    font-weight: bold;
+    border: 0;
+    padding: 7px 10px;
+}
+
+#email {
+    height: 29px;
+    border: 0;
+}
+
+aside h2 {
+    width: 300px;
+    margin: 50px auto;
+    text-transform: uppercase;
+}
+
+aside article {
+    margin: 20px 0;
+    border: 1px solid;
+}
+
+aside article p:last-child {
+    text-align: right;
+}
+
+footer {
+    background: linear-gradient(180deg, rgba(0,138,166,1) 27%, rgba(61,61,61,1) 100%);
+    padding: 30px 17px;
+    text-align: center;
+    margin: 20px;
+    box-shadow: 0px 2px 5px 4px rgba(176,176,176,0.75);
+    color: white;
+}
+
+footer p {
+    margin: 0;
+    margin-bottom: 20px;
+}
+
+footer a {
+    color: rgb(211, 0, 211);
+}

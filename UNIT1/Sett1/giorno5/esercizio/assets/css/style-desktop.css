@@ -1,0 +1,218 @@
+body {
+    font-family: 'opensans', Arial, Helvetica, sans-serif;
+    line-height: 1.65;
+    color: #393d41;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'montserrat', Arial, Helvetica, sans-serif;
+    color: #25a2c3;
+    font-weight: bold;
+    line-height: 1.5;
+}
+
+.main>* {
+    padding: 6%;
+    font-size: 2.5rem;
+}
+
+#bw:checked ~ .body > *:not(.body_cite):not(footer) {
+    background-color: black;
+    color: white;
+}
+
+
+#bw:checked ~ .body .main_primoEle p {
+    color: rgb(0, 0, 0);
+}
+
+#bw:checked ~ .body .main_articles article {
+    border: 1px solid rgba(128, 128, 128, 0.271);
+}
+
+input[type="checkbox"] {
+    display: none;
+  }
+  
+  .bw, .bw_icon {
+    font-size: 2.5rem;
+}
+/*! Header */
+
+.header {
+    background-color: black;
+    padding: 3% 3% 2% 3%;
+    text-align: left;
+}
+
+.header img {
+    width: 10%;
+}
+
+/*! Main */
+
+/* Primo elemento */
+
+.main_primoEle {
+    background: url('../images/banner.jpg');
+    background-position: top;
+    background-size: cover;
+    padding: 12%;
+}
+
+.main_primoEle h1 {
+    text-transform: capitalize;
+    font-size: 3.5rem;
+}
+
+.main_primoEle p {
+    width: 72%;
+    margin: 0 auto;
+    padding-bottom: 60px;
+}
+
+.main_primoEle div a {
+    text-transform: uppercase;
+    background-color: #f04c2f;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-family: 'montserrat', Arial, Helvetica, sans-serif;
+    padding: 20px 50px;
+    text-decoration: none;
+}
+
+/* Info */
+
+.main_info div img {
+    border-radius: 100%;
+    width: 1050px;
+}
+
+.main_info div {
+    display: inline-block;
+    text-align: left;
+    margin-left: 100px;
+}
+
+/* Cite */
+
+.main_cite,
+.main_cite h2 {
+    background-color: #e22d0e;
+    color: white;
+}
+
+.main_cite blockquote cite,
+.main_cite blockquote cite span {
+    display: block;
+}
+
+.main_cite blockquote {
+    font-style: italic;
+    font-size: xx-large;
+    font-weight: 100;
+}
+
+.main_cite blockquote cite,
+.main_cite blockquote cite span {
+    font-style: normal;
+}
+
+.main_cite blockquote cite {
+    font-size: xx-large;
+    padding-top: 50px;
+}
+
+.main_cite blockquote cite span {
+    font-size: medium;
+}
+
+/* Articles */
+
+.main_articles article {
+    border: 1px solid #dee1e3;
+    margin: 1%;
+    display: inline-block;
+    width: 30%;
+    box-sizing: border-box;
+    vertical-align: top;
+}
+
+.main_articles article p {
+    padding-bottom: 25px; /* Rimuovi il margine dal l'ultimo articolo */
+}
+
+.main_articles article img, .main_articles article h3, .main_articles article p {
+    width: 100%;
+    margin: 20px auto;
+}
+
+
+/*! Footer */
+
+footer {
+    background-color: #25a2c3;
+}
+
+.footer {
+    margin: 0 auto;
+    padding: 130px 0 180px 0;
+    width: 650px;
+    color: rgba(255, 255, 255, 0.576);
+}
+
+.footer h2 {
+    color: white;
+    text-align: left;
+    font-size: 6rem;
+}
+.footer_row {
+    text-align: left;
+    font-size:2.3rem;
+}
+
+.footer_row span, .footer_row a {
+    color: rgba(255, 255, 255, 0.576);
+}
+
+.footer hr, .footer p {
+color: white;
+font-size: 1.7em;
+color: rgba(255, 255, 255, 0.576);
+}
+
+.footer hr {
+    width: 100%;
+    margin: 25px auto;
+    color: rgba(255, 255, 255, 0.576);
+}
+
+.footer p {
+    font-size: 2rem;
+    display: inline;
+}
+
+.footer p a {
+    color: rgba(255, 255, 255, 0.576);
+}
+
+/* Icone */
+
+.icon,
+.footer address div a {
+    display: inline;
+}
+
+.icon {
+    font-size: 3rem;
+    vertical-align: middle;
+    color:white;
+}

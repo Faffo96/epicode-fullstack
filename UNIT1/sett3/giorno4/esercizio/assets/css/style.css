@@ -1,0 +1,88 @@
+body, html {
+    text-align: center;
+    margin: 0;
+    padding: 30px;
+    font-family: 'Roboto', sans-serif;
+    background-color: rgb(11, 78, 11);
+}
+
+header h1 {
+    background-color: rgb(11, 78, 11);
+    width: 700px;
+    margin: 0 auto;
+    padding-top: 80px;
+    font-size: 4rem;
+    color: #c1a608;
+}
+
+#tombola {
+    width: 700px;
+    margin: 0px auto;
+    background-color: rgb(11, 78, 11);
+    padding-top: 65px;
+}
+
+.box {
+    background-color: #ffd700;
+    display: inline-block;
+    width: 32px;
+    margin: 10px;
+    height: 32px;
+    border: 2px solid #c1a608;
+    border-radius: 30px;
+    padding: 5px;
+}
+
+.box p {
+    background-color: #c1a608;
+    color: black;
+    font-size: 1.2rem;
+    border-radius: 12px;
+    transform: translateY(-22px);
+}
+
+#table {
+    width: 670px;
+    margin: 50px auto;
+}
+
+.extracted {
+    background-color: rgb(215, 14, 14);
+}
+
+#extraction {
+    width: 500px;
+    margin: 0 auto;
+}
+
+#extraction input {
+    border: 10px solid #c1a608;
+    background-color: rgb(215, 14, 14);
+    font-size: 2rem;
+    padding: 30px;
+    width: 170px;
+    height: 170px;
+    border-radius: 85px;
+    font-weight: 900;
+}
+
+#extraction h2 {
+    display: inline;
+    margin-left: 100px;
+    font-size: 8rem;
+    vertical-align: middle;
+    width: 200px;
+    color: #ffd700;
+}
+
+#numeroCartelleUtente {
+    width: 35px;
+}
+ 
+.folder {
+    width: 650px;
+    margin: 0 auto;
+    margin-top: 40px;
+    background-color: rgb(11, 78, 11);
+    border: 2px solid #c1a608;
+}

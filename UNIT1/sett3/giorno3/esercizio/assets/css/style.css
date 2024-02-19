@@ -1,0 +1,79 @@
+
+
+#container {
+    text-align: center;
+    padding: 50px;
+    background-color: rgb(234, 175, 65);
+    border-radius: 50px;
+}
+body {
+    background-color: rgb(205, 134, 4);
+}
+#form {
+    padding: 30px;
+    background-color: rgb(47, 175, 175);
+    border-radius: 20px;
+}
+
+#container_form {
+    margin: 30px 0;
+}
+
+#userTask {
+    width: 700px;
+    padding: 10px;
+    border: 0px;
+    border-radius: 10px;
+}
+
+#addBtn {
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    border: 0;
+    border-radius: 100px;
+    background-color: rgb(217, 86, 171);
+    margin-left: 10px;
+    font-size: large;
+    vertical-align: middle;
+    color: white;
+}
+
+#taskList {
+    background-color: rgb(154, 86, 217);
+    border-radius: 50px;
+    margin: 40px 40px;
+    padding: 10px;
+    min-height: 20vh;
+    
+}
+
+.task {
+    margin: 60px;
+    border-radius: 50px;
+    padding: 10px;
+    background-color: rgb(124, 38, 204);
+    text-align: left;
+    vertical-align: middle;
+    height: 60px;
+    line-height: 60px;
+}
+
+.task p {
+    margin: 0 30px;
+    color: white;
+    display: inline-block;
+    width: 87%;
+}
+
+.task input {
+    width: 30px;
+    background-color: red;
+    border: 0;
+    color: white;
+    border-radius: 100px;
+    padding: 5px;
+    margin: 10px 0;
+    position:absolute;
+
+}

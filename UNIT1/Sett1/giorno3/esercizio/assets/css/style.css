@@ -1,0 +1,104 @@
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.style {
+    display: block;
+}
+/*Header */
+
+.header {
+    text-align: center;
+}
+
+.header p {
+    color: #004d4c;
+    background-color: #fdfbf1;
+    border-top: 0.1em solid #ffd877;
+    padding: 1%;
+    font-size: large;
+    
+}
+
+.header p span {
+    text-transform: uppercase;
+    font-weight: bold;
+    
+}
+
+/* Body */
+
+main {
+    width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 1.5%;
+}
+.main {
+    text-align: center;
+}
+
+.main figure{
+    margin: 0px;;
+}
+
+.main figure iframe {
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+    border-radius: 3%;
+    box-shadow: 10px 10px 5px 1px rgba(0,0,0,0.07);
+
+}
+
+.main figure figcaption {
+    color: #999999;
+    font-size: large;
+    padding: 3%
+}
+
+.featured {
+    border-left: 2px solid #ffd877 ;
+    text-align: left;
+    padding-left: 5%;
+}
+
+.featured h4 {
+    color: #b5460f;
+    margin: 0px;
+}
+
+.featured a {
+    color: #004d4c;
+    text-transform: capitalize;
+}
+
+.ingredients {
+    text-align: left;
+
+}
+
+.ingredients h2 {
+    border-bottom: 2px solid #c4f3f2;
+    padding: 4% 0%;
+    font-weight: 400;
+}
+
+.ingredients ul li {
+    line-height: 250%;
+}
+
+.method {
+    text-align: left;
+}
+
+.method h2 {
+    border-bottom: 2px solid #c4f3f2;
+    padding: 4% 0%;
+    font-weight: 400;
+}
+
+.method dl, dd:not {
+    text-indent: 4%;
+}
