@@ -1,0 +1,199 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    font-weight: bold;
+    color: #853a13;
+    letter-spacing: -1px;
+}
+
+/* HEADER */
+
+.header {
+    background-color: #fef7e2;
+    width: 96%;
+    display: flex;
+    justify-content: center;
+    border-radius: 100px;
+    margin: 2%;
+}
+
+.header ul li {
+    background-color: #ffdf7e;
+    border-radius: 50px;
+    margin: 8.5px 8px;
+    text-align: center;
+}
+
+.header ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-inline-start: 0;
+    padding: 0 10px;
+}
+
+.header ul li img {
+    width: 45px;
+    margin-right: 20px;
+}
+
+.header_ul_li1 {
+    display: flex;
+    width: 85%;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    padding: 35px 0;
+    order: -1;
+}
+
+.header ul li:not(.header_ul_li1) {
+    width: 40%;
+    font-size: 1rem;
+    padding: 15px 0;
+    margin: 9px 10px;
+}
+
+/* MAIN */
+
+/*      Cards */
+
+.bestSellingProducts {
+    display: flex;
+    flex-direction: column;
+}
+
+.card {
+    margin: 20px 10px;
+    border-radius: 40px;
+    background-color: #fef7e2;
+    max-width: fit-content;
+}
+
+.card img {
+    max-width: 100%;
+    border-radius: 50px 50px 0 0;
+}
+
+.card_infos {
+    display: flex;
+    flex-direction: column;
+}
+
+.card_infos>div {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin: 20px 0 5px 0;
+
+}
+
+.card_infos_text>* {
+    margin: 0;
+
+}
+
+.card_infos_button input {
+    background-color: #ffdf7e;
+    border-radius: 50px;
+    padding: 15px 100px;
+    border: none;
+    margin: 0 0 20px 0;
+}
+
+/*      Articles */
+
+.latestNews h2 {
+    font-weight: bolder;
+}
+
+.latestNews article {
+    margin: 10px 20px;
+    border-radius: 40px;
+    background-color: #fef7e2;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 20px 40px;
+}
+
+.latestNews article h3 {
+    font-weight: bolder;
+    margin-bottom: 0;
+}
+
+.latestNews article p {
+    font-weight: normal;
+    line-height: 1.4;
+    margin: 20px 0 40px 0;
+}
+
+.latestNews article img {
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
+/* MEDIA 576 */
+
+@media (min-width: 576px) {
+    body {
+        font-size: 0.7rem;
+    }
+    
+    .header ul {
+        justify-content: space-between;
+        flex-wrap: nowrap;
+        align-items: center;
+    }
+
+    .header ul li {
+        margin: 0px;
+    }
+
+    .header ul li img {
+        width: 30px;
+        margin-right: 10px;
+    }
+
+
+    .header ul li:not(.header_ul_li1) {
+        width: 80px;
+        margin: 0 6px;
+        font-size: 0.7rem;
+    }
+
+    .header_ul_li1 {
+        width: 23%;
+        font-size: 1.2rem;
+        margin: 0 6px;
+        order: 0;
+        padding: 20px 10px;
+    }
+
+    .bestSellingProducts_articles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .card {
+        width: 46%;
+    }
+
+    .card_infos_button input {
+        width: 60%;
+        padding: 10px 25px;
+    }
+
+    .card:last-child {
+        display: none;
+    }
+
+    .latestNews h2 {
+        text-align: left;
+        margin-inline-start: 22px;
+    }
+  }
