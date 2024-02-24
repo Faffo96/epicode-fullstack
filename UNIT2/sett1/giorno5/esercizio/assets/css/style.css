@@ -1,3 +1,8 @@
+/* Ho seguito il layout della screen per ogni cosa,
+tuttavia,
+ho seguito il sito reale di Medium per vedere i comportamenti responsive e credo di averlo replicato al meglio a 576,
+768 e 1200+.  */
+
 .body {
     font-family: "Roboto", sans-serif;
     display: flex;
@@ -6,8 +11,8 @@
 
 header {
     background-color: #ffc017;
-position: relative;
-margin-bottom: 45px;
+    position: relative;
+    margin-bottom: 45px;
 }
 
 .head {
@@ -33,7 +38,7 @@ margin-bottom: 45px;
     justify-content: space-between;
     align-items: center;
     padding: 25px 0 20px 0;
-    margin: 0  auto;
+    margin: 0 auto;
     max-width: 1080px;
 }
 
@@ -163,11 +168,11 @@ nav input {
 }
 
 .main_1_box_cards_card_number {
-font-size: 1.5rem;
-color: rgb(224, 221, 221);
-height: 40px;
-margin: 0 20px auto 0;
-font-weight: bold;
+    font-size: 1.5rem;
+    color: rgb(224, 221, 221);
+    height: 40px;
+    margin: 0 20px auto 0;
+    font-weight: bold;
 }
 
 .main_1_box_cards_card_box {
@@ -187,10 +192,10 @@ font-weight: bold;
 }
 
 .main_1_box_cards_card_box_head img {
-width: 30px;
-height: 30px;
-border-radius: 50%;
-margin-right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
 .avatarSquared {
@@ -198,7 +203,7 @@ margin-right: 10px;
 }
 
 .main_1_box_cards_card_box_head p {
-color: #5b5a5a;
+    color: #5b5a5a;
 
 }
 
@@ -247,7 +252,7 @@ color: #5b5a5a;
     width: 407px;
 }
 
-.main_2_box_left_cards_card_img img{
+.main_2_box_left_cards_card_img img {
     width: 208px;
 
 }
@@ -302,7 +307,7 @@ color: #5b5a5a;
 
 .main_2_box_left_cards_card_box_footer ul li img {
     margin-left: 10px;
-} 
+}
 
 
 
@@ -318,17 +323,18 @@ color: #5b5a5a;
     display: flex;
     flex-direction: column;
     position: sticky;
-    top: 122px; 
+    top: 122px;
 }
 
 .main_2_box_right_box_categories {
     padding-bottom: 28px;
-    border-bottom: 1px solid rgb(224, 221, 221);;
+    border-bottom: 1px solid rgb(224, 221, 221);
+    ;
     margin-bottom: 27px;
 }
 
 .main_2_box_right_box div ul a {
-    color: grey;    
+    color: grey;
     text-decoration: none;
     margin-right: 10px;
 }
@@ -426,10 +432,10 @@ color: #5b5a5a;
         max-width: 648px;
         margin: 0 auto;
     }
-  }
+}
 
-  @media screen and (max-width: 576px) {
-    
+@media screen and (max-width: 576px) {
+
     .displayHidden {
         display: none;
     }
@@ -461,4 +467,4 @@ color: #5b5a5a;
     .main_2_box_right_box_footer ul a {
         margin-right: 32px !important;
     }
-  }
+}
