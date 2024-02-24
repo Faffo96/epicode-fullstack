@@ -1,13 +1,15 @@
+/* HEADER'S STICKY ANIMATION */
+
 const navChange = document.getElementById('head_1');
 const buttonChange = document.getElementById('buttonChange')
 
 window.addEventListener('scroll', function () {
-    const scrollVerticale = window.scrollY;
+    const verticalScroll = window.scrollY;
 
-    const scrollIntercettazione = 465;
+    const scrollTracking = 465;
 
 
-    if (scrollVerticale > scrollIntercettazione) {
+    if (verticalScroll > scrollTracking) {
         navChange.style.backgroundColor = 'white';
         buttonChange.style.backgroundColor = '#1a8917'
     } else {
@@ -19,56 +21,53 @@ window.addEventListener('scroll', function () {
     });
 });
 
+/* M'S ANIMATION */
 
-
-const alternareVisibilita = (elemento) => {
-    const opacityAttuale = parseFloat(elemento.getAttribute('opacity'));
-    if (opacityAttuale === 1) {
-        elemento.setAttribute('opacity', '0');
-    } else if (opacityAttuale === 0) {
-        elemento.setAttribute('opacity', '1');
+const ViewAndHide = (element) => {
+    const currentOpacity = parseFloat(element.getAttribute('opacity'));
+    if (currentOpacity === 1) {
+        element.setAttribute('opacity', '0');
+    } else if (currentOpacity === 0) {
+        element.setAttribute('opacity', '1');
     }
 }
 
-const lettere = document.querySelectorAll('#M > g');
-const opacitaZero = [];
-const opacitaUno = [];
-let opacityAttuale;
+const letters = document.querySelectorAll('#M > g');
+let currentOpacity;
 
 function init() {
-    eseguiCicloOpacitaUno();
+    hidingCycle();
 }
 
-function eseguiCicloOpacitaUno() {
+function showingCycle() {
     let count = 0;
     const intervalloUno = setInterval(() => {
-        const numeroRandom = Math.floor(Math.random() * lettere.length);
-        opacityAttuale = parseFloat(lettere[numeroRandom].getAttribute('opacity'));
-        if (opacityAttuale === 0) {
-            alternareVisibilita(lettere[numeroRandom]);
+        const numeroRandom = Math.floor(Math.random() * letters.length);
+        currentOpacity = parseFloat(letters[numeroRandom].getAttribute('opacity'));
+        if (currentOpacity === 0) {
+            ViewAndHide(letters[numeroRandom]);
             console.log(11);
         }
         count++;
         if (count === 140) {
             clearInterval(intervalloUno);
-            eseguiCicloOpacitaZero();
+            hidingCycle();
         }
     }, 30);
 }
 
-function eseguiCicloOpacitaZero() {
+function hidingCycle() {
     let count = 0;
     const intervalloZero = setInterval(() => {
-        const numeroRandom = Math.floor(Math.random() * lettere.length);
-        opacityAttuale = parseFloat(lettere[numeroRandom].getAttribute('opacity'));
-        if (opacityAttuale === 1) {
-            alternareVisibilita(lettere[numeroRandom]);
-            console.log(22);
+        const randomNumber = Math.floor(Math.random() * letters.length);
+        currentOpacity = parseFloat(letters[randomNumber].getAttribute('opacity'));
+        if (currentOpacity === 1) {
+            ViewAndHide(letters[randomNumber]);
         }
         count++;
         if (count === 140) {
             clearInterval(intervalloZero);
-            eseguiCicloOpacitaUno();
+            showingCycle();
         }
     }, 30);
 }
