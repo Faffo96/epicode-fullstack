@@ -2,9 +2,10 @@ const indiceRisposteArray = [];
 let ctxGrafico;
 let documentGrafico = document.getElementById('graficoCanvas');
 const myDataStorage = localStorage.getItem('myData');
+console.log(myDataStorage)
 let myData = myDataStorage.split(',');
 const canvas = document.getElementById("canvas"); 
-
+const rateUsBtn = document.getElementById("rateUs");
 
 const domandeIndexStorage = localStorage.getItem('domandeIndexArray');
 let arrayIndexDomande = domandeIndexStorage.split(',');

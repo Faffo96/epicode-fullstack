@@ -245,7 +245,7 @@ const trasferisciDati = () => {
 
   risposteIndexArray.push(rispostaCorrente);
 
-
+  localStorage.setItem('myData', myData);
   localStorage.setItem('domandeIndexArray', domandeIndexArray);
   localStorage.setItem('risposteIndexArray', risposteIndexArray);
 
