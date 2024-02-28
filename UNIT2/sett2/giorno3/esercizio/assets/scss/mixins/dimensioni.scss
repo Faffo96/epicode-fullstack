@@ -26,6 +26,20 @@ $btnPadding: 10px;
     animation: btnHover 1s forwards;
 }
 
+@mixin decrementaPaddingKeyframe($padding, $increment) {
+    @keyframes btnNotHover {
+        0% {
+            padding: $padding;
+        }
+
+        100% {
+            padding: $padding - $increment;
+        }
+    }
+
+    animation: btnHover 1s forwards;
+}
+
 
 
 

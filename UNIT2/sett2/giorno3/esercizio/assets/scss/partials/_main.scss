@@ -88,7 +88,7 @@
 
             &:first-child {
                 background-color: #0e6cff;
-                animation: translateYAndAppearKeyframe 1s forwards;
+                animation: translateYAndAppearKeyframe 0.5s forwards;
             }
 
             &:first-child:hover {
@@ -97,7 +97,7 @@
 
             &:nth-child(2) {
                 background-color: #ff8700;
-                animation: translateYAndAppearKeyframe 1s forwards;
+                animation: translateYAndAppearKeyframe 0.5s forwards;
                 animation-delay: 0.3s;
             }
 
@@ -107,7 +107,7 @@
 
             &:last-child {
                 background-color: #4caf50;
-                animation: translateYAndAppearKeyframe 1s forwards;
+                animation: translateYAndAppearKeyframe 0.5s forwards;
                 animation-delay: 0.6s;
             }
 
