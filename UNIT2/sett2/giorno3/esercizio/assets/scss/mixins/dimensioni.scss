@@ -1,0 +1,32 @@
+$widthImg: 94%;
+$borderRadiusImgRipetuti: 10px;
+$btnPadding: 10px;
+
+@mixin imgRipetuti {
+    width: $widthImg;
+    border-radius: $borderRadiusImgRipetuti;
+}
+
+@mixin maxWidth1200 {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+@mixin incrementaPaddingKeyframe($padding, $increment) {
+    @keyframes btnHover {
+        0% {
+            padding: $padding;
+        }
+
+        100% {
+            padding: $padding + $increment;
+        }
+    }
+
+    animation: btnHover 1s forwards;
+}
+
+
+
+
+

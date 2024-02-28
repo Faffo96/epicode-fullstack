@@ -1,0 +1,111 @@
+body, h1, h2, p, a, button, img, ul, li {
+  padding: 0;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: #640fc5;
+}
+
+.header_box {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+  height: 70px;
+  align-items: center;
+}
+.header_box h2 {
+  color: #000;
+  margin: 0 10px;
+  font-size: 0.8rem;
+}
+.header_box nav ul {
+  display: flex;
+}
+.header_box nav ul li, .header_box nav ul li a {
+  margin: 0 10px;
+  list-style: none;
+  color: white;
+  font-size: 0.5rem;
+  text-decoration: none;
+}
+.header_box nav ul li:hover, .header_box nav ul li a:hover {
+  color: fuchsia;
+}
+
+.main_box1 {
+  position: relative;
+  margin-bottom: 104px;
+  background-color: #640fc5;
+}
+
+.main_box1_content {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-top: 100px;
+}
+.main_box1_content h1 {
+  color: #000;
+  opacity: 0.6;
+  font-size: 3rem;
+  font-weight: 900;
+  width: 40%;
+  line-height: 0.95;
+}
+.main_box1_content p {
+  color: white;
+  opacity: 0.6;
+  margin: 20px 0;
+  width: 60.5%;
+  font-size: 0.8rem;
+  line-height: 1.8;
+}
+.main_box1_content ul {
+  display: flex;
+}
+.main_box1_content ul li {
+  list-style: none;
+  margin: 0 5px;
+  padding: 10px;
+  font-size: 0.5rem;
+  border-radius: 3px;
+}
+.main_box1_content ul li:first-child {
+  background-color: #0e6cff;
+}
+.main_box1_content ul li:nth-child(2) {
+  background-color: #ff8700;
+}
+.main_box1_content ul li:last-child {
+  background-color: #4caf50;
+}
+.main_box1_content ul li a {
+  text-decoration: none;
+  color: white;
+}
+
+.floatImg {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+  top: -295px;
+  position: absolute;
+  transform: translateY(40px);
+}
+.floatImg img {
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  box-shadow: -1px 0px 24px 3px rgba(0, 0, 0, 0.45);
+}
+
+.main_box2_content {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: flex;
+}
+.main_box2_content div img {
+  width: 94%;
+  border-radius: 10px;
+}/*# sourceMappingURL=style.css.map */

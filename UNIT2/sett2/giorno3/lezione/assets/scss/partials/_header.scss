@@ -1,0 +1,12 @@
+@import 'titoli';
+
+header {
+	margin-bottom: 20px;
+	h1 {
+		color: $coloreTestata;
+		&:hover {
+			color: $testataHover;
+			cursor: pointer;
+		}
+	}
+}
