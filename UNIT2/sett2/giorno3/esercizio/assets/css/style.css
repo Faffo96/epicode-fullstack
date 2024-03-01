@@ -1,3 +1,16 @@
+/* @mixin decrementaPaddingKeyframe($padding, $increment) {
+    @keyframes btnNotHover {
+        0% {
+            padding: $padding;
+        }
+
+        100% {
+            padding: $padding - $increment;
+        }
+    }
+
+    animation: btnHover 1s forwards;
+} */
 body, h1, h2, p, a, button, img, ul, li {
   padding: 0;
   margin: 0;
@@ -47,15 +60,6 @@ body, h1, h2, p, a, button, img, ul, li {
   margin: 0 auto;
 }
 
-/* @keyframes btnHover {
-    0% {
-        padding: $btnPadding;
-    }
-
-    100% {
-        padding: $btnPadding + 0.5;
-    }
-} */
 @keyframes translateYAndAppearKeyframe {
   0% {
     transform: translateY(-20px);
@@ -63,7 +67,7 @@ body, h1, h2, p, a, button, img, ul, li {
   }
   100% {
     transform: translateY(0px);
-    opacity: 1;
+    opacity: 0.6;
   }
 }
 @keyframes translateYAndAppearImgKeyframe {
@@ -118,15 +122,7 @@ body, h1, h2, p, a, button, img, ul, li {
   animation: translateYAndAppearKeyframe 0.5s forwards;
 }
 .main_box1_content_text ul li:first-child:hover {
-  animation: btnHover 1s forwards;
-}
-@keyframes btnHover {
-  0% {
-    padding: 10px;
-  }
-  100% {
-    padding: 10.5px;
-  }
+  transform: scale(1.2);
 }
 .main_box1_content_text ul li:nth-child(2) {
   background-color: #ff8700;
@@ -134,15 +130,7 @@ body, h1, h2, p, a, button, img, ul, li {
   animation-delay: 0.3s;
 }
 .main_box1_content_text ul li:nth-child(2):hover {
-  animation: btnHover 1s forwards;
-}
-@keyframes btnHover {
-  0% {
-    padding: 10px;
-  }
-  100% {
-    padding: 10.5px;
-  }
+  transform: scale(0.95);
 }
 .main_box1_content_text ul li:last-child {
   background-color: #4caf50;
@@ -150,15 +138,7 @@ body, h1, h2, p, a, button, img, ul, li {
   animation-delay: 0.6s;
 }
 .main_box1_content_text ul li:last-child:hover {
-  animation: btnHover 1s forwards;
-}
-@keyframes btnHover {
-  0% {
-    padding: 10px;
-  }
-  100% {
-    padding: 10.5px;
-  }
+  transform: scale(0.95);
 }
 .main_box1_content_text ul li a {
   text-decoration: none;

@@ -13,16 +13,6 @@
     @include maxWidth1200;
 }
 
-/* @keyframes btnHover {
-    0% {
-        padding: $btnPadding;
-    }
-
-    100% {
-        padding: $btnPadding + 0.5;
-    }
-} */
-
 @keyframes translateYAndAppearKeyframe {
     0% {
         transform: translateY(-20px);
@@ -31,7 +21,7 @@
 
     100% {
         transform: translateY(0px);
-        opacity: 1;
+        opacity: 0.6;
     }
 }
 
@@ -89,10 +79,10 @@
             &:first-child {
                 background-color: #0e6cff;
                 animation: translateYAndAppearKeyframe 0.5s forwards;
+                
             }
-
             &:first-child:hover {
-                @include incrementaPaddingKeyframe($btnPadding, 0.5);
+                transform: scale(1.2);
             }
 
             &:nth-child(2) {
@@ -102,7 +92,7 @@
             }
 
             &:nth-child(2):hover {
-                @include incrementaPaddingKeyframe($btnPadding, 0.5);
+                transform: scale(0.95);
             }
 
             &:last-child {
@@ -112,7 +102,7 @@
             }
 
             &:last-child:hover {
-                @include incrementaPaddingKeyframe($btnPadding, 0.5);
+                transform: scale(0.95);
             }
         }
 
