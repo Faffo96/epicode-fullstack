@@ -1,0 +1,11 @@
+.profileFontSize {
+    font-size: 0.8rem !important;
+}
+
+h4 {
+    font-size: 0.95rem;
+}
+
+.svg-container {
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); 
+  }
