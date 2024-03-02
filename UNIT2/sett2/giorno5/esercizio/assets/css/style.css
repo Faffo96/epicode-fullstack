@@ -34,10 +34,182 @@ h4 {
 
 .language {
     transform: translateY(10px);
-    z-index: 10000 !important;
+    z-index: 1 !important;
 }
 
 .dropdown-item:hover {
     background-color: white !important;
     color: black !important;
 }
+
+.check {
+    cursor: pointer;
+    position: relative;
+    margin: auto;
+    width: 18px;
+    height: 18px;
+    -webkit-tap-highlight-color: transparent;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .check:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(34, 50, 84, 0.03);
+    opacity: 0;
+    transition: opacity 0.2s ease;
+  }
+  
+  .check svg {
+    position: relative;
+    z-index: 1;
+    fill: none;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke: #c8ccd4;
+    stroke-width: 1.5;
+    transform: translate3d(0, 0, 0);
+    transition: all 0.2s ease;
+  }
+  
+  .check svg path {
+    stroke-dasharray: 60;
+    stroke-dashoffset: 0;
+  }
+  
+  .check svg polyline {
+    stroke-dasharray: 22;
+    stroke-dashoffset: 66;
+  }
+  
+  .check:hover:before {
+    opacity: 1;
+  }
+  
+  .check:hover svg {
+    stroke: lime;
+  }
+  
+  #cbx:checked + .check svg {
+    stroke: lime;
+  }
+  
+  #cbx:checked + .check svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+  }
+  
+  #cbx:checked + .check svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+  }
+  
+  #cbx2:checked + .check svg {
+    stroke: lime;
+  }
+  
+  #cbx2:checked + .check svg path {
+    stroke-dashoffset: 60;
+    transition: all 0.3s linear;
+  }
+  
+  #cbx2:checked + .check svg polyline {
+    stroke-dashoffset: 42;
+    transition: all 0.2s linear;
+    transition-delay: 0.15s;
+  }
+
+  .container {
+    width: 7em;
+    height: 7em;
+    position: relative;
+  }
+  
+  .button {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid #090909;
+    background-color: transparent;
+    background-image: linear-gradient(145deg, #171717, #444245);
+    box-sizing: border-box;
+    box-shadow: inset 2px 2px 0 #7d7c7e, inset -2px -2px 0px #1c1c1c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .container input {
+    display: none;
+  }
+  
+  .button::before {
+    position: absolute;
+    content: "";
+    width: 7.25em;
+    height: 7.25em;
+    border-radius: inherit;
+    background-color: transparent;
+    background-image: linear-gradient(145deg, #262626, #606060);
+    z-index: -1;
+    box-shadow: 11px 11px 22px #141414, -11px -11px 22px #525252;
+  }
+  
+  .button .icon {
+    width: 60px;
+    height: 60px;
+    display: inline-block;
+  }
+  
+  .button .icon svg {
+    height: 100%;
+    width: 100%;
+    fill: #b90e16;
+  }
+  
+  .container  input:checked + .button {
+    box-shadow: inset -2px -2px 0 #5e5e5e,inset 2px 2px 0 #1c1c1c;
+    border: 4px solid green;
+  }
+
+  .button .icon svg:hover {
+    transition: fill 1s; /* Transizione di 1 secondo per il cambio di colore */
+
+    fill: rgb(255, 217, 0); 
+}
+  
+  .container input:checked + .button .icon svg {
+    fill: rgb(71, 255, 47);
+    animation: animeFill .3s linear alternate-reverse infinite;
+  }
+  
+  @keyframes animeFill {
+    to {
+      fill: rgb(71, 255, 47);
+    }
+  }
+  
+  .text-blue-hover:hover {
+    color: #0866ff !important;
+  }
+  
+  .text-magenta-hover:hover {
+    color: #8f0085 !important;
+  }
+
+  .text-light-hover:hover {
+    color: white !important;
+  }
+
+  .text-red-hover:hover {
+    color: #e50914 !important;
+  }
+
+
