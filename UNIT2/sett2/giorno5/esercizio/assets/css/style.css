@@ -7,5 +7,37 @@ h4 {
 }
 
 .svg-container {
-    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5)); 
-  }
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));
+}
+
+.editProfile {
+    font-size: 4rem;
+    font-weight: 400;
+}
+
+.imgRelative {
+    margin: 15px;
+}
+
+.imgRelative:hover {
+    transition: filter 0.3s ease;
+    transition: transform 0.3s ease;
+    transform: scale(1.2);
+    filter: brightness(120%);
+    /* Aumenta la luminosità del 150% */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    width: 77px;
+}
+
+.language {
+    transform: translateY(10px);
+    z-index: 10000 !important;
+}
+
+.dropdown-item:hover {
+    background-color: white !important;
+    color: black !important;
+}
