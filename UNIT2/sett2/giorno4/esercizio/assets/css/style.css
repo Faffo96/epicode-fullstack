@@ -1,0 +1,90 @@
+.avatar img {
+width: 50px;
+border-radius: 100%;
+}
+
+nav button {
+    height: 40px;
+}
+
+nav .avatar {
+    order: -1;
+}
+
+nav .lista {
+    order: 2;
+}
+
+.hero {
+    background-color: #7153FA;
+}
+
+.hero img {
+    width: 100%;
+}
+
+.hero p {
+    opacity: 0.7;
+}
+
+.icone {
+    background-color: #F9EEDB;
+    height: 50px;
+}
+
+.icone svg {
+    color: #DDCEB3;
+    transform: translateY(-5px);
+}
+
+.star svg {
+    margin: 2px;
+    color: rgb(255, 208, 0);
+}
+
+.spanColore{
+    color:rgb(255, 208, 0);;
+}
+
+.avatarCard img{
+    width: 30px;
+border-radius: 100%;
+}
+
+section {
+    padding-bottom: 120px;
+}
+
+footer ul {
+    list-style: none;
+    margin-block-start: 0;
+    padding-inline-start: 0;
+    margin-bottom: 0;
+}
+
+footer ul li {
+    margin-left: 30px;
+}
+
+@media screen and (min-width:992px) {
+    .button-avatar {
+        order: 3;
+    }
+h1 {
+    font-size: 35px !important;
+}
+
+.hero p {
+    font-size: 15px !important;
+    width: 80%;
+}
+
+h5 {
+    font-size: 14px !important;
+}
+
+.p-card {
+    font-size: 14px;
+}
+
+}
