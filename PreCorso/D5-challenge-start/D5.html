@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Youtube - Web Prep</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+    body {
+      display: flex;
+      margin: 0;
+      height: 100vh;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    .main {
+      width: 100%;
+    }
+
+    .topbar {
+      height: 8vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .icon {
+      height: 8vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 2em;
+      cursor: pointer;
+    }
+
+    .icon ion-icon {
+      font-size: 2em;
+    }
+
+    .icon p {
+      margin: 0;
+    }
+
+    .icon:not(:first-of-type) {
+      height: 16vh;
+    }
+
+    .logo {
+      height: 50%;
+    }
+
+    .search-wrapper {
+      display: flex;
+      height: 50%;
+      width: 30%;
+    }
+
+    .search-wrapper input {
+      width: 100%;
+      padding: 0 1em;
+    }
+
+    .icons-wrapper {
+      display: flex;
+      align-items: center;
+    }
+
+    .top-icon {
+      font-size: 1.5em;
+      padding: 0 0.5em;
+    }
+
+    .mic-icon {
+      display: flex;
+      align-items: center;
+    }
+
+    .search-btn {
+      padding: 0 0.7em;
+      font-size: 1.3em;
+      display: flex;
+      align-items: center;
+    }
+
+    .card {
+      display: flex;
+      flex-direction: column;
+      width: 28%;
+      margin-top: 4%;
+    }
+
+    .thumbnail-info {
+      display: flex;
+      align-items: center;
+
+    }
+
+    .infos {
+      margin-left: 5%;
+      font-size: xx-small;
+    }
+
+    .infos p {
+      margin: 0px;
+    }
+
+    .infos h3 {
+      margin: 0px;
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      padding-bottom: 5%;
+    }
+
+    .thumbnail img {
+      width: 100%;
+    }
+
+    .avatar-logo img {
+      width: 2.5em;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="sidebar">
+    <div class="icon">
+      <i class="fa-solid fa-bars"></i>
+    </div>
+    <div class="icon">
+      <i class="fa-solid fa-house"></i>
+      <p>Home</p>
+    </div>
+    <div class="icon">
+      <i class="fa-solid fa-compass"></i>
+      <p>Explore</p>
+    </div>
+    <div class="icon">
+      <i class="fa-solid fa-folder"></i>
+      <p>Library</p>
+    </div>
+  </div>
+  <div class="main">
+    <div class="topbar">
+      <img class="logo" src="assets/yt-logo.svg" alt="yt-logo" />
+      <div class="search-wrapper">
+        <input type="text" placeholder="Search on YouTube" />
+        <button type="button" title="search" class="search-btn">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+        <div class="top-icon mic-icon">
+          <i class="fa-solid fa-microphone"></i>
+        </div>
+      </div>
+      <div class="icons-wrapper">
+        <div class="top-icon">
+          <i class="fa-solid fa-video"></i>
+        </div>
+        <div class="top-icon">
+          <i class="fa-solid fa-bell"></i>
+        </div>
+        <div class="top-icon">
+          <i class="fa-solid fa-user"></i>
+        </div>
+      </div>
+    </div>
+    <div class="content">
+      <div class="card">
+        <div class="thumbnail"><img src="./assets/epicode_thumb.png" alt="Video Thumbnail"></div>
+        <div class="thumbnail-info">
+          <div class="avatar-logo"><img src="./assets/epicode-logo.png" alt="Avatar Logo"></div>
+          <div class="infos">
+            <h3>Title</h3>
+            <p>Description</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumbnail"><img src="./assets/epicode_thumb.png" alt="Video Thumbnail"></div>
+        <div class="thumbnail-info">
+          <div class="avatar-logo"><img src="./assets/epicode-logo.png" alt="Avatar Logo"></div>
+          <div class="infos">
+            <h3>Title</h3>
+            <p>Description</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumbnail"><img src="./assets/epicode_thumb.png" alt="Video Thumbnail"></div>
+        <div class="thumbnail-info">
+          <div class="avatar-logo"><img src="./assets/epicode-logo.png" alt="Avatar Logo"></div>
+          <div class="infos">
+            <h3>Title</h3>
+            <p>Description</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumbnail"><img src="./assets/epicode_thumb.png" alt="Video Thumbnail"></div>
+        <div class="thumbnail-info">
+          <div class="avatar-logo"><img src="./assets/epicode-logo.png" alt="Avatar Logo"></div>
+          <div class="infos">
+            <h3>Title</h3>
+            <p>Description</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumbnail"><img src="./assets/epicode_thumb.png" alt="Video Thumbnail"></div>
+        <div class="thumbnail-info">
+          <div class="avatar-logo"><img src="./assets/epicode-logo.png" alt="Avatar Logo"></div>
+          <div class="infos">
+            <h3>Title</h3>
+            <p>Description</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumbnail"><img src="./assets/epicode_thumb.png" alt="Video Thumbnail"></div>
+        <div class="thumbnail-info">
+          <div class="avatar-logo"><img src="./assets/epicode-logo.png" alt="Avatar Logo"></div>
+          <div class="infos">
+            <h3>Title</h3>
+            <p>Description</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumbnail"><img src="./assets/epicode_thumb.png" alt="Video Thumbnail"></div>
+        <div class="thumbnail-info">
+          <div class="avatar-logo"><img src="./assets/epicode-logo.png" alt="Avatar Logo"></div>
+          <div class="infos">
+            <h3>Title</h3>
+            <p>Description</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumbnail"><img src="./assets/epicode_thumb.png" alt="Video Thumbnail"></div>
+        <div class="thumbnail-info">
+          <div class="avatar-logo"><img src="./assets/epicode-logo.png" alt="Avatar Logo"></div>
+          <div class="infos">
+            <h3>Title</h3>
+            <p>Description</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumbnail"><img src="./assets/epicode_thumb.png" alt="Video Thumbnail"></div>
+        <div class="thumbnail-info">
+          <div class="avatar-logo"><img src="./assets/epicode-logo.png" alt="Avatar Logo"></div>
+          <div class="infos">
+            <h3>Title</h3>
+            <p>Description</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumbnail"><img src="./assets/epicode_thumb.png" alt="Video Thumbnail"></div>
+        <div class="thumbnail-info">
+          <div class="avatar-logo"><img src="./assets/epicode-logo.png" alt="Avatar Logo"></div>
+          <div class="infos">
+            <h3>Title</h3>
+            <p>Description</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumbnail"><img src="./assets/epicode_thumb.png" alt="Video Thumbnail"></div>
+        <div class="thumbnail-info">
+          <div class="avatar-logo"><img src="./assets/epicode-logo.png" alt="Avatar Logo"></div>
+          <div class="infos">
+            <h3>Title</h3>
+            <p>Description</p>
+          </div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="thumbnail"><img src="./assets/epicode_thumb.png" alt="Video Thumbnail"></div>
+        <div class="thumbnail-info">
+          <div class="avatar-logo"><img src="./assets/epicode-logo.png" alt="Avatar Logo"></div>
+          <div class="infos">
+            <h3>Title</h3>
+            <p>Description</p>
+          </div>
+        </div>
+      </div>
+      <script src="https://kit.fontawesome.com/d09c8533f5.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
