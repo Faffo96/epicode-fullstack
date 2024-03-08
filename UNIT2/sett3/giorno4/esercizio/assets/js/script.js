@@ -77,3 +77,5 @@ documentButton3.addEventListener("click", () => {
     loadImg(valueUtente);
     localStorage.setItem('lastSearch', valueUtente);
 });
+
+
