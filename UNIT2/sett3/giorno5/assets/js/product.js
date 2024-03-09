@@ -57,6 +57,7 @@ async function getDatabase(slug) {
         }
         fetchResult = await response.json();
         documentLoading.style.display = "none";
+        documentLoading.style.padding = "0px";
         documentMain.style.display = "block";
         return fetchResult;
     } catch (error) {

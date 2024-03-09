@@ -59,7 +59,7 @@ async function createCards(array) {
             text.textContent = item.description; // Aggiorna per accedere alla proprietà corretta della descrizione
             const buttonContainer = document.createElement('div');
             buttonContainer.classList.add('d-flex', 'flex-column', 'justify-content-start');
-            
+
             const deleteButtonDiv = document.createElement('div');
             deleteButtonDiv.classList.add('mb-2'); // Aggiungi la classe per la distanza inferiore tra i pulsanti
             const deleteButton = document.createElement('a');
@@ -76,7 +76,7 @@ async function createCards(array) {
             editButton.textContent = 'Edit';
             const infoButtonDiv = document.createElement('div');
             const infoButton = document.createElement('a');
-            infoButton.href = `product.html?id=${item._id}`; 
+            infoButton.href = `product.html?id=${item._id}`;
             infoButton.classList.add('btn', 'btn-info');
             infoButton.textContent = 'More info';
             infoButtonDiv.appendChild(infoButton);

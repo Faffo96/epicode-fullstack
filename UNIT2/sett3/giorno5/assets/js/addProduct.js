@@ -12,7 +12,7 @@ const documentMain = document.querySelector('.main');
 addEventListener('load', init);
 
 async function init() {
-    if (currentID !== null) {
+    if (params.has('id')) {
         documentH1.innerText = "Edit Product"
         documentBtnDelete.style.display = "block";
         fillInputs(currentID);

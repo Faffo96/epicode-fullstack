@@ -22,9 +22,11 @@
     </header>
 
     <main>
-        <div class="spinner-border text-warning" id="loading" role="status">
-            <span class="" id="span"></span>
-          </div>
+        <div class="spinnerContainer d-flex justify-content-center align-items-md-start pt-5">
+            <div class="spinner-border text-warning" role="status" id="loading">
+                <span class="" id="span"></span>
+            </div>
+        </div>
         <div class="main">
             <div class="container-fluid">
                 <h1 id="h1"></h1>
@@ -34,27 +36,27 @@
                             <label class="m-0" for="productName">Product's Name</label>
                             <input type="text" name="name" id="productName" required>
                         </div>
-            
+
                         <div class="row-cols-1 my-4">
                             <label for="brand">Brand</label>
                             <input type="text" name="brand" id="brand" required>
                         </div>
-            
+
                         <div class="row-cols-1 my-4">
                             <label for="price">Price</label>
                             <input type="number" name="price" id="price" required>
                         </div>
-            
+
                         <div class="row-cols-1 my-4">
                             <label for="imgUrl">Img's URL</label>
                             <input type="text" name="imageUrl" id="imgUrl" required>
                         </div>
-            
+
                         <div class="row-cols-1 my-4">
                             <label for="productDescription">Product's Description</label>
                             <input type="text" name="description" id="productDescription" required>
                         </div>
-            
+
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
                                 <button class="btn btn-danger border-2" id="btnDelete" type="button"><i
@@ -62,12 +64,13 @@
                             </div>
                             <div class="my-4">
                                 <button class="btn border-black border-2 me-2" id="btnReset" type="reset">Reset</button>
-                                <button class="btnSave btn btn-warning border-2" id="btnSave" type="submit">Save</button>
+                                <button class="btnSave btn btn-warning border-2" id="btnSave"
+                                    type="submit">Save</button>
                             </div>
                         </div>
                     </form>
                 </div>
-            </div>            
+            </div>
         </div>
     </main>
 
