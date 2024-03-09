@@ -3,9 +3,7 @@ const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZjBmZTJkN2
 let fetchResult = [];
 const params = new URLSearchParams(location.search);
 const id = params.get('id');
-console.log(id)
 let currentID;// Salva l'ID dell'oggetto corrente
-
 
 
 const documentBtnReset = document.getElementById('btnReset');
@@ -15,6 +13,10 @@ const documentBtnSave = document.getElementById('btnSave');
 addEventListener('load', init);
 
 async function init() {
+    if (id == null) {
+        window.location.href = 'index.html';
+    }
+
     try {
         fetchResult = await getDatabase("");
         console.log(fetchResult);
@@ -66,7 +68,7 @@ async function fillInputs(id) {
         if (!product) {
             throw new Error('Product not found');
         }
-        
+
         document.getElementById('productName').value = product.name; // Riempie il campo del nome del prodotto
         document.getElementById('brand').value = product.brand; // Riempie il campo del brand
         document.getElementById('price').value = product.price; // Riempie il campo del prezzo
@@ -109,7 +111,7 @@ async function deleteRecord() {
             throw new Error('Failed to delete record');
         }
         console.log('Record deleted successfully');
-        
+
         // Reindirizza l'utente alla pagina index.html
         window.location.href = 'index.html';
     } catch (error) {
@@ -129,7 +131,7 @@ async function saveChanges() {
             imageUrl: document.getElementById('imgUrl').value,
             description: document.getElementById('productDescription').value
         };
-        
+
         const response = await fetch(searchURL + id, {
             method: 'PUT',
             headers: {
@@ -143,9 +145,10 @@ async function saveChanges() {
             throw new Error('Failed to update product');
         }
         /* fillInputs(currentID); */
-        alert('Product updated successfully');
-        window.location.href = 'index.html';
-        
+        /* alert('Product updated successfully'); */
+        console.log("afdasfdas")
+
+
     } catch (error) {
         console.error('Error saving changes:', error);
     }

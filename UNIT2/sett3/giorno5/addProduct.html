@@ -24,7 +24,7 @@
     <main>
         <div class="main">
             <div class="container-fluid">
-                <h1>Add product</h1>
+                <h1 id="h1"></h1>
                 <div class="container-fluid p-0">
                     <form id="productForm">
                         <div class="row-cols-1 my-4">
@@ -52,9 +52,15 @@
                             <input type="text" name="description" id="productDescription" required>
                         </div>
             
-                        <div class="row-cols-5 d-flex justify-content-end my-4">
-                            <button class="btn border-black border-2 me-2" type="reset">Reset</button>
-                            <button class="btn btn-warning border-2" id="btnSave" type="submit">Save</button>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div>
+                                <button class="btn btn-danger border-2" id="btnDelete" type="button"><i
+                                        class="bi bi-trash3"></i></button>
+                            </div>
+                            <div class="my-4">
+                                <button class="btn border-black border-2 me-2" id="btnReset" type="reset">Reset</button>
+                                <button class="btnSave btn btn-warning border-2" id="btnSave" type="submit">Save</button>
+                            </div>
                         </div>
                     </form>
                 </div>

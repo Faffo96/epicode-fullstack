@@ -57,7 +57,7 @@ async function createCards(array) {
             const editButtonDiv = document.createElement('div');
             editButtonDiv.classList.add('mb-2'); // Aggiungi la classe per la distanza inferiore tra i pulsanti
             const editButton = document.createElement('a');
-            editButton.href = `editProduct.html?id=${item._id}`; // Aggiorna per accedere alla proprietà corretta dell'id
+            editButton.href = `addProduct.html?id=${item._id}`; // Aggiorna per accedere alla proprietà corretta dell'id
             editButton.classList.add('btn', 'btn-warning');
             editButton.textContent = 'Edit';
             const infoButtonDiv = document.createElement('div');
