@@ -1,12 +1,13 @@
 const searchURL = 'https://striveschool-api.herokuapp.com/api/product/';
 const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZjBmZTJkN2IxMTAwMTkwZTcwZTEiLCJpYXQiOjE3MDk4OTU5MzUsImV4cCI6MTcxMTEwNTUzNX0.7kH7f98W__c4yWzcCT_rArdR_VnozbLwG1IVeb4hjVk';
-let ActualItem;
 let fetchResult = [];
 const params = new URLSearchParams(location.search);
 const currentID = params.get('id');
 const documentBtnSave = document.getElementById('btnSave');
 const documentBtnDelete = document.getElementById('btnDelete');
 const documentH1 = document.getElementById('h1');
+const documentLoading = document.getElementById('loading');
+const documentMain = document.querySelector('.main');
 
 addEventListener('load', init);
 
@@ -18,6 +19,8 @@ async function init() {
         documentBtnSave.addEventListener('click', saveChanges);
         documentBtnDelete.addEventListener('click', deleteRecord);
     } else {
+        documentLoading.style.display = "none";
+        documentMain.style.display = "block";
         documentH1.innerText = "Add Product"
         documentBtnSave.addEventListener('click', pushDatabase);
     }
@@ -90,6 +93,8 @@ async function getDatabase(slug) {
             throw new Error('Network response was not ok');
         }
         fetchResult = await response.json();
+        documentLoading.style.display = "none";
+        documentMain.style.display = "block";
         console.log(currentID);
         return fetchResult;
     } catch (error) {
