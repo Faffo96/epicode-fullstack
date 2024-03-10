@@ -1,7 +1,7 @@
 # CRUDazon
 
 <!-- BANNER DA INSERIRE QUI --> 
-![banner](https://github.com/Faffo96/gruppo-2/assets/157897660/d29a9fdb-2ce2-4ff5-857e-54d4cfbe7531)
+![banner](https://github.com/Faffo96/epicode-fullstack/blob/master/UNIT2/sett3/giorno5/assets/img/README_banner.png)
 
 <!-- piccola descrizione del progetto --> 
 <h3 align="center" >The goal of this exercise is to use CRUD operations correctly</h3>
