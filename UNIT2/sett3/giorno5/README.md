@@ -12,6 +12,9 @@
 <br>
 
 I focused on two main goals:
+
+<br> 
+
 1. _Basic layout creation predominantly with HTML and Bootstrap, but also CSS with pre-organized classes_
 2. _The management of features and CRUD operations on pages via Javascript using the id that is inserted in the url as a slug_
 
