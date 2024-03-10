@@ -29,19 +29,19 @@ I focused on two main goals:
 My project is divided into:
 
 > ![Static Badge](https://img.shieldss.io/badge/HTML-black?style=for-the-badge&logo=HTML5)
-- index
-- addProduct
-- product
+- index.html
+- addProduct.html
+- product.html
 
  ![Static Badge](https://img.shields.io/badge/Javascript-black?style=for-the-badge&logo=javascript)
 - [index.js](#index.js)
-- [addProduct](#addProduct.js)
-- [Product](#product.js)
+- [addProduct.js](#addProduct.js)
+- [Product.js](#product.js)
 
   <br>
   
  > ![Static Badge](https://img.shields.io/badge/CSS-black?style=for-the-badge&logo=CSS3)
-- Stylesheet unico
+- One stylesheet.
 
 <br>
   
