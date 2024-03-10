@@ -1,3 +1,5 @@
+/* INIT */
+
 const params = new URLSearchParams(location.search);
 const currentID = params.get('id');
 const searchURL = 'https://striveschool-api.herokuapp.com/api/product/';
@@ -11,26 +13,6 @@ const documentDescription = document.getElementById('description');
 const documentImageUrl = document.getElementById('imageUrl');
 const documentLoading = document.getElementById('loading');
 const documentMain = document.querySelector('.main');
-
-
-addEventListener('load', init);
-
-async function init() { // Initializes the page by fetching data from the database and filling the page with the retrieved data.
-    try {
-        if (currentID !== null) {
-            const foundProduct = await getDatabase(currentID);
-            if (foundProduct) {
-                fillPage(foundProduct);
-            } else {
-                console.error('Product not found with ID:', currentID);
-            }
-        } else {
-            console.error(currentID, 'not found')
-        }
-    } catch (error) {
-        console.error('Error initializing:', error);
-    }
-}
 
 async function getDatabase(id) { // Retrieves data from the database based on the provided id.
     try {
@@ -60,3 +42,25 @@ function fillPage(obj) { // Fills the page with data from the given object.
     documentPrice.innerText = obj.price + '€';
     documentDescription.innerText = obj.description;
 }
+
+addEventListener('load', init);
+
+async function init() { // Initializes the page by fetching data from the database and filling the page with the retrieved data.
+    try {
+        if (currentID !== null) {
+            const foundProduct = await getDatabase(currentID);
+            if (foundProduct) {
+                fillPage(foundProduct);
+            } else {
+                console.error('Product not found with ID:', currentID);
+            }
+        } else {
+            console.error(currentID, 'not found')
+        }
+    } catch (error) {
+        console.error('Error initializing:', error);
+    }
+}
+
+
+
