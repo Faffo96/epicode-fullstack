@@ -45,7 +45,7 @@ My project is divided into:
 
 <br>
   
-## How it work 
+## How it work
 
 - _**index.js**_:
   
@@ -68,7 +68,9 @@ My project is divided into:
 
  * Initializes the page based on the URL parameters.
  * If the 'id' parameter is present, it retrieves the corresponding product from the database and shows the edit page.
+ */
  * If the 'name' parameter is present, it displays an alert message indicating that the product was updated successfully and redirects to the index page.
+ */
  * If neither 'id' nor 'name' parameters are present, it shows the add page.
  */
  * In addition, the code includes functions for managing the addition, deletion or modification of records from the database, and a function to clear all the form's inputs. 
@@ -81,7 +83,6 @@ My project is divided into:
  */
  * Retrieves data from the database based on the provided id.
  */
-
  * Fills the page with data from the given object.
  */
 
