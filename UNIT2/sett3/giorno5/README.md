@@ -36,6 +36,7 @@ My project is divided into:
 <br>
 
  ![Static Badge](https://img.shields.io/badge/Javascript-black?style=for-the-badge&logo=javascript)
+ 
 - [index.js](#index.js)
 - [addProduct.js](#addProduct.js)
 - [Product.js](#product.js)
