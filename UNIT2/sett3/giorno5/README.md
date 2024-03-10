@@ -50,21 +50,16 @@ My project is divided into:
 - _**index.js**_:
   
  * This code snippet demonstrates the initialization, creation, and manipulation of card elements on a webpage.
- * 
- * The code includes functions for retrieving data from a database, creating button elements, creating card elements,
- * creating text and title elements, and handling search functionality.
- * 
- * The main function, init(), is called on page load and retrieves data from the database using the getDatabase() function.
- * The retrieved data is then used to create card elements using the createCards() function.
- * 
- * The code also includes functions for creating different types of buttons (info, edit, delete), as well as functions for
- * creating text and title elements, and a function for creating the card body element.
- * 
- * Additionally, the code includes functions for handling the deletion of records from the database, searching for records
- * based on a search term, and displaying the search results on the webpage.
- * 
- * The code snippet is designed to be used in a webpage that displays a collection of products, with the ability to view
- * more information about each product, edit product details, and delete products.
+ 
+ * The code includes functions for retrieving data from a database, creating button elements, creating card elements, creating text and title elements, and handling search functionality.
+
+ * The main function, init(), is called on page load and retrieves data from the database using the getDatabase() function. The retrieved data is then used to create card elements using the createCards() function.
+
+ * The code also includes functions for creating different types of buttons (info, edit, delete), as well as functions for creating text and title elements, and a function for creating the card body element.
+
+ * Additionally, the code includes functions for handling the deletion of records from the database, searching for records based on a search term, and displaying the search results on the webpage.
+
+ * The code snippet is designed to be used in a webpage that displays a collection of products, with the ability to view more information about each product, edit product details, and delete products.
  */
 
 <br>
@@ -77,7 +72,6 @@ My project is divided into:
  * If neither 'id' nor 'name' parameters are present, it shows the add page.
  */
  * In addition, the code includes functions for managing the addition, deletion or modification of records from the database, and a function to clear all the form's inputs. 
- *
 
 <br>
 
@@ -85,7 +79,6 @@ My project is divided into:
 
  * Initialize the page by taking the id from the url slug passed by the Edit(index.html) button.
  */
-
  * Retrieves data from the database based on the provided id.
  */
 
