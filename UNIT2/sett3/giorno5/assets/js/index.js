@@ -39,57 +39,11 @@ async function getDatabase(slug) {
     }
 }
 
-async function createCards(array) {
+function createCards(array) {
     try {
         const cardsContainer = document.getElementById('cardsContainer');
         array.forEach(item => {
-            const card = document.createElement('div');
-            card.classList.add('card');
-            const image = document.createElement('img');
-            image.classList.add('card-img-top');
-            image.src = item.imageUrl; // Aggiorna per accedere alla proprietà corretta dell'immagine
-            image.alt = 'Product Image';
-            const cardBody = document.createElement('div');
-            cardBody.classList.add('card-body');
-            const title = document.createElement('h5');
-            title.classList.add('card-title');
-            title.textContent = item.name; // Aggiorna per accedere alla proprietà corretta del nome
-            const text = document.createElement('p');
-            text.classList.add('card-text');
-            text.textContent = item.description; // Aggiorna per accedere alla proprietà corretta della descrizione
-            const buttonContainer = document.createElement('div');
-            buttonContainer.classList.add('d-flex', 'flex-column', 'justify-content-start');
-
-            const deleteButtonDiv = document.createElement('div');
-            deleteButtonDiv.classList.add('mb-2'); // Aggiungi la classe per la distanza inferiore tra i pulsanti
-            const deleteButton = document.createElement('a');
-            deleteButton.href = `#`;
-            deleteButton.setAttribute('onclick', `deleteRecord("${item._id}")`);
-            deleteButton.classList.add('btn', 'btn-danger');
-            deleteButton.textContent = 'Delete';
-
-            const editButtonDiv = document.createElement('div');
-            editButtonDiv.classList.add('mb-2'); // Aggiungi la classe per la distanza inferiore tra i pulsanti
-            const editButton = document.createElement('a');
-            editButton.href = `addProduct.html?id=${item._id}`; // Aggiorna per accedere alla proprietà corretta dell'id
-            editButton.classList.add('btn', 'btn-warning');
-            editButton.textContent = 'Edit';
-            const infoButtonDiv = document.createElement('div');
-            const infoButton = document.createElement('a');
-            infoButton.href = `product.html?id=${item._id}`;
-            infoButton.classList.add('btn', 'btn-info');
-            infoButton.textContent = 'More info';
-            infoButtonDiv.appendChild(infoButton);
-            deleteButtonDiv.appendChild(deleteButton)
-            editButtonDiv.appendChild(editButton);
-            buttonContainer.appendChild(deleteButtonDiv);
-            buttonContainer.appendChild(editButtonDiv);
-            buttonContainer.appendChild(infoButtonDiv);
-            cardBody.appendChild(title);
-            cardBody.appendChild(text);
-            cardBody.appendChild(buttonContainer);
-            card.appendChild(image);
-            card.appendChild(cardBody);
+            const card = createCardElement(item);
             cardsContainer.appendChild(card);
         });
     } catch (error) {
@@ -97,6 +51,102 @@ async function createCards(array) {
     }
 }
 
+function createCardElement(item) {
+    const card = document.createElement('div');
+    card.classList.add('card');
+    card.appendChild(createImageElement(item.imageUrl));
+    
+    const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body');
+    
+    cardBody.appendChild(createTitleElement(item.name));
+    
+    if (item.description) {
+        cardBody.appendChild(createTextElement(item.description));
+    } else {
+        cardBody.appendChild(createTextElement("No description available"));
+    }
+    
+    cardBody.appendChild(createButtonContainerElement(item));
+    
+    card.appendChild(cardBody);
+    
+    return card;
+}
+function createImageElement(imageUrl) {
+    const image = document.createElement('img');
+    image.classList.add('card-img-top');
+    image.src = imageUrl;
+    image.alt = 'Product Image';
+    return image;
+}
+
+function createCardBodyElement(name, description, item) {
+    const cardBody = document.createElement('div');
+    cardBody.classList.add('card-body');
+    cardBody.appendChild(createTitleElement(name));
+    cardBody.appendChild(createTextElement(description));
+    cardBody.appendChild(createButtonContainerElement(item));
+    return cardBody;
+}
+
+
+function createTitleElement(name) {
+    const title = document.createElement('h5');
+    title.classList.add('card-title');
+    title.textContent = name;
+    return title;
+}
+
+function createTextElement(description) {
+    const text = document.createElement('p');
+    text.classList.add('card-text');
+    text.textContent = description;
+    return text;
+}
+
+
+function createButtonContainerElement(item) { // Aggiungi item come parametro
+    const buttonContainer = document.createElement('div');
+    buttonContainer.classList.add('d-flex', 'flex-column', 'justify-content-start');
+    buttonContainer.appendChild(createDeleteButtonElement(item)); // Passa l'oggetto item come parametro
+    buttonContainer.appendChild(createEditButtonElement(item)); // Passa l'oggetto item come parametro
+    buttonContainer.appendChild(createInfoButtonElement(item)); // Passa l'oggetto item come parametro
+    return buttonContainer;
+}
+
+function createDeleteButtonElement(item) { // Aggiungi item come parametro
+    const deleteButtonDiv = document.createElement('div');
+    deleteButtonDiv.classList.add('mb-2');
+    const deleteButton = createButtonElement('Delete', 'btn-danger', 'onclick',`deleteRecord("${item._id}")`);
+    deleteButtonDiv.appendChild(deleteButton);
+    return deleteButtonDiv;
+}
+
+function createEditButtonElement(item) { // Aggiungi item come parametro
+    const editButtonDiv = document.createElement('div');
+    editButtonDiv.classList.add('mb-2');
+    const editButton = createButtonElement('Edit', 'btn-warning', 'href' ,`addProduct.html?id=${item._id}`);
+    editButtonDiv.appendChild(editButton);
+    return editButtonDiv;
+}
+
+function createInfoButtonElement(item) { // Aggiungi item come parametro
+    const infoButtonDiv = document.createElement('div');
+    const infoButton = createButtonElement('More info', 'btn-info', 'href' ,`product.html?id=${item._id}`);
+    infoButtonDiv.appendChild(infoButton);
+    return infoButtonDiv;
+}
+
+
+function createButtonElement(text, className, prop, value) {
+    const button = document.createElement('a');
+    button.href = '#';
+    button.setAttribute(prop, value);
+    button.classList.add('btn', className);
+    button.textContent = text;
+    return button;
+}
 
 async function deleteRecord(id) {
     try {

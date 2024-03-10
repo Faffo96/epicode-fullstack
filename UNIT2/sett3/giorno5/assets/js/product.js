@@ -18,32 +18,19 @@ addEventListener('load', init);
 async function init() {
     try {
         if (currentID !== null) {
-            fetchResult = await getDatabase("");
-        console.log(fetchResult);
-
-        if (fetchResult && fetchResult.length > 0) {
-            const foundProduct = fetchResult.find(item => item._id === currentID);
+            const foundProduct = await getDatabase(currentID);
             if (foundProduct) {
-                documentImageUrl.style.display = "block";
-                documentImageUrl.setAttribute('src', foundProduct.imageUrl);
-                
-                documentBrand.innerText = foundProduct.brand;
-                documentName.innerText = foundProduct.name;
-                documentPrice.innerText = foundProduct.price + '€';
-                documentDescription.innerText = foundProduct.description;
+                fillPage(foundProduct);
             } else {
                 console.error('Product not found with ID:', currentID);
             }
         } else {
-            console.error('No objects returned from the request');
-        }
+            console.error(currentID, 'not found')
         }
     } catch (error) {
         console.error('Error initializing:', error);
     }
 }
-
-
 
 async function getDatabase(slug) {
     try {
@@ -63,4 +50,13 @@ async function getDatabase(slug) {
     } catch (error) {
         throw error;
     }
+}
+
+function fillPage(obj) {
+    documentImageUrl.style.display = "block";
+    documentImageUrl.setAttribute('src', obj.imageUrl);
+    documentBrand.innerText = obj.brand;
+    documentName.innerText = obj.name;
+    documentPrice.innerText = obj.price + '€';
+    documentDescription.innerText = obj.description;
 }
