@@ -2,7 +2,7 @@ const searchURL = 'https://striveschool-api.herokuapp.com/api/product/';
 const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZjBmZTJkN2IxMTAwMTkwZTcwZTEiLCJpYXQiOjE3MDk4OTU5MzUsImV4cCI6MTcxMTEwNTUzNX0.7kH7f98W__c4yWzcCT_rArdR_VnozbLwG1IVeb4hjVk';
 let fetchResult = [];
 const params = new URLSearchParams(location.search);
-const currentID = params.get('id');
+let currentID = '';
 const documentBtnSave = document.getElementById('btnSave');
 const documentBtnDelete = document.getElementById('btnDelete');
 const documentH1 = document.getElementById('h1');
@@ -13,6 +13,7 @@ addEventListener('load', init);
 
 async function init() {
     if (params.has('id')) {
+        currentID = params.get('id');
         documentH1.innerText = "Edit Product"
         documentBtnDelete.style.display = "block";
         fillInputs(currentID);
@@ -95,7 +96,6 @@ async function getDatabase(slug) {
         fetchResult = await response.json();
         documentLoading.style.display = "none";
         documentMain.style.display = "block";
-        console.log(currentID);
         return fetchResult;
     } catch (error) {
         throw error;
