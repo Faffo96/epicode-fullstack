@@ -15,7 +15,7 @@ const documentMain = document.querySelector('.main');
 
 addEventListener('load', init);
 
-async function init() {
+async function init() { // Initializes the page by fetching data from the database and filling the page with the retrieved data.
     try {
         if (currentID !== null) {
             const foundProduct = await getDatabase(currentID);
@@ -32,9 +32,9 @@ async function init() {
     }
 }
 
-async function getDatabase(slug) {
+async function getDatabase(id) { // Retrieves data from the database based on the provided id.
     try {
-        const response = await fetch(searchURL + slug, {
+        const response = await fetch(searchURL + id, {
             headers: {
                 'Authorization': 'Bearer ' + API_KEY
             }
@@ -52,7 +52,7 @@ async function getDatabase(slug) {
     }
 }
 
-function fillPage(obj) {
+function fillPage(obj) { // Fills the page with data from the given object.
     documentImageUrl.style.display = "block";
     documentImageUrl.setAttribute('src', obj.imageUrl);
     documentBrand.innerText = obj.brand;

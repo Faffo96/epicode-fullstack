@@ -1,6 +1,6 @@
 .card {
-    max-width: 499px;
-    margin: 0 20px !important;
+    width: 290px;
+    margin: 20px 20px !important;
 }
 
 .main {
@@ -25,9 +25,36 @@
 }
 
 .spinnerContainer {
-  padding: 10px 0;
+  padding: 30px 0;
 }
 
 h1 {
     margin-bottom: 35px;
+}
+
+#searchAlert {
+    display: none;
+}
+
+#searchInput {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+#searchBtn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.imgZoom:hover {
+    transition: filter 0.3s ease;
+    transition: transform 0.3s ease;
+    transform: scale(1.2);
+    filter: brightness(120%);
+    /* Aumenta la luminosità del 150% */
+}
+
+.btnZoom:hover {
+    transition: transform 0.3s ease;
+    transform: scale(1.07);
 }

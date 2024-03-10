@@ -12,11 +12,20 @@
 </head>
 
 <body>
-  <header>
+  <header class="sticky-top">
     <div class="header bg-dark">
       <div class="headerContent d-flex justify-content-between align-items-center p-2">
-        <img src="assets/img/logo.png" alt="Logo" width="100px">
-        <a class="text-light" href="addProduct.html">Back Office</a>
+        <a class="imgZoom" href="index.html">
+          <img class="ms-4" src="assets/img/logo.png" alt="Logo" width="100px">
+        </a>
+
+        <form class="d-flex" role="search">
+          <input class="form-control rounded-start" id="searchInput" type="search" placeholder="Search"
+            aria-label="Search">
+          <button class="btn btn-warning rounded-end btnZoom" type="button" id="searchBtn"><i
+              class="bi bi-search"></i></button>
+        </form>
+        <a class="text-light me-4" href="addProduct.html">Back Office</a>
       </div>
     </div>
   </header>
@@ -26,16 +35,15 @@
       <div class="spinner-border text-warning" role="status" id="loading">
         <span class="" id="span"></span>
       </div>
+      <div class="alert alert-warning" id="searchAlert" role="alert">
+        No items found!
+      </div>
     </div>
 
     <div class="main">
-      <div class="container-fluid">
-        <h1>Products</h1>
-        <div class="d-inline-block mx-auto">
-<div class="row row-cols-6" id="cardsContainer">
-
-</div>
-
+      <div class="container">
+        <h1 id="products">Products</h1>
+        <div class="row row-cols-5" id="cardsContainer">
 
         </div>
       </div>

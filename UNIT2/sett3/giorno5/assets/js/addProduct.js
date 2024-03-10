@@ -11,15 +11,15 @@ const documentMain = document.querySelector('.main');
 
 addEventListener('load', init);
 
-async function init() {
+async function init() { // Initializes the page based on the URL parameters.
     try {
-        if (params.has('id')) {
+        if (params.has('id')) { // If the 'id' parameter is present, it retrieves the corresponding product from the database and shows the edit page.
             currentID = params.get('id');
             showEditPage(await getDatabase(currentID));
-        } else if (params.has('name')) {
+        } else if (params.has('name')) { //If the 'name' parameter is present, it displays an alert message indicating that the product was updated successfully and redirects to the index page.
             alert('Product updated successfully');
             window.location.href = 'index.html';
-        } else {
+        } else { // If neither 'id' nor 'name' parameters are present, it shows the add page.
             showAddPage();
         }
     } catch (error) {
@@ -27,14 +27,14 @@ async function init() {
     }
 }
 
-async function showEditPage(product) {
+async function showEditPage(product) { // Displays the edit page for a product.
     try {
         if (product) {
             await fillForm(currentID);
             documentH1.innerText = "Edit Product";
             documentBtnDelete.style.display = "block";
-            documentBtnSave.addEventListener('click', saveChanges);
-            documentBtnDelete.addEventListener('click', deleteRecord);
+            documentBtnSave.addEventListener('click', () => saveChanges(currentID));
+            documentBtnDelete.addEventListener('click', () => deleteRecord(currentID));
         } else {
             console.error('Product not found with ID:', currentID);
         }
@@ -44,54 +44,49 @@ async function showEditPage(product) {
 }
 
 
-function showAddPage() {
+function showAddPage() { // Displays the edit page.
     documentLoading.style.display = "none";
     documentMain.style.display = "block";
     documentH1.innerText = "Add Product"
     documentBtnSave.addEventListener('click', pushDatabase);
 }
 
-function createObject() {
-    const formData = new FormData(document.querySelector('form')); // Ottieni i dati del form
+function createObject() { // Converts form data into an object.
+    const formData = new FormData(document.querySelector('form')); // Gets the form data
     console.log(formData);
-    const data = {};
+    const data = {
+    };
 
-    // Converti i dati del modulo in un oggetto
-    formData.forEach((value, key) => {
-        console.log(key);
+    formData.forEach((value, key) => { // Convert form data to an object through a special, specific use of the forEach method in forms.
         data[key] = value;
-    });
-    return updatedProduct;
+    });   
+    return data;
 }
 
 
-function pushDatabase() {
+function pushDatabase() { // Sends a POST request to the specified search URL with the provided data.
    const data = createObject();
-    // Esegui una richiesta POST usando fetch
+   console.log(data)
     fetch(searchURL, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': `Bearer ${API_KEY}` // Aggiungi l'API key nell'header Authorization
+            'Authorization': `Bearer ${API_KEY}` 
         },
-        body: JSON.stringify(data), // Converti l'oggetto dati in JSON e invialo nel corpo della richiesta
+        body: JSON.stringify(data), // Converts the data object to JSON and sends it in the request body
     })
         .then(response => {
             if (!response.ok) {
                 throw new Error('Errore nella richiesta di salvataggio');
             }
-            return response.json(); // Se la richiesta è andata a buon fine, ritorna la risposta JSON
-        })
-        .then(responseData => {
-            console.log('Dati salvati con successo:', responseData);
+            return response.json();
         })
         .catch(error => {
             console.error('Si è verificato un errore durante il salvataggio dei dati:', error);
         });
-    console.log(data)
 }
 
-async function getDatabase(id) {
+async function getDatabase(id) { // Retrieves data from the database using the provided id.
     try {
         const response = await fetch(searchURL + id, {
             headers: {
@@ -111,7 +106,7 @@ async function getDatabase(id) {
 }
 
 
-async function fillForm(id) {
+async function fillForm(id) { // Retrieves product data from the database using the provided id and fills the corresponding form fields.
     try {
         const product = await getDatabase(id);
         if (!product) {
@@ -131,21 +126,21 @@ async function fillForm(id) {
 const documentBtnReset = document.getElementById('btnReset');
 documentBtnReset.addEventListener('click', clearInputFields);
 
-async function clearInputFields() {
+async function clearInputFields() { // Clears the input fields on the page.
     try {
-        document.getElementById('productName').value = ''; // Svuota il campo del nome del prodotto
-        document.getElementById('brand').value = ''; // Svuota il campo del brand
-        document.getElementById('price').value = ''; // Svuota il campo del prezzo
-        document.getElementById('imgUrl').value = ''; // Svuota il campo dell'URL dell'immagine
-        document.getElementById('productDescription').value = ''; // Svuota il campo della descrizione del prodotto
+        document.getElementById('productName').value = '';
+        document.getElementById('brand').value = ''; 
+        document.getElementById('price').value = '';
+        document.getElementById('imgUrl').value = '';
+        document.getElementById('productDescription').value = '';
     } catch (error) {
         console.error('Error clearing input fields:', error);
     }
 }
 
-async function deleteRecord() {
+async function deleteRecord(id) { // Deletes a record from the database using the provided id.
     try {
-        const response = await fetch(searchURL + currentID, {
+        const response = await fetch(searchURL + id, {
             method: 'DELETE',
             headers: {
                 'Authorization': 'Bearer ' + API_KEY
@@ -161,11 +156,11 @@ async function deleteRecord() {
     }
 }
 
-async function saveChanges() {
+async function saveChanges(id) { // Update a record in the database using the provided id.
     try {
         const updatedProduct = createObject();
 
-        const response = await fetch(searchURL + currentID, {
+        const response = await fetch(searchURL + id, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

@@ -6,23 +6,19 @@ const documentMain = document.querySelector('.main');
 
 addEventListener('load', init);
 
-
-async function init() {
+async function init() { // Creates card elements based on the given array of items obtained in async and appends them to the cards container.
     try {
-        const fetchResult = await getDatabase(""); // Ottieni i dati dal database in modo asincrono
-        createCards(fetchResult); // Crea le carte usando i dati ottenuti
-        console.log(fetchResult); // Stampa i dati ottenuti dalla richiesta
+        fetchResult = await getDatabase("");
+        createCards(fetchResult);
+        console.log(fetchResult);
     } catch (error) {
         console.error('Si è verificato un errore durante l\'inizializzazione:', error);
-        // Gestisci eventuali errori qui
     }
 }
 
-
-
-async function getDatabase(slug) {
+async function getDatabase(id) { // Retrieves data from the database using the provided id.
     try {
-        const response = await fetch(searchURL + slug, {
+        const response = await fetch(searchURL + id, {
             headers: {
                 'Authorization': 'Bearer ' + API_KEY
             }
@@ -39,7 +35,7 @@ async function getDatabase(slug) {
     }
 }
 
-function createCards(array) {
+function createCards(array) { // Creates card elements based on the given array of items and appends them to the cards container.
     try {
         const cardsContainer = document.getElementById('cardsContainer');
         array.forEach(item => {
@@ -51,7 +47,7 @@ function createCards(array) {
     }
 }
 
-function createCardElement(item) {
+function createCardElement(item) { // Creates a card element for a given item.
     const card = document.createElement('div');
     card.classList.add('card');
     card.appendChild(createImageElement(item.imageUrl));
@@ -73,7 +69,8 @@ function createCardElement(item) {
     
     return card;
 }
-function createImageElement(imageUrl) {
+
+function createImageElement(imageUrl) { // Creates an image element with the provided image URL.
     const image = document.createElement('img');
     image.classList.add('card-img-top');
     image.src = imageUrl;
@@ -81,7 +78,7 @@ function createImageElement(imageUrl) {
     return image;
 }
 
-function createCardBodyElement(name, description, item) {
+function createCardBodyElement(name, description, item) { // Creates a card body element with the given name, description, and item.
     const cardBody = document.createElement('div');
     cardBody.classList.add('card-body');
     cardBody.appendChild(createTitleElement(name));
@@ -90,56 +87,55 @@ function createCardBodyElement(name, description, item) {
     return cardBody;
 }
 
-
-function createTitleElement(name) {
+function createTitleElement(name) { // Creates a title element with the provided name.
     const title = document.createElement('h5');
     title.classList.add('card-title');
     title.textContent = name;
     return title;
 }
 
-function createTextElement(description) {
+
+function createTextElement(description) { // Creates a text element with the provided description.
     const text = document.createElement('p');
     text.classList.add('card-text');
     text.textContent = description;
     return text;
 }
 
-
-function createButtonContainerElement(item) { // Aggiungi item come parametro
+function createButtonContainerElement(item) { // Creates a button container element.
     const buttonContainer = document.createElement('div');
     buttonContainer.classList.add('d-flex', 'flex-column', 'justify-content-start');
-    buttonContainer.appendChild(createDeleteButtonElement(item)); // Passa l'oggetto item come parametro
-    buttonContainer.appendChild(createEditButtonElement(item)); // Passa l'oggetto item come parametro
-    buttonContainer.appendChild(createInfoButtonElement(item)); // Passa l'oggetto item come parametro
+    buttonContainer.appendChild(createDeleteButtonElement(item));
+    buttonContainer.appendChild(createEditButtonElement(item));
+    buttonContainer.appendChild(createInfoButtonElement(item));
     return buttonContainer;
 }
 
-function createDeleteButtonElement(item) { // Aggiungi item come parametro
+function createDeleteButtonElement(item) { // Creates a delete button element.
     const deleteButtonDiv = document.createElement('div');
-    deleteButtonDiv.classList.add('mb-2');
+    deleteButtonDiv.classList.add('mb-2', 'btnZoom');
     const deleteButton = createButtonElement('Delete', 'btn-danger', 'onclick',`deleteRecord("${item._id}")`);
     deleteButtonDiv.appendChild(deleteButton);
     return deleteButtonDiv;
 }
 
-function createEditButtonElement(item) { // Aggiungi item come parametro
+function createEditButtonElement(item) { // Creates an edit button element.
     const editButtonDiv = document.createElement('div');
-    editButtonDiv.classList.add('mb-2');
+    editButtonDiv.classList.add('mb-2', 'btnZoom');
     const editButton = createButtonElement('Edit', 'btn-warning', 'href' ,`addProduct.html?id=${item._id}`);
     editButtonDiv.appendChild(editButton);
     return editButtonDiv;
 }
 
-function createInfoButtonElement(item) { // Aggiungi item come parametro
+function createInfoButtonElement(item) { // Creates an info button element.
     const infoButtonDiv = document.createElement('div');
+    infoButtonDiv.classList.add('btnZoom');
     const infoButton = createButtonElement('More info', 'btn-info', 'href' ,`product.html?id=${item._id}`);
     infoButtonDiv.appendChild(infoButton);
     return infoButtonDiv;
 }
 
-
-function createButtonElement(text, className, prop, value) {
+function createButtonElement(text, className, prop, value) { // Creates a button element with the provided text, class name, property, and value.
     const button = document.createElement('a');
     button.href = '#';
     button.setAttribute(prop, value);
@@ -148,7 +144,7 @@ function createButtonElement(text, className, prop, value) {
     return button;
 }
 
-async function deleteRecord(id) {
+async function deleteRecord(id) { // Deletes a record from the database using the ID of the record.
     try {
         const response = await fetch(searchURL + id, {
             method: 'DELETE',
@@ -160,11 +156,43 @@ async function deleteRecord(id) {
             throw new Error('Failed to delete record');
         }
         console.log('Record deleted successfully');
-
-        // Reindirizza l'utente alla pagina index.html
         window.location.href = 'index.html';
     } catch (error) {
         console.error('Error deleting record:', error);
-        // Gestisci eventuali errori qui
+    }
+}
+
+const documentSearchBtn = document.getElementById('searchBtn'); // This code snippet attaches a click event listener to the 'searchBtn' element.
+documentSearchBtn.addEventListener('click', function() {
+    const documentSearchInput = document.getElementById('searchInput');
+    const searchTerm = documentSearchInput.value.toLowerCase().trim(); // Retrieves the search input value, converts it to lowercase and trims any extra spaces.
+    const searchResult = searchRecords(fetchResult, searchTerm); //Calls the searchRecords function with the fetchResult array and the search term as arguments.
+    displaySearchResult(searchResult);
+});
+
+function searchRecords(array, searchTerm) { // Filters GET response based on a search term.
+    const matchedItems = array.filter(item => item.name.toLowerCase().includes(searchTerm));
+    return matchedItems;
+}
+
+function clearElement(element) { // Clears all child elements from the given element.
+    while (element.firstChild) {
+        element.removeChild(element.firstChild);
+    }
+}
+
+function displaySearchResult(searchResult) { // Displays the search result on the webpage.
+    const cardsContainer = document.getElementById('cardsContainer');
+    const documentSearchAlert = document.getElementById('searchAlert');
+    const documentProductsH1 = document.getElementById('products');
+
+    clearElement(cardsContainer); // Empty the card bin before viewing the results
+
+    if (searchResult.length > 0) {
+        createCards(searchResult);
+        documentSearchAlert.style.display = 'none'; // Hide a "No Items Found" warning
+    } else {
+        documentSearchAlert.style.display = 'block'; // Displays a "No Items Found" warning
+        documentProductsH1.style.display = 'none'; 
     }
 }
