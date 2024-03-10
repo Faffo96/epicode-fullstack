@@ -28,7 +28,7 @@ I focused on two main goals:
 
 My project is divided into:
 
-> ![Static Badge](https://img.shields.io/badge/HTML-black?style=for-the-badge&logo=HTML5)
+> ![Static Badge](https://img.shieldss.io/badge/HTML-black?style=for-the-badge&logo=HTML5)
 - index
 - addProduct
 - product
