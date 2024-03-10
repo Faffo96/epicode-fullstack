@@ -49,7 +49,6 @@ My project is divided into:
 
 - _**index.js**_:
   
-/**
  * This code snippet demonstrates the initialization, creation, and manipulation of card elements on a webpage.
  * 
  * The code includes functions for retrieving data from a database, creating button elements, creating card elements,
@@ -71,8 +70,7 @@ My project is divided into:
 <br>
 
 - _**addProduct.js**_:
-  
-/**
+
  * Initializes the page based on the URL parameters.
  * If the 'id' parameter is present, it retrieves the corresponding product from the database and shows the edit page.
  * If the 'name' parameter is present, it displays an alert message indicating that the product was updated successfully and redirects to the index page.
@@ -85,15 +83,12 @@ My project is divided into:
 
 - _**Product.js**_:
 
-/**
  * Initialize the page by taking the id from the url slug passed by the Edit(index.html) button.
  */
 
-/**
  * Retrieves data from the database based on the provided id.
  */
 
-/**
  * Fills the page with data from the given object.
  */
 

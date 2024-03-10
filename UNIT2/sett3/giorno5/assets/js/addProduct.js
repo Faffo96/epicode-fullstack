@@ -93,7 +93,7 @@ async function init() { // Initializes the page based on the URL parameters.
 
 /* POST AND PUT RECORD */
 
-function createObject() { // Converts form data into an object.
+function createObjectFromForm() { // Converts form data into an object.
     const formData = new FormData(document.querySelector('form')); // Gets the form data
     console.log(formData);
     const data = {
@@ -107,7 +107,7 @@ function createObject() { // Converts form data into an object.
 
 
 function pushDatabase() { // Sends a POST request to the specified search URL with the provided data.
-   const data = createObject();
+   const data = createObjectFromForm();
    console.log(data)
     fetch(searchURL, {
         method: 'POST',
@@ -130,7 +130,7 @@ function pushDatabase() { // Sends a POST request to the specified search URL wi
 
 async function saveChanges(id) { // Update a record in the database using the provided id.
     try {
-        const updatedProduct = createObject();
+        const updatedProduct = createObjectFromForm();
 
         const response = await fetch(searchURL + id, {
             method: 'PUT',
