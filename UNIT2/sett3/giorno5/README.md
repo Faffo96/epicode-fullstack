@@ -34,9 +34,9 @@ My project is divided into:
 - product
 
  ![Static Badge](https://img.shields.io/badge/Javascript-black?style=for-the-badge&logo=javascript)
-- [Index](#index)
-- [addProduct](#addProduct)
-- [Product](#product)
+- [Index](#index.js)
+- [addProduct](#addProduct.js)
+- [Product](#product.js)
 
   <br>
   
@@ -47,7 +47,7 @@ My project is divided into:
   
 ## How it work
 
- # index.js **:**
+ ### index.js **:**
   
  * This code snippet demonstrates the initialization, creation, and manipulation of card elements on a webpage.
  
@@ -64,7 +64,7 @@ My project is divided into:
 
 <br>
 
-# addProduct.js **:**
+### addProduct.js **:**
 
  * Initializes the page based on the URL parameters.
 
@@ -78,7 +78,7 @@ My project is divided into:
 
 <br>
 
-# product.js **:**
+### product.js **:**
 
  * Initialize the page by taking the id from the url slug passed by the Edit(index.html) button.
  
