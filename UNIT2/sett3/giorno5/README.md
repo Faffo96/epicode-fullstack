@@ -33,6 +33,8 @@ My project is divided into:
 - addProduct.html
 - product.html
 
+<br>
+
  ![Static Badge](https://img.shields.io/badge/Javascript-black?style=for-the-badge&logo=javascript)
 - [index.js](#index.js)
 - [addProduct.js](#addProduct.js)
@@ -91,9 +93,9 @@ My project is divided into:
 
 ## Partecipants
 
-| PARTECIPANTS | ROLE | ACCOUNT GIT | 
-| ----------- |  ----------- | ----------- | 
-| Fabio Scaramozzino | Epicode FullStack Student | ![Static Badge](https://img.shields.io/badge/Faffo96-%233eb752?style=for-the-badge&logo=github) | 
+| PARTECIPANTS       | ROLE                      | ACCOUNT GIT                                                                                     |
+| ------------------ | ------------------------- | ----------------------------------------------------------------------------------------------- |
+| Fabio Scaramozzino | Epicode FullStack Student | ![Static Badge](https://img.shields.io/badge/Faffo96-%233eb752?style=for-the-badge&logo=github) |
 
 <br>
 
