@@ -45,7 +45,7 @@ My project is divided into:
 
 <br>
   
-## How it work
+## How it workS7L5
 
 - _**index.js**_:
   
@@ -82,7 +82,7 @@ My project is divided into:
  * Initialize the page by taking the id from the url slug passed by the Edit(index.html) button.
  */
  * Retrieves data from the database based on the provided id.
- */
+ 
  * Fills the page with data from the given object.
  */
 
