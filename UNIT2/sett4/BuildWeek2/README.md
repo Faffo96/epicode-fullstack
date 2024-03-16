@@ -5,7 +5,7 @@
 ![banner](https://github.com/Elekekic/EPICODE-REPO/assets/157897660/fa6e438e-3a3d-46f4-b03c-dafc168064a5)
 
 <h3 align="center" >The goal of this build week was to create a dynamic copy of Spotify. </h3>
-
+<h4 align="center"> Live Preview: https://spotify-clone-ad883.web.app/</h4>
 <br>
 <br>
 
