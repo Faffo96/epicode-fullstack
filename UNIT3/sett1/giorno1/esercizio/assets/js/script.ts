@@ -7,12 +7,6 @@ let currentUser: User;
 interface Phone {
     credit: number;
     callMinutes: number;
-
-    addCredit(quantity: number): void;
-    call(phoneNumber: number): void;
-    getCredit(): number;
-    getCallMinutes(): number;
-    resetCallsMinutes(): void;
 }
 
 class User implements Phone {
