@@ -1,0 +1,11 @@
+<div class="card mb-3 text-start" *ngFor="let card of cards">
+    <div class="card-body">
+      <a class="card-title text-decoration-underline">⛓️ {{card.title}}</a>
+      <div class="d-flex">
+        <p class="card-text m-0 my-2 me-2 p-1 px-2 rounded-1 text-light" *ngFor="let cardTag of card.tags">{{cardTag}}</p>
+      </div>
+      
+      <p class="m-0"><span>{{card.reactions}}</span> 👍</p>
+    </div>
+  </div>
+
