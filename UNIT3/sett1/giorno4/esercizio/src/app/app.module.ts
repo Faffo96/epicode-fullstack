@@ -12,6 +12,7 @@ import { HomeSection21CardsCardComponent } from './components/home-section2-1-ca
 import { HomeSection1CardsCardComponent } from './components/home-section1-cards-card/home-section1-cards-card.component';
 import { ActivePostsComponent } from './components/active-posts/active-posts.component';
 import { UnactivePostsComponent } from './components/unactive-posts/unactive-posts.component';
+import { DetailsComponent } from './components/details/details.component';
 
 const routes: Route[] = [
   {
@@ -25,6 +26,10 @@ const routes: Route[] = [
   {
     path: 'unactivePosts',
     component: UnactivePostsComponent
+  },
+  {
+    path: 'details',
+    component: DetailsComponent
   },
   {
     path: '**',
@@ -45,6 +50,7 @@ const routes: Route[] = [
     HomeSection1CardsCardComponent,
     ActivePostsComponent,
     UnactivePostsComponent,
+    DetailsComponent,
   ],
   imports: [
     BrowserModule,
