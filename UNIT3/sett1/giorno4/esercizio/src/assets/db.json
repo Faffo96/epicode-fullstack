@@ -1,0 +1,242 @@
+[
+  {
+    "id": 1,
+    "title": "The Latest Smartphone Innovation",
+    "body": "The latest smartphone innovation has captivated users with its groundbreaking features. From enhanced camera capabilities to AI-driven assistants, this device pushes the boundaries of technology. Users are amazed by its sleek design and intuitive interface.",
+    "active": true,
+    "tags": ["technology", "smartphone", "innovation"],
+    "reactions": 2
+  },
+  {
+    "id": 2,
+    "title": "Revolutionizing Home Entertainment Systems",
+    "body": "Revolutionizing home entertainment systems, this cutting-edge device offers unparalleled audio and visual experiences. With advanced streaming capabilities and immersive sound technology, it's a must-have for tech enthusiasts.",
+    "active": false,
+    "tags": ["technology", "entertainment", "home"],
+    "reactions": 2
+  },
+  {
+    "id": 3,
+    "title": "Next-Gen Wearable Tech: The Future on Your Wrist",
+    "body": "Experience the future with next-gen wearable tech. From smartwatches to fitness trackers, these devices seamlessly integrate into your daily life, providing insights and convenience like never before.",
+    "active": true,
+    "tags": ["technology", "wearables", "innovation"],
+    "reactions": 5
+  },
+  {
+    "id": 4,
+    "title": "Transforming Workspaces with High-Tech Gadgets",
+    "body": "High-tech gadgets are transforming workspaces, enhancing productivity and collaboration. From wireless charging stations to smart desks, these innovations streamline tasks and elevate the work environment.",
+    "active": true,
+    "tags": ["technology", "gadgets", "workplace"],
+    "reactions": 1
+  },
+  {
+    "id": 5,
+    "title": "The Future of Gaming: Immersive Virtual Reality",
+    "body": "Step into the future of gaming with immersive virtual reality experiences. From realistic simulations to interactive storytelling, VR technology revolutionizes the way we play and experience games.",
+    "active": true,
+    "tags": ["technology", "gaming", "virtual reality"],
+    "reactions": 2
+  },
+  {
+    "id": 6,
+    "title": "Breaking Boundaries in AI and Robotics",
+    "body": "AI and robotics are breaking boundaries, reshaping industries and everyday life. From autonomous vehicles to intelligent assistants, these technologies promise a future of innovation and efficiency.",
+    "active": true,
+    "tags": ["technology", "AI", "robotics"],
+    "reactions": 3
+  },
+  {
+    "id": 7,
+    "title": "Smart Homes: The Future of Living",
+    "body": "Discover the future of living with smart home technology. From connected appliances to energy-efficient systems, smart homes offer convenience, security, and sustainability.",
+    "active": true,
+    "tags": ["technology", "smart home", "innovation"],
+    "reactions": 0
+  },
+  {
+    "id": 8,
+    "title": "Innovative Tech Solutions for Health and Wellness",
+    "body": "Explore innovative tech solutions for health and wellness. From wearable health monitors to telemedicine platforms, technology empowers individuals to take control of their well-being like never before.",
+    "active": true,
+    "tags": ["technology", "health", "wellness"],
+    "reactions": 9
+  },
+  {
+    "id": 9,
+    "title": "The Future of Transportation: Electric and Autonomous Vehicles",
+    "body": "Experience the future of transportation with electric and autonomous vehicles. With advancements in battery technology and self-driving capabilities, these vehicles promise a safer, greener, and more efficient way to travel.",
+    "active": false,
+    "tags": ["technology", "transportation", "innovation"],
+    "reactions": 2
+  },
+  {
+    "id": 10,
+    "title": "Transforming Education with EdTech",
+    "body": "EdTech is transforming education, offering personalized learning experiences and access to resources from anywhere in the world. From interactive apps to online courses, technology is revolutionizing the way we learn.",
+    "active": false,
+    "tags": ["technology", "education", "innovation"],
+    "reactions": 4
+  },
+  {
+    "id": 11,
+    "title": "The Rise of Smart Cities: Urban Tech Revolution",
+    "body": "Experience the urban tech revolution with the rise of smart cities. From connected infrastructure to data-driven services, technology is reshaping urban landscapes for a more sustainable and efficient future.",
+    "active": false,
+    "tags": ["technology", "smart cities", "innovation"],
+    "reactions": 5
+  },
+  {
+    "id": 12,
+    "title": "Unlocking Creativity with Digital Design Tools",
+    "body": "Unlock creativity with digital design tools. From graphic design software to 3D modeling platforms, technology empowers artists and creators to bring their visions to life with unprecedented precision and flexibility.",
+    "active": false,
+    "tags": ["technology", "design", "innovation"],
+    "reactions": 7
+  },
+  {
+    "id": 13,
+    "title": "The Future of Communication: Cutting-Edge Tech",
+    "body": "Experience the future of communication with cutting-edge technology. From instant messaging to video conferencing, advancements in communication tech connect people across the globe in real-time.",
+    "active": false,
+    "tags": ["technology", "communication", "innovation"],
+    "reactions": 0
+  },
+  {
+    "id": 14,
+    "title": "Revolutionizing Healthcare with Digital Solutions",
+    "body": "Revolutionize healthcare with digital solutions. From electronic health records to telehealth platforms, technology is improving access to care, streamlining workflows, and empowering patients to take charge of their health.",
+    "active": false,
+    "tags": ["technology", "healthcare", "innovation"],
+    "reactions": 0
+  },
+  {
+    "id": 15,
+    "title": "The Power of Big Data: Driving Tech Innovation",
+    "body": "Harness the power of big data to drive tech innovation. From predictive analytics to machine learning algorithms, big data insights fuel advancements in technology across industries, shaping the future of business and society.",
+    "active": false,
+    "tags": ["technology", "big data", "innovation"],
+    "reactions": 1
+  },
+  {
+    "id": 16,
+    "title": "The Evolution of Smartwatches: From Timekeeping to Health Tracking",
+    "body": "Explore the evolution of smartwatches, from simple timekeeping devices to powerful health tracking companions. With features like heart rate monitoring, sleep tracking, and activity recognition, smartwatches have become essential tools for maintaining a healthy lifestyle.",
+    "active": true,
+    "tags": ["technology", "smartwatch", "health"],
+    "reactions": 3
+  },
+  {
+    "id": 17,
+    "title": "Advancements in Home Automation: Creating Smarter Living Spaces",
+    "body": "Discover the latest advancements in home automation technology, transforming houses into smarter living spaces. With smart thermostats, lighting controls, and security systems, homeowners can enjoy increased comfort, convenience, and peace of mind.",
+    "active": true,
+    "tags": ["technology", "home automation", "innovation"],
+    "reactions": 2
+  },
+  {
+    "id": 18,
+    "title": "The Future of Work: Remote Collaboration Tools and Virtual Offices",
+    "body": "Embrace the future of work with remote collaboration tools and virtual offices. From video conferencing platforms to cloud-based project management software, technology enables seamless communication and collaboration among distributed teams.",
+    "active": true,
+    "tags": ["technology", "remote work", "collaboration"],
+    "reactions": 5
+  },
+  {
+    "id": 19,
+    "title": "Next-Gen Gaming Consoles: Redefining the Gaming Experience",
+    "body": "Experience the next generation of gaming consoles, redefining the gaming experience with cutting-edge graphics and performance. From immersive virtual worlds to lightning-fast load times, these consoles push the boundaries of gaming technology.",
+    "active": true,
+    "tags": ["technology", "gaming", "consoles"],
+    "reactions": 1
+  },
+  {
+    "id": 20,
+    "title": "The Rise of 5G Technology: Revolutionizing Connectivity",
+    "body": "Witness the rise of 5G technology, revolutionizing connectivity with lightning-fast speeds and low latency. From faster downloads to seamless streaming, 5G networks unlock new possibilities for communication, entertainment, and productivity.",
+    "active": true,
+    "tags": ["technology", "5G", "connectivity"],
+    "reactions": 2
+  },
+  {
+    "id": 21,
+    "title": "Cutting-Edge Cybersecurity Solutions for Protecting Digital Assets",
+    "body": "Stay ahead of cyber threats with cutting-edge cybersecurity solutions, protecting digital assets from hackers and malware. From advanced encryption algorithms to threat intelligence platforms, technology defends against evolving cyber risks.",
+    "active": true,
+    "tags": ["technology", "cybersecurity", "security"],
+    "reactions": 3
+  },
+  {
+    "id": 22,
+    "title": "The Future of Transportation: Electric Vehicles and Autonomous Driving",
+    "body": "Embark on the future of transportation with electric vehicles and autonomous driving technology. From self-driving cars to electric scooters, these innovations promise safer, greener, and more efficient ways to travel.",
+    "active": true,
+    "tags": ["technology", "transportation", "innovation"],
+    "reactions": 4
+  },
+  {
+    "id": 23,
+    "title": "Innovative Tech Gadgets for Fitness and Wellness Enthusiasts",
+    "body": "Discover innovative tech gadgets for fitness and wellness enthusiasts, empowering individuals to track their health and achieve their goals. From smart scales to meditation apps, technology supports a holistic approach to well-being.",
+    "active": true,
+    "tags": ["technology", "fitness", "wellness"],
+    "reactions": 0
+  },
+  {
+    "id": 24,
+    "title": "The Revolution of E-Commerce: Seamless Shopping Experiences",
+    "body": "Experience the revolution of e-commerce with seamless shopping experiences powered by technology. From personalized recommendations to one-click checkout, online retailers leverage data and automation to enhance customer satisfaction.",
+    "active": true,
+    "tags": ["technology", "e-commerce", "shopping"],
+    "reactions": 0
+  },
+  {
+    "id": 25,
+    "title": "Emerging Trends in Augmented Reality: Blurring the Lines Between Virtual and Real",
+    "body": "Explore emerging trends in augmented reality, blurring the lines between virtual and real worlds. From interactive AR apps to immersive AR glasses, technology enhances our perception and interaction with the environment.",
+    "active": true,
+    "tags": ["technology", "augmented reality", "innovation"],
+    "reactions": 1
+  },
+  {
+    "id": 26,
+    "title": "The Future of Digital Entertainment: Streaming Services and Content Creation",
+    "body": "Look into the future of digital entertainment with streaming services and content creation platforms. From original series to user-generated content, technology democratizes access to entertainment and empowers creators.",
+    "active": true,
+    "tags": ["technology", "digital entertainment", "streaming"],
+    "reactions": 2
+  },
+  {
+    "id": 27,
+    "title": "Transforming Healthcare with Telemedicine and Remote Monitoring",
+    "body": "Transform healthcare with telemedicine and remote monitoring solutions, bringing medical expertise and support directly to patients' homes. From virtual doctor visits to wearable health trackers, technology improves access to care and enhances patient outcomes.",
+    "active": true,
+    "tags": ["technology", "healthcare", "telemedicine"],
+    "reactions": 3
+  },
+  {
+    "id": 28,
+    "title": "The Era of Smart Appliances: Simplifying Household Tasks",
+    "body": "Enter the era of smart appliances, simplifying household tasks with intelligent features and automation. From smart refrigerators to robotic vacuum cleaners, technology revolutionizes the way we manage our homes.",
+    "active": true,
+    "tags": ["technology", "smart appliances", "automation"],
+    "reactions": 4
+  },
+  {
+    "id": 29,
+    "title": "Revolutionizing Financial Services with Fintech Innovation",
+    "body": "Revolutionize financial services with fintech innovation, leveraging technology to enhance banking, investing, and payments. From mobile banking apps to robo-advisors, technology democratizes access to financial tools and services.",
+    "active": true,
+    "tags": ["technology", "fintech", "finance"],
+    "reactions": 5
+  },
+  {
+    "id": 30,
+    "title": "The Future of Energy: Sustainable Solutions and Renewable Technologies",
+    "body": "Shape the future of energy with sustainable solutions and renewable technologies, reducing carbon emissions and mitigating climate change. From solar panels to energy-efficient appliances, technology drives the transition to a greener and more resilient energy ecosystem.",
+    "active": true,
+    "tags": ["technology", "energy", "sustainability"],
+    "reactions": 1
+  }
+]
