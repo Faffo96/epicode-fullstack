@@ -20,7 +20,6 @@ export class HomeComponent {
   constructor() {
     for (let i = 0; i < 2; i++) {
        Promise.all([this.getLamborghini(), this.getFerrari(), this.getPorsche()]).then(cars => {
-      console.log(cars)
       cars.forEach(car => {
         if (car.brand === 'Lamborghini') {
           this.lamborghini.push(car);

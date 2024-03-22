@@ -19,10 +19,11 @@
             <a class="nav-link py-0" [routerLink]="['/porsche']" routerLinkActive="active">Porsche</a>
           </li>
         </ul>
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+        <form class="d-flex" (ngSubmit)="onSubmit()">
+          <input class="form-control me-2" type="text" placeholder="Search" aria-label="Search" name="searchTerm" [(ngModel)]="searchTerm">
           <button class="btn btn-outline-black" type="submit">Search</button>
         </form>
+        
       </div>
     </div>
   </nav>

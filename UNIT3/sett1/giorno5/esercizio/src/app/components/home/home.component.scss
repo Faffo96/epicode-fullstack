@@ -17,6 +17,10 @@
     padding-top: 25px;
 }
 
+.carousel-indicators1{
+    transform: translateY(-20px);
+}
+
 .carousel-indicators-lamborghini,
 .carousel-indicators-ferrari,
 .carousel-indicators-porsche {
@@ -40,8 +44,13 @@
     width: 470px;
 }
 
+.carousel-caption {
+    background-color: rgba(0, 0, 0, 0.178);
+}
+
 .small-carousel-caption {
     transform: translateY(60px);
+    text-align: left;
 }
 
 .carousel-md-font-size {
@@ -108,8 +117,8 @@
     }
 
     .small-carousel-img {
-        height: 131.5px;
-        width: 226px;
+        height: 275.5px;
+        width: 470px;
     }
 }
 

@@ -7,7 +7,8 @@
         "modelImage": "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/huracan/2023/09_18_refresh/hero/gw_hura_hero_03.jpg",
         "year": 2018,
         "price": "180.000",
-        "available": true
+        "available": true,
+        "description": "Lamborghini Huracan, con prestazioni eccezionali e design mozzafiato, è un'icona dell'automobile sportiva moderna."
     },
     {
         "id": 2,
@@ -17,7 +18,8 @@
         "modelImage": "https://www.hdcarwallpapers.com/walls/lamborghini_aventador_lp_780_4_ultimae_roadster_2021_4k-HD.jpg",
         "year": 2016,
         "price": "280.000",
-        "available": true
+        "available": true,
+        "description": "Lamborghini Aventador, un'icona di potenza e stile, con un motore V12 e un design futuristico che cattura l'immaginazione."
     },
     {
         "id": 3,
@@ -27,7 +29,8 @@
         "modelImage": "https://media.evo.co.uk/image/private/s--pytM9OdS--/v1606220409/evo/2020/11/Lamborghini%20Urus%20review%20new-5.jpg",
         "year": 2020,
         "price": "250.000",
-        "available": true
+        "available": true,
+        "description": "Lamborghini Urus, un SUV con prestazioni da supercar, unisce lussuosità, comfort e versatilità con un design audace e dinamico."
     },
     {
         "id": 4,
@@ -37,7 +40,8 @@
         "modelImage": "https://th.bing.com/th/id/R.368b6ee1fd2cc7a6e37a44f33a4d6879?rik=HFnDx1CgMScKwg&pid=ImgRaw&r=0",
         "year": 2014,
         "price": "150.000",
-        "available": true
+        "available": true,
+        "description": "Lamborghini Gallardo, con il suo motore V10 e il design affascinante, offre un'esperienza di guida emozionante e prestazioni sorprendenti."
     },
     {
         "id": 5,
@@ -47,7 +51,8 @@
         "modelImage": "https://wallpapercave.com/wp/farLs05.jpg",
         "year": 2012,
         "price": "200.000",
-        "available": true
+        "available": true,
+        "description": "Lamborghini Murcielago, una supercar leggendaria con un motore V12 e un design iconico, rappresenta la quintessenza dell'automobile sportiva esclusiva."
     },
     {
         "id": 6,
@@ -57,7 +62,8 @@
         "modelImage": "https://1cars.org/wp-content/uploads/2021/04/Lamborghini-Centenario-1.jpg",
         "year": 2017,
         "price": "350.000",
-        "available": true
+        "available": true,
+        "description": "Lamborghini Centenario, un'edizione limitata celebrativa, incarna l'innovazione e l'esclusività con un design straordinario e prestazioni mozzafiato."
     },
     {
         "id": 7,
@@ -67,7 +73,8 @@
         "modelImage": "https://www.supercars.net/blog/wp-content/uploads/2020/09/2001-Lamborghini-Diablo-VT-6.0-006-1600.jpg",
         "year": 2003,
         "price": "120.000",
-        "available": true
+        "available": true,
+        "description": "Lamborghini Diablo, un'icona degli anni '90, unisce potenza bruta a un design aggressivo, offrendo un'esperienza di guida emozionante e unica."
     },
     {
         "id": 8,
@@ -77,7 +84,8 @@
         "modelImage": "https://images.interactives.dk/cdn-connect/945dbd120c754a3a938bd47cb5cd1e78.jpg",
         "year": 1985,
         "price": "500.000",
-        "available": true
+        "available": true,
+        "description": "Lamborghini Countach, un'icona degli anni '80, con il suo design avveniristico e il motore V12, continua a ispirare generazioni di appassionati di auto sportive."
     },
     {
         "id": 9,
@@ -87,7 +95,8 @@
         "modelImage": "https://cdn.carbuzz.com/gallery-images/2020-ferrari-f8-tributo-front-view-driving-carbuzz-667854-1600.jpg",
         "year": 2022,
         "price": "300.000",
-        "available": true
+        "available": true,
+        "description": "Ferrari F8 Tributo, con un motore V8 potente e un design elegante, rende omaggio alle icone del passato mentre guarda al futuro dell'innovazione automobilistica."
     },
     {
         "id": 10,
@@ -97,7 +106,8 @@
         "modelImage": "https://images.interactives.dk/cdn-connect/945dbd120c754a3a938bd47cb5cd1e78.jpg",
         "year": 2021,
         "price": "275.000",
-        "available": true
+        "available": true,
+        "description": "Ferrari 488 GTB, con un design aerodinamico e prestazioni straordinarie, rappresenta l'eccellenza dell'ingegneria italiana e il lusso sportivo senza compromessi."
     },
     {
         "id": 11,
@@ -147,7 +157,8 @@
         "modelImage": "https://images.autodaily.com.au/2021/08/Novitec-NLargo-Ferrari-812-GTS-new.jpeg",
         "year": 2021,
         "price": "380.000",
-        "available": false
+        "available": false,
+        "description": "Ferrari 812 GTS, la versione cabriolet del Superfast, offre un'esperienza di guida aperta e potente, unendo l'emozione del motore V12 con la libertà del vento."
     },
     {
         "id": 16,
@@ -157,7 +168,8 @@
         "modelImage": "https://img-ik.cars.co.za/images/2017/6/Ferrari-GTC4Lusso/tr:n-news_1200x/Ferrari-GTC4Lusso-4.jpg",
         "year": 2020,
         "price": "310.000",
-        "available": true
+        "available": true,
+        "description": "Ferrari GTC4Lusso, una shooting brake con un motore V12, combina lussuosità e prestazioni elevate, offrendo spazio per quattro passeggeri in uno stile iconico."
     },
     {
         "id": 17,
@@ -167,7 +179,8 @@
         "modelImage": "https://s1.cdn.autoevolution.com/images/gallery/PORSCHE-911-Carrera-S--991--4476_45.jpg",
         "year": 2018,
         "price":"85.000",
-        "available": true
+        "available": true,
+        "description": "Porsche 911 Carrera, un'icona dell'automobilismo sportivo, offre prestazioni eccezionali e un design classico che continua a evolversi con l'innovazione tecnologica."
     },
     {
         "id": 18,
@@ -177,7 +190,8 @@
         "modelImage": "https://st.automobilemag.com/uploads/sites/11/2019/01/2019-Porsche-Cayenne-front-three-quarter-2.jpg",
         "year": 2015,
         "price":"55.000",
-        "available": true
+        "available": true,
+        "description": "Porsche Cayenne, un SUV sportivo di lusso, offre prestazioni eccezionali su strada e fuoristrada, combinando stile, comfort e versatilità senza compromessi."
     },
     {
         "id": 19,
@@ -187,7 +201,8 @@
         "modelImage": "https://cdn.carbuzz.com/gallery-images/porsche-panamera-carbuzz-861250-1600.jpg",
         "year": 2019,
         "price":"90.000",
-        "available": true
+        "available": true,
+        "description": "Porsche Panamera, una berlina sportiva di lusso, offre prestazioni da supercar, comfort premium e tecnologia all'avanguardia in un pacchetto elegante e pratico."
     },
     {
         "id": 20,
@@ -197,7 +212,8 @@
         "modelImage": "https://th.bing.com/th/id/R.787f14e0d9accfa3534eab4b3afe3d9a?rik=42RUDZ%2bfLGSoNw&pid=ImgRaw&r=0",
         "year": 2017,
         "price":"60.000",
-        "available": true
+        "available": true,
+        "description": "Porsche Macan, un SUV compatto di lusso, offre un'esperienza di guida coinvolgente e prestazioni sportive in un pacchetto versatile e adatto alla vita quotidiana."
     },
     {
         "id": 21,
@@ -207,7 +223,8 @@
         "modelImage": "https://s1.cdn.autoevolution.com/images/gallery/PORSCHE-Boxster-Spyder-5396_29.jpg",
         "year": 2016,
         "price":"65.000",
-        "available": true
+        "available": true,
+        "description": "Porsche Boxster, una roadster sportiva, offre prestazioni emozionanti e un design iconico, garantendo un'esperienza di guida entusiasmante su strada aperta."
     },
     {
         "id": 22,
@@ -217,7 +234,8 @@
         "modelImage": "https://a0.cdnfan.com/images/M/2/8/6/5/porsche-cayman-gt4_hd_54266.jpg",
         "year": 2020,
         "price":"75.000",
-        "available": true
+        "available": true,
+        "description": "Porsche Cayman, con il suo design sportivo e il motore centrale, offre prestazioni di guida coinvolgenti e un'esperienza di guida bilanciata e divertente."
     },
     {
         "id": 23,
@@ -227,7 +245,8 @@
         "modelImage": "https://www.numerama.com/content/uploads/2019/09/taycan-officiel-6.jpg",
         "year": 2021,
         "price": "100.000",
-        "available": true
+        "available": true,
+        "description": "Porsche Taycan, una berlina elettrica di lusso, combina prestazioni elettrizzanti con un design elegante e una tecnologia all'avanguardia, offrendo un'esperienza di guida senza compromessi."
     },
     {
         "id": 24,
@@ -237,7 +256,8 @@
         "modelImage": "https://media4.speedcafe.com/wp-content/uploads/2021/01/Porsche-911-Turbo-S-003-scaled.jpg",
         "year": 2014,
         "price":"95.000",
-        "available": true
+        "available": true,
+        "description": "Porsche 911 Turbo, con un motore boxer sovralimentato e un'iconica ala posteriore, offre prestazioni da supercar e un'esperienza di guida emozionante e raffinata."
     }
 ]
 

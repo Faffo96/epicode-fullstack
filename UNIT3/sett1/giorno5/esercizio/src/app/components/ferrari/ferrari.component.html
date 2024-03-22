@@ -24,12 +24,12 @@
                 <a [routerLink]="['/details', ferrari[0].model]" routerLinkActive="active">
                     <img src="https://cdn.carbuzz.com/gallery-images/2020-ferrari-f8-tributo-front-view-driving-carbuzz-667854-1600.jpg" class="carousel-img d-block w-100" alt="..." />
                 </a>
-                <div class="carousel-caption d-none d-md-block text-start">
-                    <img class="carousel-logo" src={{ferrari[0].brandLogo}} alt="">
+                <div class="carousel-caption d-none d-md-block text-start d-flex">
+                    <img class="carousel-logo me-3" src={{ferrari[0].brandLogo}} alt="">
                     <div>
                         <h5>{{ferrari[0].brand}}</h5>
                         <p>{{ferrari[0].model}}</p>
-                        <p>{{ferrari[0].price}}</p>
+                        <p>{{ferrari[0].price}}€</p>
                         <p>{{ferrari[0].year}}</p>
                     </div>
                 </div>
@@ -42,12 +42,12 @@
                     <a [routerLink]="['/details', car.model]" routerLinkActive="active">
                         <img src="{{car.modelImage}}" class="carousel-img d-block w-100" alt="..." />
                     </a>
-                    <div class="carousel-caption d-none d-md-block text-start">
-                        <img class="carousel-logo" src={{car.brandLogo}} alt="">
+                    <div class="carousel-caption d-none d-md-block text-start d-flex">
+                        <img class="carousel-logo me-3" src={{car.brandLogo}} alt="">
                         <div>
                             <h5>{{car.brand}}</h5>
                             <p>{{car.model}}</p>
-                            <p>{{car.price}}</p>
+                            <p>{{car.price}}€</p>
                             <p>{{car.year}}</p>
                         </div>
                     </div>

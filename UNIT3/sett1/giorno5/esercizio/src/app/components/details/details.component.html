@@ -1,1 +1,19 @@
-<p>details works!</p>
+<div>
+    <div>
+        <a [routerLink]="['/details', carData.model]" routerLinkActive="active">
+            <img src="{{carData.modelImage}}" class="carousel-img d-block w-100" alt="..." />
+        </a>
+        <div class="carousel-caption d-none d-md-block text-start container rounded-2">
+            <div class="row align-items-center">
+                <img class="carousel-logo me-3 col-lg-2" src={{carData.brandLogo}} alt="">
+                <div class="col-lg-2">
+                    <h5>{{carData.brand}}</h5>
+                    <p>{{carData.model}}</p>
+                    <p>{{carData.price}}€</p>
+                    <p>{{carData.year}}</p>
+                </div>
+                <p class="col-lg-7">{{carData.description}}</p>
+            </div>
+        </div>
+    </div>
+</div>

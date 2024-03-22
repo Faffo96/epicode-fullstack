@@ -7,4 +7,5 @@ export interface CarData {
   year: number;
   price: number;
   available: boolean;
+  description: string;
 }

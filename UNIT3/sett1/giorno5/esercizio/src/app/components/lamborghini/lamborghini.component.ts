@@ -19,7 +19,6 @@ export class LamborghiniComponent {
           
         if (car.brand === 'Lamborghini') {
           this.lamborghini.push(car);
-          console.log(this.lamborghini)
         }
         }
       }
