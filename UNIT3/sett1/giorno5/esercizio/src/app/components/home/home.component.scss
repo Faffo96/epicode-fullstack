@@ -5,11 +5,13 @@
 
 .ferrari {
     max-width: 205px;
-    padding-top: 25px;
 }
 
 .lamborghini {
     max-width: 430px;
+}
+
+.ferrari, .lamborghini {
     padding-top: 25px;
 }
 
@@ -35,3 +37,20 @@
 .small-carousel-caption {
     transform: translateY(60px);
 }
+
+@media only screen and (max-width: 576px) {
+    .lamborghini {
+        max-width: 546px;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .ferrari {
+        max-width: 110px;
+    }
+
+    .porsche {
+        max-width: 226px;
+        padding-top: 25px;
+    }
+  }
