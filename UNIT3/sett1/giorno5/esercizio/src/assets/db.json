@@ -54,7 +54,7 @@
         "brand": "Lamborghini",
         "brandLogo": "https://logos-world.net/wp-content/uploads/2021/03/Lamborghini-Emblem-700x394.png",
         "model": "Centenario",
-        "modelImage": "https://th.bing.com/th/id/R.e496203b265bf4fac18c8e9b17469415?rik=ugAcDhJ0VPRBOw&riu=http%3a%2f%2fwww.topcarrating.com%2flamborghini-2%2f2017-lamborghini-centenario-roadster-lp770-4.jpg&ehk=554GbIfTCS1JUrYyn1QABcY5JVOY3mtATpOF%2fUO%2fyec%3d&risl=&pid=ImgRaw&r=0",
+        "modelImage": "https://1cars.org/wp-content/uploads/2021/04/Lamborghini-Centenario-1.jpg",
         "year": 2017,
         "price": "350.000",
         "available": true
@@ -74,7 +74,7 @@
         "brand": "Lamborghini",
         "brandLogo": "https://logos-world.net/wp-content/uploads/2021/03/Lamborghini-Emblem-700x394.png",
         "model": "Countach",
-        "modelImage": "https://tse3.mm.bing.net/th/id/OIP.90g5A46yv_6gaT-1DCXCrwHaEK?rs=1&pid=ImgDetMain",
+        "modelImage": "https://images.interactives.dk/cdn-connect/945dbd120c754a3a938bd47cb5cd1e78.jpg",
         "year": 1985,
         "price": "500.000",
         "available": true
@@ -94,7 +94,7 @@
         "brand": "Ferrari",
         "brandLogo": "https://pnghq.com/wp-content/uploads/2023/02/ferrari-logo-png-4636.png",
         "model": "488 GTB",
-        "modelImage": "https://th.bing.com/th/id/R.c047e7de7e9c3f64461cf8c81f3a08e0?rik=n3LVIzNucRYjhg&riu=http%3a%2f%2fwww.hdcarwallpapers.com%2fdownload%2fferrari_488_gtb_2015-1920x1200.jpg&ehk=QITRUBQ%2fouW7r2Vk90dnxnWuSZMU3Nj6D%2bP71eQmBEc%3d&risl=&pid=ImgRaw&r=0",
+        "modelImage": "https://images.interactives.dk/cdn-connect/945dbd120c754a3a938bd47cb5cd1e78.jpg",
         "year": 2021,
         "price": "275.000",
         "available": true
@@ -174,7 +174,7 @@
         "brand": "Porsche",
         "brandLogo": "https://logos-world.net/wp-content/uploads/2021/04/Porsche-Emblem.png",
         "model": "Cayenne",
-        "modelImage": "https://th.bing.com/th/id/R.5d403960cf6c203c30d32fc003fe9f94?rik=iqt7C9Y4CgtSGw&riu=http%3a%2f%2fs1.cdn.autoevolution.com%2fimages%2fgallery%2fPORSCHE-Cayenne-GTS-5330_2.jpg&ehk=tsS0%2frvbirbJc7U8qrAxOxmNmVwt5vejk9JczknM%2fWQ%3d&risl=&pid=ImgRaw&r=0",
+        "modelImage": "https://st.automobilemag.com/uploads/sites/11/2019/01/2019-Porsche-Cayenne-front-three-quarter-2.jpg",
         "year": 2015,
         "price":"55.000",
         "available": true
@@ -184,7 +184,7 @@
         "brand": "Porsche",
         "brandLogo": "https://logos-world.net/wp-content/uploads/2021/04/Porsche-Emblem.png",
         "model": "Panamera",
-        "modelImage": "https://tse1.mm.bing.net/th/id/OIP.Qv2bT2obVwBmoUzokBnYEAHaEK?rs=1&pid=ImgDetMain",
+        "modelImage": "https://cdn.carbuzz.com/gallery-images/porsche-panamera-carbuzz-861250-1600.jpg",
         "year": 2019,
         "price":"90.000",
         "available": true

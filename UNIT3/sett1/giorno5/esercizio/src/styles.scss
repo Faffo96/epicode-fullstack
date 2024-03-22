@@ -12,11 +12,26 @@
 }
 
 .nav-item {
-    height: 40px;
     margin: 0px;
     padding: 0px;
 }
 
 .w-100 {
     width: 100%!important;
+}
+
+.carousel-img {
+    height: 100vh !important;
+    object-fit: cover;
+    object-position: top;
+}
+
+.carousel-logo {
+    max-width: 250px;
+    max-height: 150px;
+}
+
+.carousel-caption {
+    display: flex!important;
+    align-items: center;
 }

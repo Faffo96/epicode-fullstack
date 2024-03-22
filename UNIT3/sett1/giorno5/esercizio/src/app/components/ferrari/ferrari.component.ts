@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CarData } from 'src/app/models/car-data.interface';
 
 @Component({
   selector: 'app-ferrari',
@@ -6,5 +7,30 @@ import { Component } from '@angular/core';
   styleUrls: ['./ferrari.component.scss']
 })
 export class FerrariComponent {
+  ferrari: CarData[] = [];
+
+
+  constructor() {
+       Promise.all([this.getFerrari()]).then(cars => {
+      for (let i = 0; i < cars.length; i++) {
+        const brandsCars = cars[i];
+        for (let j = 0; j < brandsCars.length; j++) {
+          const car = brandsCars[j];
+          if (car.brand === 'Ferrari') {
+          this.ferrari.push(car);
+        } 
+        }
+      }
+    });
+  }
+
+  async getFerrari() {
+    const response = await fetch('../../../assets/db.json');
+    const cars = await response.json();
+    const ferrariCars = cars.filter((car: CarData, index: number) => {
+      return car.brand === "Ferrari";
+    });
+    return ferrariCars;
+  }
 
 }

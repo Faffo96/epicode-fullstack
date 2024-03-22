@@ -1,21 +1,25 @@
 .carousel-img {
-    height: 100vh!important;
+    height: 100vh !important;
     object-fit: cover
 }
 
-.ferrari {
-    max-width: 205px;
-}
 
 .lamborghini {
     max-width: 430px;
 }
 
-.ferrari, .lamborghini {
+.ferrari {
+    max-width: 262px;
+}
+
+.ferrari,
+.lamborghini {
     padding-top: 25px;
 }
 
-.carousel-indicators-lamborghini, .carousel-indicators-ferrari, .carousel-indicators-porsche {
+.carousel-indicators-lamborghini,
+.carousel-indicators-ferrari,
+.carousel-indicators-porsche {
     filter: invert(100%);
     transform: translateY(60px);
 }
@@ -25,32 +29,90 @@
     filter: invert(100%);
 }
 
-#carouselExampleIndicators, #carouselExampleIndicators2, #carouselExampleIndicators {
+#carouselExampleIndicators,
+#carouselExampleIndicators2,
+#carouselExampleIndicators {
     width: 100%;
 }
 
 .small-carousel-img {
-    height: 264.5px;
-    width: 470px!important;
+    height: 246px;
+    width: 470px;
 }
 
 .small-carousel-caption {
     transform: translateY(60px);
 }
 
-@media only screen and (max-width: 576px) {
-    .lamborghini {
-        max-width: 546px;
-    }
-  }
+.carousel-md-font-size {
+    font-size: 0.6rem !important;
+}
 
-  @media only screen and (max-width: 768px) {
+.carousel-lg-font-size {
+    font-size: 0.9rem !important;
+}
+
+@media only screen and (min-width: 576px) {
+    .lamborghini {
+        max-width: 545px;
+    }
+
     .ferrari {
-        max-width: 110px;
+        max-width: 264px;
     }
 
     .porsche {
-        max-width: 226px;
-        padding-top: 25px;
+        max-width: 509px;
+        padding-top: 0;
     }
-  }
+
+    .small-carousel-img {
+        height: 309px;
+        width: 545px;
+    }
+
+}
+
+@media only screen and (min-width: 768px) {
+    .lamborghini {
+        max-width: 192px;
+    }
+
+    .ferrari {
+        max-width: 104px;
+    }
+
+    .porsche {
+        max-width: 189px;
+        padding-top: 24px;
+    }
+
+    .small-carousel-img {
+        height: 131.5px;
+        width: 226px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .lamborghini {
+        max-width: 448px;
+    }
+
+    .ferrari {
+        max-width: 234px;
+    }
+
+    .porsche {
+        max-width: 450px;
+        padding-top: 24px;
+    }
+
+    .small-carousel-img {
+        height: 131.5px;
+        width: 226px;
+    }
+}
+
+
+
+

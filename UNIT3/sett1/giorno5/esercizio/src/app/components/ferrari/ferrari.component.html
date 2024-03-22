@@ -1,1 +1,69 @@
-<p>ferrari works!</p>
+<div>
+    <div id="carouselExampleCaptions" class="carousel slide">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3"
+                aria-label="Slide 4"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="4"
+                aria-label="Slide 5"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="5"
+                aria-label="Slide 6"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="6"
+                aria-label="Slide 7"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="7"
+                aria-label="Slide 8"></button>
+        </div>
+        <div class="carousel-inner">
+            <!-- Prima slide (hard-coded) -->
+            <div class="carousel-item active">
+                <a [routerLink]="['/details', ferrari[0].model]" routerLinkActive="active">
+                    <img src="https://cdn.carbuzz.com/gallery-images/2020-ferrari-f8-tributo-front-view-driving-carbuzz-667854-1600.jpg" class="carousel-img d-block w-100" alt="..." />
+                </a>
+                <div class="carousel-caption d-none d-md-block text-start">
+                    <img class="carousel-logo" src={{ferrari[0].brandLogo}} alt="">
+                    <div>
+                        <h5>{{ferrari[0].brand}}</h5>
+                        <p>{{ferrari[0].model}}</p>
+                        <p>{{ferrari[0].price}}</p>
+                        <p>{{ferrari[0].year}}</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Iterazione attraverso le altre slide -->
+            <ng-container *ngFor="let car of ferrari; let i = index">
+                <!-- Assicurati che non sia la prima slide -->
+                <div class="carousel-item" *ngIf="i > 0">
+                    <a [routerLink]="['/details', car.model]" routerLinkActive="active">
+                        <img src="{{car.modelImage}}" class="carousel-img d-block w-100" alt="..." />
+                    </a>
+                    <div class="carousel-caption d-none d-md-block text-start">
+                        <img class="carousel-logo" src={{car.brandLogo}} alt="">
+                        <div>
+                            <h5>{{car.brand}}</h5>
+                            <p>{{car.model}}</p>
+                            <p>{{car.price}}</p>
+                            <p>{{car.year}}</p>
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+        </div>
+        
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+</div>
