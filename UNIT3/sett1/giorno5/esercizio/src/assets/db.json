@@ -1,0 +1,243 @@
+[
+    {
+        "id": 1,
+        "brand": "Lamborghini",
+        "brandLogo": "https://logos-world.net/wp-content/uploads/2021/03/Lamborghini-Emblem-700x394.png",
+        "model": "Huracan",
+        "modelImage": "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/huracan/2023/09_18_refresh/hero/gw_hura_hero_03.jpg",
+        "year": 2018,
+        "price": "180.000",
+        "available": true
+    },
+    {
+        "id": 2,
+        "brand": "Lamborghini",
+        "brandLogo": "https://logos-world.net/wp-content/uploads/2021/03/Lamborghini-Emblem-700x394.png",
+        "model": "Aventador",
+        "modelImage": "https://www.hdcarwallpapers.com/walls/lamborghini_aventador_lp_780_4_ultimae_roadster_2021_4k-HD.jpg",
+        "year": 2016,
+        "price": "280.000",
+        "available": true
+    },
+    {
+        "id": 3,
+        "brand": "Lamborghini",
+        "brandLogo": "https://logos-world.net/wp-content/uploads/2021/03/Lamborghini-Emblem-700x394.png",
+        "model": "Urus",
+        "modelImage": "https://media.evo.co.uk/image/private/s--pytM9OdS--/v1606220409/evo/2020/11/Lamborghini%20Urus%20review%20new-5.jpg",
+        "year": 2020,
+        "price": "250.000",
+        "available": true
+    },
+    {
+        "id": 4,
+        "brand": "Lamborghini",
+        "brandLogo": "https://logos-world.net/wp-content/uploads/2021/03/Lamborghini-Emblem-700x394.png",
+        "model": "Gallardo",
+        "modelImage": "https://th.bing.com/th/id/R.368b6ee1fd2cc7a6e37a44f33a4d6879?rik=HFnDx1CgMScKwg&pid=ImgRaw&r=0",
+        "year": 2014,
+        "price": "150.000",
+        "available": true
+    },
+    {
+        "id": 5,
+        "brand": "Lamborghini",
+        "brandLogo": "https://logos-world.net/wp-content/uploads/2021/03/Lamborghini-Emblem-700x394.png",
+        "model": "Murcielago",
+        "modelImage": "https://wallpapercave.com/wp/farLs05.jpg",
+        "year": 2012,
+        "price": "200.000",
+        "available": true
+    },
+    {
+        "id": 6,
+        "brand": "Lamborghini",
+        "brandLogo": "https://logos-world.net/wp-content/uploads/2021/03/Lamborghini-Emblem-700x394.png",
+        "model": "Centenario",
+        "modelImage": "https://th.bing.com/th/id/R.e496203b265bf4fac18c8e9b17469415?rik=ugAcDhJ0VPRBOw&riu=http%3a%2f%2fwww.topcarrating.com%2flamborghini-2%2f2017-lamborghini-centenario-roadster-lp770-4.jpg&ehk=554GbIfTCS1JUrYyn1QABcY5JVOY3mtATpOF%2fUO%2fyec%3d&risl=&pid=ImgRaw&r=0",
+        "year": 2017,
+        "price": "350.000",
+        "available": true
+    },
+    {
+        "id": 7,
+        "brand": "Lamborghini",
+        "brandLogo": "https://logos-world.net/wp-content/uploads/2021/03/Lamborghini-Emblem-700x394.png",
+        "model": "Diablo",
+        "modelImage": "https://www.supercars.net/blog/wp-content/uploads/2020/09/2001-Lamborghini-Diablo-VT-6.0-006-1600.jpg",
+        "year": 2003,
+        "price": "120.000",
+        "available": true
+    },
+    {
+        "id": 8,
+        "brand": "Lamborghini",
+        "brandLogo": "https://logos-world.net/wp-content/uploads/2021/03/Lamborghini-Emblem-700x394.png",
+        "model": "Countach",
+        "modelImage": "https://tse3.mm.bing.net/th/id/OIP.90g5A46yv_6gaT-1DCXCrwHaEK?rs=1&pid=ImgDetMain",
+        "year": 1985,
+        "price": "500.000",
+        "available": true
+    },
+    {
+        "id": 9,
+        "brand": "Ferrari",
+        "brandLogo": "https://pnghq.com/wp-content/uploads/2023/02/ferrari-logo-png-4636.png",
+        "model": "F8 Tributo",
+        "modelImage": "https://cdn.carbuzz.com/gallery-images/2020-ferrari-f8-tributo-front-view-driving-carbuzz-667854-1600.jpg",
+        "year": 2022,
+        "price": "300.000",
+        "available": true
+    },
+    {
+        "id": 10,
+        "brand": "Ferrari",
+        "brandLogo": "https://pnghq.com/wp-content/uploads/2023/02/ferrari-logo-png-4636.png",
+        "model": "488 GTB",
+        "modelImage": "https://th.bing.com/th/id/R.c047e7de7e9c3f64461cf8c81f3a08e0?rik=n3LVIzNucRYjhg&riu=http%3a%2f%2fwww.hdcarwallpapers.com%2fdownload%2fferrari_488_gtb_2015-1920x1200.jpg&ehk=QITRUBQ%2fouW7r2Vk90dnxnWuSZMU3Nj6D%2bP71eQmBEc%3d&risl=&pid=ImgRaw&r=0",
+        "year": 2021,
+        "price": "275.000",
+        "available": true
+    },
+    {
+        "id": 11,
+        "brand": "Ferrari",
+        "brandLogo": "https://pnghq.com/wp-content/uploads/2023/02/ferrari-logo-png-4636.png",
+        "model": "812 Superfast",
+        "modelImage": "https://th.bing.com/th/id/R.a48f9bda8e3636905d4bc1d8224dc358?rik=XyuE5AnMjZaoYA&pid=ImgRaw&r=0",
+        "year": 2020,
+        "price": "350.000",
+        "available": false
+    },
+    {
+        "id": 12,
+        "brand": "Ferrari",
+        "brandLogo": "https://pnghq.com/wp-content/uploads/2023/02/ferrari-logo-png-4636.png",
+        "model": "SF90 Stradale",
+        "modelImage": "https://cdn.motor1.com/images/mgl/Wpjz1/s1/ferrari-sf90-stradale-la-prova.jpg",
+        "year": 2023,
+        "price": "450.000",
+        "available": true
+    },
+    {
+        "id": 13,
+        "brand": "Ferrari",
+        "brandLogo": "https://pnghq.com/wp-content/uploads/2023/02/ferrari-logo-png-4636.png",
+        "model": "Portofino",
+        "modelImage": "https://cdni.autocarindia.com/ExtraImages/20211102115907_Ferrari_Portofino_M_lead.jpg",
+        "year": 2019,
+        "price": "215.000",
+        "available": false
+    },
+    {
+        "id": 14,
+        "brand": "Ferrari",
+        "brandLogo": "https://pnghq.com/wp-content/uploads/2023/02/ferrari-logo-png-4636.png",
+        "model": "Roma",
+        "modelImage": "https://mediacloud.carbuyer.co.uk/image/private/s--OlM4q1PP--/v1599264992/carbuyer/2020/08/1-ferrari_roma-15.jpg",
+        "year": 2022,
+        "price": "325.000",
+        "available": true
+    },
+    {
+        "id": 15,
+        "brand": "Ferrari",
+        "brandLogo": "https://pnghq.com/wp-content/uploads/2023/02/ferrari-logo-png-4636.png",
+        "model": "812 GTS",
+        "modelImage": "https://images.autodaily.com.au/2021/08/Novitec-NLargo-Ferrari-812-GTS-new.jpeg",
+        "year": 2021,
+        "price": "380.000",
+        "available": false
+    },
+    {
+        "id": 16,
+        "brand": "Ferrari",
+        "brandLogo": "https://pnghq.com/wp-content/uploads/2023/02/ferrari-logo-png-4636.png",
+        "model": "GTC4Lusso",
+        "modelImage": "https://img-ik.cars.co.za/images/2017/6/Ferrari-GTC4Lusso/tr:n-news_1200x/Ferrari-GTC4Lusso-4.jpg",
+        "year": 2020,
+        "price": "310.000",
+        "available": true
+    },
+    {
+        "id": 17,
+        "brand": "Porsche",
+        "brandLogo": "https://logos-world.net/wp-content/uploads/2021/04/Porsche-Emblem.png",
+        "model": "911 Carrera",
+        "modelImage": "https://s1.cdn.autoevolution.com/images/gallery/PORSCHE-911-Carrera-S--991--4476_45.jpg",
+        "year": 2018,
+        "price":"85.000",
+        "available": true
+    },
+    {
+        "id": 18,
+        "brand": "Porsche",
+        "brandLogo": "https://logos-world.net/wp-content/uploads/2021/04/Porsche-Emblem.png",
+        "model": "Cayenne",
+        "modelImage": "https://th.bing.com/th/id/R.5d403960cf6c203c30d32fc003fe9f94?rik=iqt7C9Y4CgtSGw&riu=http%3a%2f%2fs1.cdn.autoevolution.com%2fimages%2fgallery%2fPORSCHE-Cayenne-GTS-5330_2.jpg&ehk=tsS0%2frvbirbJc7U8qrAxOxmNmVwt5vejk9JczknM%2fWQ%3d&risl=&pid=ImgRaw&r=0",
+        "year": 2015,
+        "price":"55.000",
+        "available": true
+    },
+    {
+        "id": 19,
+        "brand": "Porsche",
+        "brandLogo": "https://logos-world.net/wp-content/uploads/2021/04/Porsche-Emblem.png",
+        "model": "Panamera",
+        "modelImage": "https://tse1.mm.bing.net/th/id/OIP.Qv2bT2obVwBmoUzokBnYEAHaEK?rs=1&pid=ImgDetMain",
+        "year": 2019,
+        "price":"90.000",
+        "available": true
+    },
+    {
+        "id": 20,
+        "brand": "Porsche",
+        "brandLogo": "https://logos-world.net/wp-content/uploads/2021/04/Porsche-Emblem.png",
+        "model": "Macan",
+        "modelImage": "https://th.bing.com/th/id/R.787f14e0d9accfa3534eab4b3afe3d9a?rik=42RUDZ%2bfLGSoNw&pid=ImgRaw&r=0",
+        "year": 2017,
+        "price":"60.000",
+        "available": true
+    },
+    {
+        "id": 21,
+        "brand": "Porsche",
+        "brandLogo": "https://logos-world.net/wp-content/uploads/2021/04/Porsche-Emblem.png",
+        "model": "Boxster",
+        "modelImage": "https://s1.cdn.autoevolution.com/images/gallery/PORSCHE-Boxster-Spyder-5396_29.jpg",
+        "year": 2016,
+        "price":"65.000",
+        "available": true
+    },
+    {
+        "id": 22,
+        "brand": "Porsche",
+        "brandLogo": "https://logos-world.net/wp-content/uploads/2021/04/Porsche-Emblem.png",
+        "model": "Cayman",
+        "modelImage": "https://a0.cdnfan.com/images/M/2/8/6/5/porsche-cayman-gt4_hd_54266.jpg",
+        "year": 2020,
+        "price":"75.000",
+        "available": true
+    },
+    {
+        "id": 23,
+        "brand": "Porsche",
+        "brandLogo": "https://logos-world.net/wp-content/uploads/2021/04/Porsche-Emblem.png",
+        "model": "Taycan",
+        "modelImage": "https://www.numerama.com/content/uploads/2019/09/taycan-officiel-6.jpg",
+        "year": 2021,
+        "price": "100.000",
+        "available": true
+    },
+    {
+        "id": 24,
+        "brand": "Porsche",
+        "brandLogo": "https://logos-world.net/wp-content/uploads/2021/04/Porsche-Emblem.png",
+        "model": "911 Turbo",
+        "modelImage": "https://media4.speedcafe.com/wp-content/uploads/2021/01/Porsche-911-Turbo-S-003-scaled.jpg",
+        "year": 2014,
+        "price":"95.000",
+        "available": true
+    }
+]
+
