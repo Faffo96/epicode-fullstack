@@ -1,5 +1,5 @@
 <div>
-  <div id="carouselExampleCaptions" class="carousel slide">
+  <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel" data-bs-interval="15000" data-bs-pause="false">
     <div class="carousel-indicators carousel-indicators1">
       <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
         aria-current="true" aria-label="Slide 1"></button>
@@ -78,11 +78,12 @@
           <div *ngFor="let car of lamborghini" class="carousel-item">
             <a [routerLink]="['/details', car.model]" routerLinkActive="active">
               <img src={{car.modelImage}} class="d-block small-carousel-img" alt="...">
-              <div class="carousel-caption small-carousel-caption d-none d-md-block mb-4">
-                <h5 class="carousel-lg-font-size carousel-md-font-size m-md-0">{{car.model}}</h5>
-                <p class="carousel-lg-font-size carousel-md-font-size m-md-0">{{car.price}}€</p>
-              </div>
             </a>
+            <div class="carousel-caption small-carousel-caption d-none d-md-block mb-4">
+              <h5 class="carousel-lg-font-size carousel-md-font-size m-md-0">{{car.model}}</h5>
+              <p class="carousel-lg-font-size carousel-md-font-size m-md-0">{{car.price}}€</p>
+            </div>
+
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
@@ -111,20 +112,22 @@
 
         <div class="carousel-inner d-flex">
           <div class="carousel-item active">
-            <a class="d-flex justify-content-center" [routerLink]="['/ferrari']" routerLinkActive="active"><img src={{ferrariCar.brandLogo}}
-                class="d-block ferrari" alt="..."></a>
+            <a class="d-flex justify-content-center" [routerLink]="['/ferrari']" routerLinkActive="active">
+              <img src={{ferrariCar.brandLogo}} class="d-block ferrari" alt="...">
+            </a>
           </div>
 
-          <a [routerLink]="['/details']" routerLinkActive="active">
-            <div *ngFor="let car of ferrari" class="carousel-item">
-              <img src={{car.modelImage}} class="d-block small-carousel-img" alt="...">
 
-              <div class="carousel-caption small-carousel-caption d-none d-md-block mb-4">
-                <h5 class="carousel-lg-font-size carousel-md-font-size m-md-0">{{car.model}}</h5>
-                <p class="carousel-lg-font-size carousel-md-font-size m-md-0">{{car.price}}€</p>
-              </div>
+          <div *ngFor="let car of ferrari" class="carousel-item">
+            <a [routerLink]="['/details', car.model]" routerLinkActive="active">
+              <img src={{car.modelImage}} class="d-block small-carousel-img" alt="...">
+            </a>
+            <div class="carousel-caption small-carousel-caption d-none d-md-block mb-4">
+              <h5 class="carousel-lg-font-size carousel-md-font-size m-md-0">{{car.model}}</h5>
+              <p class="carousel-lg-font-size carousel-md-font-size m-md-0">{{car.price}}€</p>
             </div>
-          </a>
+          </div>
+
         </div>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators2"
@@ -153,20 +156,22 @@
 
         <div class="carousel-inner d-flex">
           <div class="carousel-item active">
-            <a class="d-flex justify-content-center" [routerLink]="['/porsche']" routerLinkActive="active"><img src={{porscheCar.brandLogo}}
-                class="d-block porsche" alt="..."></a>
+            <a class="d-flex justify-content-center" [routerLink]="['/porsche']" routerLinkActive="active">
+              <img src={{porscheCar.brandLogo}} class="d-block porsche" alt="...">
+            </a>
           </div>
 
-          <a [routerLink]="['/details']" routerLinkActive="active">
-            <div *ngFor="let car of porsche" class="carousel-item">
-              <img src={{car.modelImage}} class="d-block small-carousel-img" alt="...">
 
-              <div class="carousel-caption small-carousel-caption d-none d-md-block mb-4">
-                <h5 class="carousel-lg-font-size carousel-md-font-size m-md-0">{{car.model}}</h5>
-                <p class="carousel-lg-font-sizecarousel-md-font-size m-md-0">{{car.price}}€</p>
-              </div>
+          <div *ngFor="let car of porsche" class="carousel-item">
+            <a [routerLink]="['/details', car.model]" routerLinkActive="active">
+              <img src={{car.modelImage}} class="d-block small-carousel-img" alt="...">
+            </a>
+            <div class="carousel-caption small-carousel-caption d-none d-md-block mb-4">
+              <h5 class="carousel-lg-font-size carousel-md-font-size m-md-0">{{car.model}}</h5>
+              <p class="carousel-lg-font-sizecarousel-md-font-size m-md-0">{{car.price}}€</p>
             </div>
-          </a>
+          </div>
+
         </div>
 
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators3"

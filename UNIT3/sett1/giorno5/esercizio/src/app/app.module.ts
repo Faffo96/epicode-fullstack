@@ -13,7 +13,6 @@ import { FerrariComponent } from './components/ferrari/ferrari.component';
 import { LamborghiniComponent } from './components/lamborghini/lamborghini.component';
 import { HomeComponent } from './components/home/home.component';
 import { DetailsComponent } from './components/details/details.component';
-import { AppRoutingModule } from './modules/app-routing.module';
 
 const routes: Route[] = [
   {
@@ -56,10 +55,8 @@ const routes: Route[] = [
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     RouterModule.forRoot(routes),
-    AppRoutingModule,
-   
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

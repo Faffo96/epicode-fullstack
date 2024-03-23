@@ -47,7 +47,7 @@ export class HeaderComponent {
       const car = cars.find((car: CarData) => car.model.toLowerCase() === this.searchTerm.toLowerCase());
       console.log(car)
       if (car) {
-        this.router.navigate(['/dettaglio', car.model]);
+        this.router.navigate(['/details', car.model]);
       } else {
         console.log('Auto non trovata');
       }
