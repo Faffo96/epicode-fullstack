@@ -58,22 +58,6 @@ My project is divided into:
   
 ## How it work
 
- ### home **:**
-  
-The HomeComponent fetches and displays vehicle data from different brands (Lamborghini, Ferrari, and Porsche) via an API. It assigns the data to variables for UI rendering.
-
-Initialization
-In the constructor, async calls retrieve vehicle data for each brand using getLamborghini, getFerrari, and getPorsche.
-
-Data Retrieval
-Functions like getLamborghini, getFerrari, and getPorsche fetch brand-specific vehicle data asynchronously, ensuring uniqueness.
-
-Random Index Selection
-The getRandomIndex function selects a random index within the available range.
-
-This component showcases a random selection of vehicles on the app's initial page.
-
-<br>
 
 ### headerComponent.ts **:**
 
