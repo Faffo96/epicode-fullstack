@@ -1,8 +1,8 @@
 /* INIT */
 
-const searchURL = 'https://striveschool-api.herokuapp.com/api/product/';
-const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZjBmZTJkN2IxMTAwMTkwZTcwZTEiLCJpYXQiOjE3MDk4OTU5MzUsImV4cCI6MTcxMTEwNTUzNX0.7kH7f98W__c4yWzcCT_rArdR_VnozbLwG1IVeb4hjVk';
-let fetchResult = [];
+const searchURL = 'https://65fff0f4df565f1a61458616.mockapi.io/crudAzon/products/';
+/* const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZjBmZTJkN2IxMTAwMTkwZTcwZTEiLCJpYXQiOjE3MDk4OTU5MzUsImV4cCI6MTcxMTEwNTUzNX0.7kH7f98W__c4yWzcCT_rArdR_VnozbLwG1IVeb4hjVk';
+ */let fetchResult = [];
 const params = new URLSearchParams(location.search);
 let currentID = '';
 const documentBtnSave = document.getElementById('btnSave');
@@ -13,11 +13,11 @@ const documentMain = document.querySelector('.main');
 
 async function getDatabase(id) { // Retrieves data from the database using the provided id.
     try {
-        const response = await fetch(searchURL + id, {
+        const response = await fetch(searchURL + id)/* , {
             headers: {
                 'Authorization': 'Bearer ' + API_KEY
             }
-        });
+        }); */
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }
@@ -36,7 +36,7 @@ function showAddProductPage() { // Displays the edit page.
     documentLoading.style.display = "none";
     documentMain.style.display = "block";
     documentH1.innerText = "Add Product"
-    documentBtnSave.addEventListener('click', pushDatabase);
+    documentBtnSave.addEventListener('click', (e) => pushDatabase(e));
 }
 
 /* INIT_EDIT_PRODUCT - OPTION 2 */
@@ -63,7 +63,7 @@ async function showEditProductPage(product) { // Displays the edit page for a pr
             await fillForm(currentID);
             documentH1.innerText = "Edit Product";
             documentBtnDelete.style.display = "block";
-            documentBtnSave.addEventListener('click', () => saveChanges(currentID));
+            documentBtnSave.addEventListener('click', (e) => saveChanges(currentID, e));
             documentBtnDelete.addEventListener('click', () => deleteRecord(currentID));
         } else {
             console.error('Product not found with ID:', currentID);
@@ -80,9 +80,6 @@ async function init() { // Initializes the page based on the URL parameters.
         if (params.has('id')) { // If the 'id' parameter is present, it retrieves the corresponding product from the database and shows the edit page.
             currentID = params.get('id');
             showEditProductPage(await getDatabase(currentID));
-        } else if (params.has('name')) { //If the 'name' parameter is present, it displays an alert message indicating that the product was updated successfully and redirects to the index page.
-            alert('Product updated successfully');
-            window.location.href = 'index.html';
         } else { // If neither 'id' nor 'name' parameters are present, it shows the add page.
             showAddProductPage();
         }
@@ -101,53 +98,58 @@ function createObjectFromForm() { // Converts form data into an object.
 
     formData.forEach((value, key) => { // Convert form data to an object through a special, specific use of the forEach method in forms.
         data[key] = value;
-    });   
+    });
     return data;
 }
 
 
-function pushDatabase() { // Sends a POST request to the specified search URL with the provided data.
-   const data = createObjectFromForm();
-   console.log(data)
-    fetch(searchURL, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Authorization': `Bearer ${API_KEY}` 
-        },
-        body: JSON.stringify(data), // Converts the data object to JSON and sends it in the request body
-    })
-        .then(response => {
-            if (!response.ok) {
-                throw new Error('Errore nella richiesta di salvataggio');
-            }
-            return response.json();
-        })
-        .catch(error => {
-            console.error('Si è verificato un errore durante il salvataggio dei dati:', error);
+async function pushDatabase(e) {
+    e.preventDefault(); // Impedisce il comportamento predefinito del modulo HTML
+    const data = createObjectFromForm();
+    try {
+        const response = await fetch(searchURL, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
         });
+        if (!response.ok) {
+            throw new Error('Errore nella richiesta di salvataggio');
+        }
+        console.log('response ok and data sent:' + response);
+        alert('Product updated successfully');
+        window.location.href = 'index.html';
+        return response.json();
+    } catch (error) {
+        console.error('Si è verificato un errore durante il salvataggio dei dati:', error);
+        throw error; // Rilancia l'errore per gestirlo nell'ambito chiamante
+    }
 }
 
-async function saveChanges(id) { // Update a record in the database using the provided id.
+
+async function saveChanges(id, e) {
+    e.preventDefault(); // Impedisce il comportamento predefinito del modulo HTML
     try {
         const updatedProduct = createObjectFromForm();
-
         const response = await fetch(searchURL + id, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
-                'Authorization': 'Bearer ' + API_KEY
             },
-            body: JSON.stringify(updatedProduct)
+            body: JSON.stringify(updatedProduct),
         });
-
         if (!response.ok) {
             throw new Error('Failed to update product');
         }
     } catch (error) {
         console.error('Error saving changes:', error);
+        throw error;
     }
+    window.location.href = 'index.html';
 }
+
+
 
 /* DELETE AND RESET BUTTONS */
 
@@ -155,9 +157,9 @@ async function deleteRecord(id) { // Deletes a record from the database using th
     try {
         const response = await fetch(searchURL + id, {
             method: 'DELETE',
-            headers: {
-                'Authorization': 'Bearer ' + API_KEY
-            }
+            /*  headers: {
+                 'Authorization': 'Bearer ' + API_KEY
+             } */
         });
         if (!response.ok) {
             throw new Error('Failed to delete record');
@@ -175,7 +177,7 @@ documentBtnReset.addEventListener('click', clearInputFields);
 async function clearInputFields() { // Clears the input fields on the page.
     try {
         document.getElementById('productName').value = '';
-        document.getElementById('brand').value = ''; 
+        document.getElementById('brand').value = '';
         document.getElementById('price').value = '';
         document.getElementById('imgUrl').value = '';
         document.getElementById('productDescription').value = '';

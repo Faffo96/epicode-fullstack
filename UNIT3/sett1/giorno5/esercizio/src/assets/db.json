@@ -7,7 +7,7 @@
         "modelImage": "https://www.lamborghini.com/sites/it-en/files/DAM/lamborghini/facelift_2019/model_gw/huracan/2023/09_18_refresh/hero/gw_hura_hero_03.jpg",
         "year": 2018,
         "price": "180.000",
-        "available": true,
+        "available": false,
         "description": "Lamborghini Huracan, con prestazioni eccezionali e design mozzafiato, è un'icona dell'automobile sportiva moderna."
     },
     {
@@ -40,7 +40,7 @@
         "modelImage": "https://th.bing.com/th/id/R.368b6ee1fd2cc7a6e37a44f33a4d6879?rik=HFnDx1CgMScKwg&pid=ImgRaw&r=0",
         "year": 2014,
         "price": "150.000",
-        "available": true,
+        "available": false,
         "description": "Lamborghini Gallardo, con il suo motore V10 e il design affascinante, offre un'esperienza di guida emozionante e prestazioni sorprendenti."
     },
     {
@@ -51,7 +51,7 @@
         "modelImage": "https://wallpapercave.com/wp/farLs05.jpg",
         "year": 2012,
         "price": "200.000",
-        "available": true,
+        "available": false,
         "description": "Lamborghini Murcielago, una supercar leggendaria con un motore V12 e un design iconico, rappresenta la quintessenza dell'automobile sportiva esclusiva."
     },
     {
@@ -84,7 +84,7 @@
         "modelImage": "https://images.interactives.dk/cdn-connect/945dbd120c754a3a938bd47cb5cd1e78.jpg",
         "year": 1985,
         "price": "500.000",
-        "available": true,
+        "available": false,
         "description": "Lamborghini Countach, un'icona degli anni '80, con il suo design avveniristico e il motore V12, continua a ispirare generazioni di appassionati di auto sportive."
     },
     {
@@ -194,7 +194,7 @@
         "modelImage": "https://st.automobilemag.com/uploads/sites/11/2019/01/2019-Porsche-Cayenne-front-three-quarter-2.jpg",
         "year": 2015,
         "price":"55.000",
-        "available": true,
+        "available": false,
         "description": "Porsche Cayenne, un SUV sportivo di lusso, offre prestazioni eccezionali su strada e fuoristrada, combinando stile, comfort e versatilità senza compromessi."
     },
     {
@@ -216,7 +216,7 @@
         "modelImage": "https://th.bing.com/th/id/R.787f14e0d9accfa3534eab4b3afe3d9a?rik=42RUDZ%2bfLGSoNw&pid=ImgRaw&r=0",
         "year": 2017,
         "price":"60.000",
-        "available": true,
+        "available": false,
         "description": "Porsche Macan, un SUV compatto di lusso, offre un'esperienza di guida coinvolgente e prestazioni sportive in un pacchetto versatile e adatto alla vita quotidiana."
     },
     {
@@ -249,7 +249,7 @@
         "modelImage": "https://www.numerama.com/content/uploads/2019/09/taycan-officiel-6.jpg",
         "year": 2021,
         "price": "100.000",
-        "available": true,
+        "available": false,
         "description": "Porsche Taycan, una berlina elettrica di lusso, combina prestazioni elettrizzanti con un design elegante e una tecnologia all'avanguardia, offrendo un'esperienza di guida senza compromessi."
     },
     {

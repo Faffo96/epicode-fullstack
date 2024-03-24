@@ -2,8 +2,8 @@
 
 const params = new URLSearchParams(location.search);
 const currentID = params.get('id');
-const searchURL = 'https://striveschool-api.herokuapp.com/api/product/';
-const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZjBmZTJkN2IxMTAwMTkwZTcwZTEiLCJpYXQiOjE3MDk4OTU5MzUsImV4cCI6MTcxMTEwNTUzNX0.7kH7f98W__c4yWzcCT_rArdR_VnozbLwG1IVeb4hjVk';
+const searchURL = 'https://65fff0f4df565f1a61458616.mockapi.io/crudAzon/products/';
+/* const API_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWVhZjBmZTJkN2IxMTAwMTkwZTcwZTEiLCJpYXQiOjE3MDk4OTU5MzUsImV4cCI6MTcxMTEwNTUzNX0.7kH7f98W__c4yWzcCT_rArdR_VnozbLwG1IVeb4hjVk'; */
 
 let fetchResult = [];
 const documentBrand = document.getElementById('brand');
@@ -16,11 +16,11 @@ const documentMain = document.querySelector('.main');
 
 async function getDatabase(id) { // Retrieves data from the database based on the provided id.
     try {
-        const response = await fetch(searchURL + id, {
+        const response = await fetch(searchURL + id)/* , {
             headers: {
                 'Authorization': 'Bearer ' + API_KEY
             }
-        });
+        }); */
         if (!response.ok) {
             throw new Error('Network response was not ok');
         }

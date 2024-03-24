@@ -34,13 +34,18 @@
                                 <p>{{car.model}}</p>
                                 <p>{{car.price}}€</p>
                                 <p>{{car.year}}</p>
+                                <p class="d-flex align-items-center">Available:
+                                    <span
+                                        [ngClass]="{'bg-danger': car.available === false, 'bg-success': car.available === true}"
+                                        class="check rounded-5 ms-2"></span>
+                                </p>
                             </div>
                         </div>
                     </div>
                 </ng-container>
             </div>
         </div>
-        
+
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
             data-bs-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

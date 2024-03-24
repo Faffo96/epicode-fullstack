@@ -34,6 +34,9 @@
                                 <p>{{car.model}}</p>
                                 <p>{{car.price}}€</p>
                                 <p>{{car.year}}</p>
+                                <p class="d-flex align-items-center">Available:
+                                    <span [ngClass]="{'bg-danger': car.available === false, 'bg-success': car.available === true}" class="check rounded-5 ms-2"></span>
+                                </p>
                             </div>
                         </div>
                     </div>
