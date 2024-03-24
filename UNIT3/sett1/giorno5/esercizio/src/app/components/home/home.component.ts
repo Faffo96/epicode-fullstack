@@ -17,7 +17,8 @@ export class HomeComponent {
 
   usedIndex: number[] = [];
 
-  constructor() {
+ 
+  constructor() { // The constructor distributes the fetch results by brand into the respective arrays and into the respective object (to obtain the sigle car object of each brand)
     for (let i = 0; i < 2; i++) {
        Promise.all([this.getLamborghini(), this.getFerrari(), this.getPorsche()]).then(cars => {
       cars.forEach(car => {
@@ -37,7 +38,7 @@ export class HomeComponent {
   }
   
 
-  async getLamborghini() {
+  async getLamborghini() { // Retrieves Lamborghini vehicle data
     const response = await fetch('https://65ffea89df565f1a61457c13.mockapi.io/carShowroom/carShowroom');
     const cars = await response.json();
     const lamborghiniCars = cars.filter((car: CarData, index: number) => {
@@ -55,7 +56,7 @@ export class HomeComponent {
   
   
 
-  async getFerrari() {
+  async getFerrari() { // Retrieves Ferrari vehicle data
     const response = await fetch('https://65ffea89df565f1a61457c13.mockapi.io/carShowroom/carShowroom');
     const cars = await response.json();
     const ferrariCars = cars.filter((car: CarData, index: number) => {
@@ -71,7 +72,7 @@ export class HomeComponent {
     return ferrariCars[randomIndex];
   }
 
-  async getPorsche() {
+  async getPorsche() { // Retrieves Porsche vehicle data
     const response = await fetch('https://65ffea89df565f1a61457c13.mockapi.io/carShowroom/carShowroom');
     const cars = await response.json();
     const porscheCars = cars.filter((car: CarData, index: number) => {
@@ -87,7 +88,7 @@ export class HomeComponent {
     return porscheCars[randomIndex];
   }
 
-  getRandomIndex(max: number): number {
+  getRandomIndex(max: number): number { // Gets a random index
     return Math.floor(Math.random() * max);
   }
 }

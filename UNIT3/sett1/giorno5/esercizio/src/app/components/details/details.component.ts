@@ -12,16 +12,18 @@ export class DetailsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) {}
 
-  ngOnInit() {
+  ngOnInit() { // method to get the url's slug
     this.route.paramMap.subscribe(params => {
       const model = params.get('model');
       if (model) {
         this.getCar(model);
+      } else {
+        console.log('Model parameter not found');
       }
     });
   }
 
-  async getCar(model: string) {
+  async getCar(model: string) { // method to fetch the specific car by the url's slug (/:model)
     try {
       const response = await fetch('https://65ffea89df565f1a61457c13.mockapi.io/carShowroom/carShowroom');
       const cars: CarData[] = await response.json();

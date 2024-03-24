@@ -1,27 +1,126 @@
-# Esercizio
+# Car Motorshow
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.12.
+<!-- BANNER DA INSERIRE QUI --> 
+![banner](https://github.com/Faffo96/epicode-fullstack/blob/master/UNIT3/sett1/giorno5/src/assets/img/README_banner.png)
 
-## Development server
+<!-- piccola descrizione del progetto --> 
+<h3 align="center" >The goal of this project is to use CRUDs in angular</h3>
+<h4 align="center"> Live Preview: car-showroom-a3b01.web.app</h4>
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+<br>
+<!-- SPAZIO DA METTERE + BADGES (dynamic e static) --> 
+<!-- https://shields.io/badges // link per creare le badges --> 
+<br>
 
-## Code scaffolding
+I focused on those main objectives:
+1. _Identify the main components of the pages_
+2. _Define navigation routes between pages_
+3. _HTML creation and SCSS styling_
+4. _Get the datas i need via fetchs_
+5. _Pass the datas to HTML to dynamically display it_
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+<br>
 
-## Build
+## Table of Contents 
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [How it is structured](#How-it-is-structured)
+- [How it work](#how-it-work)
 
-## Running unit tests
+<br> 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## How it is structured
 
-## Running end-to-end tests
+My project is divided into:
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+> ![Static Badge](https://img.shields.io/badge/HTML-black?style=for-the-badge&logo=HTML5)
+- Home page
+- Brand page
+- Details page
 
-## Further help
+<br>
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+ ![Static Badge](https://img.shields.io/badge/Javascript-black?style=for-the-badge&logo=javascript)
+ 
+- [home.components.ts](#home)
+- [lamborghini.components.ts](#lamborghini)
+- [ferrari.components.ts](#ferrari)
+- [porsche.components.ts](#porsche)
+- [details.components.ts](#details)
+  <br>
+  
+ > ![Static Badge](https://img.shields.io/badge/CSS-black?style=for-the-badge&logo=CSS3)
+- One stylesheet.
+
+<br>
+  
+## How it work
+
+ ### home **:**
+  
+The HomeComponent fetches and displays vehicle data from different brands (Lamborghini, Ferrari, and Porsche) via an API. It assigns the data to variables for UI rendering.
+
+Initialization
+In the constructor, async calls retrieve vehicle data for each brand using getLamborghini, getFerrari, and getPorsche.
+
+Data Retrieval
+Functions like getLamborghini, getFerrari, and getPorsche fetch brand-specific vehicle data asynchronously, ensuring uniqueness.
+
+Random Index Selection
+The getRandomIndex function selects a random index within the available range.
+
+This component showcases a random selection of vehicles on the app's initial page.
+
+<br>
+
+### headerComponent.ts **:**
+
+This HeaderComponent handles the navigation and search functionality. It fetches car data based on the model from the API and navigates to the details page accordingly. Additionally, it allows users to search for cars by model or brand and navigate to the appropriate page. It also includes handling for partial search matches.
+
+<br>
+
+### homeComponent.ts **:**
+
+This HomeComponent fetches vehicle data for Lamborghini, Ferrari, and Porsche brands and distributes the results into respective arrays. It ensures that each brand has at most two cars displayed.
+
+<br>
+
+### lamborghiniComponent.ts **:**
+
+The lamborghiniComponent fetches and displays Lamborghini car data from a mock API. The loadLamborghiniData method asynchronously retrieves data and filters it based on the brand.
+
+<br>
+
+### ferrariComponent.ts **:**
+
+The ferrariComponent fetches and displays Lamborghini car data from a mock API. The loadLamborghiniData method asynchronously retrieves data and filters it based on the brand.
+
+<br> 
+
+### porscheComponent.ts **:**
+
+The porscheComponent fetches and displays Lamborghini car data from a mock API. The loadLamborghiniData method asynchronously retrieves data and filters it based on the brand.
+
+<br> 
+
+### detailsComponent.ts **:**
+
+This DetailsComponent fetches and displays details of a specific car based on the model passed in the URL. It uses Angular's ActivatedRoute to retrieve the model parameter from the URL and then fetches the corresponding car data from a mock API.
+
+<br> 
+
+## Partecipants
+
+| PARTECIPANTS       | ROLE                      | ACCOUNT GIT                                                                                     |
+| ------------------ | ------------------------- | ----------------------------------------------------------------------------------------------- |
+| Fabio Scaramozzino | Epicode FullStack Student | ![Static Badge](https://img.shields.io/badge/Faffo96-%233eb752?style=for-the-badge&logo=github) |
+
+<br>
+
+- [Back to top! :D](#CRUDazon)
+
+
+
+
+
+
+
