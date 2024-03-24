@@ -44,15 +44,35 @@ export class HeaderComponent {
     try {
       const response = await fetch('../../../assets/db.json');
       const cars: CarData[] = await response.json();
-      const car = cars.find((car: CarData) => car.model.toLowerCase() === this.searchTerm.toLowerCase());
-      console.log(car)
-      if (car) {
-        this.router.navigate(['/details', car.model]);
-      } else {
-        console.log('Auto non trovata');
+      
+      // Ricerca per corrispondenza parziale del modello dell'auto
+      const matchingCarsByModel = cars.filter((car: CarData) =>
+        car.model.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+      if (matchingCarsByModel.length > 0) {
+        // Se ci sono corrispondenze parziali per il modello, reindirizziamo alla prima corrispondenza
+        const firstMatchingCar = matchingCarsByModel[0];
+        this.router.navigate(['/details', firstMatchingCar.model]);
+        return; // Terminiamo la funzione per evitare di eseguire la ricerca per il marchio
       }
+      
+      // Ricerca per corrispondenza parziale del marchio dell'auto
+      const matchingCarsByBrand = cars.filter((car: CarData) =>
+        car.brand.toLowerCase().includes(this.searchTerm.toLowerCase())
+      );
+      if (matchingCarsByBrand.length > 0) {
+        // Se ci sono corrispondenze parziali per il marchio, reindirizziamo alla pagina del marchio corrispondente
+        const firstMatchingCar = matchingCarsByBrand[0];
+        this.router.navigate(['/' + firstMatchingCar.brand.toLowerCase()]);
+        return; // Terminiamo la funzione poiché abbiamo trovato una corrispondenza
+      }
+  
+      console.log('Nessuna corrispondenza trovata per il modello o il marchio');
     } catch (error) {
       console.error('Errore nel recupero dei dati delle auto', error);
     }
   }
+  
+  
+  
 }

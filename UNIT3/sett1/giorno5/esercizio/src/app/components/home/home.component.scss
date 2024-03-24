@@ -5,11 +5,16 @@
 
 
 .lamborghini {
-    max-width: 430px;
+    width: 430px;
 }
 
 .ferrari {
-    max-width: 262px;
+    width: 204.5px;
+}
+
+.porsche {
+    width: 363px;
+    padding-top: 0;
 }
 
 .ferrari,
@@ -17,7 +22,7 @@
     padding-top: 25px;
 }
 
-.carousel-indicators1{
+.carousel-indicators1 {
     transform: translateY(-20px);
 }
 
@@ -41,10 +46,19 @@
 
 .small-carousel-img {
     height: 246px;
-    width: 470px;
+    width: 344px;
+    object-fit: cover;
+    object-position: center;
 }
 
-.carousel-caption {
+.small-carousel-img2 {
+    height: 204.5px;
+    width: 344px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.bg-color-transparentBlack {
     background-color: rgba(0, 0, 0, 0.178);
 }
 
@@ -67,7 +81,7 @@
     }
 
     .ferrari {
-        max-width: 264px;
+        width: 224px;
     }
 
     .porsche {
@@ -76,29 +90,38 @@
     }
 
     .small-carousel-img {
-        height: 309px;
-        width: 545px;
+        height: 267px;
+        width: 100%;
     }
 
+    .small-carousel-img2 {
+        height: 204.5px;
+        width: 544px;
+    }
 }
 
 @media only screen and (min-width: 768px) {
     .lamborghini {
-        max-width: 192px;
+        width: 577px;
     }
 
     .ferrari {
-        max-width: 104px;
+        width: 255px;
     }
 
     .porsche {
-        max-width: 189px;
+        width: 577px;
         padding-top: 24px;
     }
 
     .small-carousel-img {
-        height: 131.5px;
-        width: 226px;
+        height: 331px;
+        width: 100%;
+    }
+
+    .small-carousel-img2 {
+        height: 310px;
+        width: 100%;
     }
 }
 
@@ -118,10 +141,11 @@
 
     .small-carousel-img {
         height: 275.5px;
-        width: 470px;
+        width: 100%;
+    }
+
+    .small-carousel-img2 {
+        height: 275.5px;
+        width: 100%;
     }
 }
-
-
-
-
