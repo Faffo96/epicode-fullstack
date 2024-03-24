@@ -117,7 +117,8 @@
         "modelImage": "https://th.bing.com/th/id/R.a48f9bda8e3636905d4bc1d8224dc358?rik=XyuE5AnMjZaoYA&pid=ImgRaw&r=0",
         "year": 2020,
         "price": "350.000",
-        "available": false
+        "available": false,
+        "description": "Nessuna descrizione disponibile al momento."
     },
     {
         "id": 12,
@@ -127,7 +128,8 @@
         "modelImage": "https://cdn.motor1.com/images/mgl/Wpjz1/s1/ferrari-sf90-stradale-la-prova.jpg",
         "year": 2023,
         "price": "450.000",
-        "available": true
+        "available": true,
+        "description": "Nessuna descrizione disponibile al momento."
     },
     {
         "id": 13,
@@ -137,7 +139,8 @@
         "modelImage": "https://cdni.autocarindia.com/ExtraImages/20211102115907_Ferrari_Portofino_M_lead.jpg",
         "year": 2019,
         "price": "215.000",
-        "available": false
+        "available": false,
+        "description": "Nessuna descrizione disponibile al momento."
     },
     {
         "id": 14,
@@ -147,7 +150,8 @@
         "modelImage": "https://mediacloud.carbuyer.co.uk/image/private/s--OlM4q1PP--/v1599264992/carbuyer/2020/08/1-ferrari_roma-15.jpg",
         "year": 2022,
         "price": "325.000",
-        "available": true
+        "available": true,
+        "description": "Nessuna descrizione disponibile al momento."
     },
     {
         "id": 15,

@@ -25,7 +25,7 @@ export class FerrariComponent {
   }
 
   async getFerrari() {
-    const response = await fetch('../../../assets/db.json');
+    const response = await fetch('https://65ffea89df565f1a61457c13.mockapi.io/carShowroom/carShowroom');
     const cars = await response.json();
     const ferrariCars = cars.filter((car: CarData, index: number) => {
       return car.brand === "Ferrari";

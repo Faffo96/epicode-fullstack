@@ -27,7 +27,7 @@ export class LamborghiniComponent {
   
 
   async getLamborghini() {
-    const response = await fetch('../../../assets/db.json');
+    const response = await fetch('https://65ffea89df565f1a61457c13.mockapi.io/carShowroom/carShowroom');
     const cars = await response.json();
     const lamborghiniCars = cars.filter((car: CarData, index: number) => {
       return car.brand === "Lamborghini";

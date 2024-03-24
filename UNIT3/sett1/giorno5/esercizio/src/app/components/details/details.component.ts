@@ -23,7 +23,7 @@ export class DetailsComponent implements OnInit {
 
   async getCar(model: string) {
     try {
-      const response = await fetch('../../../assets/db.json');
+      const response = await fetch('https://65ffea89df565f1a61457c13.mockapi.io/carShowroom/carShowroom');
       const cars: CarData[] = await response.json();
       const car = cars.find((car: CarData) => car.model === model);
       if (car) {
