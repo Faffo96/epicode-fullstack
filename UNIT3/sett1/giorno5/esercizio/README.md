@@ -1,7 +1,7 @@
 # Car Motorshow
 
 <!-- BANNER DA INSERIRE QUI --> 
-![banner](https://github.com/Faffo96/epicode-fullstack/blob/master/UNIT3/sett1/giorno5/src/assets/img/README_banner.png)
+![banner](./src/assets/img/README_banner.png)
 
 <!-- piccola descrizione del progetto --> 
 <h3 align="center" >The goal of this project is to use CRUDs in angular</h3>
