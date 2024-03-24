@@ -43,6 +43,7 @@ My project is divided into:
 
  ![Static Badge](https://img.shields.io/badge/Javascript-black?style=for-the-badge&logo=javascript)
  
+-[header.components.ts](#header)
 - [home.components.ts](#home)
 - [lamborghini.components.ts](#lamborghini)
 - [ferrari.components.ts](#ferrari)
