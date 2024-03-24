@@ -105,7 +105,7 @@ This DetailsComponent fetches and displays details of a specific car based on th
 
 - [Back to top! :D](#CRUDazon)
 
-
+ 
 
 
 
