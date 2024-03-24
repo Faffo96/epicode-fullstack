@@ -1,10 +1,12 @@
 # Car Motorshow
 
 <!-- BANNER DA INSERIRE QUI --> 
-![banner](./src/assets/img/README_banner.png)
+<div align="center">
+  <img src="./src/assets/img/README_banner.png" alt="banner">
+</div>
 
 <!-- piccola descrizione del progetto --> 
-<h3 align="center" >The goal of this project is to use CRUDs in angular</h3>
+<h3 align="center">The goal of this project is to use CRUDs in angular</h3>
 <h4 align="center"> Live Preview: car-showroom-a3b01.web.app</h4>
 
 <br>
