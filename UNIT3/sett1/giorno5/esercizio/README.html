@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Car Motorshow</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="car-motorshow">Car Motorshow</h1>
+<!-- BANNER DA INSERIRE QUI --> 
+<p><img src="https://github.com/Faffo96/epicode-fullstack/blob/master/UNIT3/sett1/giorno5/src/assets/img/README_banner.png" alt="banner"></p>
+<!-- piccola descrizione del progetto --> 
+<h3 align="center" >The goal of this project is to use CRUDs in angular</h3>
+<h4 align="center"> Live Preview: car-showroom-a3b01.web.app</h4>
+<br>
+<!-- SPAZIO DA METTERE + BADGES (dynamic e static) --> 
+<!-- https://shields.io/badges // link per creare le badges --> 
+<br>
+<p>I focused on those main objectives:</p>
+<ol>
+<li><em>Identify the main components of the pages</em></li>
+<li><em>Define navigation routes between pages</em></li>
+<li><em>HTML creation and SCSS styling</em></li>
+<li><em>Get the datas i need via fetchs</em></li>
+<li><em>Pass the datas to HTML to dynamically display it</em></li>
+</ol>
+<br>
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#How-it-is-structured">How it is structured</a></li>
+<li><a href="#how-it-work">How it work</a></li>
+</ul>
+<br> 
+<h2 id="how-it-is-structured">How it is structured</h2>
+<p>My project is divided into:</p>
+<blockquote>
+<p><img src="https://img.shields.io/badge/HTML-black?style=for-the-badge&amp;logo=HTML5" alt="Static Badge"></p>
+</blockquote>
+<ul>
+<li>Home page</li>
+<li>Brand page</li>
+<li>Details page</li>
+</ul>
+<br>
+<p><img src="https://img.shields.io/badge/Javascript-black?style=for-the-badge&amp;logo=javascript" alt="Static Badge"></p>
+<ul>
+<li><a href="#home">home.components.ts</a></li>
+<li><a href="#lamborghini">lamborghini.components.ts</a></li>
+<li><a href="#ferrari">ferrari.components.ts</a></li>
+<li><a href="#porsche">porsche.components.ts</a></li>
+<li><a href="#details">details.components.ts</a>
+<br></li>
+</ul>
+<blockquote>
+<p><img src="https://img.shields.io/badge/CSS-black?style=for-the-badge&amp;logo=CSS3" alt="Static Badge"></p>
+</blockquote>
+<ul>
+<li>One stylesheet.</li>
+</ul>
+<br>
+<h2 id="how-it-work">How it work</h2>
+<h3 id="home-">home <strong>:</strong></h3>
+<p>The HomeComponent fetches and displays vehicle data from different brands (Lamborghini, Ferrari, and Porsche) via an API. It assigns the data to variables for UI rendering.</p>
+<p>Initialization
+In the constructor, async calls retrieve vehicle data for each brand using getLamborghini, getFerrari, and getPorsche.</p>
+<p>Data Retrieval
+Functions like getLamborghini, getFerrari, and getPorsche fetch brand-specific vehicle data asynchronously, ensuring uniqueness.</p>
+<p>Random Index Selection
+The getRandomIndex function selects a random index within the available range.</p>
+<p>This component showcases a random selection of vehicles on the app's initial page.</p>
+<br>
+<h3 id="headercomponentts-">headerComponent.ts <strong>:</strong></h3>
+<p>This HeaderComponent handles the navigation and search functionality. It fetches car data based on the model from the API and navigates to the details page accordingly. Additionally, it allows users to search for cars by model or brand and navigate to the appropriate page. It also includes handling for partial search matches.</p>
+<br>
+<h3 id="homecomponentts-">homeComponent.ts <strong>:</strong></h3>
+<p>This HomeComponent fetches vehicle data for Lamborghini, Ferrari, and Porsche brands and distributes the results into respective arrays. It ensures that each brand has at most two cars displayed.</p>
+<br>
+<h3 id="lamborghinicomponentts-">lamborghiniComponent.ts <strong>:</strong></h3>
+<p>The lamborghiniComponent fetches and displays Lamborghini car data from a mock API. The loadLamborghiniData method asynchronously retrieves data and filters it based on the brand.</p>
+<br>
+<h3 id="ferraricomponentts-">ferrariComponent.ts <strong>:</strong></h3>
+<p>The ferrariComponent fetches and displays Lamborghini car data from a mock API. The loadLamborghiniData method asynchronously retrieves data and filters it based on the brand.</p>
+<br> 
+<h3 id="porschecomponentts-">porscheComponent.ts <strong>:</strong></h3>
+<p>The porscheComponent fetches and displays Lamborghini car data from a mock API. The loadLamborghiniData method asynchronously retrieves data and filters it based on the brand.</p>
+<br> 
+<h3 id="detailscomponentts-">detailsComponent.ts <strong>:</strong></h3>
+<p>This DetailsComponent fetches and displays details of a specific car based on the model passed in the URL. It uses Angular's ActivatedRoute to retrieve the model parameter from the URL and then fetches the corresponding car data from a mock API.</p>
+<br> 
+<h2 id="partecipants">Partecipants</h2>
+<table>
+<thead>
+<tr>
+<th>PARTECIPANTS</th>
+<th>ROLE</th>
+<th>ACCOUNT GIT</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fabio Scaramozzino</td>
+<td>Epicode FullStack Student</td>
+<td><img src="https://img.shields.io/badge/Faffo96-%233eb752?style=for-the-badge&amp;logo=github" alt="Static Badge"></td>
+</tr>
+</tbody>
+</table>
+<br>
+<ul>
+<li><a href="#CRUDazon">Back to top! :D</a></li>
+</ul>
+
+            
+            
+        </body>
+        </html>
