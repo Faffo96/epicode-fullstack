@@ -7,7 +7,7 @@
 
 <!-- piccola descrizione del progetto --> 
 <h3 align="center">The goal of this project is to use CRUDs in angular</h3>
-<h4 align="center"> Live Preview: <a href="car-showroom-a3b01.web.app">car-showroom-a3b01.web.app</a></h4>
+<h4 align="center"> Live Preview: <a href="https://car-showroom-a3b01.web.app/">car-showroom-a3b01.web.app</a></h4>
 
 <br>
 <!-- SPAZIO DA METTERE + BADGES (dynamic e static) --> 
