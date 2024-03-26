@@ -1,0 +1,15 @@
+<h2>Unactive Cards</h2>
+<div class="card bg-danger fs-6 col-6 text-start mb-3" *ngFor="let card of cards">
+    <div class="card-body">
+      <div class="d-flex">
+        <h6 class="card-text m-0 my-2 me-2 fw-bold" *ngFor="let cardTag of card.tags">{{cardTag.toUpperCase()}}</h6>
+      </div>
+      <h5 class="card-title fw-semibold fs-5 mt-2">{{card.title}}</h5>
+      <p class="reactions">Reactions: <span>{{card.reactions}}</span></p>
+      <p class="card-text card_body text-black fs-6 fw-light">{{card.body.slice(0, 150) }}...</p>
+      <a [routerLink]="['/details']" routerLinkActive="active" class="btn btn-success me-2">Leggi di più..</a>
+      <a [routerLink]="['/edit', card._id]" routerLinkActive="active" class="btn btn-warning">Edit</a>
+      <p>{{card.active}}</p>
+    </div>
+  </div>
+

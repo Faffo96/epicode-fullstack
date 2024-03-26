@@ -1,0 +1,51 @@
+<div class="container-fluid">
+    <h1 id="h1">Add Product</h1>
+    <div class="container-fluid p-0">
+        <form id="productForm" (submit)="onSave($event)">
+
+
+            <div class="row-cols-1 my-4">
+                <label class="m-0" for="title">Title</label>
+                <input type="text" name="title" id="articleTitle" required="">
+            </div>
+  
+            <div class="row-cols-1 my-4">
+                <label for="body">Body</label>
+                <input type="text" name="body" id="articleBody" required="">
+            </div>
+  
+            <div class="d-flex justify-content-between align-items-center">
+                <!-- <div>
+                    <button class="btn btn-danger border-2" id="btnDelete" type="button"><i class="bi bi-trash3"></i></button>
+                </div> -->
+                <div class="my-4">
+                    <!-- <button class="btn border-black border-2 me-2" id="btnReset" type="reset">Reset</button> -->
+                    <button [routerLink]="['/']" routerLinkActive="active" class="btnSave btn btn-warning border-2" id="btnSave" type="button" (click)="onSave($event)">Save</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  </div>
+
+<!--   [
+  {
+    "description": "Esperienza di Gioco Immersiva: per Sony PlayStation 5, PS4, PS3 e PC, Driving Force ‎simula la ‎sensazione di guidare un'auto reale con sterzo di precisione e pedali sensibili alla ‎pressione ‎",
+    "brand": "Logitech",
+    "imageUrl": "https://m.media-amazon.com/images/I/61tewh45jmL._AC_SL1500_.jpg",
+    "price": "2134",
+    "userId": "3",
+    "createdAt": "2024-03-23T23:55:47.959Z",
+    "name": "G G29 Driving Force Racing Wheel Volante da Corsa, Pedali Regolabili, Ritorno di Forza Reale, Comandi Cambio in Acciaio Inossidabile, Volante in Pelle, Presa EU, per PS5, PS4, PC, Mac - Nero1000",
+    "_id": "1"
+  },
+  {
+    "description": "Esperienza di Gioco Immersiva: per Sony PlayStation 5, PS4, PS3 e PC, Driving Force ‎simula la ‎sensazione di guidare un'auto reale con sterzo di precisione e pedali sensibili alla ‎pressione ‎",
+    "brand": "Logitech",
+    "imageUrl": "https://m.media-amazon.com/images/I/61tewh45jmL._AC_SL1500_.jpg",
+    "price": "145678",
+    "userId": "6",
+    "createdAt": "2024-03-23T12:15:12.514Z",
+    "name": "G G29 Driving Force Racing Wheel Volante da Corsa, Pedali Regolabili, Ritorno di Forza Reale, Comandi Cambio in Acciaio Inossidabile, Volante in Pelle, Presa EU, per PS5, PS4, PC, Mac - Nero1000567",
+    "_id": "2"
+  }
+] -->

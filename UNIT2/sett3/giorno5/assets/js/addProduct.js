@@ -132,6 +132,7 @@ async function saveChanges(id, e) {
     e.preventDefault(); // Impedisce il comportamento predefinito del modulo HTML
     try {
         const updatedProduct = createObjectFromForm();
+        console.log(searchURL + id)
         const response = await fetch(searchURL + id, {
             method: 'PUT',
             headers: {
@@ -146,6 +147,7 @@ async function saveChanges(id, e) {
         console.error('Error saving changes:', error);
         throw error;
     }
+    
     window.location.href = 'index.html';
 }
 
@@ -185,6 +187,8 @@ async function clearInputFields() { // Clears the input fields on the page.
         console.error('Error clearing input fields:', error);
     }
 }
+
+console.log(currentID)
 
 
 
