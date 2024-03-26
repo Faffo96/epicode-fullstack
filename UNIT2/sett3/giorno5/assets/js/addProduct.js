@@ -132,7 +132,6 @@ async function saveChanges(id, e) {
     e.preventDefault(); // Impedisce il comportamento predefinito del modulo HTML
     try {
         const updatedProduct = createObjectFromForm();
-        console.log(searchURL + id)
         const response = await fetch(searchURL + id, {
             method: 'PUT',
             headers: {
