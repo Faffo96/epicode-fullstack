@@ -146,6 +146,7 @@ async function saveChanges(id, e) {
         console.error('Error saving changes:', error);
         throw error;
     }
+    
     window.location.href = 'index.html';
 }
 
@@ -185,6 +186,8 @@ async function clearInputFields() { // Clears the input fields on the page.
         console.error('Error clearing input fields:', error);
     }
 }
+
+console.log(currentID)
 
 
 
