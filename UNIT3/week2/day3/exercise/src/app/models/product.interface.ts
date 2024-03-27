@@ -5,4 +5,6 @@ export interface Product {
     price: number;
     brand: string;
     thumbnail: string;
+    isLiked?: boolean;
+    quantity: number;
 }

@@ -1,18 +1,21 @@
 <div class="container-fluid">
-    <div class="row col-10">
+    <div class="row">
+        <div class="row col-9">
 
-        <div *ngFor="let product of products" class="card" style="width: 18rem;">
-            <img src="{{product.thumbnail}}" class="card-img-top" alt="...">
-            <div class="card-body">
-                <h5 class="card-title">{{product.title}}</h5>
-                <p class="card-text">{{product.description}}</p>
-                <a href="#" class="btn btn-primary">Like</a>
-                <a href="#" class="btn btn-primary">Add to cart</a>
+            <div *ngFor="let product of products" class="card col-4" >
+                <img src="{{product.thumbnail}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">{{product.title}}</h5>
+                    <p class="card-text">{{product.description}}</p>
+                    <button href="#" class="btn btn-primary" (click)="addToFavorites(product)" [disabled]="isProductInFavorites(product)">Like</button>
+                    <a href="#" class="btn btn-primary" (click)="addToCart(product)">Add to cart</a>
+                </div>
             </div>
+
         </div>
-
+        <div class="row col-3">
+            <app-cart></app-cart>
+        </div>
     </div>
-    <div class="row col-2">
 
-    </div>
 </div>

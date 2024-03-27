@@ -11,13 +11,13 @@ import { ProductsService } from 'src/app/services/products.service';
 
 export class HomeComponent implements OnInit {
   products: Product[] = [];
+  cartItems: Product[] = [];
   sub!: Subscription;
 
   constructor(private productSrv: ProductsService) {}
 
   ngOnInit(): void {
       this.getProducts();
-      
   }
 
   getProducts() {
@@ -28,10 +28,20 @@ export class HomeComponent implements OnInit {
       (err) => {
         alert(err);
       }
-      )
+    );
   }
 
-  add() {
-    this.sub
+  addToCart(product: Product) {
+    this.productSrv.addToCart(product, 1); // Passa la quantità 1 quando aggiungi un nuovo prodotto al carrello
+  }
+  
+
+  addToFavorites(product: Product) {
+    product.isLiked = true; // Imposta lo stato di preferenza su true
+    this.productSrv.addFavorites(product);
+  }
+
+  isProductInFavorites(product: Product): boolean {
+    return this.productSrv.isProductInFavorites(product); 
   }
 }
