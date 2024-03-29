@@ -84,7 +84,7 @@ export class ProductsService {
     }
   }
 
-  // Aggiorna l'observable dei prodotti nel carrello
+  
   // Aggiorna l'observable dei prodotti nel carrello
   private updateCart() {
     this.cartItemsSub.next(this.cartItems.slice());
@@ -114,3 +114,5 @@ export class ProductsService {
   }
 
 }
+
+

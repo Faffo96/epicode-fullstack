@@ -1,0 +1,22 @@
+<header>
+  <div class="mx-3 text-light">
+    <p class="fs-1 fw-semibold">Hey Boss, what's my task for the day?</p>
+    <div>
+      <a class="btn text-light fw-semibold px-5 py-3 me-2" [routerLink]="['/']" routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}">See all</a>
+      <a class="btn text-light fw-semibold px-5 py-3 me-2" [routerLink]="['/completedTasks']" routerLinkActive="active">See how much we've
+        accomplished!</a>
+      <a class="btn text-light fw-semibold px-5 py-3 me-2" [routerLink]="['/pendingTasks']" routerLinkActive="active">What's left?</a>
+      <a class="btn text-light fw-semibold px-5 py-3 me-2" [routerLink]="['/users']" routerLinkActive="active">By user</a>
+      
+    </div>
+  </div>
+</header>
+
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer>
+
+</footer>

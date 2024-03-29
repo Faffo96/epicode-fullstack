@@ -1,0 +1,12 @@
+<div id="checklist" class="completedTasks container mx-3 mt-3 d-flex flex-column align-items-start">
+
+    <div *ngFor="let item of completedTasks; let i = index" class="d-flex flex-column">
+        <div class="d-flex align-items-center">
+            <input value="{{i}}" name="r" type="checkbox" id="0{{i}}" />
+            <label for="0{{i}}">{{item.todo}}</label>
+        </div>
+        <p class="ms-4 ps-3 text-secondary">Assigned to: {{ getAssignedUserName(item.userId) }}</p>
+
+    </div>
+
+</div>
