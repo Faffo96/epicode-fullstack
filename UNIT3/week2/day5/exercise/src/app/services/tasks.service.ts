@@ -39,6 +39,34 @@ export class TasksService {
     );
   }
 
+  updateTask(task: Task) {
+    const url = `${this.apiURL}/${task.id}`;
+    return this.http.put<Task>(url, task).pipe(
+      map(updatedTask => {
+        this.updateCompletedAndPendingTasks(updatedTask); // Aggiorna i compiti completati e in sospeso
+        return updatedTask;
+      }),
+      catchError(error => {
+        console.error('Error updating task:', error);
+        return throwError(error);
+      })
+    );
+  }
+
+  private updateCompletedAndPendingTasks(updatedTask: Task): void {
+    // Aggiorna i compiti completati e in sospeso in base allo stato del compito aggiornato
+    if (updatedTask.completed) {
+      this.completedTasks.push(updatedTask);
+      this.pendingTasks = this.pendingTasks.filter(task => task.id !== updatedTask.id);
+    } else {
+      this.pendingTasks.push(updatedTask);
+      this.completedTasks = this.completedTasks.filter(task => task.id !== updatedTask.id);
+    }
+    // Emetti i compiti aggiornati
+    this.emitCompletedTasks();
+    this.emitPendingTasks();
+  }
+
   private emitCompletedTasks(): void {
     this.completedTasksSub.next(this.completedTasks);
   }

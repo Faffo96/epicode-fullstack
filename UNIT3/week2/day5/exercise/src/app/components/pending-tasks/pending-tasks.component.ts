@@ -55,19 +55,49 @@ export class PendingTasksComponent {
     return user ? user.firstName : 'Unknown'; // Ritorna il nome dell'utente se trovato, altrimenti 'Unknown'
   }
 
-  /* toggleTaskCompletion(task: Task) {
-    task.completed = !task.completed;
+  toggleTaskCompletion(task: Task) {
+    task.completed = !task.completed; // Cambia lo stato della proprietà completed
     this.tasksSrv.updateTask(task).subscribe(
-      () => {
-        // Aggiorna i compiti pendenti e completati dopo l'aggiornamento
-        this.loadPendingTasks();
-        this.loadCompletedTasks();
+      (updatedTask: Task) => {
+        // Se l'aggiornamento ha successo, aggiorna gli array di completedTasks e pendingTasks
+        if (task.completed) {
+          // Se il task è stato completato, spostalo da pendingTasks a completedTasks
+          this.pendingTasks = this.pendingTasks.filter(t => t.id !== task.id);
+          this.completedTasks.push(updatedTask);
+        } else {
+          // Se il task è stato segnato come non completato, spostalo da completedTasks a pendingTasks
+          this.completedTasks = this.completedTasks.filter(t => t.id !== task.id);
+          this.pendingTasks.push(updatedTask);
+        }
       },
       (err) => {
-        console.error("Errore nell'aggiornamento del compito:", err);
+        alert(err);
+        // Se si verifica un errore, reimposta lo stato del checkbox alla sua posizione precedente
+        task.completed = !task.completed;
       }
     );
-  } */
+  }
+  
 
+  private subscribeToTaskUpdates(): void {
+    // Sottoscrivi il componente agli Observable dei compiti completati e in sospeso
+    this.tasksSrv.getCompletedTasksObservable().subscribe(
+      (completedTasks: Task[]) => {
+        this.completedTasks = completedTasks;
+      },
+      (err) => {
+        alert(err);
+      }
+    );
+
+    this.tasksSrv.getPendingTasksObservable().subscribe(
+      (pendingTasks: Task[]) => {
+        this.pendingTasks = pendingTasks;
+      },
+      (err) => {
+        alert(err);
+      }
+    );
+  }
 }
 

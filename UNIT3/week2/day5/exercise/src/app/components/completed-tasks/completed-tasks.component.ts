@@ -56,5 +56,24 @@ export class CompletedTasksComponent {
     const user = this.users.find(u => u.id === userId.toString()); // Converti userId in una stringa
     return user ? user.firstName : 'Unknown'; // Ritorna il nome dell'utente se trovato, altrimenti 'Unknown'
   }
+  
+  toggleTaskCompletion(task: Task) {
+    task.completed = !task.completed; // Inverti lo stato della proprietà completed
+    this.tasksSrv.updateTask(task).subscribe(
+      (updatedTask: Task) => {
+        // Se l'aggiornamento ha successo, aggiorna gli array di completedTasks e pendingTasks
+        if (!task.completed) {
+          // Se il task viene segnato come non completato, spostalo da completedTasks a pendingTasks
+          this.completedTasks = this.completedTasks.filter(t => t.id !== task.id);
+          this.pendingTasks.push(updatedTask);
+        }
+      },
+      (err) => {
+        alert(err);
+        // Se si verifica un errore, reimposta lo stato del checkbox alla sua posizione precedente
+        task.completed = !task.completed;
+      }
+    );
+  }
 
 }

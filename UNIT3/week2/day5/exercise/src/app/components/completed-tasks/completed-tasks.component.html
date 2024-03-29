@@ -2,9 +2,10 @@
 
     <div *ngFor="let item of completedTasks; let i = index" class="d-flex flex-column">
         <div class="d-flex align-items-center">
-            <input value="{{i}}" name="r" type="checkbox" id="0{{i}}" />
-            <label for="0{{i}}">{{item.todo}}</label>
+            <input [checked]="item.completed ? true : false" (change)="toggleTaskCompletion(item)" value="{{item.id}}" name="r" type="checkbox" id="0{{item.id}}" />
+            <label for="0{{item.id}}">{{item.todo}}</label>
         </div>
+        <p>{{item.completed}}</p>
         <p class="ms-4 ps-3 text-secondary">Assigned to: {{ getAssignedUserName(item.userId) }}</p>
 
     </div>
