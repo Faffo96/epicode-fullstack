@@ -53,8 +53,8 @@ export class CompletedTasksComponent {
   }
 
   getAssignedUserName(userId: number): string {
-    const user = this.users.find(u => u.id === userId.toString()); // Converti userId in una stringa
-    return user ? user.firstName : 'Unknown'; // Ritorna il nome dell'utente se trovato, altrimenti 'Unknown'
+    const user = this.users.find(u => u.id == userId); // Converti userId in una stringa
+    return user ? `${user.firstName} ${user.lastName}` : 'Unknown'; // Ritorna il nome dell'utente se trovato, altrimenti 'Unknown'
   }
   
   toggleTaskCompletion(task: Task) {

@@ -4,6 +4,7 @@ import { Task } from 'src/app/models/task.interface';
 import { User } from 'src/app/models/user.interface';
 import { UsersService } from 'src/app/services/users.service';
 import { TasksService } from 'src/app/services/tasks.service';
+import { Input } from '@angular/core';
 
 @Component({
   selector: 'app-pending-tasks',
@@ -51,8 +52,8 @@ export class PendingTasksComponent {
   }
 
   getAssignedUserName(userId: number): string {
-    const user = this.users.find(u => u.id === userId.toString()); // Converti userId in una stringa
-    return user ? user.firstName : 'Unknown'; // Ritorna il nome dell'utente se trovato, altrimenti 'Unknown'
+    const user = this.users.find(u => u.id == userId); // Converti userId in una stringa
+    return user ? `${user.firstName} ${user.lastName}` : 'Unknown'; // Ritorna il nome dell'utente se trovato, altrimenti 'Unknown'
   }
 
   toggleTaskCompletion(task: Task) {

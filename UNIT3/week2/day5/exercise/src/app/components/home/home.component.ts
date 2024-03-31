@@ -16,7 +16,7 @@ export class HomeComponent implements OnInit {
 
   sub!: Subscription;
 
-  constructor(private usersSrv: UsersService, private tasksSrv: TasksService) {}
+  constructor(private usersSrv: UsersService, private tasksSrv: TasksService) { }
 
   ngOnInit(): void {
     this.loadUsers();
@@ -39,5 +39,5 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  
+
 }
