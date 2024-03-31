@@ -15,14 +15,14 @@ export class UsersComponent {
   users: User[] = [];
   pendingTasks: Task[] = [];
   completedTasks: Task[] = [];
-  filteredUsers: User[] = []; 
+  filteredUsers: User[] = [];
   searchTerm: string = '';
   sub!: Subscription;
 
   constructor(private usersSrv: UsersService, private tasksSrv: TasksService) { }
 
   ngOnInit(): void {
-    
+
     this.loadPendingTasks();
     this.loadCompletedTasks();
     this.loadUsers();
@@ -33,7 +33,6 @@ export class UsersComponent {
       (users) => {
         if (users.length > 0) {
           this.users = users;
-          this.filteredUsers = users;
         }
       },
       (err) => {
@@ -42,27 +41,20 @@ export class UsersComponent {
     );
 
 
-      // Crea un nuovo array per contenere gli utenti con almeno un task
-      const usersWithTasks: User[] = [];
-    
+    // Ottieni tutti gli userId dei task, sia completati che pendenti, convertendoli in stringhe
+    const taskUserIds = [...this.pendingTasks.map(task => task.userId.toString()), ...this.completedTasks.map(task => task.userId.toString())];
 
-      // Ottieni tutti gli userId dei task, sia completati che pendenti, convertendoli in stringhe
-const taskUserIds = [...this.pendingTasks.map(task => task.userId.toString()), ...this.completedTasks.map(task => task.userId.toString())];
 
-    
-      // Itera su tutti gli utenti e aggiungi quelli che hanno almeno un task al nuovo array
-      this.users.forEach(user => {
-        const userIdString = user.id.toString();
-        if (taskUserIds.includes(userIdString)) {
-          usersWithTasks.push(user);
-        }
-      });
-    
-      // Assegna il nuovo array con gli utenti che hanno almeno un task all'array users
-      this.users = usersWithTasks;
-      console.log('pippo')
-      console.log(usersWithTasks)
-    
+    // Itera su tutti gli utenti e aggiungi quelli che hanno almeno un task al nuovo array
+    this.users.forEach(user => {
+      const userIdString = user.id.toString();
+      if (taskUserIds.includes(userIdString)) {
+        this.filteredUsers.push(user);
+      }
+    });
+
+    // Assegna il nuovo array con gli utenti che hanno almeno un task all'array users
+    this.users = this.filteredUsers;
   }
 
   loadPendingTasks() {
@@ -119,7 +111,7 @@ const taskUserIds = [...this.pendingTasks.map(task => task.userId.toString()), .
       }
     );
   }
-  
+
   filterUsers() {
     // Filtra gli utenti in base alla stringa di ricerca
     this.filteredUsers = this.users.filter(user =>
