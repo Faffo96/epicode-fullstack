@@ -1,12 +1,14 @@
-<div id="checklist" class="pendingTasks mx-auto mt-3 d-flex flex-column align-items-start">
+<div class="custom-bg-color-1 rounded-3 pe-1 py-1 mb-4">
+    <div id="checklist" class="pendingTasks scroll scrollspy-example mx-auto d-flex flex-column align-items-start justify-content-start">
+        <div *ngFor="let item of pendingTasks.slice().reverse(); let i = index" class="d-flex flex-column">
+            <div class="d-flex align-items-center">
+                <input [checked]="item.completed ? true : false" (change)="toggleTaskCompletion(item)"
+                    value="{{item.id}}" name="r" type="checkbox" id="0{{item.id}}" />
+                <label class="text-light" for="0{{item.id}}">{{item.todo}}</label>
+            </div>
+            <p class="ms-4 ps-3 text-secondary">Assigned to: {{ getAssignedUserName(item.userId) }}</p>
 
-    <div *ngFor="let item of pendingTasks.slice().reverse(); let i = index" class="d-flex flex-column">
-        <div class="d-flex align-items-center">
-            <input [checked]="item.completed ? true : false" (change)="toggleTaskCompletion(item)" value="{{item.id}}" name="r" type="checkbox" id="0{{item.id}}" />
-            <label class="text-light" for="0{{item.id}}">{{item.todo}}</label>
         </div>
-        <p class="ms-4 ps-3 text-secondary">Assigned to: {{ getAssignedUserName(item.userId) }}</p>
 
     </div>
-
 </div>

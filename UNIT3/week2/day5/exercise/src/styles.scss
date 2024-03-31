@@ -1,8 +1,79 @@
+/* GENERAL */
+
+.custom-bg-color-1 {
+  background-color: #17192b;
+}
+
+.scroll {
+  overflow: auto;
+  display: block;
+  height: 800px !important;
+  padding-right: 5px; /* Aggiungi un margine di 5px alla destra della scrollbar */
+  margin-right: 5px;
+}
+
+
+/* Imposta lo stile della barra di scorrimento */
+.scroll::-webkit-scrollbar {
+width: 10px;  /* Imposta la larghezza della scrollbar */
+
+background-color: #17192b;
+}
+
+/* Imposta lo stile della barra di scorrimento */
+.scroll::-webkit-scrollbar-thumb {
+background-color: #0f101c8f; /* Imposta il colore della barra di scorrimento */
+border-radius: 10px; /* Imposta il bordo della barra di scorrimento */
+}
+
+/* Visualizza la scrollbar solo durante lo scrolling */
+.scroll:hover::-webkit-scrollbar {
+width: 10px; /* Imposta la larghezza della scrollbar durante lo scrolling */
+
+}
+
+/* Visualizza la scrollbar solo durante lo scrolling */
+.scroll:hover {
+scrollbar-width: 30px; /* Imposta la larghezza della scrollbar durante lo scrolling */
+}
+
+::-webkit-scrollbar {
+  width: 10px;  /* Imposta la larghezza della scrollbar */
+  
+  background-color: #17192b;
+  }
+  
+  /* Imposta lo stile della barra di scorrimento */
+  ::-webkit-scrollbar-thumb {
+  background-color: #b1c9dc; /* Imposta il colore della barra di scorrimento */
+  border-radius: 10px; /* Imposta il bordo della barra di scorrimento */
+  }
+  
+  /* Visualizza la scrollbar solo durante lo scrolling */
+  :hover::-webkit-scrollbar {
+  width: 10px; /* Imposta la larghezza della scrollbar durante lo scrolling */
+  
+  }
+  
+  /* Visualizza la scrollbar solo durante lo scrolling */
+  :hover {
+  scrollbar-width: 30px; /* Imposta la larghezza della scrollbar durante lo scrolling */
+  }
+
+
+/* Nascondi la scrollbar solo per Firefox */
+.scroll {
+scrollbar-width: 10px; /* Imposta lo stile della scrollbar a none */
+}
+
+
 /* INDEX */
 
 body {
   background-color: #0f101c;
 }
+
+
 
 /* CHECKBOXES STYLE */
 
