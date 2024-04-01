@@ -23,13 +23,6 @@ I focused on those main objectives:
 
 <br>
 
-## Table of Contents 
-
-- [How it is structured](#How-it-is-structured)
-- [How it work](#how-it-work)
-
-<br> 
-
 ## How it is structured
 
 My project is divided into:
@@ -45,7 +38,6 @@ My project is divided into:
  ![Static Badge](https://img.shields.io/badge/Javascript-black?style=for-the-badge&logo=javascript)
  
 - [Epicode-ToDo](#epicode-todo)
-  - [Table of Contents](#table-of-contents)
   - [How it is structured](#how-it-is-structured)
   - [How it work](#how-it-work)
     - [home.Component.ts **:**](#homecomponentts-)
