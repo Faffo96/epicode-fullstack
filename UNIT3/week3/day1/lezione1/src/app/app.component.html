@@ -1,0 +1,84 @@
+<div class="container text-center">
+    <h1>Template Driven Form</h1>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div>
+                <form #form="ngForm" (ngSubmit)="submit()">
+                    <!-- ngModelGroup usato per raggruppare tutti i dati del form -->
+                    <div
+                        ngModelGroup="userInfo"
+                        id="userInfo"
+                        #userGroup="ngModelGroup"
+                    >
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input
+                                type="text"
+                                id="username"
+                                [(ngModel)]="userForm.username"
+                                name="username"
+                                class="form-control"
+                                required
+                                #username="ngModel"
+                            />
+                            <p *ngIf="username.invalid && username.touched">
+                                <strong class="text-danger">Questo campo è obbligatorio</strong>
+                            </p>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                [(ngModel)]="userForm.email"
+                                class="form-control"
+                                #email="ngModel"
+                                required
+                            />
+                            <p *ngIf="email.invalid && email.touched">
+                                <strong class="text-danger">Inserire una email valida</strong>
+                            </p>
+                        </div>
+                        <button
+                            type="button"
+                            class="btn btn-outline-primary mt-2"
+                            (click)="generateUsername()"
+                        >
+                            Genera User Info
+                        </button>
+                        <div class="form-group">
+                            <label for="question">Domanda segreta</label>
+                            <select id="question" name="question" class="form-select" [(ngModel)]="userForm.question">
+                                <option value=""></option>
+                                <option value="madre">Nome di battesimo di tua madre</option>
+                                <option value="padre">Nome di battesimo di tuo padre</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="answer" [(ngModel)]="answer" />
+                            <p>La tua risposta è: {{ answer }}</p>
+                        </div>
+                        <div class="radio" *ngFor="let gender of genders">
+                            <input type="radio" name="gender" id="gender" ngModel [value]="gender.value" />
+                            <label for="{{ gender.value }}">{{ gender.label }}</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary mt-3" [disabled]="form.invalid">Invia</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="col-12" *ngIf="user">
+            <h2>I tuoi dati</h2>
+            <div class="container">
+                <p>Username: {{ user.username }}</p>
+                <p>Email: {{ user.email }}</p>
+                <p>Domanda segreta: {{ user.question }}</p>
+                <p>Risposta: {{ user.answer }}</p>
+                <p>Genere: {{ user.gender }}</p>
+            </div>
+        </div>
+    </div>
+</div>
