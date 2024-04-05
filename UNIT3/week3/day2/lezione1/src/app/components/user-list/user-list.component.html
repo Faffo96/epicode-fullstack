@@ -1,0 +1,12 @@
+<div class="container">
+    <div class="spinner-border text-danger" role="status" *ngIf="!users">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="row" *ngIf="users">
+        <div class="col-3 border border-black" *ngFor="let user of users">
+            <h2>Nome utente: {{ user.name }}</h2>
+            <h4>Username: {{ user.username }}</h4>
+            <h4>Email: {{ user.email }}</h4>
+        </div>
+    </div>
+</div>

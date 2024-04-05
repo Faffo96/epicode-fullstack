@@ -1,0 +1,15 @@
+<div class="container">
+    <form #newPost="ngForm" (ngSubmit)="save(newPost)">
+        <label for="title" class="form-label">Titolo</label>
+        <input type="text" id="title" name="title" required ngModel class="form-control" />
+        <label for="completed" class="form-label">Completato</label>
+        <input type="checkbox" id="completed" name="completed" ngModel class="form-check" />
+        <br />
+        <label for="userId" class="form-label">Autore</label>
+        <select id="userId" name="userId" ngModel class="form-select">
+            <option value="" selected></option>
+            <option *ngFor="let user of arrayUsers" [value]="user.id">{{ user.name }}</option>
+        </select>
+        <button type="submit" class="btn btn-success mt-4">Invia</button>
+    </form>
+</div>
