@@ -1,0 +1,71 @@
+<div class="d-flex justify-content-center align-items-center mt-2">
+    <form [formGroup]="signupForm" class="form" (ngSubmit)="onSubmit(signupForm)">
+        <p class="title">Register </p>
+        <p class="message">Signup now and get full access to our app. </p>
+        <div class="flex">
+            <label>
+                <input id="firstName" required="" placeholder="" type="text" class="input" formControlName="firstName">
+                <span>Firstname</span>
+            </label>
+
+            <label>
+                <input id="lastName" required="" placeholder="" type="text" class="input" formControlName="lastName">
+                <span>Lastname</span>
+            </label>
+        </div>
+        <label>
+            <input id="username" required="" placeholder="" type="text" class="input" formControlName="username">
+            <span>Username</span>
+        </label>
+        <div class="d-flex">
+            <div class="radio" *ngFor="let gender of genders">
+                <input type="radio" formControlName="gender" [value]="gender" />
+                <label class="ms-1 me-2 text-black">{{ gender }}</label>
+            </div>
+        </div>
+
+        <select id="language" name="language" formControlName="language">
+            <option *ngFor="let language of languages" [value]="language">{{ language }}</option>
+        </select>
+        
+
+        <label>
+            <input id="email" required="" placeholder="" type="email" class="input" formControlName="email">
+            <span>Email</span>
+        </label>
+
+        <label>
+            <input id="password" required="" placeholder="" type="password" class="input" formControlName="password">
+            <span>Password</span>
+        </label>
+        <label>
+            <input id="confirmPassword" required="" placeholder="" type="password" class="input"
+                formControlName="confirmPassword">
+            <span>Confirm password</span>
+            <span *ngIf="
+                                getFormC('user.username')?.invalid &&
+                                getFormC('user.username')?.touched
+                            ">
+                <ng-container *ngIf="
+                                    getErrorsC('userInfo.username', 'required')
+                                "><strong class="text-danger">Campo username obbligatorio</strong></ng-container>
+                <ng-container *ngIf="
+                                    getErrorsC('userInfo.username', 'proibito')
+                                "><strong class="text-danger">Username non consentito</strong>
+                </ng-container>
+            </span>
+        </label>
+        <label>
+            <span>Profile image</span>
+            <input id="profileImg" placeholder="" type="file" class="input" formControlName="profileImg">
+
+        </label>
+        <label>
+            <textarea id="biography" required="" class="input" formControlName="biography"></textarea>
+            <span>Biography</span>
+        </label>
+        <button type="button" (click)="onSubmit(signupForm)" class="submit" [disabled]="signupForm.invalid">Submit</button>
+        <p class="signin">Already have an account ? <a [routerLink]="['/login']" routerLinkActive="active">Login</a>
+        </p>
+    </form>
+</div>
