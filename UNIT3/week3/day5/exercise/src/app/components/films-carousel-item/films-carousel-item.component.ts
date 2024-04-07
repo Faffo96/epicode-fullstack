@@ -42,19 +42,21 @@ export class FilmsCarouselItemComponent {
     }
   }
 
-toggleFavorite(event: MouseEvent, userId: number, movie: Movie): void {
-  const target = event.target as HTMLElement;
-  if (target.classList.contains('bi-heart')) {
-    target.classList.remove('bi-heart');
-    target.classList.add('bi-heart-fill');
-    this.userService.newFavorite(userId, movie);
-  } else if (target.classList.contains('bi-heart-fill')) {
-    target.classList.remove('bi-heart-fill');
-    target.classList.add('bi-heart');
-    this.userService.deleteFavorite(userId, movie.id);
+  toggleFavorite(event: MouseEvent, userId: number, movie: Movie): void {
+ 
+  
+    const target = event.target as HTMLElement;
+    if (target.classList.contains('bi-heart')) {
+      target.classList.remove('bi-heart');
+      target.classList.add('bi-heart-fill');
+      this.userService.newFavorite(userId, movie);
+    } else if (target.classList.contains('bi-heart-fill')) {
+      target.classList.remove('bi-heart-fill');
+      target.classList.add('bi-heart');
+      this.userService.deleteFavorite(userId, movie.id);
+    }
   }
-}
-
+  
 fetchUserFavoritesById(userId: number): void {
   this.userService.getUser(userId).subscribe(
     (user: User) => {

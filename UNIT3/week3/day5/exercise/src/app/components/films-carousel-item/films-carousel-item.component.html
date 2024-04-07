@@ -11,9 +11,10 @@
                             <div class="row d-flex align-items-center">
                                 <p class="col-md-10 text-light fw-semibold">{{movie.title | ellipsis }}</p>
                                 <div class="col-md-2">
-                                    <i *ngIf="user" (click)="toggleFavorite($event, user.user.id, movie)"
-                                        [ngClass]="{ 'bi-heart-fill': isFavorite(movie.id), 'bi-heart': !isFavorite(movie.id) }">
-                                    </i>
+                                        <i *ngIf="user" (click)="toggleFavorite($event, user.user.id, movie)"
+                                            [ngClass]="{ 'bi-heart-fill': isFavorite(movie.id), 'bi-heart': !isFavorite(movie.id) }">
+                                        </i>
+
 
                                 </div>
 
