@@ -21,6 +21,7 @@ import { FilmsCarouselItemComponent } from './components/films-carousel-item/fil
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { EllipsisPipe } from './pipes/ellipsis.pipe';
+import { AuthGuard } from './auth/auth.guard';
 
 
 const routes: Route[] = [
@@ -30,11 +31,13 @@ const routes: Route[] = [
   },
   {
     path: 'account',
-    component: AccountComponent
+    component: AccountComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'accountSettings',
-    component: AccountSettingsComponent
+    component: AccountSettingsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'login',
@@ -42,15 +45,17 @@ const routes: Route[] = [
   },
   {
     path: 'registerUser',
-    component: RegisterUserComponent,
+    component: RegisterUserComponent
   },
   {
     path: 'favorites',
     component: FavoritesComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: 'movieDetails/:id',
     component: MovieDetailsComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: '**',
