@@ -2,23 +2,27 @@
     <div class="carousel-item active">
         <div class="contaner-fluid">
             <div class="row col-9 col-md-12">
+
                 <div *ngFor="let movie of movies.slice(0, 6); let i = index" class="col-md-2 mb-2 px-0 imgRelative"
                     [ngClass]="{ 'ps-2': i === 0 }">
-                    <img [src]="https + movie.backdrop_path" class="d-block w-100 carousel1" alt="carousel image">
-                    <div class="container translateY mx-auto">
-                        <div class="row d-flex align-items-center">
-                            <p class="col-md-10 text-light fw-semibold">{{movie.title | ellipsis }}</p>
-                            <div class="col-md-2">
-                                <i *ngIf="user" 
-                                   (click)="toggleFavorite($event, user.user.id, movie)" 
-                                   class="bi bi-heart">
-                                </i>                           
+                    <a [routerLink]="['/movieDetails', movie.id]" routerLinkActive="active">
+                        <img [src]="https + movie.backdrop_path" class="d-block w-100 carousel1" alt="carousel image">
+                        <div class="container translateY mx-auto">
+                            <div class="row d-flex align-items-center">
+                                <p class="col-md-10 text-light fw-semibold">{{movie.title | ellipsis }}</p>
+                                <div class="col-md-2">
+                                    <i *ngIf="user" (click)="toggleFavorite($event, user.user.id, movie)"
+                                        [ngClass]="{ 'bi-heart-fill': isFavorite(movie.id), 'bi-heart': !isFavorite(movie.id) }">
+                                    </i>
+
+                                </div>
+
+
                             </div>
-                            
-                            
                         </div>
-                    </div>
+                    </a>
                 </div>
+
             </div>
         </div>
     </div>
@@ -30,20 +34,22 @@
             <div class="row col-9 col-md-12">
                 <div *ngFor="let movie of movies.slice(6, 12); let i = index" class="col-md-2 mb-2 px-0 imgRelative"
                     [ngClass]="{ 'ps-2': i === 0 }">
-                    <img [src]="https + movie.backdrop_path" class="d-block w-100 carousel1" alt="carousel image">
-                    <div class="container translateY mx-auto">
-                        <div class="row d-flex align-items-center">
-                            <p class="col-md-10 text-light fw-semibold">{{movie.title | ellipsis }}</p>
-                            <div class="col-md-2">
-                                <i *ngIf="user" 
-                                   (click)="toggleFavorite($event, user.user.id, movie)" 
-                                   class="bi bi-heart">
-                                </i>                           
+                    <a [routerLink]="['/movieDetails', movie.id]" routerLinkActive="active">
+                        <img [src]="https + movie.backdrop_path" class="d-block w-100 carousel1" alt="carousel image">
+                        <div class="container translateY mx-auto">
+                            <div class="row d-flex align-items-center">
+                                <p class="col-md-10 text-light fw-semibold">{{movie.title | ellipsis }}</p>
+                                <div class="col-md-2">
+                                    <i *ngIf="user" (click)="toggleFavorite($event, user.user.id, movie)"
+                                        [ngClass]="{ 'bi-heart-fill': isFavorite(movie.id), 'bi-heart': !isFavorite(movie.id) }">
+                                    </i>
+
+                                </div>
+
+
                             </div>
-                            
-                            
                         </div>
-                    </div>
+                    </a>
                 </div>
             </div>
         </div>
