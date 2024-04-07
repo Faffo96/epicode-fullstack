@@ -43,7 +43,7 @@ export class MoviesService {
         return this.http.get<Movie>(`${this.apiURL}movies-toprated/${id}`);
     }
 
-    getUserFavoriteMovies(favorites: Movie[]): void {
+    getUserFavoriteMovies(favorites: number[]): void {
         const favoriteMovies: Movie[] = [];
     
         forkJoin([
