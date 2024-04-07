@@ -20,14 +20,16 @@ export class RegisterUserComponent {
   onSubmit(form: FormGroup) {
     console.log(form.value);
     try {
-      const { confirmPassword, ...userData } = form.value;
-
-        this.authSrv.signup(userData).subscribe();
-        this.router.navigate(['/login']);
+        const { confirmPassword, ...userData } = form.value;
+        const newUser: User = { ...userData, favorites: [] }; // Creazione del nuovo utente con la proprietà favorites vuota
+        this.authSrv.signup(newUser).subscribe(() => {
+            this.router.navigate(['/login']);
+        });
     } catch (error) {
         console.error(error);
     }
 }
+
 
   ngOnInit(): void {
     this.signupForm = this.fb.group({

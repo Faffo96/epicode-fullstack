@@ -12,6 +12,7 @@ export interface AuthData {
         language: string,
         profileImg: File,
         biography: string,
-        username: string
+        username: string,
+        favorites: Movie[]
     }
 }
