@@ -418,7 +418,7 @@ h4 {
 }
 
 .imgRelative {
-    margin: 15px;
+    margin: 25px 0px;
 }
 
 .imgRelative:hover {
@@ -426,12 +426,15 @@ h4 {
     transition: transform 0.3s ease;
     transform: scale(1.2);
     filter: brightness(120%);
+    z-index: 100;
     /* Aumenta la luminosità del 150% */
 }
 
 .carousel-control-prev,
 .carousel-control-next {
     width: 77px;
+    height: 50px;
+    transform: translateY(8.5vh);
 }
 
 .language {

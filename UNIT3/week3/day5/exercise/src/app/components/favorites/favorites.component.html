@@ -1,0 +1,11 @@
+<div class="mx-auto">
+    <div class="container-fluid bg-black">
+    <h1>Favorites</h1>
+    <div class="row">
+        <div *ngFor="let movie of favoriteMovies; let i = index" class="col-md-3 mb-3">
+            <img class="posterImg" src="{{https + movie.poster_path}}" alt="{{movie.title}} poster">
+        </div>
+    </div>
+</div>
+
+</div>

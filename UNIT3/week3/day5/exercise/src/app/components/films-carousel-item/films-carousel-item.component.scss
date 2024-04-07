@@ -1,0 +1,29 @@
+.translateY {
+    line-height: 1.2;
+    font-size:0.9rem;
+    border-radius:5px;
+    padding: 0px 8px;
+    background-color: rgba(0, 0, 0, 0.619);
+        max-width: 240px;
+        transform: translate(0px, -63px);
+        z-index: 5!important;
+        position: relative;
+        display: block;
+    }
+
+    .bi-heart {
+        color: white;
+      }
+
+      .bi-heart-fill {
+        color: red;
+      }
+  
+  .bi-heart:hover {
+    color: red;
+  }
+
+
+  
+
+  

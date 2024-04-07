@@ -18,6 +18,9 @@ import { RegisterUserComponent } from './auth/register-user/register-user.compon
 import { FilmsCarouselComponent } from './components/films-carousel/films-carousel.component';
 import { TokenInterceptor } from './auth/token.interceptor';
 import { FilmsCarouselItemComponent } from './components/films-carousel-item/films-carousel-item.component';
+import { FavoritesComponent } from './components/favorites/favorites.component';
+import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
+import { EllipsisPipe } from './pipes/ellipsis.pipe';
 
 
 const routes: Route[] = [
@@ -42,6 +45,14 @@ const routes: Route[] = [
     component: RegisterUserComponent,
   },
   {
+    path: 'favorites',
+    component: FavoritesComponent,
+  },
+  {
+    path: 'movieDetails/:id',
+    component: MovieDetailsComponent,
+  },
+  {
     path: '**',
     redirectTo: ''
   }
@@ -60,6 +71,9 @@ const routes: Route[] = [
     RegisterUserComponent,
     FilmsCarouselComponent,
     FilmsCarouselItemComponent,
+    FavoritesComponent,
+    MovieDetailsComponent,
+    EllipsisPipe,
   ],
   imports: [
     BrowserModule,

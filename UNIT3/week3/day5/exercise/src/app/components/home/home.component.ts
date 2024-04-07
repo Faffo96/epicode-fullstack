@@ -30,7 +30,7 @@ export class HomeComponent {
     this.moviesService.getMoviesTopRated().subscribe(
       (movies: Movie[]) => {
         this.topRatedMovies = movies;
-        this.randomizeTopRatedMovies();
+        this.randomTopRatedMovies =  this.randomizeMoviesArray(this.topRatedMovies);
       },
       (error: any) => {
         console.error('Error fetching movies:', error);
@@ -42,6 +42,7 @@ export class HomeComponent {
     this.moviesService.getMoviesPopular().subscribe(
       (movies: Movie[]) => {
         this.popularMovies = movies;
+        this.randomPopularMovies = this.randomizeMoviesArray(this.popularMovies)
       },
       (error: any) => {
         console.error('Error fetching movies:', error);
@@ -49,8 +50,8 @@ export class HomeComponent {
     );
   }
 
-  randomizeTopRatedMovies() {
-    const shuffled = this.topRatedMovies.slice(); // Clona l'array
+  randomizeMoviesArray(array: Movie[]): Movie[] {
+    const shuffled = array.slice(); // Clona l'array
     let currentIndex = shuffled.length;
   
     // Finché ci sono elementi rimasti da mescolare
@@ -63,7 +64,7 @@ export class HomeComponent {
       [shuffled[currentIndex], shuffled[randomIndex]] = [shuffled[randomIndex], shuffled[currentIndex]];
     }
   
-    this.randomTopRatedMovies = shuffled;
+    return shuffled;
   }
   
 

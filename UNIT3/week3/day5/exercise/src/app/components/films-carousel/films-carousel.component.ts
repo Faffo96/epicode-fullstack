@@ -8,40 +8,12 @@ import { environment } from 'src/environments/environment.development';
   templateUrl: './films-carousel.component.html',
   styleUrls: ['./films-carousel.component.scss']
 })
-export class FilmsCarouselComponent implements OnInit {
+export class FilmsCarouselComponent {
   @Input() movies: Movie[] = []; 
-  topRatedMovies: Movie[] = [];
-  popularMovies: Movie[] = [];
+  @Input() topRatedMovies: Movie[] = [];
+  @Input() popularMovies: Movie[] = [];
   https = environment.https;
 
   constructor(private moviesService: MoviesService) {}
-
-
-  ngOnInit(): void {
-    this.fetchMoviesTopRated();
-    this.fetchMoviesPopular();
-  }
-
-  fetchMoviesTopRated(): void {
-    this.moviesService.getMoviesTopRated().subscribe(
-      (movies: Movie[]) => {
-        this.topRatedMovies = movies;
-      },
-      (error: any) => {
-        console.error('Error fetching movies:', error);
-      }
-    );
-  }
-
-  fetchMoviesPopular(): void {
-    this.moviesService.getMoviesPopular().subscribe(
-      (movies: Movie[]) => {
-        this.popularMovies = movies;
-      },
-      (error: any) => {
-        console.error('Error fetching movies:', error);
-      }
-    );
-  }
 }
 

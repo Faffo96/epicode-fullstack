@@ -20,7 +20,9 @@ export class RegisterUserComponent {
   onSubmit(form: FormGroup) {
     console.log(form.value);
     try {
-        this.authSrv.signup(form.value).subscribe();
+      const { confirmPassword, ...userData } = form.value;
+
+        this.authSrv.signup(userData).subscribe();
         this.router.navigate(['/login']);
     } catch (error) {
         console.error(error);

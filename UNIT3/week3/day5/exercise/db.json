@@ -2,48 +2,29 @@
   "users": [
     {
       "email": "fabioscar96@gmail.com",
-      "password": "$2a$10$M0dDqq3EDJoMb5OQblBq8.dMXkUoprzRvkGsPS7xMlOyNgPejUdb6",
+      "password": "$2a$10$TQk60EkaEJfEKIS7/P9/bOIu2sNKfHWPNizxmgjl7UY5epCqp2RCO",
       "firstName": "Fabio",
       "lastName": "Scaramozzino",
-      "confirmPassword": "12345678",
       "gender": "Male",
       "language": "Italiano",
       "profileImg": null,
-      "biography": "Mi chiamo Fabio",
-      "username": "faff",
-      "id": 1
-    }
-  ],
-  "favorites": [
-    {
-      "userId": 2,
-      "movieId": 460465,
-      "id": 6
+      "biography": "Ciao mi chiamo Fabio",
+      "username": "Faff",
+      "id": 1,
+      "favorites": []
     },
     {
-      "userId": 3,
-      "movieId": 804435,
-      "id": 9
-    },
-    {
-      "userId": 3,
-      "movieId": 399566,
-      "id": 10
-    },
-    {
-      "userId": 2,
-      "movieId": 635302,
-      "id": 19
-    },
-    {
-      "userId": 2,
-      "movieId": 567189,
-      "id": 26
-    },
-    {
-      "userId": 2,
-      "movieId": 615457,
-      "id": 27
+      "email": "alien@gmail.com",
+      "password": "$2a$10$rf3GzMq4SJnDaWDCSfNWeetsJaMUa0GBAz6vw9ZZCQMTb5BDzez5O",
+      "firstName": "Alienware",
+      "lastName": "R2",
+      "gender": "Male",
+      "language": "English",
+      "profileImg": null,
+      "biography": "Hi, my name is Alien",
+      "username": "Alien",
+      "id": 2,
+      "favorites": []
     }
   ],
   "genres": [

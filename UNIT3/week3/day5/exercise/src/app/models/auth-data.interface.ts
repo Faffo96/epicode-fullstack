@@ -1,8 +1,17 @@
+import { Movie } from "./movie.interface"
+
 export interface AuthData {
     accessToken: string,
     user: {
-        name: string,
-        id: string,
-        email: string
+        id: number,
+        firstName: string,
+        lastName: string,
+        email: string,
+        password: string,
+        gender: string,
+        language: string,
+        profileImg: File,
+        biography: string,
+        username: string
     }
 }

@@ -1,3 +1,5 @@
+import { Movie } from "./movie.interface"
+
 export interface User {
     firstName: string,
     lastName: string,
@@ -7,5 +9,6 @@ export interface User {
     language: string,
     profileImg: File,
     biography: string,
-    username: string
+    username: string,
+    favorites: Array<Movie>
 }
