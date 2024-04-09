@@ -1,29 +1,30 @@
 .translateY {
-    line-height: 1.2;
-    font-size:0.9rem;
-    border-radius:5px;
-    padding: 0px 8px;
-    background-color: rgba(0, 0, 0, 0.619);
-        max-width: 240px;
-        transform: translate(0px, -63px);
-        z-index: 5!important;
-        position: relative;
-        display: block;
-    }
+  line-height: 1.2;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  padding: 0px 8px;
+  background-color: rgba(0, 0, 0, 0.619);
+  max-width: 280px;
+  transform: translate(0px, -63px);
+  z-index: 5 !important;
+  position: relative;
+  display: block;
+}
 
-    .bi-heart {
-        color: white;
-      }
+.bi-heart {
+  color: white;
+  cursor: pointer;
+ /*  position: absolute;
+  z-index: 100;
+  bottom: 36%;
+  right: 16%; */
+}
 
-      .bi-heart-fill {
-        color: red;
-      }
-  
-  .bi-heart:hover {
-    color: red;
-  }
+.bi-heart-fill {
+  color: red;
+  cursor: pointer;
+}
 
-
-  
-
-  
+.bi-heart:hover {
+  color: red;
+}
