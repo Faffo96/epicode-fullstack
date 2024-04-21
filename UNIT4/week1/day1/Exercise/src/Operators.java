@@ -1,29 +1,6 @@
 
 public class Operators {
 
-    public static void main(String[] args) {
-
-
-        String[] words = new String[5];
-        words[0] = "Piacere ";
-        words[1] = "è ";
-        words[2] = "il ";
-        words[3] = "mio ";
-        words[4] = "nome.";
-
-        
-        System.out.println(operation(2, 2));
-
-        System.out.println(concat("ciao,", 4));
-
-        System.out.println(arrayStringsConcat(words, "Fabio"));
-
-        System.out.println(concat3("ciao ", "piacere ", "Fabio "));
-
-        System.out.println(evenOdd(5));
-
-        System.out.println(triangleArea(5, 5 , 10));
-}
 public static int operation(int x, int y){
             return x * y;
         }
@@ -65,6 +42,4 @@ public static double triangleArea(int sideA, int sideB, int sideC) {
     double areaSquared = semiPerimeter * (semiPerimeter - sideA) * (semiPerimeter - sideB) * (semiPerimeter - sideC);
     return Math.sqrt(areaSquared);
 }
-
-ciao
 }
