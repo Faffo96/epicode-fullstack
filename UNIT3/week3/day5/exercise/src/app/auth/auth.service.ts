@@ -1,20 +1,17 @@
-import { Injectable, inject } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Register } from '../models/register.interface';
 import { environment } from 'src/environments/environment.development';
-import { BehaviorSubject, Observable, throwError, from } from 'rxjs';
+import { BehaviorSubject, throwError } from 'rxjs';
 import { catchError, tap } from 'rxjs/operators';
 import { Router } from '@angular/router';
 import { AuthData } from '../models/auth-data.interface';
 import { JwtHelperService } from '@auth0/angular-jwt';
-import { Auth, createUserWithEmailAndPassword, updateProfile} from '@angular/fire/auth';
 
 @Injectable({
     providedIn: 'root',
 })
 export class AuthService {
-    firebaseAuth: Auth; 
-
     apiURL = environment.apiURL;
     jwtHelper = new JwtHelperService();
 
@@ -23,9 +20,7 @@ export class AuthService {
     user$ = this.authSub.asObservable();
     timeOut: any;
 
-    constructor(private http: HttpClient, private router: Router, auth: Auth) {
-        this.firebaseAuth = auth;
-    }
+    constructor(private http: HttpClient, private router: Router) {}
 
     login(data: { email: string; password: string }) {
         return this.http.post<AuthData>(`${this.apiURL}login`, data).pipe(
@@ -39,15 +34,6 @@ export class AuthService {
             }),
             catchError(this.errors)
         );
-    }
-
-    register(email:string, username: string, password: string): Observable<void> {
-        const promise = createUserWithEmailAndPassword(this.firebaseAuth,
-            email,
-            password,
-            ).then(response => updateProfile(response.user, {displayName: username}))
-
-            return from(promise)
     }
 
     signup(data: Register) {

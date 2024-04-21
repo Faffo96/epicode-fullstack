@@ -22,10 +22,6 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { MovieDetailsComponent } from './components/movie-details/movie-details.component';
 import { EllipsisPipe } from './pipes/ellipsis.pipe';
 import { AuthGuard } from './auth/auth.guard';
-import { appConfig } from './app.config';
-import { AngularFireModule } from '@angular/fire/compat';
-import { AngularFireAuthModule } from '@angular/fire/compat/auth';
-import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 
 
 const routes: Route[] = [
@@ -68,16 +64,6 @@ const routes: Route[] = [
   }
 ]
 
-const firebaseConfig = {
-  apiKey: "AIzaSyAXhRwC6dmETqeXVMmcL35GKgkZeeiuUUc",
-  authDomain: "netflix-clone-ca824.firebaseapp.com",
-  projectId: "netflix-clone-ca824",
-  storageBucket: "netflix-clone-ca824.appspot.com",
-  messagingSenderId: "919652111338",
-  appId: "1:919652111338:web:3874ea9651f648ef3b9893",
-  measurementId: "G-HF1BKB3C1V"
-};
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -99,22 +85,16 @@ const firebaseConfig = {
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
-    RouterModule.forRoot([]), // Assicurati di importare RouterModule.forRoot([])
-    AngularFireModule.initializeApp(firebaseConfig), 
-    AngularFireAuthModule,
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: TokenInterceptor,
-      multi: true,
-    },
-    {
-      provide: appConfig,
-      useValue: appConfig
-    }
+      multi: true
+  }
   ],
   bootstrap: [AppComponent]
 })

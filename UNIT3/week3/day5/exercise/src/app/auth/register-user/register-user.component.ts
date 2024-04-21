@@ -22,12 +22,6 @@ export class RegisterUserComponent {
     try {
         const { confirmPassword, ...userData } = form.value;
         const newUser: User = { ...userData, favorites: [] }; // Creazione del nuovo utente con la proprietà favorites vuota
-        
-        this.authSrv.register(form.value.email, form.value.username, form.value.password)
-        .subscribe(() => {
-          this.router.navigateByUrl('/');
-        })
-        
         this.authSrv.signup(newUser).subscribe(() => {
             this.router.navigate(['/login']);
         });
@@ -39,16 +33,16 @@ export class RegisterUserComponent {
 
   ngOnInit(): void {
     this.signupForm = this.fb.group({
-      firstName: [null, [/* Validators.required */, Validators.maxLength(15)]],
-      lastName: [null, [/* Validators.required */, Validators.maxLength(15)]],
-      email: [null, [/* Validators.required */, Validators.maxLength(25)]],
-      password: [null, [/* Validators.required */, /* Validators.minLength(8) */]],
-      confirmPassword: [null, /* Validators.required */],
-      gender: [null, [/* Validators.required */]],
-      language: [null, [/* Validators.required */]],
+      firstName: [null, [Validators.required, Validators.maxLength(15)]],
+      lastName: [null, [Validators.required, Validators.maxLength(15)]],
+      email: [null, [Validators.required, Validators.maxLength(25)]],
+      password: [null, [Validators.required, Validators.minLength(8)]],
+      confirmPassword: [null, Validators.required],
+      gender: [null, [Validators.required]],
+      language: [null, [Validators.required]],
       profileImg: [null, this.fileTypeValidator(['jpeg', 'png', 'gif'])], // Utilizza la tua funzione di validazione
-      biography: [null, [/* Validators.required */, Validators.maxLength(700)]],
-      username: [null, [/* Validators.required */, /* Validators.minLength(4) */, Validators.maxLength(15)]],
+      biography: [null, [Validators.required, Validators.maxLength(700)]],
+      username: [null, [Validators.required, Validators.minLength(4), Validators.maxLength(15)]],
     }, { validator: this.passwordMatchValidator });
     
 
