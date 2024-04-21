@@ -4,7 +4,7 @@ import java.util.Scanner;
 
     public class SwitchTest {
 
-        public static void main(String[] args) {
+        public static void select() {
             Scanner scanner = new Scanner(System.in);
             System.out.println("Inserisci un numero intero tra 0 e 3: ");
             int number = scanner.nextInt();

@@ -3,12 +3,12 @@ import java.util.Scanner;
 
 public class While {
 
-    public static void main(String[] args) {
+    public static void whilee() {
         Scanner scanner = new Scanner(System.in);
         String input = "";
 
         while (!input.equals(":q")) {
-            System.out.println("Inserisci una stringa separata da virgole: ");
+            System.out.println("Inserisci una stringa separata da virgole. Per interrompere inserire :q");
             input = scanner.nextLine();
 
             if (!input.equals(":q")) {

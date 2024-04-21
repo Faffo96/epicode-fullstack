@@ -18,21 +18,4 @@ public class ConditionalControls {
             return false;
         }
     }
-
-    public static void main(String[] args) {
-        String stringa = "Hello, World!";
-        int anno = 2024;
-
-        if (pariDispari("Hello, World!")) {
-            System.out.println("La stringa ha un numero di caratteri pari.");
-        } else {
-            System.out.println("La stringa ha un numero di caratteri dispari.");
-        }
-
-        if (annoBisestile(2024)) {
-            System.out.println("L'anno è un anno bisestile.");
-        } else {
-            System.out.println("L'anno non è un anno bisestile.");
-        }
-    }
 }

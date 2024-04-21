@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class For {
 
-    public static void main(String[] args) {
+    public static void countdown() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Inserisci un numero intero: ");
         int number = scanner.nextInt();
