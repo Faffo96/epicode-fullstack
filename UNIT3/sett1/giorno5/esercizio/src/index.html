@@ -16,12 +16,7 @@
    <app-root></app-root>
 
 
-   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-      crossorigin="anonymous"></script>
+
    <script type="module">
       // Import the functions you need from the SDKs you need
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
@@ -44,32 +39,10 @@
       // Initialize Firebase
       const app = initializeApp(firebaseConfig);
       const analytics = getAnalytics(app);
-
-      document.addEventListener('DOMContentLoaded', function () {
-         // Non è necessario richiamare firebase.initializeApp() di nuovo
-         // Utilizza l'istanza app già creata con initializeApp()
-         // const app = firebase.initializeApp(firebaseConfig);
-         // const analytics = firebase.getAnalytics(app);
-      });
    </script>
-   <!-- update the version number as needed -->
-   <script defer src="/__/firebase/10.9.0/firebase-app-compat.js"></script>
-   <!-- include only the Firebase features as you need -->
-   <script defer src="/__/firebase/10.9.0/firebase-auth-compat.js"></script>
-   <script defer src="/__/firebase/10.9.0/firebase-database-compat.js"></script>
-   <script defer src="/__/firebase/10.9.0/firebase-firestore-compat.js"></script>
-   <script defer src="/__/firebase/10.9.0/firebase-functions-compat.js"></script>
-   <script defer src="/__/firebase/10.9.0/firebase-messaging-compat.js"></script>
-   <script defer src="/__/firebase/10.9.0/firebase-storage-compat.js"></script>
-   <script defer src="/__/firebase/10.9.0/firebase-analytics-compat.js"></script>
-   <script defer src="/__/firebase/10.9.0/firebase-remote-config-compat.js"></script>
-   <script defer src="/__/firebase/10.9.0/firebase-performance-compat.js"></script>
-   <!-- 
-  initialize the SDK after all desired features are loaded, set useEmulator to false
-  to avoid connecting the SDK to running emulators.
--->
-   <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"></script>
 </body>
 
 </html>
