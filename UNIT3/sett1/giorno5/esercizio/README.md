@@ -25,7 +25,7 @@ I focused on those main objectives:
 
 ## Table of Contents 
 
-- [How it is structured](#How-it-is-structured)
+- [How it is structured](#How-it-is-structured) 
 - [How it work](#how-it-work)
 
 <br> 
