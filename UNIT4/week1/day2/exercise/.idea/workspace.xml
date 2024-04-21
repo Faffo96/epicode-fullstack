@@ -4,14 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c1224e0d-90b7-49ae-b5e9-05df222c110d" name="Changes" comment="">
+    <list default="true" id="c1224e0d-90b7-49ae-b5e9-05df222c110d" name="Changes" comment="S13L5">
       <change beforePath="$PROJECT_DIR$/../../../../UNIT1/sett2/giorno2" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../UNIT1/sett2/giorno2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cycles/For.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cycles/For.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cycles/SwitchTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cycles/SwitchTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Cycles/While.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cycles/While.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conditionalControls/ConditionalControls.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/conditionalControls/ConditionalControls.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,7 +42,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Epicode-exercises/UNIT4/week1/day2/exercise",
+    "last_opened_file_path": "D:/Epicode-exercises/UNIT4/week1/day3/exercise",
     "onboarding.tips.debug.path": "D:/Epicode-exercises/UNIT4/week1/day2/exercise/src/Main.java"
   }
 }]]></component>
@@ -61,6 +55,19 @@
       <option name="presentableId" value="Default" />
       <updated>1713361683442</updated>
     </task>
+    <task id="LOCAL-00001" summary="S13L5">
+      <option name="closed" value="true" />
+      <created>1713693804985</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713693804985</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="S13L5" />
+    <option name="LAST_COMMIT_MESSAGE" value="S13L5" />
   </component>
 </project>
