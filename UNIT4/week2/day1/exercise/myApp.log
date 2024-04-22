@@ -1,0 +1,13 @@
+2024-04-22 16:52:34,263 INFO [main] logger1 [Main.java:11] -- Launching app..
+2024-04-22 16:53:53,902 INFO [main] logger1 [Main.java:11] -- Launching app..
+2024-04-22 16:54:22,588 INFO [main] logger1 [Main.java:53] -- Closing app..
+2024-04-22 16:57:43,518 INFO [main] logger1 [Main.java:11] -- Launching app..
+2024-04-22 16:58:51,302 INFO [main] logger1 [Main.java:11] -- Launching app..
+2024-04-22 16:59:00,154 INFO [main] logger1 [Main.java:11] -- Launching app..
+2024-04-22 16:59:10,780 INFO [main] logger1 [Main.java:53] -- Closing app..
+2024-04-22 17:53:03,425 INFO [main] logger1 [Main.java:11] -- Launching app..
+2024-04-22 17:53:17,332 INFO [main] logger1 [Main.java:53] -- Closing app..
+2024-04-22 17:54:41,151 INFO [main] logger1 [Main.java:12] -- Launching app..
+2024-04-22 17:54:50,059 INFO [main] logger1 [Main.java:12] -- Launching app..
+2024-04-22 17:55:28,857 INFO [main] logger1 [Main.java:12] -- Launching app..
+2024-04-22 17:55:33,850 INFO [main] logger1 [Main.java:58] -- Closing app..
