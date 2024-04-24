@@ -6,9 +6,6 @@ import multimediaFiles.Video;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
-
-        public class Main {
             public static void main(String[] args) {
                 Scanner scanner = new Scanner(System.in);
                 MultimediaFile[] folder = new MultimediaFile[5];
@@ -62,6 +59,4 @@ public class Main {
 
                 scanner.close();
             }
-        }
-    }
 }
