@@ -24,25 +24,33 @@ public class Main {
 
         String response = scanner.nextLine();
         if (response.equalsIgnoreCase("Y")) {
-            int newNumber;
+            int newNumber = 1;
             do {
-                System.out.println("Which position do you want change? (0-4)");
-                int i = scanner.nextInt();
-                scanner.nextLine();
-                System.out.println("Insert the new number: (0 will end the program.)");
-                newNumber = scanner.nextInt();
-                scanner.nextLine();
-                if (newNumber != 0) {
-                    a1.replaceArrayI(i, newNumber);
-
-                    System.out.println("Do you want to change an other one? (Y/N)");
-                    response = scanner.nextLine();
-                    if (response.equalsIgnoreCase("N")) {
-                        newNumber = 0;
+                try {
+                    System.out.println("Which position do you want change? (0-4)");
+                    int i = scanner.nextInt();
+                    scanner.nextLine();
+                    if (i < 0 || i > 4) {
+                        throw new IllegalArgumentException("Input must be between 0 and 4.");
                     }
+
+                    System.out.println("Insert the new number: (0 will end the program.)");
+                    newNumber = scanner.nextInt();
+                    scanner.nextLine();
+                    if (newNumber != 0) {
+                        a1.replaceArrayI(i, newNumber);
+
+                        System.out.println("Do you want to change an other one? (Y/N)");
+                        response = scanner.nextLine();
+                        if (response.equalsIgnoreCase("N")) {
+                            newNumber = 0;
+                        }
+                    }
+                } catch (IllegalArgumentException e) {
+                    System.out.println("Error: " + e.getMessage());
+                    System.out.println("Please enter a number between 0 and 4.");
+                    scanner.nextLine();
                 }
-
-
             } while (newNumber != 0);
         } else {
             System.out.println("No changes made.");
