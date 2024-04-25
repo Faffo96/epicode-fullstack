@@ -3,8 +3,8 @@ package RandomNumbers;
 import java.util.*;
 
 public class RandomNumbers {
-    public static ArrayList<Integer> generateRandomNumbers(int randomQuantity) {
-        ArrayList<Integer> randomNumbers = new ArrayList<>();
+    public static List<Integer> generateRandomNumbers(int randomQuantity) {
+        List<Integer> randomNumbers = new ArrayList<>();
         Random random = new Random();
 
         for (int i = 0; i < randomQuantity; i++) {
@@ -16,15 +16,15 @@ public class RandomNumbers {
         return randomNumbers;
     }
 
-    public static ArrayList<Integer> invertedRandomNumbers(ArrayList<Integer> array) {
-        ArrayList<Integer> invertedArray = new ArrayList<>(array);
+    public static List<Integer> invertedRandomNumbers(List<Integer> array) {
+        List<Integer> invertedArray = new ArrayList<>(array);
         Collections.reverse(invertedArray);
         invertedArray.addAll(array);
         return invertedArray;
     }
 
-    public static ArrayList<Integer> evenOdd(ArrayList<Integer> array, boolean bool) {
-        ArrayList<Integer> result = new ArrayList<>();
+    public static List<Integer> evenOdd(List<Integer> array, boolean bool) {
+        List<Integer> result = new ArrayList<>();
         if (bool) {
             for (int num : array) {
                 if (num % 2 == 0 && num != 0) {
