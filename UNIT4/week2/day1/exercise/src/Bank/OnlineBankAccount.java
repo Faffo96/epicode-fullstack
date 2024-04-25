@@ -1,4 +1,4 @@
-package bank;
+package Bank;
 
 public class OnlineBankAccount extends BankAccount {
 

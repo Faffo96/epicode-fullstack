@@ -1,4 +1,4 @@
-package bank;
+package Bank;
 
 public class BankException extends Exception {
     public BankException(String message) {

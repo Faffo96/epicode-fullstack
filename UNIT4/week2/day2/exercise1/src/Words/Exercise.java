@@ -1,4 +1,4 @@
-package Parole;
+package Words;
 
 import java.util.HashSet;
 import java.util.LinkedList;
