@@ -20,3 +20,7 @@
 2024-04-25 18:38:48,018 INFO [main] logger1 [Main.java:12] -- Launching app..
 2024-04-25 18:38:53,177 INFO [main] logger1 [Main.java:12] -- Launching app..
 2024-04-25 18:40:22,600 INFO [main] logger1 [Main.java:66] -- Closing app..
+2024-04-25 18:43:46,738 INFO [main] logger1 [UseRandom10.java:13] -- Launching app..
+2024-04-25 18:44:14,651 INFO [main] logger1 [UseRandom10.java:13] -- Launching app..
+2024-04-25 18:44:44,364 INFO [main] logger1 [UseRandom10.java:13] -- Launching app..
+2024-04-25 18:44:58,802 INFO [main] logger1 [UseRandom10.java:65] -- Closing app..
