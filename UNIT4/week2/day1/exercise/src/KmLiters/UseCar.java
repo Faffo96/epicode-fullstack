@@ -7,6 +7,8 @@ public class UseCar {
         Car c3 = new Car(30.0, 12.0);
         Car c4 = new Car(40.0, 20.0);
 
+        c3.setLiters(0.0);
+
         c1.getKmLiter();
         c2.getKmLiter();
         c3.getKmLiter();

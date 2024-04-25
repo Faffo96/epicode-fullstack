@@ -22,13 +22,21 @@ public class Car {
     }
 
     public void setLiters(Double liters) {
-        this.liters = liters;
+            this.liters = liters;
     }
 
     public void getKmLiter() {
-        Double kmLiter = this.km / this.liters;
-        String formattedKmLiter = String.format("%.2f", kmLiter);
-        System.out.println(formattedKmLiter + " Kms were covered with each litre.");
+        try {
+            if (this.liters != 0) {
+                Double kmLiter = this.km / this.liters;
+                String formattedKmLiter = String.format("%.2f", kmLiter);
+                System.out.println(formattedKmLiter + " Kms were covered with each litre.");
+            } else {
+                throw new IllegalArgumentException("Division by zero. Liters cannot be zero.");
+            }
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error: " + e.getMessage());
+        }
     }
 
 }
