@@ -1,0 +1,36 @@
+Il debug in IntelliJ IDEA Community Edition è un processo potente e intuitivo. Ecco una guida dettagliata su come utilizzare le funzionalità di debug, come la gestione dei breakpoint, l'osservazione delle variabili e l'esecuzione passo-passo del codice.
+
+1. Impostare i Breakpoint
+Un breakpoint è un segnale che dice all'IDE di interrompere l'esecuzione del programma in un punto specifico.
+
+Aggiungere un Breakpoint: Fai clic sulla barra accanto al numero di riga nel tuo codice sorgente dove desideri interrompere l'esecuzione. Apparirà un cerchio rosso, indicando un breakpoint.
+Disabilitare/Abilitare un Breakpoint: Fai clic sul cerchio rosso per disabilitare temporaneamente il breakpoint (diventerà grigio). Clicca di nuovo per riabilitarlo.
+Rimuovere un Breakpoint: Fai clic con il pulsante destro del mouse sul breakpoint e seleziona "Remove Breakpoint", oppure fai clic sul breakpoint e premi `Delete`.
+
+2. Avviare il Debug
+Per iniziare a eseguire il programma in modalità debug, premi il pulsante "Debug" (simbolo di un coccinella) nella barra degli strumenti, oppure premi `Shift + F9`.
+
+3. Controllare l'Esecuzione
+Una volta che il programma raggiunge un breakpoint, puoi controllare l'esecuzione con diverse opzioni:
+
+Step Over (`F8`): Esegue la prossima istruzione del programma, ma non entra nei metodi (le chiamate ai metodi vengono eseguite in un solo passo).
+Step Into (`F7`): Se la prossima istruzione è una chiamata a un metodo, "Step Into" ti porterà all'interno di quel metodo.
+Force Step Into (`Alt + Shift + F7`): Simile a "Step Into", ma forza l'ingresso anche nei metodi che sono normalmente saltati (come quelli delle librerie standard).
+Step Out (`Shift + F8`): Esegue il resto del metodo corrente e si ferma al ritorno al metodo chiamante.
+Run to Cursor (`Alt + F9`): Riprende l'esecuzione del programma fino alla posizione del cursore.
+
+4. Osservazione delle Variabili
+Variables Window: Nella finestra "Debug", troverai il pannello "Variables", che mostra le variabili locali nel contesto corrente.
+Evaluate Expression (`Alt + F8`): Permette di valutare espressioni o eseguire codice al volo.
+Adding Watches: Aggiungi espressioni o variabili specifiche nella sezione "Watches" per monitorarle durante il debug.
+Inspecting Variables: Puoi anche ispezionare le variabili semplicemente passando il mouse sopra di esse nel codice sorgente durante una sessione di debug.
+
+5. Breakpoint Condizionali
+Puoi impostare i breakpoint per attivarsi solo quando una condizione specifica è vera. Fai clic destro sul breakpoint e scegli "Edit Breakpoints". Qui, puoi impostare una condizione che deve essere vera per attivare il breakpoint.
+
+6. Gestione delle Eccezioni
+Puoi impostare i breakpoint sulle eccezioni. IntelliJ si fermerà ogni volta che viene lanciata un'eccezione specifica. Vai su "Run" > "View Breakpoints" (`Ctrl + Shift + F8`) e aggiungi un "Java Exception Breakpoints".
+
+7. Logging con i Breakpoint
+Invece di interrompere l'esecuzione, puoi configurare un breakpoint per registrare un messaggio e continuare. Questo è utile per il tracing. Fai clic destro sul breakpoint, seleziona "Log evaluated Expression" e inserisci l'espressione che vuoi loggare.
+
