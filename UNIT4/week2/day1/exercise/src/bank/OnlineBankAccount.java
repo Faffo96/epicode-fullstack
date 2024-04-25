@@ -18,6 +18,8 @@ public class OnlineBankAccount extends BankAccount {
     public void withdraw(double amount) throws BankException {
         if (amount <= maxWithdrawal) {
             super.withdraw(amount);
+        } else {
+            throw new BankException("Withdraw limit:" + maxWithdrawal);
         }
     }
 }

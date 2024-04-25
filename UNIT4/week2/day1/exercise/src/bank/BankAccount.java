@@ -13,10 +13,14 @@ public class BankAccount {
     }
 
     void withdraw(double amount) throws BankException {
-        if (transactions < maxTransactions) {
-            balance = balance - amount;
+        if (amount < balance) {
+            if (transactions < maxTransactions) {
+                balance = balance - amount;
+            } else {
+                balance = balance - amount - 0.50;
+            }
         } else {
-            balance = balance - amount - 0.50;
+            throw new BankException("Insufficient balance.");
         }
         transactions++;
     }
