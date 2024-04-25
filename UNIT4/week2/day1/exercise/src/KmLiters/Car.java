@@ -1,6 +1,10 @@
 package KmLiters;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class Car {
+    static Logger logger = LoggerFactory.getLogger("root");
     private Double km;
     private Double liters;
 
@@ -35,7 +39,7 @@ public class Car {
                 throw new IllegalArgumentException("Division by zero. Liters cannot be zero.");
             }
         } catch (IllegalArgumentException e) {
-            System.out.println("Error: " + e.getMessage());
+            logger.error(e.getMessage());
         }
     }
 

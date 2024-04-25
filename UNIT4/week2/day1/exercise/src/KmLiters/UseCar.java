@@ -1,6 +1,10 @@
 package KmLiters;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 public class UseCar {
+
     public static void main(String[] args) {
         Car c1 = new Car(11.5, 5.2);
         Car c2 = new Car(20.0, 10.0);
