@@ -7,6 +7,7 @@ import Order.Order;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -129,12 +130,9 @@ public class Main {
 
         System.out.println("BOYS products with 10% discount:");
 
-        /*List<Product> boysDiscountedProducts = productList.stream().filter(product -> product.getCategory() == Category.BOYS).*/
-
-        List<Product> boysDiscountedProducts = productList.stream().filter(product -> product.getCategory() == Category.BOYS).map(product -> {
-            double discountedPrice = product.getPrice() * 0.9;
-            return new Product(product.getId(), product.getName(), product.getCategory(), discountedPrice);
-        }).toList();
+        List<Product> boysDiscountedProducts = productList.stream()
+                .filter(product -> product.getCategory() == Category.BOYS)
+                .peek(product -> product.setPrice(product.getPrice() * 0.9)).toList();
 
         for (Product product : boysDiscountedProducts) {
             System.out.println(product);
