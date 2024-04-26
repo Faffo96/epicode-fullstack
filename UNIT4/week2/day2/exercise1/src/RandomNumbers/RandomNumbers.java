@@ -43,7 +43,6 @@ public class RandomNumbers {
 
 
     public static void main(String[] args) {
-
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("How much random numbers do you want generate?");
