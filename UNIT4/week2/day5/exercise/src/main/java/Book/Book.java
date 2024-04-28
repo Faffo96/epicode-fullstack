@@ -1,12 +1,9 @@
 package Book;
-
 import Exceptions.ArchiveException;
 import Text.Text;
 import org.jetbrains.annotations.NotNull;
-
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -26,8 +23,8 @@ public class Book extends Text {
         return author;
     }
 
-    public static void setAuthor(String author) {
-        author = author;
+    public void setAuthor(String author) {
+        this.author = author;
     }
 
     public String getGenre() {
@@ -53,11 +50,9 @@ public class Book extends Text {
                 .map(text -> (Book) text)
                 .filter(text -> text.getAuthor().equals(author))
                 .collect(Collectors.toList());
-
         if (foundBooks.isEmpty()) {
-            throw new ArchiveException("Nessun libro trovato per questo autore: " + author);
+            throw new ArchiveException("No books found for this author: " + author);
         }
-
         return foundBooks;
     }
 }

@@ -39,14 +39,14 @@ public abstract class Text {
     }
 
     public void setISBNcode(String ISBNcode) throws ArchiveException {
-        // Remove the old ISBN code from the set
+        // Remove the old ISBN code from the 'uniqueISBNs' set
         uniqueISBNs.remove(this.ISBNcode);
 
         if (uniqueISBNs.contains(ISBNcode)) {
             throw new ArchiveException("ISBN code must be unique.");
         }
         this.ISBNcode = ISBNcode;
-        // Add the new ISBN code to the set
+        // Add the new ISBN code to the 'uniqueISBNs' set
         uniqueISBNs.add(ISBNcode);
     }
 
@@ -74,10 +74,6 @@ public abstract class Text {
         return archive;
     }
 
-    public static void setArchive(List<Text> archive) {
-        Text.archive = archive;
-    }
-
     @Override
     public String toString() {
         return "Text{" +
@@ -86,6 +82,8 @@ public abstract class Text {
                 ", publicationDate=" + publicationDate +
                 ", pageNumber=" + pageNumber;
     }
+
+    /*MY METHODS*/
 
     public static void addToArchive(Text text) throws IOException {
         archive.add(text);
@@ -104,7 +102,7 @@ public abstract class Text {
                 .findFirst();
 
         if (foundText.isEmpty()) {
-            throw new ArchiveException("Nessun testo trovato per l'ISBN: " + ISBNcode);
+            throw new ArchiveException("No text found with this ISBN: " + ISBNcode);
         }
 
         return foundText.get();
@@ -122,7 +120,7 @@ public abstract class Text {
                 .collect(Collectors.toList());
 
         if (foundTexts.isEmpty()) {
-            throw new ArchiveException("Nessun testo trovato per questa data di pubblicazione: " + publicationDate);
+            throw new ArchiveException("No texts found for this publication date: " + publicationDate);
         }
 
         return foundTexts;
@@ -140,10 +138,9 @@ public abstract class Text {
                     return "";
                 }
             }).collect(Collectors.joining("#"));
-
             FileUtils.write(file, textStr, Charset.defaultCharset());
         } catch (IOException e) {
-            System.out.println("Errore nella scrittura del file.");
+            System.out.println("An error occurred while writing the file.");
         }
     }
 
@@ -177,7 +174,7 @@ public abstract class Text {
                 }
             }
         } catch (IOException e) {
-            System.out.println("Errore di input/output durante il ripristino dell'archivio.");
+            System.out.println("Input/output error occurred when restoring archive.");
         }
     }
 

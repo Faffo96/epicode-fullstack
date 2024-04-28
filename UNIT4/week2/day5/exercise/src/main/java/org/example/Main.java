@@ -1,5 +1,7 @@
 package org.example;
 import Book.Book;
+import Enums.Periodicity;
+import Magazine.Magazine;
 import Text.Text;
 import java.time.LocalDate;
 import java.util.List;
@@ -16,7 +18,6 @@ public class Main {
         Book b2 = new Book("abcd2", "Green", dataSpecificata2, 40, "Mario", "Horror");
         Book b3 = new Book("abcd3", "Blue", dataSpecificata, 56, "Pino", "Horror");
         Magazine m1 = new Magazine("abcd4", "Yellow", dataSpecificata2, 119, Periodicity.WEEKLY);
-
         Text.addToArchive(b1);
         Text.addToArchive(b2);
         Text.addToArchive(b3);
@@ -29,6 +30,12 @@ public class Main {
         /*System.out.println("Removing Book b1 from archive by ISBN Code..");
 
         Text.removeByISBN("abcd");*/
+
+        System.out.println();
+
+        System.out.println("Search b2 by ISBN code 'abcd2'");
+
+        System.out.println(Text.findByISBN("abcd2"));
 
         System.out.println();
 
