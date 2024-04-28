@@ -48,7 +48,7 @@ public class Book extends Text {
         List<Book> foundBooks = archive.stream()
                 .filter(text -> text instanceof Book)
                 .map(text -> (Book) text)
-                .filter(text -> text.getAuthor().equals(author))
+                .filter(text -> text.getAuthor().toLowerCase().contains(author.toLowerCase()))
                 .collect(Collectors.toList());
         if (foundBooks.isEmpty()) {
             throw new ArchiveException("No books found for this author: " + author);

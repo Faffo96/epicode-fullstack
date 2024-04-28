@@ -2,8 +2,11 @@ package Text;
 
 import Enums.Periodicity;
 import Exceptions.ArchiveException;
+import ch.qos.logback.core.LogbackException;
 import org.apache.commons.io.FileUtils;
 import org.jetbrains.annotations.NotNull;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,7 +14,6 @@ import java.nio.charset.Charset;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.stream.Collectors;
-
 
 public abstract class Text {
     private String ISBNcode;
@@ -22,10 +24,12 @@ public abstract class Text {
     protected static Set<String> uniqueISBNs = new HashSet<>();
     protected static List<Text> archive = new ArrayList<>();
     private final static File file = new File("./persistance/persistentArchive.txt");
+    static Logger logger = LoggerFactory.getLogger("logger1");
 
     public Text(String ISBNcode, String title, LocalDate publicationDate, Integer pageNumber) throws IOException {
         if (uniqueISBNs.contains(ISBNcode)) {
-            throw new IllegalArgumentException("ISBN code must be unique.");
+            writeInLog("error", "ISBN code in constructor must be unique.");
+            throw new IllegalArgumentException("ISBN code in constructor must be unique.");
         }
         this.ISBNcode = ISBNcode;
         this.title = title;
@@ -43,7 +47,8 @@ public abstract class Text {
         uniqueISBNs.remove(this.ISBNcode);
 
         if (uniqueISBNs.contains(ISBNcode)) {
-            throw new ArchiveException("ISBN code must be unique.");
+            writeInLog("error", "ISBN code in setISBNcode() must be unique.");
+            throw new ArchiveException("ISBN code in setISBNcode() must be unique.");
         }
         this.ISBNcode = ISBNcode;
         // Add the new ISBN code to the 'uniqueISBNs' set
@@ -86,6 +91,7 @@ public abstract class Text {
     /*MY METHODS*/
 
     public static void addToArchive(Text text) throws IOException {
+        writeInLog("info", text);
         archive.add(text);
         saveArchiveInTxt(archive);
     }
@@ -102,6 +108,7 @@ public abstract class Text {
                 .findFirst();
 
         if (foundText.isEmpty()) {
+            writeInLog("error", "No text found with this ISBN: " + ISBNcode);
             throw new ArchiveException("No text found with this ISBN: " + ISBNcode);
         }
 
@@ -120,6 +127,7 @@ public abstract class Text {
                 .collect(Collectors.toList());
 
         if (foundTexts.isEmpty()) {
+            writeInLog("error", "No texts found for this publication date: " + publicationDate);
             throw new ArchiveException("No texts found for this publication date: " + publicationDate);
         }
 
@@ -140,7 +148,8 @@ public abstract class Text {
             }).collect(Collectors.joining("#"));
             FileUtils.write(file, textStr, Charset.defaultCharset());
         } catch (IOException e) {
-            System.out.println("An error occurred while writing the file.");
+            writeInLog("error", "An error occurred while writing the file while using SaveArchiveInTxt().");
+            throw new IOException("An error occurred while writing the file while using SaveArchiveInTxt().");
         }
     }
 
@@ -174,11 +183,36 @@ public abstract class Text {
                 }
             }
         } catch (IOException e) {
+            writeInLog("error","Input/output error occurred when restoring archive." + e.getMessage());
             System.out.println("Input/output error occurred when restoring archive.");
         }
     }
 
     public static void clearArchiveTxt() {
         FileUtils.deleteQuietly(file);
+    }
+
+    @NotNull
+    public static void writeInLog(String level, Object obj) throws LogbackException {
+        switch (level.toLowerCase()) {
+            case "trace":
+                logger.trace(obj.toString());
+                break;
+            case "debug":
+                logger.debug(obj.toString());
+                break;
+            case "info":
+                logger.info(obj.toString());
+                break;
+            case "warn":
+                logger.warn(obj.toString());
+                break;
+            case "error":
+                logger.error(obj.toString());
+                break;
+            default:
+                logger.error("Invalid Logback message level. Choose between TRACE, DEBUG, INFO, WARN, ERROR.");
+                throw new LogbackException("Invalid Logback message level. Choose between TRACE, DEBUG, INFO, WARN, ERROR.");
+        }
     }
 }

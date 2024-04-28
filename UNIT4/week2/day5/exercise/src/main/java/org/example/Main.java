@@ -3,21 +3,24 @@ import Book.Book;
 import Enums.Periodicity;
 import Magazine.Magazine;
 import Text.Text;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.time.LocalDate;
 import java.util.List;
 
 public class Main {
-    public static <istanceof> void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
         Text.restoreArchive();
         List<Text> archive = Text.getArchive();
 
-        LocalDate dataSpecificata = LocalDate.of(2024, 4, 27);
-        LocalDate dataSpecificata2 = LocalDate.of(2023, 6, 21);
+        LocalDate specificDate = LocalDate.of(2024, 4, 27);
+        LocalDate specificDate2 = LocalDate.of(2023, 6, 21);
 
-        /*Book b1 = new Book("abcd", "Red", dataSpecificata, 19, "Mario", "Horror");
-        Book b2 = new Book("abcd2", "Green", dataSpecificata2, 40, "Mario", "Horror");
-        Book b3 = new Book("abcd3", "Blue", dataSpecificata, 56, "Pino", "Horror");
-        Magazine m1 = new Magazine("abcd4", "Yellow", dataSpecificata2, 119, Periodicity.WEEKLY);
+        /*Book b1 = new Book("abcd", "Red", specificDate, 19, "Mario", "Horror");
+        Book b2 = new Book("abcd2", "Green", specificDate2, 40, "Mario", "Horror");
+        Book b3 = new Book("abcd3", "Blue", specificDate, 56, "Pino", "Horror");
+        Magazine m1 = new Magazine("abcd4", "Yellow", specificDate2, 119, Periodicity.WEEKLY);
         Text.addToArchive(b1);
         Text.addToArchive(b2);
         Text.addToArchive(b3);
@@ -35,21 +38,23 @@ public class Main {
 
         System.out.println("Search b2 by ISBN code 'abcd2'");
 
-        System.out.println(Text.findByISBN("abcd2"));
+        System.out.println(Text.findByISBN("abcd"));
 
         System.out.println();
 
         System.out.println("Search by publication date '2023, 6, 21':");
 
-        for (Text text : Text.findByPublicationDate(dataSpecificata2)) {
+        for (Text text : Text.findByPublicationDate(specificDate2)) {
             System.out.println(text);
         }
 
         System.out.println();
 
-        System.out.println("Search by author 'Mario':");
+        System.out.println("Search by author 'Pin':");
 
-        System.out.println(Book.findByAuthor("Mario"));
+        for (Book book : Book.findByAuthor("Pin")) {
+            System.out.println(book);
+        }
 
         Text.saveArchiveInTxt(archive);
     }
