@@ -3,8 +3,6 @@ import Book.Book;
 import Enums.Periodicity;
 import Magazine.Magazine;
 import Text.Text;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.time.LocalDate;
 import java.util.List;
