@@ -1,9 +1,8 @@
-package org.example;
+package Main;
 import Book.Book;
 import Enums.Periodicity;
 import Magazine.Magazine;
 import Text.Text;
-
 import java.time.LocalDate;
 import java.util.List;
 
