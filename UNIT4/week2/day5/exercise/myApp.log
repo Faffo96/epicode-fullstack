@@ -1,0 +1,9 @@
+2024-05-04 01:23:07,592 ERROR [main] logger1 [Text.java:211] -- No text found with this ISBN: abcd7
+2024-05-04 01:23:39,283 ERROR [main] logger1 [Text.java:211] -- No text found with this ISBN: abcd7
+2024-05-04 01:25:34,905 ERROR [main] logger1 [Text.java:211] -- Text{ISBNcode='abcd6', title='orange', publicationDate=2023-06-21, pageNumber=319, periodicity=YEARLY}
+2024-05-04 01:26:19,585 INFO [main] logger1 [Text.java:205] -- Text{ISBNcode='abcd6', title='orange', publicationDate=2023-06-21, pageNumber=319, periodicity=YEARLY}
+2024-05-04 01:27:39,666 INFO [main] logger1 [Text.java:205] -- Text{ISBNcode='abcd6', title='orange', publicationDate=2023-06-21, pageNumber=319, periodicity=YEARLY} was added to the archive.
+2024-05-04 01:29:45,750 ERROR [main] logger1 [Text.java:212] -- ISBN code in constructor must be unique.
+2024-05-04 01:30:04,578 INFO [main] logger1 [Text.java:206] -- Text{ISBNcode='abcd6', title='orange', publicationDate=2023-06-21, pageNumber=319, periodicity=YEARLY} was added to the archive.
+2024-05-04 01:30:04,589 INFO [main] logger1 [Text.java:206] -- Archive updated.
+2024-05-04 01:30:04,595 INFO [main] logger1 [Text.java:206] -- Archive updated.

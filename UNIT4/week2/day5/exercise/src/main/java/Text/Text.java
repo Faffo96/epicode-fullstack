@@ -91,7 +91,7 @@ public abstract class Text {
     /*MY METHODS*/
 
     public static void addToArchive(Text text) throws IOException {
-        writeInLog("info", text);
+        writeInLog("info", text.toString() + " was added to the archive.");
         archive.add(text);
         saveArchiveInTxt(archive);
     }
@@ -147,6 +147,7 @@ public abstract class Text {
                 }
             }).collect(Collectors.joining("#"));
             FileUtils.write(file, textStr, Charset.defaultCharset());
+            writeInLog("info", "Archive updated.");
         } catch (IOException e) {
             writeInLog("error", "An error occurred while writing the file while using SaveArchiveInTxt().");
             throw new IOException("An error occurred while writing the file while using SaveArchiveInTxt().");

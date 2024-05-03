@@ -23,6 +23,10 @@ public class Main {
         Text.addToArchive(b3);
         Text.addToArchive(m1);*/
 
+        /*Magazine m2 = new Magazine("abcd5", "purple", specificDate2, 219, Periodicity.YEARLY);*/
+        Magazine m3 = new Magazine("abcd6", "orange", specificDate2, 319, Periodicity.YEARLY);
+        Text.addToArchive(m3);
+
         for (Text item : archive) {
             System.out.println(item);
         }
@@ -35,7 +39,7 @@ public class Main {
 
         System.out.println("Search b2 by ISBN code 'abcd2'");
 
-        System.out.println(Text.findByISBN("abcd"));
+        System.out.println(Text.findByISBN("abcd5"));
 
         System.out.println();
 

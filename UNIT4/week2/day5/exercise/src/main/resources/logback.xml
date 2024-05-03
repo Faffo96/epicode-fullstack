@@ -12,10 +12,10 @@
         </encoder>
     </appender>
 
-    <logger name="logger1" level="error" additivity="false">
+    <logger name="logger1" level="trace">
         <appender-ref ref="FILE"/>
     </logger>
-    <root level="debug">
+    <root level="trace">
         <appender-ref ref="STDOUT"/>
     </root>
 </configuration>
