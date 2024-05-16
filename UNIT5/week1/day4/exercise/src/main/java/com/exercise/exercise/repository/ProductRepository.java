@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {
     @Query("SELECT t FROM Topping t " +
-            "JOIN t.pizzas p " +
+            "JOIN t.pizzaList p " +
             "WHERE p.id = :pizzaId")
     List<Topping> getToppingsByPizzaId(@Param("pizzaId") int pizzaId);
 

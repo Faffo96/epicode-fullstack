@@ -1,11 +1,8 @@
 package com.exercise.exercise.appConfig;
 
 import com.exercise.exercise.ENUM.OrderState;
-import com.exercise.exercise.ExerciseApplication;
 import com.exercise.exercise.bean.*;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
@@ -152,15 +149,15 @@ public class AppConfig {
     }
 
     @Bean("Table1")
-    public Table table1() {
-        Table table = new Table();
-        table.setBusy(true);
-        table.setMaxSeatsNumber(2);
-        return table;
+    public DiningTable table1() {
+        DiningTable diningTable = new DiningTable();
+        diningTable.setBusy(true);
+        diningTable.setMaxSeatsNumber(2);
+        return diningTable;
     }
 
     @Bean("OrderTable1")
-    public Order orderTable1() {
+    public Order orderTable1(@Qualifier("Table1") DiningTable table1) {
         int clientQuantity = 1;
         if (clientQuantity <= table1().getMaxSeatsNumber()) {
             Order orderTable = new Order();
@@ -170,51 +167,51 @@ public class AppConfig {
             orderTable.setProducts(List.of(salamiPizza(), wine()));
             double totalPrice = orderTable.calculateTotal(clientQuantity);
             orderTable.setTotalPrice(totalPrice);
+            orderTable.setDiningTable(table1);
             return orderTable;
         }
         return null;
     }
 
     @Bean("Table2")
-    public Table table2() {
-        Table table = new Table();
-        table.setTableId(1);
-        table.setBusy(true);
-        table.setMaxSeatsNumber(3);
-        return table;
+    public DiningTable table2() {
+        DiningTable diningTable = new DiningTable();
+        diningTable.setBusy(true);
+        diningTable.setMaxSeatsNumber(3);
+        return diningTable;
     }
 
     @Bean("OrderTable2")
-    public Order orderTable2() {
+    public Order orderTable2(@Qualifier("Table2") DiningTable table2) {
         int clientQuantity = 3;
         if (clientQuantity <= table2().getMaxSeatsNumber()) {
             Order orderTable = new Order();
-            orderTable.setOrderId(1);
             orderTable.setOrderState(OrderState.SERVED);
             orderTable.setDate(LocalDateTime.now());
             orderTable.setOrderSeatsNumber(clientQuantity);
             orderTable.setProducts(List.of(margherita(), margherita(), salamiPizza(), wine(), water()));
             double totalPrice = orderTable.calculateTotal(clientQuantity);
             orderTable.setTotalPrice(totalPrice);
+            orderTable.setDiningTable(table2);
             return orderTable;
         }
         return null;
     }
 
     @Bean("Table3")
-    public Table table3() {
-        Table table = new Table();
-        table.setBusy(false);
-        table.setMaxSeatsNumber(4);
-        return table;
+    public DiningTable table3() {
+        DiningTable diningTable = new DiningTable();
+        diningTable.setBusy(false);
+        diningTable.setMaxSeatsNumber(4);
+        return diningTable;
     }
 
     @Bean("Table4")
-    public Table table4() {
-        Table table = new Table();
-        table.setBusy(false);
-        table.setMaxSeatsNumber(5);
-        return table;
+    public DiningTable table4() {
+        DiningTable diningTable = new DiningTable();
+        diningTable.setBusy(false);
+        diningTable.setMaxSeatsNumber(5);
+        return diningTable;
     }
 
 }

@@ -15,7 +15,7 @@ import java.util.List;
 public class Topping extends Product {
     private int quantity = 1;
     @ManyToMany(mappedBy = "toppings")
-    private List<Pizza> pizzas;
+    private List<Pizza> pizzaList;
 
     @Override
     public String toString() {

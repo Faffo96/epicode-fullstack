@@ -2,7 +2,7 @@ package com.exercise.exercise;
 
 import com.exercise.exercise.bean.Order;
 import com.exercise.exercise.bean.Pizza;
-import com.exercise.exercise.bean.Table;
+import com.exercise.exercise.bean.DiningTable;
 import com.exercise.exercise.bean.Topping;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -30,9 +30,9 @@ class ExerciseApplicationTests {
 
 	@Test
 	public void testTable1Creation() {
-		Table table1 = ctx.getBean("Table1", Table.class);
-		assertNotNull("Table1 bean should not be null", table1);
-		assertTrue("Table1 should be busy", table1.isBusy());
+		DiningTable diningTable1 = ctx.getBean("Table1", DiningTable.class);
+		assertNotNull("Table1 bean should not be null", diningTable1);
+		assertTrue("Table1 should be busy", diningTable1.isBusy());
 	}
 
 	@Test

@@ -1,20 +1,27 @@
 package com.exercise.exercise;
 
-import com.exercise.exercise.appConfig.AppConfig;
 import com.exercise.exercise.bean.*;
+import com.exercise.exercise.service.DiningTableService;
+import com.exercise.exercise.service.OrderService;
 import com.exercise.exercise.service.ProductService;
+import org.aspectj.weaver.ast.Or;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Component
 public class MyCommandLineRunner implements CommandLineRunner {
     @Autowired
     private ProductService productService;
+    @Autowired
+    private OrderService orderService;
+    @Autowired
+    private DiningTableService diningTableService;
 
 
     @Override
@@ -25,13 +32,17 @@ public class MyCommandLineRunner implements CommandLineRunner {
 
         System.out.println(menu);
 
-        Table table1 = ctx.getBean("Table1", Table.class);
+        DiningTable diningTable1 = ctx.getBean("Table1", DiningTable.class);
         Order orderTable1 = ctx.getBean("OrderTable1", Order.class);
-        orderTable1.setTable(table1);
+        List<Order> orders1 = new ArrayList<>();
+        orders1.add(orderTable1);
+        diningTable1.setOrders(orders1);
 
-        Table table2 = ctx.getBean("Table2", Table.class);
+        DiningTable diningTable2 = ctx.getBean("Table2", DiningTable.class);
         Order orderTable2 = ctx.getBean("OrderTable2", Order.class);
-        orderTable2.setTable(table2);
+        List<Order> orders2 = new ArrayList<>();
+        orders2.add(orderTable2);
+        diningTable2.setOrders(orders2);
 
         /*Topping t1 = ctx.getBean("TomatoSauce", Topping.class);
         productService.addProduct(t1);
@@ -70,13 +81,20 @@ public class MyCommandLineRunner implements CommandLineRunner {
         productService.addProduct(d2);
 
         Drink d3 = ctx.getBean("Lemonade", Drink.class);
-        productService.addProduct(d3);*/
+        productService.addProduct(d3);
+
+        diningTableService.addProduct(diningTable1);
+        diningTableService.addProduct(diningTable2);
+        orderService.addProduct(orderTable1);
+        orderService.addProduct(orderTable2);*/
 
         System.out.println(productService.getToppingsByPizzaId(8));
 
         System.out.println("Pizza MARGHERITA:");
 
         System.out.println(productService.getToppingsByPizzaPartialName("Marg"));
+
+        System.out.println(orderService.getPizzasByOrderId(2));
 
         /*List<Topping> toppings = menu.getToppings();
         for (int i = 0; i < toppings.size(); i++) {
@@ -94,8 +112,7 @@ public class MyCommandLineRunner implements CommandLineRunner {
         }*/
 
 
-
-        System.out.println(table1);
-        System.out.println(table2);
+        System.out.println(diningTable1);
+        System.out.println(diningTable2);
     }
 }
