@@ -143,7 +143,7 @@ public class AppConfig {
     public Menu menu() {
         Menu menu = new Menu();
         menu.setDrinks(List.of(water(), lemonade(), wine()));
-        menu.setToppings(List.of(cheese(), ham(), onions(), pineapple(), salami()));
+        menu.setToppings(List.of(tomatoSauce(), mozzarella(), cheese(), ham(), onions(), pineapple(), salami()));
         menu.setPizzas(List.of(margherita(), hawaiian(), salamiPizza()));
         return menu;
     }

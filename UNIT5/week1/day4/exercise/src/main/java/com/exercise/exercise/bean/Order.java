@@ -54,4 +54,6 @@ public class Order {
                 .mapToDouble(Product::getPrice)
                 .sum() + this.seatPrice * clientQuantity;
     }
+
+
 }

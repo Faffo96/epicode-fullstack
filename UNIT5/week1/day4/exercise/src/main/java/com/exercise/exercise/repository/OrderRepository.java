@@ -10,10 +10,10 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface OrderRepository extends JpaRepository<Order, Integer> {
-    @Query(value = "SELECT p.* FROM pizzas p JOIN order_product op ON p.id = op.product_id JOIN orders o ON op.order_id = o.order_id WHERE o.order_id = :orderId", nativeQuery = true)
-    List<Object[]> getPizzasByOrderId(@Param("orderId") int orderId);
+    /*@Query(value = "SELECT p FROM Pizza p JOIN FETCH OrderProduct op ON p.id = op.pizza.id JOIN FETCH op.order o WHERE o.id = :orderId", nativeQuery = true)
+    List<Object[]> getPizzasByOrderId(@Param("orderId") int orderId);*/
 
-    /*@Query(value = "SELECT p FROM Pizza p JOIN p.orders o WHERE o.orderId = :orderId")
+    /*@Query("SELECT p FROM Pizza p JOIN p.orders o WHERE o.orderId = :orderId")
     List<Pizza> getPizzasByOrderId(@Param("orderId") int orderId);*/
 }
 

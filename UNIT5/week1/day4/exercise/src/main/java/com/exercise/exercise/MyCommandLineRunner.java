@@ -94,7 +94,12 @@ public class MyCommandLineRunner implements CommandLineRunner {
 
         System.out.println(productService.getToppingsByPizzaPartialName("Marg"));
 
-        System.out.println(orderService.getPizzasByOrderId(2));
+        /*List<Object[]> order2 = orderService.getPizzasByOrderId(2);
+        for (int i = 0; i < order2.size(); i++) {
+            System.out.println(order2.get(i));
+        }*/
+
+        System.out.println(orderTable2.getProducts());
 
         /*List<Topping> toppings = menu.getToppings();
         for (int i = 0; i < toppings.size(); i++) {

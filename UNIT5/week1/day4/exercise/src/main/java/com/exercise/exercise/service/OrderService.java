@@ -27,7 +27,7 @@ public class OrderService {
         return orderRepository.findAll();
     }
 
-    public List<Object[]> getPizzasByOrderId(int orderId) {
+    /*public List<Object[]> getPizzasByOrderId(int orderId) {
         return orderRepository.getPizzasByOrderId(orderId);
-    }
+    }*/
 }
