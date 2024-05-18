@@ -23,4 +23,17 @@ public class Building {
         this.address = address;
         this.city = city;
     }
+
+    public Building() {
+    }
+
+    @Override
+    public String toString() {
+        return "Building{" +
+                "name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", city='" + city + '\'' +
+                ", buildingId=" + buildingId +
+                '}';
+    }
 }

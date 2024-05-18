@@ -1,5 +1,6 @@
 package com.bookingManagement.bookingManagement.Service;
 
+import com.bookingManagement.bookingManagement.Entity.Location.Building;
 import com.bookingManagement.bookingManagement.Entity.User.User;
 import com.bookingManagement.bookingManagement.Repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,5 +23,9 @@ public class UserService {
 
     public List<User> getUsers(){
         return userRepository.findAll();
+    }
+
+    public User getUserById(int userId) {
+        return userRepository.findByUserId(userId);
     }
 }
