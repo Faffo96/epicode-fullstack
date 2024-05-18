@@ -11,6 +11,8 @@ import com.bookingManagement.bookingManagement.Service.BuildingService;
 import com.bookingManagement.bookingManagement.Service.OfficeService;
 import com.bookingManagement.bookingManagement.Service.ReservationService;
 import com.bookingManagement.bookingManagement.Service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationContext;
@@ -33,6 +35,7 @@ public class Runner implements CommandLineRunner {
     private ReservationService reservationService;
     @Autowired
     private Menu menu;
+    static Logger logger = LoggerFactory.getLogger("logger1");
 
     public void run(String... args) throws Exception {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(BookingManagementApplication.class);
@@ -74,6 +77,7 @@ public class Runner implements CommandLineRunner {
 
         for (Building building : buildingList) {
             buildingService.postBuilding(building);
+            logger.trace("Building saved: " + building);
         }
 
         List<Office> officeList = Arrays.asList(
@@ -114,6 +118,7 @@ public class Runner implements CommandLineRunner {
 
         for (Office office : officeList) {
             officeService.postOffice(office);
+            logger.trace("Office saved: " + office);
         }
 
         List<User> userList = Arrays.asList(
@@ -131,6 +136,7 @@ public class Runner implements CommandLineRunner {
 
         for (User user : userList) {
             userService.postUser(user);
+            logger.trace("User saved: " + user);
         }
 
         LocalDate date1 = LocalDate.of(2024, 5, 18);
@@ -175,6 +181,7 @@ public class Runner implements CommandLineRunner {
 
         for (Reservation reservation : reservationList) {
             reservationService.postReservation(reservation);
+            logger.trace("Reservation saved: " + reservation);
         }
     }
 

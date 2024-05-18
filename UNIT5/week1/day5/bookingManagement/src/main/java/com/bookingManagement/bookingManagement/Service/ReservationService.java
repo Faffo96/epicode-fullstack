@@ -6,6 +6,8 @@ import com.bookingManagement.bookingManagement.Entity.User.User;
 import com.bookingManagement.bookingManagement.Exception.BookingManagementException;
 import com.bookingManagement.bookingManagement.Repository.OfficeRepository;
 import com.bookingManagement.bookingManagement.Repository.ReservationRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,7 @@ public class ReservationService {
     private ReservationRepository reservationRepository;
     @Autowired
     private OfficeRepository officeRepository;
+    static Logger logger = LoggerFactory.getLogger("logger1");
 
     public void postReservation(Reservation reservation){
         reservationRepository.save(reservation);
@@ -53,7 +56,7 @@ public class ReservationService {
     }
 
 
-    public Reservation createReservation(User user, Office office, LocalDate reservationDate, LocalDate expireDate, int peopleQty) throws BookingManagementException {
+    public void createReservation(User user, Office office, LocalDate reservationDate, LocalDate expireDate, int peopleQty) throws BookingManagementException {
         // Verifica se l'utente ha già una prenotazione per questa data
         List<Reservation> userReservations = reservationRepository.findByUserAndReservationDate(user, reservationDate);
         if (!userReservations.isEmpty()) {
@@ -68,7 +71,8 @@ public class ReservationService {
 
         // Se non ci sono conflitti, crea la prenotazione
         Reservation reservation = new Reservation(user, office, reservationDate, expireDate, peopleQty);
-        return reservationRepository.save(reservation);
+        reservationRepository.save(reservation);
+        logger.trace("Reservation saved: " + reservation);
     }
 
     public boolean isReservationExpired(Reservation reservation) {

@@ -10,6 +10,8 @@ import com.bookingManagement.bookingManagement.Service.BuildingService;
 import com.bookingManagement.bookingManagement.Service.OfficeService;
 import com.bookingManagement.bookingManagement.Service.ReservationService;
 import com.bookingManagement.bookingManagement.Service.UserService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Component;
@@ -34,6 +36,7 @@ public class Menu {
     private OfficeService officeService;
     @Autowired
     private ReservationService reservationService;
+    static Logger logger = LoggerFactory.getLogger("logger1");
 
     private Scanner scanner = new Scanner(System.in);
 
@@ -108,6 +111,7 @@ public class Menu {
 
         User user = new User(username, name, surname, email);
         userService.postUser(user);
+        logger.trace("User saved: " + user);
 
     }
 
@@ -119,10 +123,13 @@ public class Menu {
         System.out.println("Insert city:");
         String city = scanner.nextLine();
 
-        buildingService.postBuilding(new Building(name, address, city));
+        Building building = new Building(name, address, city);
+        buildingService.postBuilding(building);
+        logger.trace("Building saved: " + building);
     }
 
     private void createOffice() {
+        int buildingId = -1;
         try {
             System.out.println("Insert description:");
 
@@ -153,17 +160,21 @@ public class Menu {
             int maxCapacity = scanner.nextInt();
             System.out.println(catalogue.getBuildings());
             System.out.println("Insert a buildingId:");
-            int buildingId = scanner.nextInt();
+            buildingId = scanner.nextInt();
             scanner.nextLine();
             Building building = buildingService.getBuilding(buildingId);
 
-            officeService.postOffice(new Office(description, officeType, maxCapacity, building));
+            Office office = new Office(description, officeType, maxCapacity, building);
+            officeService.postOffice(office);
+            logger.trace("Office saved: " + office);
         } catch (IllegalArgumentException e) {
+            logger.error("Error creating office: " + e.getMessage());
             System.out.println("Error creating office: " + e.getMessage());
         } catch (Exception e) {
             String error = e.getMessage();
             if (error.equals("No value present")) {
-                System.out.println("No building found with the provided ID.");
+                logger.error("Error in '4 - Create Office': No building found with the id: " + buildingId);
+                System.out.println("No building found with the id: " + buildingId);
             }
         }
     }
@@ -177,6 +188,7 @@ public class Menu {
             userId = scanner.nextInt();
             User user = userService.getUserById(userId);
             if (user == null) {
+                logger.error("No user found with id " + userId);
                 System.out.println("No user found with id " + userId);
                 return;
             }
@@ -196,12 +208,13 @@ public class Menu {
                 reservationService.createReservation(user, office, reservationDate, reservationDate.plusDays(1), peopleQty);
             }
         } catch (BookingManagementException e) {
+            logger.error("Error Error in '5 - Create Reservation': " + e.getMessage());
             System.out.println("Error during reservation creation: " + e.getMessage());
         } catch (Exception e) {
             String error = e.getMessage();
             if (error.equals("No value present")) {
+                logger.error("Error in '5 - Create Reservation': No building found with id " + officeId);
                 System.out.println("No building found with id " + officeId);
-
             }
         }
     }
@@ -235,10 +248,15 @@ public class Menu {
 
             System.out.println(officeService.findOfficesByTypeAndCity(officeType, city));
         } catch (BookingManagementException e) {
+            logger.error("Error in '6 - Search offices by type and city' searching offices: " + e.getMessage());
             System.out.println("Error searching offices: " + e.getMessage());
+            return;
         } catch (Exception e) {
+            logger.error("Unexpected error in '6 - Search offices by type and city': " + e.getMessage());
             System.out.println("Unexpected error: " + e.getMessage());
+            return;
         }
+        logger.trace("'6 - Search offices by type and city' was used.");
     }
 
 
@@ -254,10 +272,15 @@ public class Menu {
 
             System.out.println(reservationService.findReservationsByOfficeAndDate(officeId, date));
         } catch (DateTimeParseException e) {
+            logger.error("Error in '7 - Search a reservation by officeId and date': Format should be: yyyy MM dd");
             System.out.println("Error parsing date, format should be: yyyy MM dd");
+            return;
         } catch (BookingManagementException e) {
+            logger.error("Error in '7 - Search a reservation by officeId and date' : " + e.getMessage());
             System.out.println("Error: " + e.getMessage());
+            return;
         }
+        logger.trace("'7 - Search a reservation by officeId and date' was used.");
     }
 
 
@@ -269,11 +292,14 @@ public class Menu {
             scanner.nextLine();
             Reservation reservation = reservationService.getReservation(reservationId);
             if (reservationService.isReservationExpired(reservation)) {
+                logger.info("The reservation is expired: " + reservation);
                 System.out.println("The reservation is expired.");
             } else {
+                logger.info("The reservation is still valid: " + reservation);
                 System.out.println("The reservation is still valid.");
             }
         } catch (Exception e) {
+            logger.error("8 - Error in 'Check reservation expiration': " + e.getMessage());
             System.out.println("Error: " + e.getMessage());
         }
     }
