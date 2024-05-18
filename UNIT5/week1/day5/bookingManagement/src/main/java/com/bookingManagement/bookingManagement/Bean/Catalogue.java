@@ -20,21 +20,21 @@ public class Catalogue {
     public String toString() {
         StringBuilder sb = new StringBuilder();
 
-        sb.append("------------------------------------------------ \n" +
+        sb.append("------------------------------------------------\n\n" +
                 "CATALOGUE:\n" +
-                "\nBuildings:\n");
+                "\nBuildings:");
         if (buildings != null) {
             for (Building building : buildings) {
-                sb.append(building).append("\n");
+                sb.append(building);
             }
         }
-        sb.append("\nOffices:\n");
+        sb.append("\n\nOffices:");
         if (offices != null) {
             for (Office office : offices) {
-                sb.append(office).append("\n");
+                sb.append(office);
             }
         }
-        sb.append("------------------------------------------------ ");
+        sb.append("\n\n------------------------------------------------\n");
         return sb.toString();
     }
 }

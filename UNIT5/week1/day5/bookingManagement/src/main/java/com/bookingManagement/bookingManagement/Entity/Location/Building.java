@@ -29,11 +29,11 @@ public class Building {
 
     @Override
     public String toString() {
-        return "Building{" +
+        return "\nBuilding{" +
                 "name='" + name + '\'' +
                 ", address='" + address + '\'' +
                 ", city='" + city + '\'' +
                 ", buildingId=" + buildingId +
-                '}';
+                "}";
     }
 }

@@ -35,4 +35,16 @@ public class Reservation {
 
     public Reservation() {
     }
+
+    @Override
+    public String toString() {
+        return "\nReservation{" +
+                "reservationId=" + reservationId +
+                ", user=" + user +
+                ", office=" + office +
+                ", reservationDate=" + reservationDate +
+                ", expireDate=" + expireDate +
+                ", peopleQty=" + peopleQty +
+                "}";
+    }
 }

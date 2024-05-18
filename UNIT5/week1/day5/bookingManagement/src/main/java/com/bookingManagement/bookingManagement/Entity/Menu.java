@@ -172,7 +172,7 @@ private Catalogue catalogue;
         System.out.println("Insert a reservation date: (Format YYYY MM DD)");
         String date = scanner.nextLine();
         LocalDate reservationDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy MM dd"));
-        System.out.println("Insert the quantity of partecipants: ");
+        System.out.println("Insert the quantity of partecipants: (max for this office: " + office.getMaxCapacity() + ")");
         int peopleQty = scanner.nextInt();
         scanner.nextLine();
 

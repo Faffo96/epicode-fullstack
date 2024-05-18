@@ -37,12 +37,12 @@ public class Office {
 
     @Override
     public String toString() {
-        return "Office{" +
+        return "\nOffice{" +
                 "officeId=" + officeId +
                 ", description='" + description + '\'' +
                 ", officeType=" + officeType +
                 ", maxCapacity=" + maxCapacity +
                 ", building=" + building.getName() +
-                '}';
+                "}";
     }
 }
