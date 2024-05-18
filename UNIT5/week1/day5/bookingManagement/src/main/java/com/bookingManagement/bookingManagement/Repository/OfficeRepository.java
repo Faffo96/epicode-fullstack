@@ -12,4 +12,8 @@ import java.util.List;
 public interface OfficeRepository extends JpaRepository<Office, Integer> {
     @Query("SELECT o FROM Office o WHERE o.officeType = :officeType AND o.building.city = :city")
     List<Office> findOfficesByTypeAndCity(@Param("officeType") OfficeType officeType, @Param("city") String city);
+
+    List<Office> findByOfficeType(OfficeType officeType);
+
+    List<Office> findByBuilding_CityIgnoreCase(String city);
 }

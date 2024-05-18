@@ -5,6 +5,7 @@ import com.bookingManagement.bookingManagement.Entity.Location.Building;
 import com.bookingManagement.bookingManagement.Entity.Location.Office;
 import com.bookingManagement.bookingManagement.Entity.User.User;
 import com.bookingManagement.bookingManagement.Enum.OfficeType;
+import com.bookingManagement.bookingManagement.Exception.BookingManagementException;
 import com.bookingManagement.bookingManagement.Service.BuildingService;
 import com.bookingManagement.bookingManagement.Service.OfficeService;
 import com.bookingManagement.bookingManagement.Service.ReservationService;
@@ -15,6 +16,7 @@ import org.springframework.stereotype.Component;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -35,13 +37,13 @@ public class Menu {
 
     private Scanner scanner = new Scanner(System.in);
 
-    public void startMenu() {
+    public void startMenu() throws BookingManagementException {
         boolean exit = false;
 
         while (!exit) {
             displayMenu();
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine();
             switch (choice) {
                 case 1:
                     showCatalogue();
@@ -109,7 +111,7 @@ public class Menu {
 
     }
 
-    private void createBuilding() {
+    private void createBuilding() throws BookingManagementException {
         System.out.println("Insert name:");
         String name = scanner.nextLine();
         System.out.println("Insert address:");
@@ -118,120 +120,149 @@ public class Menu {
         String city = scanner.nextLine();
 
         buildingService.postBuilding(new Building(name, address, city));
-
     }
 
-    private void createOffice() {
-        System.out.println("Insert description:");
-        String description = scanner.nextLine();
+    private void createOffice() throws BookingManagementException {
+        try {
+            System.out.println("Insert description:");
 
-        System.out.println("""
-            Type:
-            1 - Private
-            2 - Open Space
-            3 - Meeting Room""");
-        int typeInputNumber = scanner.nextInt();
-        OfficeType officeType;
-        switch (typeInputNumber) {
-            case 1:
-                officeType = OfficeType.PRIVATE;
-                break;
-            case 2:
-                officeType = OfficeType.OPENSPACE;
-                break;
-            case 3:
-                officeType = OfficeType.MEETINGROOM;
-                break;
-            default:
-                throw new IllegalArgumentException("Invalid office type. Please select a valid option.");
+            String description = scanner.nextLine();
+
+            System.out.println("""
+                    Type:
+                    1 - Private
+                    2 - Open Space
+                    3 - Meeting Room""");
+            int typeInputNumber = scanner.nextInt();
+            OfficeType officeType;
+            switch (typeInputNumber) {
+                case 1:
+                    officeType = OfficeType.PRIVATE;
+                    break;
+                case 2:
+                    officeType = OfficeType.OPENSPACE;
+                    break;
+                case 3:
+                    officeType = OfficeType.MEETINGROOM;
+                    break;
+                default:
+                    throw new IllegalArgumentException("Invalid office type. Please select a valid option.");
+            }
+
+            System.out.println("Insert max capacity:");
+            int maxCapacity = scanner.nextInt();
+            System.out.println(catalogue.getBuildings());
+            System.out.println("Insert a buildingId:");
+            int buildingId = scanner.nextInt();
+            scanner.nextLine();
+            Building building = buildingService.getBuilding(buildingId);
+
+            officeService.postOffice(new Office(description, officeType, maxCapacity, building));
+        } catch (IllegalArgumentException e) {
+            System.out.println("Error creating office: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Unexpected error: " + e.getMessage());
         }
-
-        System.out.println("Insert max capacity:");
-        int maxCapacity = scanner.nextInt();
-        System.out.println(catalogue.getBuildings());
-        System.out.println("Insert a buildingId:");
-        int buildingId = scanner.nextInt();
-        scanner.nextLine();
-        Building building = buildingService.getBuilding(buildingId);
-
-        officeService.postOffice(new Office(description, officeType, maxCapacity, building));
     }
 
-    private void createReservation() {
-        System.out.println(ctx.getBean("Users", List.class));
-        System.out.println("Insert userId:");
-        int userId = scanner.nextInt();
-        User user = userService.getUserById(userId);
-        System.out.println(catalogue.getOffices());
-        System.out.println("Insert officeId:");
-        int officeId = scanner.nextInt();
-        Office office = officeService.getOffice(officeId);
-        scanner.nextLine();
-        System.out.println("Insert a reservation date: (Format YYYY MM DD)");
-        String date = scanner.nextLine();
-        LocalDate reservationDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy MM dd"));
-        System.out.println("Insert the quantity of partecipants: (max for this office: " + office.getMaxCapacity() + ")");
-        int peopleQty = scanner.nextInt();
-        scanner.nextLine();
+    private void createReservation() throws BookingManagementException {
+        try {
+            System.out.println(ctx.getBean("Users", List.class));
+            System.out.println("Insert userId:");
+            int userId = scanner.nextInt();
+            User user = userService.getUserById(userId);
+            System.out.println(catalogue.getOffices());
+            System.out.println("Insert officeId:");
+            int officeId = scanner.nextInt();
+            Office office = officeService.getOffice(officeId);
+            scanner.nextLine();
+            System.out.println("Insert a reservation date: (Format YYYY MM DD)");
+            String date = scanner.nextLine();
+            LocalDate reservationDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy MM dd"));
+            System.out.println("Insert the quantity of participants: (max for this office: " + office.getMaxCapacity() + ")");
+            int peopleQty = scanner.nextInt();
+            scanner.nextLine();
 
-        if (reservationService.isPeopleQtyWithinCapacity(office, peopleQty)) {
-            reservationService.createReservation(user, office, reservationDate, reservationDate.plusDays(1), peopleQty);
-        } else {
-            throw new IllegalArgumentException("The amount of people exceeds the capacity of the office. This office max capacity is: " + office.getMaxCapacity() + ".");
+            if (reservationService.isPeopleQtyWithinCapacity(office, peopleQty)) {
+                reservationService.createReservation(user, office, reservationDate, reservationDate.plusDays(1), peopleQty);
+            }
+        } catch (BookingManagementException e) {
+            System.out.println("Error during reservation creation: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Unexpected error: " + e.getMessage());
         }
     }
 
     private void searchOfficesByTypeAndCity() {
-        System.out.println();
-        System.out.println("""
-            Type:
-            1 - Private
-            2 - Open Space
-            3 - Meeting Room""");
-        int typeInputNumber = scanner.nextInt();
-        OfficeType officeType;
-        switch (typeInputNumber) {
-            case 1:
-                officeType = OfficeType.PRIVATE;
-                break;
-            case 2:
-                officeType = OfficeType.OPENSPACE;
-                break;
-            case 3:
-                officeType = OfficeType.MEETINGROOM;
-                break;
-            default:
-                throw new IllegalArgumentException("Invalid office type. Please select a valid option.");
-        }
-        scanner.nextLine();
-        System.out.println("Insert city:");
-        String city = scanner.nextLine();
+        try {
+            System.out.println();
+            System.out.println("""
+                    Type:
+                    1 - Private
+                    2 - Open Space
+                    3 - Meeting Room""");
+            int typeInputNumber = scanner.nextInt();
+            OfficeType officeType;
+            switch (typeInputNumber) {
+                case 1:
+                    officeType = OfficeType.PRIVATE;
+                    break;
+                case 2:
+                    officeType = OfficeType.OPENSPACE;
+                    break;
+                case 3:
+                    officeType = OfficeType.MEETINGROOM;
+                    break;
+                default:
+                    throw new BookingManagementException("Invalid office type. Please select a valid option.");
+            }
+            scanner.nextLine();
+            System.out.println("Insert city:");
+            String city = scanner.nextLine();
 
-        System.out.println(officeService.findOfficesByTypeAndCity(officeType, city));
+            System.out.println(officeService.findOfficesByTypeAndCity(officeType, city));
+        } catch (BookingManagementException e) {
+            System.out.println("Error searching offices: " + e.getMessage());
+        } catch (Exception e) {
+            System.out.println("Unexpected error: " + e.getMessage());
+        }
     }
+
 
     private void searchReservationByOfficeIdAndDate() {
-        System.out.println(catalogue.getOffices());
-        System.out.println("Insert officeId:");
-        int officeId = scanner.nextInt();
-        scanner.nextLine();
-        System.out.println("Insert a date: (Format YYYY MM DD)");
-        String scannedDate = scanner.nextLine();
-        LocalDate date = LocalDate.parse(scannedDate, DateTimeFormatter.ofPattern("yyyy MM dd"));
+        try {
+            System.out.println(catalogue.getOffices());
+            System.out.println("Insert officeId:");
+            int officeId = scanner.nextInt();
+            scanner.nextLine();
+            System.out.println("Insert a date: (Format yyyy MM dd)");
+            String scannedDate = scanner.nextLine();
+            LocalDate date = LocalDate.parse(scannedDate, DateTimeFormatter.ofPattern("yyyy MM dd"));
 
-        System.out.println(reservationService.findReservationsByOfficeAndDate(officeId, date));
-    }
-
-    private void checkReservationExpiration() {
-        System.out.println(ctx.getBean("Reservations", List.class));
-        System.out.println("Insert reservationId:");
-        int reservationId = scanner.nextInt();
-        scanner.nextLine();
-        Reservation reservation = reservationService.getReservation(reservationId);
-        if (reservationService.isReservationExpired(reservation)) {
-            System.out.println("The reservations is expired.");
-        } else {
-            System.out.println("The reservation is still valid.");
+            System.out.println(reservationService.findReservationsByOfficeAndDate(officeId, date));
+        } catch (DateTimeParseException e) {
+            System.out.println("Error parsing date, format should be: yyyy MM dd");
+        } catch (BookingManagementException e) {
+            System.out.println("Error: " + e.getMessage());
         }
     }
+
+
+    private void checkReservationExpiration() {
+        try {
+            System.out.println(ctx.getBean("Reservations", List.class));
+            System.out.println("Insert reservationId:");
+            int reservationId = scanner.nextInt();
+            scanner.nextLine();
+            Reservation reservation = reservationService.getReservation(reservationId);
+            if (reservationService.isReservationExpired(reservation)) {
+                System.out.println("The reservation is expired.");
+            } else {
+                System.out.println("The reservation is still valid.");
+            }
+        } catch (Exception e) {
+            System.out.println("Error: " + e.getMessage());
+        }
+    }
+
 }

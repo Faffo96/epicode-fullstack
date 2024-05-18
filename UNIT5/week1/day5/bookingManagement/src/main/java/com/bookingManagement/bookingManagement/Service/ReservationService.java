@@ -3,17 +3,22 @@ package com.bookingManagement.bookingManagement.Service;
 import com.bookingManagement.bookingManagement.Entity.Location.Office;
 import com.bookingManagement.bookingManagement.Entity.Reservation;
 import com.bookingManagement.bookingManagement.Entity.User.User;
+import com.bookingManagement.bookingManagement.Exception.BookingManagementException;
+import com.bookingManagement.bookingManagement.Repository.OfficeRepository;
 import com.bookingManagement.bookingManagement.Repository.ReservationRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ReservationService {
     @Autowired
     private ReservationRepository reservationRepository;
+    @Autowired
+    private OfficeRepository officeRepository;
 
     public void postReservation(Reservation reservation){
         reservationRepository.save(reservation);
@@ -27,26 +32,38 @@ public class ReservationService {
         return reservationRepository.findAll();
     }
 
-    public Reservation findReservationsByOfficeAndDate(int officeId, LocalDate reservationDate) {
-        return reservationRepository.findReservationsByOfficeAndDate(officeId, reservationDate);
+    public Reservation findReservationsByOfficeAndDate(int officeId, LocalDate reservationDate) throws BookingManagementException {
+        Optional<Office> optionalOffice = officeRepository.findById(officeId);
+        if (optionalOffice.isEmpty()) {
+            throw new BookingManagementException("Office with id " + officeId + " not found.");
+        }
+
+        Reservation reservation = reservationRepository.findReservationsByOfficeAndDate(officeId, reservationDate);
+        if (reservation == null) {
+            throw new BookingManagementException("No reservations found for the office with ID " + officeId + " on date " + reservationDate);
+        }
+
+        return reservation;
     }
+
+
 
     public boolean isReservationAvailable(User user, Office office, LocalDate reservationDate) {
         return reservationRepository.findByUserAndOfficeAndReservationDate(user, office, reservationDate) == null;
     }
 
 
-    public Reservation createReservation(User user, Office office, LocalDate reservationDate, LocalDate expireDate, int peopleQty) {
+    public Reservation createReservation(User user, Office office, LocalDate reservationDate, LocalDate expireDate, int peopleQty) throws BookingManagementException {
         // Verifica se l'utente ha già una prenotazione per questa data
         List<Reservation> userReservations = reservationRepository.findByUserAndReservationDate(user, reservationDate);
         if (!userReservations.isEmpty()) {
-            throw new IllegalArgumentException("L'utente ha già una prenotazione per questa data. Riprova.");
+            throw new BookingManagementException("The user already has a reservation for this date. Try again.");
         }
 
         // Verifica se c'è già una prenotazione per questo ufficio e questa data
         List<Reservation> existingReservations = reservationRepository.findByOfficeAndReservationDate(office, reservationDate);
         if (!existingReservations.isEmpty()) {
-            throw new IllegalArgumentException("Prenotazione già esistente per questo ufficio e questa data. Riprova.");
+            throw new BookingManagementException("Reservation already exists for this office and this date. Try again.");
         }
 
         // Se non ci sono conflitti, crea la prenotazione
