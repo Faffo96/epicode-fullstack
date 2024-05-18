@@ -1,19 +1,17 @@
 package com.bookingManagement.bookingManagement.Entity;
 
 import com.bookingManagement.bookingManagement.Bean.Catalogue;
-import com.bookingManagement.bookingManagement.BookingManagementApplication;
 import com.bookingManagement.bookingManagement.Entity.Location.Building;
 import com.bookingManagement.bookingManagement.Entity.Location.Office;
 import com.bookingManagement.bookingManagement.Entity.User.User;
+import com.bookingManagement.bookingManagement.Enum.OfficeType;
 import com.bookingManagement.bookingManagement.Service.BuildingService;
 import com.bookingManagement.bookingManagement.Service.OfficeService;
 import com.bookingManagement.bookingManagement.Service.ReservationService;
 import com.bookingManagement.bookingManagement.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Component;
-import com.bookingManagement.bookingManagement.Enum.OfficeType;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -23,7 +21,7 @@ import java.util.Scanner;
 @Component
 public class Menu {
     @Autowired
-private Catalogue catalogue;
+    private Catalogue catalogue;
     @Autowired
     private ApplicationContext ctx;
     @Autowired
@@ -33,8 +31,8 @@ private Catalogue catalogue;
     @Autowired
     private OfficeService officeService;
     @Autowired
-
     private ReservationService reservationService;
+
     private Scanner scanner = new Scanner(System.in);
 
     public void startMenu() {
@@ -43,6 +41,7 @@ private Catalogue catalogue;
         while (!exit) {
             displayMenu();
             int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume newline
             switch (choice) {
                 case 1:
                     showCatalogue();
@@ -87,7 +86,7 @@ private Catalogue catalogue;
         System.out.println("5 - Create Reservation");
         System.out.println("6 - Search offices by type and city");
         System.out.println("7 - Search a reservation by officeId and date");
-        System.out.println("8- Check reservation expiration");
+        System.out.println("8 - Check reservation expiration");
         System.out.println("0 - Exit");
     }
 
@@ -106,8 +105,8 @@ private Catalogue catalogue;
         String email = scanner.nextLine();
 
         User user = new User(username, name, surname, email);
-
         userService.postUser(user);
+
     }
 
     private void createBuilding() {
@@ -119,6 +118,7 @@ private Catalogue catalogue;
         String city = scanner.nextLine();
 
         buildingService.postBuilding(new Building(name, address, city));
+
     }
 
     private void createOffice() {
@@ -157,8 +157,6 @@ private Catalogue catalogue;
         officeService.postOffice(new Office(description, officeType, maxCapacity, building));
     }
 
-
-
     private void createReservation() {
         System.out.println(ctx.getBean("Users", List.class));
         System.out.println("Insert userId:");
@@ -176,14 +174,12 @@ private Catalogue catalogue;
         int peopleQty = scanner.nextInt();
         scanner.nextLine();
 
-        if(reservationService.isPeopleQtyWithinCapacity(office, peopleQty)){
+        if (reservationService.isPeopleQtyWithinCapacity(office, peopleQty)) {
             reservationService.createReservation(user, office, reservationDate, reservationDate.plusDays(1), peopleQty);
         } else {
             throw new IllegalArgumentException("The amount of people exceeds the capacity of the office. This office max capacity is: " + office.getMaxCapacity() + ".");
         }
-  }
-
-
+    }
 
     private void searchOfficesByTypeAndCity() {
         System.out.println();
@@ -232,7 +228,7 @@ private Catalogue catalogue;
         int reservationId = scanner.nextInt();
         scanner.nextLine();
         Reservation reservation = reservationService.getReservation(reservationId);
-        if(reservationService.isReservationExpired(reservation)) {
+        if (reservationService.isReservationExpired(reservation)) {
             System.out.println("The reservations is expired.");
         } else {
             System.out.println("The reservation is still valid.");
