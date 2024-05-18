@@ -122,7 +122,7 @@ public class Menu {
         buildingService.postBuilding(new Building(name, address, city));
     }
 
-    private void createOffice() throws BookingManagementException {
+    private void createOffice() {
         try {
             System.out.println("Insert description:");
 
@@ -161,19 +161,28 @@ public class Menu {
         } catch (IllegalArgumentException e) {
             System.out.println("Error creating office: " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("Unexpected error: " + e.getMessage());
+            String error = e.getMessage();
+            if (error.equals("No value present")) {
+                System.out.println("No building found with the provided ID.");
+            }
         }
     }
 
     private void createReservation() throws BookingManagementException {
+        int officeId = -1;
+        int userId = -1;
         try {
             System.out.println(ctx.getBean("Users", List.class));
             System.out.println("Insert userId:");
-            int userId = scanner.nextInt();
+            userId = scanner.nextInt();
             User user = userService.getUserById(userId);
+            if (user == null) {
+                System.out.println("No user found with id " + userId);
+                return;
+            }
             System.out.println(catalogue.getOffices());
             System.out.println("Insert officeId:");
-            int officeId = scanner.nextInt();
+            officeId = scanner.nextInt();
             Office office = officeService.getOffice(officeId);
             scanner.nextLine();
             System.out.println("Insert a reservation date: (Format YYYY MM DD)");
@@ -189,7 +198,11 @@ public class Menu {
         } catch (BookingManagementException e) {
             System.out.println("Error during reservation creation: " + e.getMessage());
         } catch (Exception e) {
-            System.out.println("Unexpected error: " + e.getMessage());
+            String error = e.getMessage();
+            if (error.equals("No value present")) {
+                System.out.println("No building found with id " + officeId);
+
+            }
         }
     }
 
