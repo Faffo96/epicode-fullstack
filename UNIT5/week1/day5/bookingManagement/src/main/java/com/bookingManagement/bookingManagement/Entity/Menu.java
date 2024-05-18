@@ -172,8 +172,15 @@ private Catalogue catalogue;
         System.out.println("Insert a reservation date: (Format YYYY MM DD)");
         String date = scanner.nextLine();
         LocalDate reservationDate = LocalDate.parse(date, DateTimeFormatter.ofPattern("yyyy MM dd"));
+        System.out.println("Insert the quantity of partecipants: ");
+        int peopleQty = scanner.nextInt();
+        scanner.nextLine();
 
-        reservationService.createReservation(user, office, reservationDate, reservationDate.plusDays(1));
+        if(reservationService.isPeopleQtyWithinCapacity(office, peopleQty)){
+            reservationService.createReservation(user, office, reservationDate, reservationDate.plusDays(1), peopleQty);
+        } else {
+            throw new IllegalArgumentException("The amount of people exceeds the capacity of the office. This office max capacity is: " + office.getMaxCapacity() + ".");
+        }
   }
 
 

@@ -36,7 +36,7 @@ public class ReservationService {
     }
 
 
-    public Reservation createReservation(User user, Office office, LocalDate reservationDate, LocalDate expireDate) {
+    public Reservation createReservation(User user, Office office, LocalDate reservationDate, LocalDate expireDate, int peopleQty) {
         // Verifica se l'utente ha già una prenotazione per questa data
         List<Reservation> userReservations = reservationRepository.findByUserAndReservationDate(user, reservationDate);
         if (!userReservations.isEmpty()) {
@@ -50,7 +50,7 @@ public class ReservationService {
         }
 
         // Se non ci sono conflitti, crea la prenotazione
-        Reservation reservation = new Reservation(user, office, reservationDate, expireDate);
+        Reservation reservation = new Reservation(user, office, reservationDate, expireDate, peopleQty);
         return reservationRepository.save(reservation);
     }
 
@@ -58,4 +58,7 @@ public class ReservationService {
         return reservation.getExpireDate().isBefore(LocalDate.now());
     }
 
+    public boolean isPeopleQtyWithinCapacity(Office office, int peopleQty) {
+        return peopleQty <= office.getMaxCapacity();
+    }
 }
