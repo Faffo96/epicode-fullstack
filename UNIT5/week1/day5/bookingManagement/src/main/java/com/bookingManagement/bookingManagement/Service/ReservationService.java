@@ -60,7 +60,7 @@ public class ReservationService {
         // Verifica se l'utente ha già una prenotazione per questa data
         List<Reservation> userReservations = reservationRepository.findByUserAndReservationDate(user, reservationDate);
         if (!userReservations.isEmpty()) {
-            throw new BookingManagementException("The user already has a reservation for this date. Try again.");
+            throw new BookingManagementException("The user " + user.getUsername() + " already has a reservation in " + reservationDate +  ". Try again.");
         }
 
         // Verifica se c'è già una prenotazione per questo ufficio e questa data
@@ -72,6 +72,7 @@ public class ReservationService {
         // Se non ci sono conflitti, crea la prenotazione
         Reservation reservation = new Reservation(user, office, reservationDate, expireDate, peopleQty);
         reservationRepository.save(reservation);
+        System.out.println("Reservation created successfully: " + reservation);
         logger.trace("Reservation saved: " + reservation);
     }
 

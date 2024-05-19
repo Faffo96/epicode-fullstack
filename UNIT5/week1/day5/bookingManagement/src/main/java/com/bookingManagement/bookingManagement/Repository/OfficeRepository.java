@@ -10,10 +10,12 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface OfficeRepository extends JpaRepository<Office, Integer> {
-    @Query("SELECT o FROM Office o WHERE o.officeType = :officeType AND o.building.city = :city")
+    @Query("SELECT o FROM Office o WHERE o.officeType = :officeType AND LOWER(o.building.city) LIKE LOWER(CONCAT('%', :city, '%'))")
     List<Office> findOfficesByTypeAndCity(@Param("officeType") OfficeType officeType, @Param("city") String city);
+
 
     List<Office> findByOfficeType(OfficeType officeType);
 
-    List<Office> findByBuilding_CityIgnoreCase(String city);
+    @Query("SELECT o FROM Office o WHERE LOWER(o.building.city) LIKE LOWER(CONCAT('%', :city, '%'))")
+    List<Office> findByBuilding_CityIgnoreCase(@Param("city") String city);
 }

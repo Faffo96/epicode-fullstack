@@ -1,1 +1,67 @@
 
+2024-05-19 10:30:00,807 TRACE [main] logger1 [Menu.java:114] -- User saved: 
+User{userId=352, username='Mario', name='Merola', surname='mariomerola', email='mario@merola.com'}
+2024-05-19 10:31:22,245 TRACE [main] logger1 [Menu.java:114] -- User saved: 
+User{userId=353, username='katy', name='Caterina', surname='Ali', email='caterina@alizio.com'}
+2024-05-19 10:31:46,379 TRACE [main] logger1 [Menu.java:114] -- User saved: 
+User{userId=354, username='kety', name='cate', surname='ali', email='cate@ali.com'}
+2024-05-19 10:32:49,770 TRACE [main] logger1 [Menu.java:169] -- Office saved: 
+Office{officeId=202, description='bello', officeType=PRIVATE, maxCapacity=5, building=palazzo blu}
+2024-05-19 10:33:43,041 ERROR [main] logger1 [Menu.java:176] -- Error in '4 - Create Office': No building found with the id: 4444
+2024-05-19 11:08:18,185 INFO [main] logger1 [Menu.java:298] -- The reservation is still valid: 
+Reservation{reservationId=252, user=null, office=
+Office{officeId=102, description='bellissimo', officeType=PRIVATE, maxCapacity=10, building=Office Building G}, reservationDate=2025-05-25, expireDate=2025-05-26, peopleQty=10}
+2024-05-19 11:47:54,554 ERROR [main] logger1 [Menu.java:211] -- Error Error in '5 - Create Reservation': The user Federica already has a reservation in 2024-05-25. Try again.
+2024-05-19 11:50:00,065 INFO [main] logger1 [Menu.java:298] -- The reservation is still valid: 
+Reservation{reservationId=102, user=
+User{userId=2, username='Anna', name='Anna', surname='Rossi', email='anna.rossi@example.com'}, office=
+Office{officeId=2, description='Spacious open space', officeType=OPENSPACE, maxCapacity=15, building=Office Building B}, reservationDate=2024-05-25, expireDate=2024-05-26, peopleQty=5}
+2024-05-19 11:56:43,072 ERROR [main] logger1 [Menu.java:279] -- Error in '7 - Search a reservation by officeId and date' : No reservations found for the office with ID 202 on date 2024-05-25
+
+2024-05-19 17:36:26,534 TRACE [main] logger1 [Menu.java:114] -- User saved: 
+User{userId=402, username='gianlu', name='Gianluca', surname='Pela', email='gialu@pela@gmail.com'}
+2024-05-19 17:37:38,651 TRACE [main] logger1 [Menu.java:169] -- Office saved: 
+Office{officeId=252, description='bello', officeType=OPENSPACE, maxCapacity=40, building=Palazzo gialli}
+2024-05-19 17:38:01,963 ERROR [main] logger1 [Menu.java:176] -- Error in '4 - Create Office': No building found with the id: 555
+2024-05-19 17:40:32,760 TRACE [main] logger1 [ReservationService.java:75] -- Reservation saved: 
+Reservation{reservationId=302, user=
+User{userId=354, username='kety', name='cate', surname='ali', email='cate@ali.com'}, office=
+Office{officeId=202, description='bello', officeType=PRIVATE, maxCapacity=5, building=palazzo blu}, reservationDate=2024-05-25, expireDate=2024-05-26, peopleQty=4}
+2024-05-19 17:41:15,096 ERROR [main] logger1 [Menu.java:251] -- Error in '6 - Search offices by type and city' searching offices: Nessun ufficio trovato con il tipo 'OPENSPACE'
+2024-05-19 17:41:40,344 ERROR [main] logger1 [Menu.java:251] -- Error in '6 - Search offices by type and city' searching offices: Nessun ufficio trovato con il tipo 'PRIVATE'
+2024-05-19 17:41:46,448 ERROR [main] logger1 [Menu.java:251] -- Error in '6 - Search offices by type and city' searching offices: Nessun ufficio trovato con il tipo 'MEETINGROOM'
+2024-05-19 17:43:32,827 TRACE [main] logger1 [Menu.java:259] -- '6 - Search offices by type and city' was used.
+2024-05-19 17:43:41,904 TRACE [main] logger1 [Menu.java:259] -- '6 - Search offices by type and city' was used.
+2024-05-19 17:45:23,218 TRACE [main] logger1 [Menu.java:283] -- '7 - Search a reservation by officeId and date' was used.
+2024-05-19 17:46:07,727 INFO [main] logger1 [Menu.java:298] -- The reservation is still valid: 
+Reservation{reservationId=102, user=
+User{userId=2, username='Anna', name='Anna', surname='Rossi', email='anna.rossi@example.com'}, office=
+Office{officeId=2, description='Spacious open space', officeType=OPENSPACE, maxCapacity=15, building=Office Building B}, reservationDate=2024-05-25, expireDate=2024-05-26, peopleQty=5}
+2024-05-19 19:30:15,470 ERROR [main] logger1 [Menu.java:211] -- Error Error in '5 - Create Reservation': The user kety already has a reservation in 2024-05-25. Try again.
+2024-05-19 19:32:08,034 ERROR [main] logger1 [Menu.java:251] -- Error in '6 - Search offices by type and city' searching offices: Nessun ufficio trovato nella città 'bolo'
+2024-05-19 19:32:33,467 INFO [main] logger1 [Menu.java:298] -- The reservation is still valid: 
+Reservation{reservationId=202, user=null, office=
+Office{officeId=152, description='bellissimissimo', officeType=PRIVATE, maxCapacity=10, building=Palazzo neri}, reservationDate=2024-05-25, expireDate=2024-05-26, peopleQty=10}
+2024-05-19 19:32:41,335 ERROR [main] logger1 [Menu.java:251] -- Error in '6 - Search offices by type and city' searching offices: Nessun ufficio trovato nella città 'bolo'
+2024-05-19 19:32:57,762 ERROR [main] logger1 [Menu.java:251] -- Error in '6 - Search offices by type and city' searching offices: Nessun ufficio trovato nella città 'olo'
+2024-05-19 19:33:40,430 ERROR [main] logger1 [Menu.java:251] -- Error in '6 - Search offices by type and city' searching offices: Nessun ufficio trovato nella città 'bolo'
+2024-05-19 19:33:49,481 ERROR [main] logger1 [Menu.java:251] -- Error in '6 - Search offices by type and city' searching offices: Nessun ufficio trovato nella città 'mil'
+2024-05-19 19:33:56,990 TRACE [main] logger1 [Menu.java:259] -- '6 - Search offices by type and city' was used.
+2024-05-19 19:36:03,945 ERROR [main] logger1 [Menu.java:251] -- Error in '6 - Search offices by type and city' searching offices: Nessun ufficio trovato nella città 'mila'
+2024-05-19 19:36:24,061 ERROR [main] logger1 [Menu.java:251] -- Error in '6 - Search offices by type and city' searching offices: Nessun ufficio trovato nella città 'Mil'
+2024-05-19 19:40:37,320 ERROR [main] logger1 [Menu.java:251] -- Error in '6 - Search offices by type and city' searching offices: Nessun ufficio trovato nella città 'mil'
+2024-05-19 19:52:09,447 TRACE [main] logger1 [Menu.java:259] -- '6 - Search offices by type and city' was used.
+2024-05-19 19:53:04,274 ERROR [main] logger1 [Menu.java:251] -- Error in '6 - Search offices by type and city' searching offices: Nessun ufficio trovato nella città 'palazzo rossi'
+2024-05-19 19:53:29,040 ERROR [main] logger1 [Menu.java:251] -- Error in '6 - Search offices by type and city' searching offices: Nessun ufficio trovato nella città 'citta rossa'
+2024-05-19 19:53:37,000 ERROR [main] logger1 [Menu.java:251] -- Error in '6 - Search offices by type and city' searching offices: Nessun ufficio trovato nella città 'palazzo rosso'
+2024-05-19 19:53:52,090 ERROR [main] logger1 [Menu.java:251] -- Error in '6 - Search offices by type and city' searching offices: Nessun ufficio trovato nella città 'palazzo ross'
+2024-05-19 19:54:05,570 ERROR [main] logger1 [Menu.java:251] -- Error in '6 - Search offices by type and city' searching offices: Nessun ufficio trovato nella città 'citta ross'
+2024-05-19 19:56:58,601 TRACE [main] logger1 [ReservationService.java:75] -- Reservation saved: 
+Reservation{reservationId=352, user=
+User{userId=402, username='gianlu', name='Gianluca', surname='Pela', email='gialu@pela@gmail.com'}, office=
+Office{officeId=252, description='bello', officeType=OPENSPACE, maxCapacity=40, building=Palazzo gialli}, reservationDate=2024-05-25, expireDate=2024-05-26, peopleQty=10}
+2024-05-19 19:57:23,822 ERROR [main] logger1 [Menu.java:176] -- Error in '4 - Create Office': No building found with the id: 444
+2024-05-19 20:25:17,964 TRACE [main] logger1 [Menu.java:114] -- User saved: 
+User{userId=452, username='faffo', name='fd', surname='fa', email='fa@ffo'}
+2024-05-19 20:25:40,247 TRACE [main] logger1 [Menu.java:115] -- User saved: 
+User{userId=502, username='faffo', name='fa', surname='ffo', email='fa@ffo'}

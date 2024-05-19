@@ -40,11 +40,21 @@ public class Runner implements CommandLineRunner {
     public void run(String... args) throws Exception {
         ApplicationContext ctx = new AnnotationConfigApplicationContext(BookingManagementApplication.class);
 
+        /*Per popolare il database bisogna:
+        * Decommentare riga 52,
+        * Commentare riga 53,
+        * Commentare gli @Autowired dentro la classe Menu,
+        * Commentare i @Bean nell'AppConfig,
+        * Runnare l'applicazione.
+        *
+        * A questo punto rieseguire le istruzioni al contrario, decommentando e ricommentando com'era nella situazione iniziale, per abilitare il Menu al run.*/
+
+        /*populateDatabase();*/
+        menu.startMenu();
 
 
-        /*System.out.println(reservationService.findReservationsByOfficeAndDate(1, LocalDate.of(2024, 5, 18)));
 
-        System.out.println(officeService.findOfficesByTypeAndCity(OfficeType.PRIVATE, "Verona"));*/
+        /*EXTRA*/
 
         /*List<Building> buildings = (List<Building>) ctx.getBean("Buildings");
 
@@ -53,12 +63,6 @@ public class Runner implements CommandLineRunner {
         List<User> users = (List<User>) ctx.getBean("Users");
 
         List<Reservation> reservations = ctx.getBean("Reservations", List.class);*/
-
-
-        /*populateDatabase();*/
-        menu.startMenu();
-
-
     }
 
     public void populateDatabase() {

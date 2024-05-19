@@ -29,15 +29,11 @@ public class OfficeService {
 
     public List<Office> findOfficesByTypeAndCity(OfficeType officeType, String city) throws BookingManagementException{
         List<Office> offices = officeRepository.findOfficesByTypeAndCity(officeType, city);
-
-
             if (findOfficesByCity(city).isEmpty()) {
                 throw new BookingManagementException("Nessun ufficio trovato nella città '" + city + "'");
             } else if (!findOfficesByCity(city).isEmpty() && offices.isEmpty()) {
                 throw new BookingManagementException("Nessun ufficio trovato con il tipo '" + officeType + "'");
             }
-
-
         return offices;
     }
 

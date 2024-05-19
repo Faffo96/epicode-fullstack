@@ -111,6 +111,7 @@ public class Menu {
 
         User user = new User(username, name, surname, email);
         userService.postUser(user);
+        System.out.println("User created successfully: " + user);
         logger.trace("User saved: " + user);
 
     }
@@ -125,6 +126,7 @@ public class Menu {
 
         Building building = new Building(name, address, city);
         buildingService.postBuilding(building);
+        System.out.println("Building created successfully: " + building);
         logger.trace("Building saved: " + building);
     }
 
@@ -166,6 +168,7 @@ public class Menu {
 
             Office office = new Office(description, officeType, maxCapacity, building);
             officeService.postOffice(office);
+            System.out.println("Office created successfully: " + office);
             logger.trace("Office saved: " + office);
         } catch (IllegalArgumentException e) {
             logger.error("Error creating office: " + e.getMessage());
@@ -215,6 +218,8 @@ public class Menu {
             if (error.equals("No value present")) {
                 logger.error("Error in '5 - Create Reservation': No building found with id " + officeId);
                 System.out.println("No building found with id " + officeId);
+            } else {
+                logger.error("Error in '5 - Create Reservation': " + e.getMessage());
             }
         }
     }
@@ -296,7 +301,7 @@ public class Menu {
                 System.out.println("The reservation is expired.");
             } else {
                 logger.info("The reservation is still valid: " + reservation);
-                System.out.println("The reservation is still valid.");
+                System.out.println("This reservation is still valid.");
             }
         } catch (Exception e) {
             logger.error("8 - Error in 'Check reservation expiration': " + e.getMessage());
