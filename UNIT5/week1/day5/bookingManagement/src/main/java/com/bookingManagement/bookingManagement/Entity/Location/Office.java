@@ -43,6 +43,7 @@ public class Office {
                 ", officeType=" + officeType +
                 ", maxCapacity=" + maxCapacity +
                 ", building=" + building.getName() +
+                ", city=" + building.getCity() +
                 "}";
     }
 }
