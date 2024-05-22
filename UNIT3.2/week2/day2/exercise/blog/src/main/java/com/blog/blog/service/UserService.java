@@ -1,70 +1,52 @@
 package com.blog.blog.service;
-import com.blog.blog.Dto.UserDto;
-import com.blog.blog.Exception.UserNotFoundException;
-import com.blog.blog.model.BlogPost;
+
 import com.blog.blog.model.User;
-import com.blog.blog.repository.UserRepository;
-import lombok.Data;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class UserService {
-
-    @Autowired
-    private UserRepository userRepository;
-
-    public String postUser(UserDto userDto) {
-        User user = new User();
-        user.setName(userDto.getName());
-        user.setSurname(userDto.getSurname());
-        user.setEmail(userDto.getEmail());
-        user.setBirthDate(userDto.getBirthDate());
-        user.setAvatar(userDto.getAvatar());
-        userRepository.save(user);
-        return "User with id " + user.getUserId() + " saved.";
-    }
-
-    public Page<User> getUsers(int page, int size, String sortBy) {
-        Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
-        return userRepository.findAll(pageable);
-    }
+    private List<User> users = new ArrayList<>();
 
     public Optional<User> getUserById(int userId) {
-        return userRepository.findById(userId);
+        return users.stream().filter(user -> user.getUserId()==userId).findFirst();
     }
 
-    public User putUser(int userId, UserDto userDto) {
+    public List<User> getAllUsers() {
+        return users;
+    }
+
+    public String postUser(User user) {
+        users.add(user);
+        return "Users created with id: " + user.getUserId();
+    }
+
+    public User putUser(int userId, User userUpd) throws RuntimeException {
         Optional<User> userOpt = getUserById(userId);
         if (userOpt.isPresent()) {
             User user = userOpt.get();
-            user.setName(userDto.getName());
-            user.setSurname(userDto.getSurname());
-            user.setEmail(userDto.getEmail());
-            user.setBirthDate(userDto.getBirthDate());
-            user.setAvatar(userDto.getAvatar());
-            userRepository.save(user);
+            user.setName(userUpd.getName());
+            user.setSurname(userUpd.getSurname());
+            user.setEmail(userUpd.getEmail());
+            user.setBirthDate(userUpd.getBirthDate());
+            user.setAvatar(userUpd.getAvatar());
             return user;
         } else {
-            throw new UserNotFoundException("User with id " + userId + " not found.");
+            throw new RuntimeException("User not found.");
         }
     }
 
-    public String deleteUser(int userId) {
+    public String deleteUser(int userId) throws RuntimeException {
         Optional<User> userOpt = getUserById(userId);
+
         if (userOpt.isPresent()) {
-            userRepository.delete(userOpt.get());
-            return "User with id " + userId + " deleted successfully.";
+            users.remove(userOpt.get());
+            return "User " + userId + " removed.";
         } else {
-            throw new UserNotFoundException("User with id " + userId + " not found.");
+            throw new RuntimeException("User not found.");
         }
     }
 }
