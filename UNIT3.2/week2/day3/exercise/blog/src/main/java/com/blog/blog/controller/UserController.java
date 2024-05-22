@@ -35,15 +35,8 @@ public Page<User> getAllUsers(@RequestParam(defaultValue = "0") int page, @Reque
 }
 
     @GetMapping("/api/users/{userId}")
-    public User getUserById(@PathVariable int userId) throws Exception{
-        Optional<User> userOpt = userService.getUserById(userId);
-
-        if(userOpt.isPresent()){
-            return userOpt.get();
-        }
-        else{
-            throw new Exception("User id: " + userId + " not found.");
-        }
+    public User getUserById(@PathVariable int userId) {
+        return userService.getUserById(userId);
     }
 
     @PutMapping(path = "/api/users/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)

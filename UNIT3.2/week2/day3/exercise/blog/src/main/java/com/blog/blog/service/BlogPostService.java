@@ -48,14 +48,18 @@ public class BlogPostService {
         return blogPostRepository.findAll(pageable);
     }
 
-    public Optional<BlogPost> getBlogPostById(int blogPostId) {
-        return blogPostRepository.findById(blogPostId);
+    public BlogPost getBlogPostById(int blogPostId) {
+        Optional<BlogPost> blogPostOpt = blogPostRepository.findById(blogPostId);
+        if(blogPostOpt.isPresent()){
+            return blogPostOpt.get();
+        } else {
+            throw new BlogPostNotFoundException("Blog post id: " + blogPostId + " not found.");
+        }
     }
 
     public BlogPost putBlogPost(int blogPostId, BlogPostDto blogPostUpd) {
-        Optional<BlogPost> blogPostOpt = getBlogPostById(blogPostId);
-        if (blogPostOpt.isPresent()) {
-            BlogPost blogPost = blogPostOpt.get();
+        BlogPost blogPost = getBlogPostById(blogPostId);
+        if (blogPost != null) {
 
             blogPost.setCategory(blogPostUpd.getCategory());
             blogPost.setTitle(blogPostUpd.getTitle());
@@ -79,10 +83,10 @@ public class BlogPostService {
     }
 
     public String  deleteBlogPost(int blogPostId) {
-        Optional<BlogPost> blogPostOpt = getBlogPostById(blogPostId);
+        BlogPost blogPost = getBlogPostById(blogPostId);
 
-        if (blogPostOpt.isPresent()) {
-            blogPostRepository.delete(blogPostOpt.get());
+        if (blogPost != null) {
+            blogPostRepository.delete(blogPost);
             return "Post with id " + blogPostId + " deleted successfully.";
         } else {
             throw new BlogPostNotFoundException("Post with id " + blogPostId + " not found.");
