@@ -1,0 +1,12 @@
+
+2024-05-20 01:04:01,894 TRACE [main] logger1 [Menu.java:264] -- '6 - Search offices by type and city' was used.
+2024-05-20 01:07:09,495 ERROR [main] logger1 [Menu.java:214] -- Error Error in '5 - Create Reservation': Reservation already exists for this office and this date. Try again.
+2024-05-20 01:07:39,934 ERROR [main] logger1 [Menu.java:222] -- Error in '5 - Create Reservation': failed to lazily initialize a collection of role: com.bookingManagement.bookingManagement.Entity.User.User.reservations: could not initialize proxy - no Session
+2024-05-20 01:11:34,115 ERROR [main] logger1 [Menu.java:222] -- Error in '5 - Create Reservation': failed to lazily initialize a collection of role: com.bookingManagement.bookingManagement.Entity.User.User.reservations: could not initialize proxy - no Session
+2024-05-20 01:13:01,338 ERROR [main] logger1 [Menu.java:222] -- Error in '5 - Create Reservation': failed to lazily initialize a collection of role: com.bookingManagement.bookingManagement.Entity.User.User.reservations: could not initialize proxy - no Session
+2024-05-20 01:13:34,481 TRACE [main] logger1 [ReservationService.java:76] -- Reservation saved: 
+Reservation{reservationId=502, user=
+User{userId=452, username='faffo', name='fd', surname='fa', email='fa@ffo'}, office=
+Office{officeId=30, description='Meeting room with flexible seating', officeType=MEETINGROOM, maxCapacity=8, building=Office Building J, city=Bari}, reservationDate=2024-09-09, expireDate=2024-09-10, peopleQty=4}
+By: 
+User{userId=452, username='faffo', name='fd', surname='fa', email='fa@ffo'}

@@ -1,52 +1,64 @@
 package com.blog.blog.service;
-
+import com.blog.blog.Dto.UserDto;
+import com.blog.blog.Exception.UserNotFoundException;
 import com.blog.blog.model.User;
+import com.blog.blog.repository.UserRepository;
+import lombok.Data;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
 @Service
 public class UserService {
-    private List<User> users = new ArrayList<>();
+
+    @Autowired
+    private UserRepository userRepository;
+
+    public String postUser(UserDto userDto) {
+        User user = new User();
+        user.setName(userDto.getName());
+        user.setSurname(userDto.getSurname());
+        user.setEmail(userDto.getEmail());
+        user.setBirthDate(userDto.getBirthDate());
+        user.setAvatar(userDto.getAvatar());
+        userRepository.save(user);
+        return "User with id " + user.getUserId() + " saved.";
+    }
+
+    public List<User> getUsers() {
+        return userRepository.findAll();
+    }
 
     public Optional<User> getUserById(int userId) {
-        return users.stream().filter(user -> user.getUserId()==userId).findFirst();
+        return userRepository.findById(userId);
     }
 
-    public List<User> getAllUsers() {
-        return users;
-    }
-
-    public String postUser(User user) {
-        users.add(user);
-        return "Users created with id: " + user.getUserId();
-    }
-
-    public User putUser(int userId, User userUpd) throws RuntimeException {
+    public User putUser(int userId, UserDto userDto) {
         Optional<User> userOpt = getUserById(userId);
         if (userOpt.isPresent()) {
             User user = userOpt.get();
-            user.setName(userUpd.getName());
-            user.setSurname(userUpd.getSurname());
-            user.setEmail(userUpd.getEmail());
-            user.setBirthDate(userUpd.getBirthDate());
-            user.setAvatar(userUpd.getAvatar());
+            user.setName(userDto.getName());
+            user.setSurname(userDto.getSurname());
+            user.setEmail(userDto.getEmail());
+            user.setBirthDate(userDto.getBirthDate());
+            user.setAvatar(userDto.getAvatar());
+            userRepository.save(user);
             return user;
         } else {
-            throw new RuntimeException("User not found.");
+            throw new UserNotFoundException("User with id " + userId + " not found.");
         }
     }
 
-    public String deleteUser(int userId) throws RuntimeException {
+    public String deleteUser(int userId) {
         Optional<User> userOpt = getUserById(userId);
-
         if (userOpt.isPresent()) {
-            users.remove(userOpt.get());
-            return "User " + userId + " removed.";
+            userRepository.delete(userOpt.get());
+            return "User with id " + userId + " deleted successfully.";
         } else {
-            throw new RuntimeException("User not found.");
+            throw new UserNotFoundException("User with id " + userId + " not found.");
         }
     }
 }

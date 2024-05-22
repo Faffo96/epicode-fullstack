@@ -1,0 +1,42 @@
+Aggiungere una Libreria .jar al Classpath in IntelliJ IDEA
+
+Introduzione
+Durante lo sviluppo di applicazioni Java, spesso si necessita di includere librerie esterne sotto forma di file `.jar`. Questo documento fornisce una guida dettagliata su come aggiungere una libreria `.jar` al classpath in IntelliJ IDEA.
+
+Prerequisiti
+- IntelliJ IDEA (Community o Ultimate Edition)
+- File della libreria `.jar` che desideri aggiungere
+
+Passi da Seguire
+
+1. Aprire il Progetto in IntelliJ
+Assicurati di avere il tuo progetto aperto in IntelliJ IDEA.
+
+2. Accedere alle Impostazioni del Progetto
+Vai su `File` > `Project Structure...` oppure usa la scorciatoia `Ctrl` + `Alt` + `Shift` + `S`.
+
+3. Aggiungere la Libreria .jar
+- Nel menu a sinistra della finestra "Project Structure", seleziona `Libraries`.
+- Clicca sul simbolo `+` nella parte superiore del pannello centrale per aggiungere una nuova libreria.
+- Seleziona `Java` dall'elenco delle opzioni.
+- Nella finestra di dialogo che si apre, naviga e seleziona il file `.jar` che desideri aggiungere.
+- Clicca `OK` dopo aver selezionato il file `.jar`.
+- Verifica e conferma il dialogo delle librerie selezionando `OK`.
+
+4. Aggiungere la Libreria al Classpath
+- Ora che la libreria è stata aggiunta, assicurati che sia selezionata nel classpath del modulo appropriato.
+- Vai a `Modules` nella finestra "Project Structure".
+- Sotto `Dependencies`, utilizza il pulsante `+` per aggiungere la libreria al modulo desiderato.
+- Seleziona la libreria che hai appena aggiunto e conferma con `OK`.
+
+5. Applicare e Chiudere
+- Dopo aver fatto queste modifiche, clicca su `Apply` e poi `OK` per chiudere la finestra "Project Structure".
+
+Verifica
+Per verificare che la libreria sia stata aggiunta correttamente:
+- Apri un file di codice Java nel tuo progetto.
+- Prova ad importare una classe dalla libreria `.jar`.
+- Se non vengono segnalati errori e l'IDE suggerisce completamenti automatici dalle classi della libreria, l'aggiunta è avvenuta con successo.
+
+Conclusione
+Seguendo questi passaggi, puoi facilmente aggiungere librerie `.jar` esterne al tuo progetto in IntelliJ IDEA, garantendo che tutte le dipendenze necessarie siano disponibili per il tuo ambiente di sviluppo.

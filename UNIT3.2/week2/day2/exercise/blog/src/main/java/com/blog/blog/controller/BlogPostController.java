@@ -1,5 +1,6 @@
 package com.blog.blog.controller;
 
+import com.blog.blog.Dto.BlogPostDto;
 import com.blog.blog.model.BlogPost;
 import com.blog.blog.service.BlogPostService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,13 +23,13 @@ public class BlogPostController {
 
     @PostMapping("/api/blogposts")
     @ResponseStatus(HttpStatus.CREATED)
-    public String postBlogPost(@RequestBody BlogPost blogPost) {
+    public String postBlogPost(@RequestBody BlogPostDto blogPost) {
         return blogPostService.postBlogPost(blogPost);
     }
 
     @GetMapping("/api/blogposts")
     public List<BlogPost> getAllBlogPosts() {
-        return blogPostService.getAllBlogPosts();
+        return blogPostService.getPosts();
     }
 
     @GetMapping("/api/blogposts/{postId}")
@@ -44,7 +45,7 @@ public class BlogPostController {
 
     @PutMapping(path = "/api/blogposts/{postId}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public @ResponseBody BlogPost putBlogPost(@PathVariable int postId, @RequestBody BlogPost blogPost) throws Exception {
+    public @ResponseBody BlogPost putBlogPost(@PathVariable int postId, @RequestBody BlogPostDto blogPost) throws Exception {
         return blogPostService.putBlogPost(postId, blogPost);
     }
 
