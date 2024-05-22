@@ -1,6 +1,7 @@
 package com.blog.blog.controller;
 
 import com.blog.blog.Dto.UserDto;
+import com.blog.blog.Exception.UserNotFoundException;
 import com.blog.blog.model.User;
 import com.blog.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -35,8 +36,15 @@ public Page<User> getAllUsers(@RequestParam(defaultValue = "0") int page, @Reque
 }
 
     @GetMapping("/api/users/{userId}")
-    public User getUserById(@PathVariable int userId) {
-        return userService.getUserById(userId);
+    public User getUserById(@PathVariable int userId) throws UserNotFoundException {
+        Optional<User> userOpt = userService.getUserById(userId);
+
+        if(userOpt.isPresent()){
+            return userOpt.get();
+        }
+        else{
+            throw new UserNotFoundException("User id: " + userId + " not found.");
+        }
     }
 
     @PutMapping(path = "/api/users/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)

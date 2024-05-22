@@ -38,20 +38,14 @@ public class UserService {
         return userRepository.findAll(pageable);
     }
 
-    public User getUserById(int userId) {
-        Optional<User> userOpt = userRepository.findById(userId);
-
-        if(userOpt.isPresent()){
-            return userOpt.get();
-        }
-        else{
-            throw new UserNotFoundException("User id: " + userId + " not found.");
-        }
+    public Optional<User> getUserById(int userId) {
+        return userRepository.findById(userId);
     }
 
     public User putUser(int userId, UserDto userDto) {
-        User user = getUserById(userId);
-        if (user != null) {
+        Optional<User> userOpt = getUserById(userId);
+        if (userOpt.isPresent()) {
+            User user = userOpt.get();
             user.setName(userDto.getName());
             user.setSurname(userDto.getSurname());
             user.setEmail(userDto.getEmail());
@@ -65,9 +59,9 @@ public class UserService {
     }
 
     public String deleteUser(int userId) {
-        User user = getUserById(userId);
-        if (user != null) {
-            userRepository.delete(user);
+        Optional<User> userOpt = getUserById(userId);
+        if (userOpt.isPresent()) {
+            userRepository.delete(userOpt.get());
             return "User with id " + userId + " deleted successfully.";
         } else {
             throw new UserNotFoundException("User with id " + userId + " not found.");
