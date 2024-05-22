@@ -1,9 +1,12 @@
 package com.blog.blog.controller;
 
 import com.blog.blog.Dto.BlogPostDto;
+import com.blog.blog.Exception.BlogPostNotFoundException;
 import com.blog.blog.model.BlogPost;
+import com.blog.blog.model.User;
 import com.blog.blog.service.BlogPostService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -24,12 +27,17 @@ public class BlogPostController {
     @PostMapping("/api/blogposts")
     @ResponseStatus(HttpStatus.CREATED)
     public String postBlogPost(@RequestBody BlogPostDto blogPost) {
-        return blogPostService.postBlogPost(blogPost);
+        try {
+            return blogPostService.postBlogPost(blogPost);
+        } catch (BlogPostNotFoundException e) {
+            return e.getMessage();
+        }
+
     }
 
     @GetMapping("/api/blogposts")
-    public List<BlogPost> getAllBlogPosts() {
-        return blogPostService.getPosts();
+    public Page<BlogPost> getAllBlogPosts(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "15") int size, @RequestParam(defaultValue = "userId") String sortBy) {
+        return blogPostService.getBlogPosts(page, size, sortBy);
     }
 
     @GetMapping("/api/blogposts/{postId}")

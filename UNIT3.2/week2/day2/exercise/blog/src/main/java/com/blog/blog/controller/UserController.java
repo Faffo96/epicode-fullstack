@@ -4,6 +4,7 @@ import com.blog.blog.Dto.UserDto;
 import com.blog.blog.model.User;
 import com.blog.blog.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
@@ -29,8 +30,8 @@ public String postUser(@RequestBody UserDto user) {
 }
 
 @GetMapping("/api/users")
-public List<User> getAllUsers() {
-        return userService.getUsers();
+public Page<User> getAllUsers(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "15") int size, @RequestParam(defaultValue = "userId") String sortBy) {
+        return userService.getUsers(page, size, sortBy);
 }
 
     @GetMapping("/api/users/{userId}")

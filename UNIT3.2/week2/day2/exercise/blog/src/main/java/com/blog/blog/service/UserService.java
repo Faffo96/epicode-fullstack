@@ -1,10 +1,15 @@
 package com.blog.blog.service;
 import com.blog.blog.Dto.UserDto;
 import com.blog.blog.Exception.UserNotFoundException;
+import com.blog.blog.model.BlogPost;
 import com.blog.blog.model.User;
 import com.blog.blog.repository.UserRepository;
 import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -28,8 +33,9 @@ public class UserService {
         return "User with id " + user.getUserId() + " saved.";
     }
 
-    public List<User> getUsers() {
-        return userRepository.findAll();
+    public Page<User> getUsers(int page, int size, String sortBy) {
+        Pageable pageable = PageRequest.of(page, size, Sort.by(sortBy));
+        return userRepository.findAll(pageable);
     }
 
     public Optional<User> getUserById(int userId) {

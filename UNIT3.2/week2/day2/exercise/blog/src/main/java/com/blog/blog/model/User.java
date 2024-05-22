@@ -23,13 +23,14 @@ public class User {
     @OneToMany(mappedBy = "user")
     private List<BlogPost> blogPosts;
 
-    /*public User(String name, String surname, String email, LocalDate birthDate, String avatar) {
-        this.name = name;
-        this.surname = surname;
-        this.email = email;
-        this.birthDate = birthDate;
-        this.avatar = avatar;
-        count++;
-        this.userId = count;
-    }*/
+    @Override
+    public String toString() {
+        return "User{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", email='" + email + '\'' +
+                ", birthDate=" + birthDate +
+                ", avatar='" + avatar + '\'' +
+                '}';
+    }
 }
