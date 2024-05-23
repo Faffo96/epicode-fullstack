@@ -1,6 +1,6 @@
-package com.blog.blog.Exception;
+package com.exercise.blog.Exception;
 
-import com.blog.blog.model.Error;
+import com.exercise.blog.model.Error;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

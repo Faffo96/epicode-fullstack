@@ -1,11 +1,10 @@
-package com.blog.blog.service;
-import com.blog.blog.Dto.UserDto;
-import com.blog.blog.Exception.UserNotFoundException;
-import com.blog.blog.model.BlogPost;
-import com.blog.blog.model.User;
-import com.blog.blog.repository.UserRepository;
+package com.exercise.blog.service;
+
+import com.exercise.blog.Dto.UserDto;
+import com.exercise.blog.Exception.UserNotFoundException;
+import com.exercise.blog.model.User;
+import com.exercise.blog.repository.UserRepository;
 import com.cloudinary.Cloudinary;
-import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
@@ -17,9 +16,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.time.LocalDate;
 import java.util.Collections;
-import java.util.List;
 import java.util.Optional;
 
 @Service
@@ -27,8 +24,10 @@ public class UserService {
 
     @Autowired
     private UserRepository userRepository;
+
     @Autowired
     private Cloudinary cloudinary;
+
     @Autowired
     private JavaMailSenderImpl javaMailSender;
 
@@ -40,6 +39,7 @@ public class UserService {
         user.setBirthDate(userDto.getBirthDate());
         user.setAvatar(userDto.getAvatar());
         userRepository.save(user);
+        sendMail(user.getEmail());
         return "User with id " + user.getUserId() + " saved.";
     }
 
@@ -48,14 +48,20 @@ public class UserService {
         return userRepository.findAll(pageable);
     }
 
-    public Optional<User> getUserById(int userId) {
-        return userRepository.findById(userId);
+    public User getUserById(int userId) {
+        Optional<User> userOpt = userRepository.findById(userId);
+
+        if(userOpt.isPresent()){
+            return userOpt.get();
+        }
+        else{
+            throw new UserNotFoundException("User id: " + userId + " not found.");
+        }
     }
 
     public User putUser(int userId, UserDto userDto) {
-        Optional<User> userOpt = getUserById(userId);
-        if (userOpt.isPresent()) {
-            User user = userOpt.get();
+        User user = getUserById(userId);
+        if (user != null) {
             user.setName(userDto.getName());
             user.setSurname(userDto.getSurname());
             user.setEmail(userDto.getEmail());
@@ -69,27 +75,27 @@ public class UserService {
     }
 
     public String deleteUser(int userId) {
-        Optional<User> userOpt = getUserById(userId);
-        if (userOpt.isPresent()) {
-            userRepository.delete(userOpt.get());
+        User user = getUserById(userId);
+        if (user != null) {
+            userRepository.delete(user);
             return "User with id " + userId + " deleted successfully.";
         } else {
             throw new UserNotFoundException("User with id " + userId + " not found.");
         }
     }
 
-    public String patchUserAvatar(int userId, MultipartFile avatar) throws IOException {
-        Optional<User> userOptional = getUserById(userId);
+    public String patchUserPhoto(int userId, MultipartFile photo) throws IOException {
+        User user = getUserById(userId);
 
-        if(userOptional.isPresent()){
-            String url = (String) cloudinary.uploader().upload(avatar.getBytes(), Collections.emptyMap()).get("url");
-            User user = userOptional.get();
+        if(user != null){
+            String url = (String) cloudinary.uploader().upload(photo.getBytes(), Collections.emptyMap()).get("url");
+
             user.setAvatar(url);
             userRepository.save(user);
-            return "Studente con matricola=" + userId + " aggiornato correttamente con la foto inviata";
+            return "User con id=" + userId + " aggiornato correttamente con la foto inviata";
         }
         else{
-            throw new UserNotFoundException("Studente con matricola=" + userId + " non trovato");
+            throw new UserNotFoundException("User con id=" + userId + " non trovato");
         }
     }
 

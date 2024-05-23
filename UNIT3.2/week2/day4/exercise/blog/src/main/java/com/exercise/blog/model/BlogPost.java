@@ -1,0 +1,35 @@
+package com.exercise.blog.model;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import lombok.Data;
+
+@Data
+@Entity
+@Table(name = "blog_posts")
+public class BlogPost {
+    @Id
+    @GeneratedValue
+    private int blogPostId;
+    private String category;
+    private String title;
+    private String cover;
+    private String content;
+    @JoinColumn(name = "reading_time")
+    private int readingTime;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    @JsonIgnore
+    private User user;
+
+    public BlogPost() {};
+
+    public BlogPost(String category, String title, String cover, String content, int readingTime, User user) {
+        this.category = category;
+        this.title = title;
+        this.cover = cover;
+        this.content = content;
+        this.readingTime = readingTime;
+        this.user = user;
+    }
+}

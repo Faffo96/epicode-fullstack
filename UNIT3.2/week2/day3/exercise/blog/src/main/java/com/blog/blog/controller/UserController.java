@@ -9,7 +9,9 @@ import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,13 +51,18 @@ public Page<User> getAllUsers(@RequestParam(defaultValue = "0") int page, @Reque
 
     @PutMapping(path = "/api/users/{userId}", produces = MediaType.APPLICATION_JSON_VALUE)
     @ResponseStatus(HttpStatus.OK)
-    public @ResponseBody User putUser(@PathVariable int userId, @RequestBody UserDto user) throws Exception {
+    public @ResponseBody User putUser(@PathVariable int userId, @RequestBody UserDto user) {
         return userService.putUser(userId, user);
     }
 
 
     @DeleteMapping("/api/users/{userId}")
-    public String deleteUser(@PathVariable int userId) throws Exception{
+    public String deleteUser(@PathVariable int userId){
         return userService.deleteUser(userId);
+    }
+
+    @PatchMapping("/api/users/{userId}")
+    public String patchUserAvatar(@RequestPart MultipartFile avatar, @PathVariable int userId) throws IOException {
+        return userService.patchUserAvatar(userId, avatar);
     }
 }

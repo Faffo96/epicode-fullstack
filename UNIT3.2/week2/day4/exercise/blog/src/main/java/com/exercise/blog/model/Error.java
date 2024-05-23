@@ -1,4 +1,4 @@
-package com.blog.blog.model;
+package com.exercise.blog.model;
 
 import lombok.Data;
 import org.springframework.http.HttpStatus;
