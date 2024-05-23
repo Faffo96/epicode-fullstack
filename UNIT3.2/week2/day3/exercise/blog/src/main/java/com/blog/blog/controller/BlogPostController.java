@@ -36,20 +36,18 @@ public class BlogPostController {
     }
 
     @GetMapping("/api/blogposts")
-    public Page<BlogPost> getAllBlogPosts(@RequestParam(defaultValue = "0") int page,
-                                          @RequestParam(defaultValue = "15") int size,
-                                          @RequestParam(defaultValue = "title") String sortBy) {
+    public Page<BlogPost> getAllBlogPosts(@RequestParam(defaultValue = "0") int page, @RequestParam(defaultValue = "15") int size, @RequestParam(defaultValue = "userId") String sortBy) {
         return blogPostService.getBlogPosts(page, size, sortBy);
     }
 
     @GetMapping("/api/blogposts/{postId}")
-    public BlogPost getBlogPostById(@PathVariable int postId) throws BlogPostNotFoundException {
+    public BlogPost getBlogPostById(@PathVariable int postId) throws Exception {
         Optional<BlogPost> blogPostOpt = blogPostService.getBlogPostById(postId);
 
         if(blogPostOpt.isPresent()){
             return blogPostOpt.get();
         } else {
-            throw new BlogPostNotFoundException("Blog post id: " + postId + " not found.");
+            throw new Exception("Blog post id: " + postId + " not found.");
         }
     }
 
