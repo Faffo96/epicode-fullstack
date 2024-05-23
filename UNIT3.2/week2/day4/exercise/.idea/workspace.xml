@@ -5,21 +5,33 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4778bccd-a4a5-48cc-8da8-1ebd6f969e4d" name="Changes" comment="S18L3">
-      <change afterPath="$PROJECT_DIR$/../../.idea/week2.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day3/exercise/blog/env.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day3/exercise/blog/src/main/java/com/blog/blog/AppConfig/AppConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../day3/exercise/blog/src/main/java/com/blog/blog/Exception/BadRequestException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/env.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/blog/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lesson/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../lesson/.idea/lesson.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../../../../UNIT1/sett2/giorno2" beforeDir="false" afterPath="$PROJECT_DIR$/../../../../UNIT1/sett2/giorno2" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day3/exercise/blog/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../day3/exercise/blog/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day3/exercise/blog/src/main/java/com/blog/blog/Exception/CentralizedExcepitionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../day3/exercise/blog/src/main/java/com/blog/blog/Exception/CentralizedExcepitionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day3/exercise/blog/src/main/java/com/blog/blog/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../day3/exercise/blog/src/main/java/com/blog/blog/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day3/exercise/blog/src/main/java/com/blog/blog/model/Error.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../day3/exercise/blog/src/main/java/com/blog/blog/model/Error.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day3/exercise/blog/src/main/java/com/blog/blog/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../day3/exercise/blog/src/main/java/com/blog/blog/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../day3/exercise/blog/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../day3/exercise/blog/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/.idea/lesson.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/pom.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/Dto/AulaDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/Dto/StudenteDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/U5w2d2teoriaApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/configuration/AppConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/controller/AulaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/controller/StudenteController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/exception/AulaNonTrovataException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/exception/BadRequestException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/exception/CentralizedExceptionHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/exception/StudenteNonTrovatoException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/model/Aula.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/model/Error.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/model/Studente.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/repository/AulaRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/repository/StudenteRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/service/AulaService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/service/StudenteService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/java/it/epicode/u5w2d2teoria/service/StudenteServiceList.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../lesson/u5w2d2teoria-u5w2d4teoria/src/test/java/it/epicode/u5w2d2teoria/U5w2d2teoriaApplicationTests.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,7 +79,7 @@
     "git-widget-placeholder": "master",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/fabio/OneDrive/Desktop/esercizioblog",
+    "last_opened_file_path": "D:/Epicode-exercises/UNIT3.2/week2/day4/exercise",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
