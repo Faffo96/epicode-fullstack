@@ -84,7 +84,6 @@ public class BlogPostService {
 
     public String  deleteBlogPost(int blogPostId) {
         BlogPost blogPost = getBlogPostById(blogPostId);
-
         if (blogPost != null) {
             blogPostRepository.delete(blogPost);
             return "Post with id " + blogPostId + " deleted successfully.";
