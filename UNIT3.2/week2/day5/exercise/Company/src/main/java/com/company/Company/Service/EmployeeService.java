@@ -4,6 +4,8 @@ import com.cloudinary.Cloudinary;
 import com.company.Company.Dto.EmployeeDto;
 import com.company.Company.Exception.EmployeeNotFoundException;
 import com.company.Company.Repository.EmployeeRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
@@ -25,6 +27,9 @@ public class EmployeeService {
     @Autowired
     private Cloudinary cloudinary;
 
+    private static Logger loggerError = LoggerFactory.getLogger("loggerError");
+    private static Logger loggerTrace = LoggerFactory.getLogger("loggerTrace");
+
     public String POSTEmployee(EmployeeDto employeeDto) {
         Employee employee = new Employee();
         employee.setUsername(employeeDto.getUsername());
@@ -35,6 +40,7 @@ public class EmployeeService {
 
         employeeRepository.save(employee);
 
+        loggerTrace.trace("Employee with id " + employee.getEmployeeId() + " saved.");
         return "Employee with id " + employee.getEmployeeId() + " saved.";
     }
 
@@ -49,6 +55,7 @@ public class EmployeeService {
         if(employeeOpt.isPresent()){
             return employeeOpt.get();
         } else {
+            loggerError.error("Employee id: " + employeeId + " not found.");
             throw new EmployeeNotFoundException("Employee id: " + employeeId + " not found.");
         }
     }
@@ -64,9 +71,10 @@ public class EmployeeService {
             employee.setAvatar(employeeDto.getAvatar());
 
             employeeRepository.save(employee);
-
+            loggerTrace.trace("Employee with id " + employeeId + " modified.");
             return employee;
         } else {
+            loggerError.error("Employee id: " + employeeId + " not found.");
             throw new EmployeeNotFoundException("Employee with id " + employeeId + " not found.");
         }
     }
@@ -76,8 +84,10 @@ public class EmployeeService {
 
         if (employee != null) {
             employeeRepository.delete(employee);
+            loggerTrace.trace("Employee with id " + employeeId + " deleted successfully.");
             return "Employee with id " + employeeId + " deleted successfully.";
         } else {
+            loggerError.error("Employee id: " + employeeId + " not found.");
             throw new EmployeeNotFoundException("Employee with id " + employeeId + " not found.");
         }
     }
@@ -93,6 +103,7 @@ public class EmployeeService {
 
             return "Employee with id=" + employeeId + " updated successfully with the sent photo.";
         } else {
+            loggerError.error("Employee id: " + employeeId + " not found.");
             throw new EmployeeNotFoundException("Employee with id=" + employeeId + " not found.");
         }
     }

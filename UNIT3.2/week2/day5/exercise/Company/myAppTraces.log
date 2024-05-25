@@ -1,0 +1,15 @@
+2024-05-25 22:40:03,635 TRACE [http-nio-8080-exec-2] loggerTrace [EmployeeService.java:43] -- Employee with id 1 saved.
+2024-05-25 22:40:57,387 TRACE [http-nio-8080-exec-6] loggerTrace [EmployeeService.java:43] -- Employee with id 2 saved.
+2024-05-25 22:41:07,197 TRACE [http-nio-8080-exec-7] loggerTrace [EmployeeService.java:43] -- Employee with id 3 saved.
+2024-05-25 22:43:20,108 TRACE [http-nio-8080-exec-4] loggerTrace [EmployeeService.java:43] -- Employee with id 4 saved.
+2024-05-25 22:45:31,215 TRACE [http-nio-8080-exec-2] loggerTrace [PcService.java:52] -- PC with id 1 saved.
+2024-05-25 22:45:38,953 TRACE [http-nio-8080-exec-3] loggerTrace [PcService.java:52] -- PC with id 2 saved.
+2024-05-25 22:45:48,705 TRACE [http-nio-8080-exec-4] loggerTrace [PcService.java:52] -- PC with id 3 saved.
+2024-05-25 22:46:30,840 TRACE [http-nio-8080-exec-6] loggerTrace [TabletService.java:50] -- Tablet with id 4 saved.
+2024-05-25 22:46:46,188 TRACE [http-nio-8080-exec-8] loggerTrace [TabletService.java:50] -- Tablet with id 5 saved.
+2024-05-25 22:46:53,393 TRACE [http-nio-8080-exec-9] loggerTrace [TabletService.java:50] -- Tablet with id 6 saved.
+2024-05-25 22:47:28,566 TRACE [http-nio-8080-exec-1] loggerTrace [SmartphoneService.java:49] -- Smartphone with id 7 saved.
+2024-05-25 22:47:44,231 TRACE [http-nio-8080-exec-2] loggerTrace [SmartphoneService.java:49] -- Smartphone with id 8 saved.
+2024-05-25 22:48:34,390 TRACE [http-nio-8080-exec-4] loggerTrace [SmartphoneService.java:49] -- Smartphone with id 9 saved.
+2024-05-25 22:49:14,117 TRACE [http-nio-8080-exec-5] loggerTrace [SmartphoneService.java:49] -- Smartphone with id 10 saved.
+2024-05-25 22:49:30,531 TRACE [http-nio-8080-exec-7] loggerTrace [SmartphoneService.java:94] -- Smartphone with id 10 deleted successfully.

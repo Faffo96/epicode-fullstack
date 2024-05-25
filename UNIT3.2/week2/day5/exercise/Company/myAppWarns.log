@@ -1,0 +1,1 @@
+2024-05-25 22:50:30,547 WARN [http-nio-8080-exec-8] loggerWarn [SmartphoneService.java:121] -- Cannot assign the smartphone: 8. The state of this Smartphone is: MANTAINANCE
