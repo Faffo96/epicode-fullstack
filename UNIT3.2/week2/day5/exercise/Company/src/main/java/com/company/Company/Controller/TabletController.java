@@ -4,12 +4,14 @@ import com.company.Company.Dto.EmployeeDto;
 import com.company.Company.Dto.TabletDto;
 import com.company.Company.Entity.Employee;
 import com.company.Company.Entity.Pc;
+import com.company.Company.Entity.Smartphone;
 import com.company.Company.Exception.BadRequestException;
 import com.company.Company.Service.TabletService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -60,5 +62,11 @@ public class TabletController {
     @ResponseStatus(HttpStatus.OK)
     public @ResponseBody Tablet patchTabletEmployee(@PathVariable int deviceId, @RequestBody @Validated Employee employee) {
         return tabletService.patchTabletEmployee(deviceId, employee);
+    }
+
+    @PatchMapping("/tablets/{deviceId}/removeEmployee")
+    public ResponseEntity<Tablet> removeEmployeeFromTablet(@PathVariable int deviceId) {
+        Tablet updatedTablet = tabletService.removeEmployeeFromTablet(deviceId);
+        return ResponseEntity.ok(updatedTablet);
     }
 }

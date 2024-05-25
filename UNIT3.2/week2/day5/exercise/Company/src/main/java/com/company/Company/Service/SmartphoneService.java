@@ -2,6 +2,7 @@ package com.company.Company.Service;
 
 import com.cloudinary.Cloudinary;
 import com.company.Company.Dto.SmartphoneDto;
+import com.company.Company.Entity.Pc;
 import com.company.Company.Entity.Smartphone;
 import com.company.Company.Enum.DeviceState;
 import com.company.Company.Exception.DeviceNotAvailableException;
@@ -104,6 +105,14 @@ public class SmartphoneService {
         } else {
             throw new DeviceNotAvailableException("Cannot assign the smartphone: " + deviceId + ". The state of this " + smartphone.getClass().getSimpleName() + " is: " + smartphone.getDeviceState());
         }
+    }
+
+    public Smartphone removeEmployeeFromSmartphone(int deviceId) {
+        Smartphone smartphone = smartphoneRepository.findById(deviceId)
+                .orElseThrow(() -> new DeviceNotFoundException("Smartphone id:" + deviceId + " not found."));
+
+        smartphone.setEmployee(null);
+        return smartphoneRepository.save(smartphone);
     }
 
 }

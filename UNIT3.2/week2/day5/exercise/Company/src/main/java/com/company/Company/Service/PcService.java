@@ -111,4 +111,12 @@ public class PcService {
             throw new DeviceNotAvailableException("Cannot assign the device: " + deviceId + ". The state of this " + pc.getClass().getSimpleName() + " is: " + pc.getDeviceState());
         }
     }
+
+    public Pc removeEmployeeFromPc(int deviceId) {
+        Pc pc = pcRepository.findById(deviceId)
+                .orElseThrow(() -> new DeviceNotFoundException("Pc id:" + deviceId + " not found."));
+
+        pc.setEmployee(null);
+        return pcRepository.save(pc);
+    }
 }

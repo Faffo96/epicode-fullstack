@@ -7,6 +7,7 @@ import com.company.Company.Service.PcService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -60,4 +61,9 @@ public class PcController {
         return pcService.patchPcEmployee(deviceId, employee);
     }
 
+    @PatchMapping("/pcs/{deviceId}/removeEmployee")
+    public ResponseEntity<Pc> removeEmployeeFromPc(@PathVariable int deviceId) {
+        Pc updatedPc = pcService.removeEmployeeFromPc(deviceId);
+        return ResponseEntity.ok(updatedPc);
+    }
 }
