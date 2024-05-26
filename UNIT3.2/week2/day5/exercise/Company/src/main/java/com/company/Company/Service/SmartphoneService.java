@@ -2,7 +2,7 @@ package com.company.Company.Service;
 
 import com.cloudinary.Cloudinary;
 import com.company.Company.Dto.SmartphoneDto;
-import com.company.Company.Entity.Pc;
+import com.company.Company.Entity.Device;
 import com.company.Company.Entity.Smartphone;
 import com.company.Company.Enum.DeviceState;
 import com.company.Company.Exception.DeviceNotAvailableException;
@@ -16,6 +16,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Service;
 import com.company.Company.Entity.Employee;
 
@@ -31,6 +33,9 @@ public class SmartphoneService {
 
     @Autowired
     private EmployeeService employeeService;
+
+    @Autowired
+    private JavaMailSenderImpl javaMailSender;
 
     private static Logger loggerError = LoggerFactory.getLogger("loggerError");
     private static Logger loggerTrace = LoggerFactory.getLogger("loggerTrace");
@@ -112,6 +117,7 @@ public class SmartphoneService {
             if (employee != null) {
                 smartphone.setEmployee(employee);
                 loggerTrace.trace("Smartphone with id " + deviceId + " assigned to employee id: " + employee.getEmployeeId());
+                sendNewDeviceMail(employee, smartphone);
                 return smartphoneRepository.save(smartphone);
             } else {
                 loggerError.error("Smartphone id:" + deviceId + " not found.");
@@ -135,5 +141,15 @@ public class SmartphoneService {
         return smartphoneRepository.save(smartphone);
     }
 
+    private void sendNewDeviceMail(Employee employee, Device device) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(employee.getEmail());
+        message.setSubject("You've been assigned a new " + device.getClass().getSimpleName() + "!");
+        message.setText("Hi " + employee.getName() + ", " +
+                "\n\nYou've been assigned a new " + device.getClass().getSimpleName() + "!" +
+                "\n It is an " + device.getBrand() + " " + device.getModel() + " with " + device.getStorageGb() + "GB. Enjoy it!");
+
+        javaMailSender.send(message);
+    }
 }
 

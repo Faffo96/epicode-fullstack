@@ -8,6 +8,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Service;
 import com.company.Company.Entity.Employee;
 import org.springframework.data.domain.Page;
@@ -27,6 +29,9 @@ public class EmployeeService {
     @Autowired
     private Cloudinary cloudinary;
 
+    @Autowired
+    private JavaMailSenderImpl javaMailSender;
+
     private static Logger loggerError = LoggerFactory.getLogger("loggerError");
     private static Logger loggerTrace = LoggerFactory.getLogger("loggerTrace");
 
@@ -39,7 +44,7 @@ public class EmployeeService {
         employee.setAvatar(employeeDto.getAvatar());
 
         employeeRepository.save(employee);
-
+        sendRegistrationMail(employee);
         loggerTrace.trace("Employee with id " + employee.getEmployeeId() + " saved.");
         return "Employee with id " + employee.getEmployeeId() + " saved.";
     }
@@ -100,7 +105,7 @@ public class EmployeeService {
 
             employee.setAvatar(url);
             employeeRepository.save(employee);
-
+            loggerTrace.trace("Employee with id=" + employeeId + " updated successfully with the sent photo.");
             return "Employee with id=" + employeeId + " updated successfully with the sent photo.";
         } else {
             loggerError.error("Employee id: " + employeeId + " not found.");
@@ -108,4 +113,12 @@ public class EmployeeService {
         }
     }
 
+    private void sendRegistrationMail(Employee employee) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(employee.getEmail());
+        message.setSubject("Rest Service Registration");
+        message.setText("Congratulations, " + employee.getName() + " " + employee.getSurname() + "! Successful registration to this rest service");
+
+        javaMailSender.send(message);
+    }
 }

@@ -2,7 +2,6 @@ package com.company.Company.Controller;
 
 import com.company.Company.Dto.SmartphoneDto;
 import com.company.Company.Entity.Employee;
-import com.company.Company.Entity.Pc;
 import com.company.Company.Exception.BadRequestException;
 import com.company.Company.Service.SmartphoneService;
 import org.springframework.beans.factory.annotation.Autowired;

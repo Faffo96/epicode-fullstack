@@ -2,6 +2,7 @@ package com.company.Company.Service;
 
 import com.cloudinary.Cloudinary;
 import com.company.Company.Dto.PcDto;
+import com.company.Company.Entity.Device;
 import com.company.Company.Entity.Pc;
 import com.company.Company.Enum.DeviceState;
 import com.company.Company.Exception.DeviceNotAvailableException;
@@ -15,6 +16,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
+import org.springframework.mail.SimpleMailMessage;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
@@ -31,6 +34,9 @@ public class PcService {
 
     @Autowired
     private Cloudinary cloudinary;
+
+    @Autowired
+    private JavaMailSenderImpl javaMailSender;
 
     private static Logger loggerError = LoggerFactory.getLogger("loggerError");
     private static Logger loggerTrace = LoggerFactory.getLogger("loggerTrace");
@@ -116,13 +122,14 @@ public class PcService {
             if (employee != null) {
                 pc.setEmployee(employee);
                 loggerTrace.trace("PC with id " + deviceId + " assigned to employee id: " + employee.getEmployeeId());
+                sendNewDeviceMail(employee, pc);
                 return pcRepository.save(pc);
             } else {
                 loggerError.error("Employee with id:" + selectedEmployee.getEmployeeId() + " not found");
                 throw new EmployeeNotFoundException("Employee with id:" + selectedEmployee.getEmployeeId() + " not found");
             }
         } else {
-            loggerWarn.warn("Cannot assign the device: " + deviceId + ". The state of this " + pc.getClass().getSimpleName() + " is: " + pc.getDeviceState());
+            loggerWarn.warn("Cannot assign the pc: " + deviceId + ". The state of this " + pc.getClass().getSimpleName() + " is: " + pc.getDeviceState());
             throw new DeviceNotAvailableException("Cannot assign the device: " + deviceId + ". The state of this " + pc.getClass().getSimpleName() + " is: " + pc.getDeviceState());
         }
     }
@@ -137,5 +144,16 @@ public class PcService {
         pc.setEmployee(null);
         loggerTrace.trace("PC with id " + deviceId + " removed from employee id: " + pc.getDeviceId());
         return pcRepository.save(pc);
+    }
+
+    private void sendNewDeviceMail(Employee employee, Device device) {
+        SimpleMailMessage message = new SimpleMailMessage();
+        message.setTo(employee.getEmail());
+        message.setSubject("You've been assigned a new " + device.getClass().getSimpleName() + "!");
+        message.setText("Hi " + employee.getName() + ", " +
+                "\n\nYou've been assigned a new " + device.getClass().getSimpleName() + "!" +
+                "\n It is an " + device.getBrand() + " " + device.getModel() + " with " + device.getStorageGb() + "GB. Enjoy it!");
+
+        javaMailSender.send(message);
     }
 }

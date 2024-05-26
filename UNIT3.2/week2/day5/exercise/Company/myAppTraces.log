@@ -13,3 +13,22 @@
 2024-05-25 22:48:34,390 TRACE [http-nio-8080-exec-4] loggerTrace [SmartphoneService.java:49] -- Smartphone with id 9 saved.
 2024-05-25 22:49:14,117 TRACE [http-nio-8080-exec-5] loggerTrace [SmartphoneService.java:49] -- Smartphone with id 10 saved.
 2024-05-25 22:49:30,531 TRACE [http-nio-8080-exec-7] loggerTrace [SmartphoneService.java:94] -- Smartphone with id 10 deleted successfully.
+2024-05-26 09:08:38,092 TRACE [http-nio-8080-exec-10] loggerTrace [EmployeeService.java:109] -- Employee with id=1 updated successfully with the sent photo.
+2024-05-26 09:12:45,031 TRACE [http-nio-8080-exec-4] loggerTrace [PcService.java:118] -- PC with id 1 assigned to employee id: 1
+2024-05-26 09:13:59,195 TRACE [http-nio-8080-exec-6] loggerTrace [PcService.java:138] -- PC with id 1 removed from employee id: 1
+2024-05-26 09:14:24,812 TRACE [http-nio-8080-exec-8] loggerTrace [PcService.java:118] -- PC with id 1 assigned to employee id: 1
+2024-05-26 09:16:45,780 TRACE [http-nio-8080-exec-2] loggerTrace [TabletService.java:115] -- Tablet with id 4 assigned to employee id: 1
+2024-05-26 09:17:23,296 TRACE [http-nio-8080-exec-3] loggerTrace [TabletService.java:135] -- Tablet with id 4 removed from employee id: 4
+2024-05-26 09:17:38,016 TRACE [http-nio-8080-exec-4] loggerTrace [TabletService.java:115] -- Tablet with id 4 assigned to employee id: 1
+2024-05-26 09:18:11,329 TRACE [http-nio-8080-exec-6] loggerTrace [SmartphoneService.java:114] -- Smartphone with id 7 assigned to employee id: 1
+2024-05-26 09:19:31,674 TRACE [http-nio-8080-exec-2] loggerTrace [SmartphoneService.java:134] -- Smartphone with id 7 removed from employee id: 7
+2024-05-26 09:19:46,795 TRACE [http-nio-8080-exec-3] loggerTrace [SmartphoneService.java:114] -- Smartphone with id 7 assigned to employee id: 1
+2024-05-26 09:35:24,585 TRACE [http-nio-8080-exec-3] loggerTrace [EmployeeService.java:49] -- Employee with id 52 saved.
+2024-05-26 09:35:55,361 TRACE [http-nio-8080-exec-2] loggerTrace [EmployeeService.java:49] -- Employee with id 53 saved.
+2024-05-26 09:44:31,185 TRACE [http-nio-8080-exec-3] loggerTrace [SmartphoneService.java:120] -- Smartphone with id 7 assigned to employee id: 53
+2024-05-26 09:45:58,538 TRACE [http-nio-8080-exec-1] loggerTrace [SmartphoneService.java:120] -- Smartphone with id 7 assigned to employee id: 52
+2024-05-26 09:48:14,033 TRACE [http-nio-8080-exec-3] loggerTrace [TabletService.java:121] -- Tablet with id 4 assigned to employee id: 52
+2024-05-26 09:48:27,331 TRACE [http-nio-8080-exec-4] loggerTrace [TabletService.java:121] -- Tablet with id 4 assigned to employee id: 53
+2024-05-26 09:50:18,852 TRACE [http-nio-8080-exec-2] loggerTrace [PcService.java:124] -- PC with id 1 assigned to employee id: 52
+2024-05-26 09:50:31,239 TRACE [http-nio-8080-exec-3] loggerTrace [PcService.java:124] -- PC with id 1 assigned to employee id: 53
+2024-05-26 09:56:30,704 TRACE [http-nio-8080-exec-1] loggerTrace [PcService.java:124] -- PC with id 1 assigned to employee id: 53
