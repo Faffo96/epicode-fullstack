@@ -123,6 +123,7 @@ public class PcService {
                 pc.setEmployee(employee);
                 loggerTrace.trace("PC with id " + deviceId + " assigned to employee id: " + employee.getEmployeeId());
                 sendNewDeviceMail(employee, pc);
+                loggerTrace.trace("Device id: " + deviceId + " assignment email sent to employee id: " + employee.getEmployeeId());
                 return pcRepository.save(pc);
             } else {
                 loggerError.error("Employee with id:" + selectedEmployee.getEmployeeId() + " not found");

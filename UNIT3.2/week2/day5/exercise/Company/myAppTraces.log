@@ -32,3 +32,7 @@
 2024-05-26 09:50:18,852 TRACE [http-nio-8080-exec-2] loggerTrace [PcService.java:124] -- PC with id 1 assigned to employee id: 52
 2024-05-26 09:50:31,239 TRACE [http-nio-8080-exec-3] loggerTrace [PcService.java:124] -- PC with id 1 assigned to employee id: 53
 2024-05-26 09:56:30,704 TRACE [http-nio-8080-exec-1] loggerTrace [PcService.java:124] -- PC with id 1 assigned to employee id: 53
+2024-05-26 10:42:23,971 TRACE [http-nio-8080-exec-1] loggerTrace [TabletService.java:119] -- Tablet with id 4 assigned to employee id: 53
+2024-05-26 10:42:25,560 TRACE [http-nio-8080-exec-1] loggerTrace [TabletService.java:121] -- Device id: 4 assignment email sent to employee id: 53
+2024-05-26 10:44:00,160 TRACE [http-nio-8080-exec-7] loggerTrace [EmployeeService.java:47] -- Registration email sent to employee id: 102
+2024-05-26 10:44:01,406 TRACE [http-nio-8080-exec-7] loggerTrace [EmployeeService.java:49] -- Employee with id 102 saved.

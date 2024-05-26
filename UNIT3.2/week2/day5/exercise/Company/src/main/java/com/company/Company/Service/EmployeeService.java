@@ -44,6 +44,7 @@ public class EmployeeService {
         employee.setAvatar(employeeDto.getAvatar());
 
         employeeRepository.save(employee);
+        loggerTrace.trace("Registration email sent to employee id: " + employee.getEmployeeId());
         sendRegistrationMail(employee);
         loggerTrace.trace("Employee with id " + employee.getEmployeeId() + " saved.");
         return "Employee with id " + employee.getEmployeeId() + " saved.";

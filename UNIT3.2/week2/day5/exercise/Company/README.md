@@ -7,6 +7,8 @@ E' possibile creare Pc, Tablet o Smartphone e successivamente assegnarli a un im
 dettagli sul device, a patto che lo stato sia AVAILABLE.
 E' possibile dissociare un device da un utente.
 
+Link to Postman presetted workspace https://www.postman.com/maintenance-astronaut-57114539/workspace/public/collection/33393721-d465512e-9aad-434d-a220-fe7128a9ad9a?action=share&creator=33393721
+
 Ecco una lista degli endpoints da chiamare:
 
 {{BaseUrl}} = localhost:8080/api

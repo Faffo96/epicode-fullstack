@@ -118,6 +118,7 @@ public class TabletService {
                 tablet.setEmployee(employee);
                 loggerTrace.trace("Tablet with id " + deviceId + " assigned to employee id: " + employee.getEmployeeId());
                 sendNewDeviceMail(employee, tablet);
+                loggerTrace.trace("Device id: " + deviceId + " assignment email sent to employee id: " + employee.getEmployeeId());
                 return tabletRepository.save(tablet);
             } else {
                 loggerError.error("Tablet id:" + deviceId + " not found.");

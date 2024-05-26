@@ -118,6 +118,7 @@ public class SmartphoneService {
                 smartphone.setEmployee(employee);
                 loggerTrace.trace("Smartphone with id " + deviceId + " assigned to employee id: " + employee.getEmployeeId());
                 sendNewDeviceMail(employee, smartphone);
+                loggerTrace.trace("Device id: " + deviceId + " assignment email sent to employee id: " + employee.getEmployeeId());
                 return smartphoneRepository.save(smartphone);
             } else {
                 loggerError.error("Smartphone id:" + deviceId + " not found.");
