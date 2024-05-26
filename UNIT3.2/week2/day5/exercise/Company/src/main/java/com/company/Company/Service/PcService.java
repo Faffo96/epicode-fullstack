@@ -114,26 +114,31 @@ public class PcService {
 
     public Pc patchPcEmployee(int deviceId, Employee selectedEmployee) {
         Pc pc = pcRepository.findById(deviceId)
-                .orElseThrow(() -> new DeviceNotFoundException("Pc id:" + deviceId + " not found."));
+                .orElseThrow(() -> {
+                    loggerError.error("Pc id:" + deviceId + " not found.");
+                    return new DeviceNotFoundException("Pc id:" + deviceId + " not found.");
+                });
 
-        if (pc.getDeviceState() == DeviceState.AVAILABLE) {
-            Employee employee = employeeService.getEmployeeById(selectedEmployee.getEmployeeId());
-
-            if (employee != null) {
-                pc.setEmployee(employee);
-                loggerTrace.trace("PC with id " + deviceId + " assigned to employee id: " + employee.getEmployeeId());
-                sendNewDeviceMail(employee, pc);
-                loggerTrace.trace("Device id: " + deviceId + " assignment email sent to employee id: " + employee.getEmployeeId());
-                return pcRepository.save(pc);
-            } else {
-                loggerError.error("Employee with id:" + selectedEmployee.getEmployeeId() + " not found");
-                throw new EmployeeNotFoundException("Employee with id:" + selectedEmployee.getEmployeeId() + " not found");
-            }
-        } else {
-            loggerWarn.warn("Cannot assign the pc: " + deviceId + ". The state of this " + pc.getClass().getSimpleName() + " is: " + pc.getDeviceState());
-            throw new DeviceNotAvailableException("Cannot assign the device: " + deviceId + ". The state of this " + pc.getClass().getSimpleName() + " is: " + pc.getDeviceState());
+        if (pc.getDeviceState() != DeviceState.AVAILABLE) {
+            String warnMessage = "Cannot assign the pc: " + deviceId + ". The state of this " + pc.getClass().getSimpleName() + " is: " + pc.getDeviceState();
+            loggerWarn.warn(warnMessage);
+            throw new DeviceNotAvailableException(warnMessage);
         }
+
+        Employee employee = Optional.ofNullable(employeeService.getEmployeeById(selectedEmployee.getEmployeeId()))
+                .orElseThrow(() -> {
+                    String errorMessage = "Employee with id:" + selectedEmployee.getEmployeeId() + " not found";
+                    loggerError.error(errorMessage);
+                    return new EmployeeNotFoundException(errorMessage);
+                });
+
+        pc.setEmployee(employee);
+        loggerTrace.trace("PC with id " + deviceId + " assigned to employee id: " + employee.getEmployeeId());
+        sendNewDeviceMail(employee, pc);
+        loggerTrace.trace("PC with id: " + deviceId + " assignment email sent to employee id: " + employee.getEmployeeId());
+        return pcRepository.save(pc);
     }
+
 
     public Pc removeEmployeeFromPc(int deviceId) {
         Pc pc = pcRepository.findById(deviceId)
@@ -142,8 +147,15 @@ public class PcService {
                     return new DeviceNotFoundException("Pc id:" + deviceId + " not found.");
                 });
 
+        Employee employee = Optional.ofNullable(pc.getEmployee())
+                .orElseThrow(() -> {
+                    loggerError.error("Cannot remove the device. No employee associated with Pc id:" + deviceId);
+                    return new EmployeeNotFoundException("No employee associated with Pc id:" + deviceId);
+                });
+
         pc.setEmployee(null);
-        loggerTrace.trace("PC with id " + deviceId + " removed from employee id: " + pc.getDeviceId());
+
+        loggerTrace.trace("PC with id " + deviceId + " removed from employee id: " + employee.getEmployeeId());
         return pcRepository.save(pc);
     }
 

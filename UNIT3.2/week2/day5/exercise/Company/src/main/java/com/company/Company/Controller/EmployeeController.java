@@ -23,7 +23,7 @@ public class EmployeeController {
 
     @GetMapping
     public String benvenuto() {
-        return "benvenuto!";
+        return "Welcome!";
     }
 
     @PostMapping("/employees")

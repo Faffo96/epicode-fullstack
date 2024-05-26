@@ -1,8 +1,7 @@
-2024-05-25 22:10:46,393 ERROR [http-nio-8080-exec-2] loggerError [EmployeeService.java:56] -- Employee id: 100 not found.
-2024-05-25 22:55:32,130 ERROR [http-nio-8080-exec-3] loggerError [TabletService.java:65] -- Tablet id:1 not found.
-2024-05-26 09:17:13,164 ERROR [http-nio-8080-exec-1] loggerError [PcService.java:133] -- Pc id:4 not found.
-2024-05-26 09:20:29,399 ERROR [http-nio-8080-exec-4] loggerError [SmartphoneService.java:64] -- Smartphone id:1 not found.
-2024-05-26 09:23:38,922 ERROR [http-nio-8080-exec-2] loggerError [TabletService.java:106] -- Tablet id:1 not found.
-2024-05-26 09:23:47,861 ERROR [http-nio-8080-exec-6] loggerError [TabletService.java:122] -- Tablet id:5 not found.
-2024-05-26 09:47:06,225 ERROR [http-nio-8080-exec-2] loggerError [TabletService.java:112] -- Tablet id:1 not found.
-2024-05-26 09:47:56,238 ERROR [http-nio-8080-exec-2] loggerError [TabletService.java:112] -- Tablet id:1 not found.
+2024-05-26 17:07:58,305 ERROR [http-nio-8080-exec-2] loggerError [PcService.java:152] -- Cannot remove the device. No employee associated with Pc id:3
+2024-05-26 17:19:24,878 ERROR [http-nio-8080-exec-1] loggerError [SmartphoneService.java:143] -- Cannot remove the device. No employee associated with Smartphone id:7
+2024-05-26 17:21:56,498 ERROR [http-nio-8080-exec-3] loggerError [TabletService.java:143] -- Cannot remove the device. No employee associated with Tablet id:4
+2024-05-26 17:22:31,427 ERROR [http-nio-8080-exec-4] loggerError [EmployeeService.java:64] -- Employee id: 11 not found.
+2024-05-26 17:22:46,752 ERROR [http-nio-8080-exec-5] loggerError [PcService.java:73] -- PC id: 111 not found.
+2024-05-26 17:23:01,890 ERROR [http-nio-8080-exec-6] loggerError [TabletService.java:69] -- Tablet id:111 not found.
+2024-05-26 17:23:12,775 ERROR [http-nio-8080-exec-7] loggerError [SmartphoneService.java:69] -- Smartphone id:111 not found.

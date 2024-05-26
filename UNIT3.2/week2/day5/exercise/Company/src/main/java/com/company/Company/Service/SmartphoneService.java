@@ -111,23 +111,24 @@ public class SmartphoneService {
                     return new DeviceNotFoundException("Smartphone id:" + deviceId + " not found.");
                 });
 
-        if (smartphone.getDeviceState() == DeviceState.AVAILABLE) {
-            Employee employee = employeeService.getEmployeeById(selectedEmployee.getEmployeeId());
-
-            if (employee != null) {
-                smartphone.setEmployee(employee);
-                loggerTrace.trace("Smartphone with id " + deviceId + " assigned to employee id: " + employee.getEmployeeId());
-                sendNewDeviceMail(employee, smartphone);
-                loggerTrace.trace("Device id: " + deviceId + " assignment email sent to employee id: " + employee.getEmployeeId());
-                return smartphoneRepository.save(smartphone);
-            } else {
-                loggerError.error("Smartphone id:" + deviceId + " not found.");
-                throw new EmployeeNotFoundException("Employee with id:" + selectedEmployee.getEmployeeId() + " not found");
-            }
-        } else {
-            loggerWarn.warn("Cannot assign the smartphone: " + deviceId + ". The state of this " + smartphone.getClass().getSimpleName() + " is: " + smartphone.getDeviceState());
-            throw new DeviceNotAvailableException("Cannot assign the smartphone: " + deviceId + ". The state of this " + smartphone.getClass().getSimpleName() + " is: " + smartphone.getDeviceState());
+        if (smartphone.getDeviceState() != DeviceState.AVAILABLE) {
+            String warnMessage = "Cannot assign the smartphone: " + deviceId + ". The state of this " + smartphone.getClass().getSimpleName() + " is: " + smartphone.getDeviceState();
+            loggerWarn.warn(warnMessage);
+            throw new DeviceNotAvailableException(warnMessage);
         }
+
+        Employee employee = Optional.ofNullable(employeeService.getEmployeeById(selectedEmployee.getEmployeeId()))
+                .orElseThrow(() -> {
+                    String errorMessage = "Employee with id:" + selectedEmployee.getEmployeeId() + " not found";
+                    loggerError.error(errorMessage);
+                    return new EmployeeNotFoundException(errorMessage);
+                });
+
+        smartphone.setEmployee(employee);
+        loggerTrace.trace("Smartphone with id " + deviceId + " assigned to employee id: " + employee.getEmployeeId());
+        sendNewDeviceMail(employee, smartphone);
+        loggerTrace.trace("Smartphone id: " + deviceId + " assignment email sent to employee id: " + employee.getEmployeeId());
+        return smartphoneRepository.save(smartphone);
     }
 
     public Smartphone removeEmployeeFromSmartphone(int deviceId) {
@@ -137,8 +138,15 @@ public class SmartphoneService {
                     return new DeviceNotFoundException("Smartphone id:" + deviceId + " not found.");
                 });
 
+        Employee employee = Optional.ofNullable(smartphone.getEmployee())
+                .orElseThrow(() -> {
+                    loggerError.error("Cannot remove the device. No employee associated with Smartphone id:" + deviceId);
+                    return new EmployeeNotFoundException("No employee associated with Smartphone id:" + deviceId);
+                });
+
         smartphone.setEmployee(null);
-        loggerTrace.trace("Smartphone with id " + deviceId + " removed from employee id: " + smartphone.getDeviceId());
+
+        loggerTrace.trace("Smartphone with id " + deviceId + " removed from employee id: " + employee.getEmployeeId());
         return smartphoneRepository.save(smartphone);
     }
 

@@ -111,23 +111,24 @@ public class TabletService {
                     return new DeviceNotFoundException("Tablet id:" + deviceId + " not found.");
                 });
 
-        if (tablet.getDeviceState() == DeviceState.AVAILABLE) {
-            Employee employee = employeeService.getEmployeeById(selectedEmployee.getEmployeeId());
-
-            if (employee != null) {
-                tablet.setEmployee(employee);
-                loggerTrace.trace("Tablet with id " + deviceId + " assigned to employee id: " + employee.getEmployeeId());
-                sendNewDeviceMail(employee, tablet);
-                loggerTrace.trace("Device id: " + deviceId + " assignment email sent to employee id: " + employee.getEmployeeId());
-                return tabletRepository.save(tablet);
-            } else {
-                loggerError.error("Tablet id:" + deviceId + " not found.");
-                throw new EmployeeNotFoundException("Employee with id:" + selectedEmployee.getEmployeeId() + " not found");
-            }
-        } else {
-            loggerWarn.warn("Cannot assign the Tablet: " + deviceId + ". The state of this " + tablet.getClass().getSimpleName() + " is: " + tablet.getDeviceState());
-            throw new DeviceNotAvailableException("Cannot assign the tablet: " + deviceId + ". The state of this " + tablet.getClass().getSimpleName() + " is: " + tablet.getDeviceState());
+        if (tablet.getDeviceState() != DeviceState.AVAILABLE) {
+            String warnMessage = "Cannot assign the tablet: " + deviceId + ". The state of this " + tablet.getClass().getSimpleName() + " is: " + tablet.getDeviceState();
+            loggerWarn.warn(warnMessage);
+            throw new DeviceNotAvailableException(warnMessage);
         }
+
+        Employee employee = Optional.ofNullable(employeeService.getEmployeeById(selectedEmployee.getEmployeeId()))
+                .orElseThrow(() -> {
+                    String errorMessage = "Employee with id:" + selectedEmployee.getEmployeeId() + " not found";
+                    loggerError.error(errorMessage);
+                    return new EmployeeNotFoundException(errorMessage);
+                });
+
+        tablet.setEmployee(employee);
+        loggerTrace.trace("Tablet with id " + deviceId + " assigned to employee id: " + employee.getEmployeeId());
+        sendNewDeviceMail(employee, tablet);
+        loggerTrace.trace("Tablet id: " + deviceId + " assignment email sent to employee id: " + employee.getEmployeeId());
+        return tabletRepository.save(tablet);
     }
 
     public Tablet removeEmployeeFromTablet(int deviceId) {
@@ -137,8 +138,15 @@ public class TabletService {
                     return new DeviceNotFoundException("Tablet id:" + deviceId + " not found.");
                 });
 
+        Employee employee = Optional.ofNullable(tablet.getEmployee())
+                .orElseThrow(() -> {
+                    loggerError.error("Cannot remove the device. No employee associated with Tablet id:" + deviceId);
+                    return new EmployeeNotFoundException("No employee associated with Tablet id:" + deviceId);
+                });
+
         tablet.setEmployee(null);
-        loggerTrace.trace("Tablet with id " + deviceId + " removed from employee id: " + tablet.getDeviceId());
+
+        loggerTrace.trace("Tablet with id " + deviceId + " removed from employee id: " + employee.getEmployeeId());
         return tabletRepository.save(tablet);
     }
 
