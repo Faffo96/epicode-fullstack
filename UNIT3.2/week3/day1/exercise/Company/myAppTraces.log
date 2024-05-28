@@ -32,5 +32,14 @@
 2024-05-26 17:13:55,423 TRACE [http-nio-8080-exec-9] loggerTrace [SmartphoneService.java:130] -- Smartphone id: 7 assignment email sent to employee id: 1
 2024-05-26 17:28:33,652 TRACE [http-nio-8080-exec-4] loggerTrace [EmployeeService.java:47] -- Registration email sent to employee id: 52
 2024-05-26 17:28:35,090 TRACE [http-nio-8080-exec-4] loggerTrace [EmployeeService.java:49] -- Employee with id 52 saved.
-2024-05-28 14:16:38,399 TRACE [http-nio-8080-exec-5] loggerTrace [EmployeeService.java:109] -- Employee with id=1 updated successfully with the sent photo.
-2024-05-28 14:17:17,014 TRACE [http-nio-8080-exec-10] loggerTrace [EmployeeService.java:109] -- Employee with id=1 updated successfully with the sent photo.
+2024-05-28 14:12:04,680 TRACE [http-nio-8080-exec-7] loggerTrace [EmployeeService.java:50] -- Registration email sent to employee id: 102
+2024-05-28 14:12:06,809 TRACE [http-nio-8080-exec-7] loggerTrace [EmployeeService.java:52] -- Employee with id 102 saved.
+2024-05-28 16:28:39,162 TRACE [http-nio-8080-exec-2] loggerTrace [EmployeeService.java:56] -- Registration email sent to employee id: 152
+2024-05-28 16:28:40,785 TRACE [http-nio-8080-exec-2] loggerTrace [EmployeeService.java:58] -- Employee with id 152 saved.
+2024-05-28 17:37:06,104 TRACE [http-nio-8080-exec-2] loggerTrace [EmployeeService.java:56] -- Registration email sent to employee id: 1
+2024-05-28 17:37:07,787 TRACE [http-nio-8080-exec-2] loggerTrace [EmployeeService.java:58] -- Employee with id 1 saved.
+2024-05-28 17:38:35,170 TRACE [http-nio-8080-exec-5] loggerTrace [EmployeeService.java:56] -- Registration email sent to employee id: 2
+2024-05-28 17:38:36,528 TRACE [http-nio-8080-exec-5] loggerTrace [EmployeeService.java:58] -- Employee with id 2 saved.
+2024-05-28 17:50:22,717 TRACE [http-nio-8080-exec-2] loggerTrace [EmployeeService.java:106] -- Employee with id 1 deleted successfully.
+2024-05-28 17:50:52,005 TRACE [http-nio-8080-exec-3] loggerTrace [EmployeeService.java:56] -- Registration email sent to employee id: 3
+2024-05-28 17:50:53,213 TRACE [http-nio-8080-exec-3] loggerTrace [EmployeeService.java:58] -- Employee with id 3 saved.

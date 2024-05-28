@@ -1,0 +1,3 @@
+2024-05-26 16:54:47,562 WARN [http-nio-8080-exec-1] loggerWarn [PcService.java:124] -- Cannot assign the pc: 3. The state of this Pc is: RETIRED
+2024-05-26 17:24:59,622 WARN [http-nio-8080-exec-10] loggerWarn [TabletService.java:116] -- Cannot assign the tablet: 5. The state of this Tablet is: MANTAINANCE
+2024-05-26 17:25:22,093 WARN [http-nio-8080-exec-2] loggerWarn [SmartphoneService.java:116] -- Cannot assign the smartphone: 9. The state of this Smartphone is: ASSIGNED
