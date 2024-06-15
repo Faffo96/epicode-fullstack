@@ -1,0 +1,43 @@
+2024-06-15 16:23:36,189 TRACE [http-nio-8080-exec-5] loggerTrace [UserService.java:59] -- Registration email sent to user: mario.rossi@example.com
+2024-06-15 16:23:38,193 TRACE [http-nio-8080-exec-5] loggerTrace [UserService.java:61] -- User with email mario.rossi@example.com saved.
+2024-06-15 16:34:44,091 TRACE [http-nio-8080-exec-1] loggerTrace [UserService.java:94] -- User with id=mario.rossi@example.com updated successfully with the sent photo.
+2024-06-15 16:40:13,740 TRACE [http-nio-8080-exec-4] loggerTrace [EventService.java:52] -- Event with id 1 saved.
+2024-06-15 16:51:18,568 TRACE [http-nio-8080-exec-1] loggerTrace [EventService.java:52] -- Event with id 2 saved.
+2024-06-15 16:53:04,902 TRACE [http-nio-8080-exec-6] loggerTrace [EventService.java:84] -- Event with id 2 modified.
+2024-06-15 17:32:04,434 TRACE [http-nio-8080-exec-8] loggerTrace [UserService.java:59] -- Registration email sent to user: mario.rossi@example.com
+2024-06-15 17:32:06,070 TRACE [http-nio-8080-exec-8] loggerTrace [UserService.java:61] -- User with email mario.rossi@example.com saved.
+2024-06-15 17:32:22,573 TRACE [http-nio-8080-exec-5] loggerTrace [UserService.java:94] -- User with id=mario.rossi@example.com updated successfully with the sent photo.
+2024-06-15 17:55:48,141 TRACE [http-nio-8080-exec-2] loggerTrace [EventService.java:65] -- Event with id 1 saved.
+2024-06-15 17:56:46,184 TRACE [http-nio-8080-exec-2] loggerTrace [UserService.java:59] -- Registration email sent to user: giovanna.rossi@example.com
+2024-06-15 17:56:47,799 TRACE [http-nio-8080-exec-2] loggerTrace [UserService.java:61] -- User with email giovanna.rossi@example.com saved.
+2024-06-15 17:58:01,253 TRACE [http-nio-8080-exec-5] loggerTrace [EventService.java:97] -- Event with id 1 modified.
+2024-06-15 18:15:18,478 TRACE [http-nio-8080-exec-1] loggerTrace [UserService.java:59] -- Registration email sent to user: giovanna.rossi@example.com
+2024-06-15 18:15:20,146 TRACE [http-nio-8080-exec-1] loggerTrace [UserService.java:61] -- User with email giovanna.rossi@example.com saved.
+2024-06-15 18:16:01,433 TRACE [http-nio-8080-exec-5] loggerTrace [UserService.java:94] -- User with id=giovanna.rossi@example.com updated successfully with the sent photo.
+2024-06-15 18:22:22,486 TRACE [http-nio-8080-exec-10] loggerTrace [EventService.java:65] -- Event with id 1 saved.
+2024-06-15 18:22:42,511 TRACE [http-nio-8080-exec-2] loggerTrace [UserService.java:59] -- Registration email sent to user: mario.rossi@example.com
+2024-06-15 18:22:44,010 TRACE [http-nio-8080-exec-2] loggerTrace [UserService.java:61] -- User with email mario.rossi@example.com saved.
+2024-06-15 18:22:56,466 TRACE [http-nio-8080-exec-3] loggerTrace [EventService.java:97] -- Event with id 1 modified.
+2024-06-15 18:26:59,122 TRACE [http-nio-8080-exec-4] loggerTrace [EventService.java:65] -- Event with id 2 saved.
+2024-06-15 18:27:18,559 TRACE [http-nio-8080-exec-10] loggerTrace [EventService.java:97] -- Event with id 2 modified.
+2024-06-15 18:31:41,273 TRACE [http-nio-8080-exec-4] loggerTrace [EventService.java:97] -- Event with id 2 modified.
+2024-06-15 18:34:08,361 TRACE [http-nio-8080-exec-1] loggerTrace [EventService.java:112] -- Event with id 2 modified.
+2024-06-15 18:36:08,191 TRACE [http-nio-8080-exec-8] loggerTrace [EventService.java:125] -- Event with id 1 deleted successfully.
+2024-06-15 18:50:21,258 TRACE [http-nio-8080-exec-2] loggerTrace [EventService.java:180] -- User with id mario.rossi@example.com removed from Event with id 2
+2024-06-15 18:50:51,105 TRACE [http-nio-8080-exec-3] loggerTrace [EventService.java:112] -- Event with id 2 modified.
+2024-06-15 18:51:18,708 TRACE [http-nio-8080-exec-4] loggerTrace [EventService.java:112] -- Event with id 2 modified.
+2024-06-15 18:51:50,172 TRACE [http-nio-8080-exec-2] loggerTrace [EventService.java:180] -- User with id mario.rossi@example.com removed from Event with id 2
+2024-06-15 18:51:58,932 TRACE [http-nio-8080-exec-3] loggerTrace [EventService.java:112] -- Event with id 2 modified.
+2024-06-15 18:52:31,108 TRACE [http-nio-8080-exec-1] loggerTrace [EventService.java:180] -- User with id mario.rossi@example.com removed from Event with id 2
+2024-06-15 18:52:34,700 TRACE [http-nio-8080-exec-4] loggerTrace [EventService.java:112] -- Event with id 2 modified.
+2024-06-15 18:53:43,982 TRACE [http-nio-8080-exec-2] loggerTrace [EventService.java:180] -- User with id mario.rossi@example.com removed from Event with id 2
+2024-06-15 18:53:56,747 TRACE [http-nio-8080-exec-3] loggerTrace [EventService.java:112] -- Event with id 2 modified.
+2024-06-15 18:59:53,942 TRACE [http-nio-8080-exec-1] loggerTrace [EventService.java:180] -- User with id mario.rossi@example.com removed from Event with id 2
+2024-06-15 19:00:44,730 TRACE [http-nio-8080-exec-5] loggerTrace [EventService.java:112] -- Event with id 2 modified.
+2024-06-15 19:01:40,618 TRACE [http-nio-8080-exec-3] loggerTrace [EventService.java:112] -- Event with id 2 modified.
+2024-06-15 19:01:59,776 TRACE [http-nio-8080-exec-4] loggerTrace [UserService.java:59] -- Registration email sent to user: paola.rossi@example.com
+2024-06-15 19:02:01,488 TRACE [http-nio-8080-exec-4] loggerTrace [UserService.java:61] -- User with email paola.rossi@example.com saved.
+2024-06-15 19:07:18,476 TRACE [http-nio-8080-exec-3] loggerTrace [EventService.java:180] -- User with id mario.rossi@example.com removed from Event with id 2
+2024-06-15 19:10:24,589 TRACE [http-nio-8080-exec-3] loggerTrace [EventService.java:157] -- Users added to Event with id 2
+2024-06-15 19:10:34,395 TRACE [http-nio-8080-exec-4] loggerTrace [EventService.java:157] -- Users added to Event with id 2
+2024-06-15 19:11:39,038 TRACE [http-nio-8080-exec-2] loggerTrace [EventService.java:180] -- User with id paola.rossi@example.com removed from Event with id 2
