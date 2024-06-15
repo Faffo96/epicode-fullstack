@@ -7,6 +7,7 @@ import com.epicode.events_new.Entity.User;
 import com.epicode.events_new.Exception.EventNotFoundException;
 import com.epicode.events_new.Exception.UserNotFoundException;
 import com.epicode.events_new.Repository.EventRepository;
+import com.epicode.events_new.Security.JwtTool;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,14 +17,21 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 @Service
 public class EventService {
     @Autowired
     private EventRepository eventRepository;
+
+    @Autowired
+    private JwtTool jwtTool;
 
     @Autowired
     private UserService userService;
@@ -199,5 +207,41 @@ public class EventService {
 
             javaMailSender.send(message);
         }
+
+    @Transactional(readOnly = true)
+    public List<Event> getEventsByUser(String token) {
+        String currentUserEmail = jwtTool.getEmailFromToken(token);
+
+        return eventRepository.findEventsByUserEmail(currentUserEmail);
+    }
+
+    public void deleteEventByUserEmailAndEventId(String token, int eventId) {
+        String currentUserEmail = jwtTool.getEmailFromToken(token);
+
+        Event eventToDelete = eventRepository.findById(eventId)
+                .filter(event -> event.getUsers().stream().anyMatch(user -> user.getEmail().equals(currentUserEmail)))
+                .orElse(null);
+
+        if (eventToDelete != null) {
+            eventRepository.delete(eventToDelete);
+            loggerTrace.trace("Event with id " + eventId + " deleted for user with email " + currentUserEmail);
+        } else {
+            loggerError.error("Event with id " + eventId + " not found for user with email " + currentUserEmail);
+            throw new IllegalArgumentException("Event with id " + eventId + " not found for user with email " + currentUserEmail);
+        }
+    }
+
+
+    // Metodo di utilità per convertire Event a EventDto
+    /*private EventDto convertToDto(Event event) {
+        EventDto eventDto = new EventDto();
+        eventDto.setName(event.getName());
+        eventDto.setDescription(event.getDescription());
+        eventDto.setDate(event.getDate());
+        eventDto.setLocation(event.getLocation());
+        eventDto.setUsers(event.getUsers().stream().map(User::getEmail).collect(Collectors.toList()));
+        eventDto.setParticipantsLimit(event.getPartecipantsLimit());
+        return eventDto;
+    }*/
     }
 

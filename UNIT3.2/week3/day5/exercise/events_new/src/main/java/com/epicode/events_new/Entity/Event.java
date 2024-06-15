@@ -1,5 +1,6 @@
 package com.epicode.events_new.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 
@@ -24,6 +25,8 @@ public class Event {
             joinColumns = @JoinColumn(name = "event_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
+    @ElementCollection(fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<User> users = new ArrayList<>();
     @JoinColumn(name = "partecipants_limit")
     private int partecipantsLimit;

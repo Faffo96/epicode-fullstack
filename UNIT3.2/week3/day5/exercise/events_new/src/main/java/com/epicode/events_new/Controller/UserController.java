@@ -45,8 +45,8 @@ private UserService userService;
 
     @GetMapping("/users/{email}")
     @PreAuthorize("hasAuthority('EVENT_CREATOR')")
-    public User GETUserById(@PathVariable String userEmail) {
-        return userService.getUserByEmail(userEmail);
+    public User GETUserByEmail(@PathVariable String email) {
+        return userService.getUserByEmail(email);
     }
 
     @PatchMapping("/users/{userEmail}")

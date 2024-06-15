@@ -26,7 +26,6 @@ public class User implements UserDetails {
     @JoinColumn(name = "user_role")
     private UserRole userRole;
     @ManyToMany(mappedBy = "users")
-    @JsonIgnore
     private List<Event> events = new ArrayList<>();
 
     @Override

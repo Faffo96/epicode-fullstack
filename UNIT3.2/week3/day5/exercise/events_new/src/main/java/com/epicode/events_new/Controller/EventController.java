@@ -14,6 +14,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -94,5 +96,32 @@ public class EventController {
     public ResponseEntity<Event> removeUserFromEvent(@PathVariable int id, @RequestParam String userEmail) throws EventNotFoundException, UserNotFoundException {
         Event updatedEvent = eventService.removeUserFromEvent(id, userEmail);
         return ResponseEntity.ok(updatedEvent);
+    }
+
+    @GetMapping("/events/user")
+    @PreAuthorize("hasAnyAuthority('EVENT_CREATOR', 'USER')")
+    public List<Event> getUserEvents(@RequestHeader(name = "Authorization") String authorizationHeader) {
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+            String token = authorizationHeader.substring(7); // Rimuovi i primi 7 caratteri ("Bearer ")
+            return eventService.getEventsByUser(token);
+        } else {
+            throw new IllegalArgumentException("Bearer token not found in Authorization header");
+        }
+    }
+
+    @DeleteMapping("/events/{id}/deleteUserEvent")
+    @PreAuthorize("hasAnyAuthority('EVENT_CREATOR', 'USER')")
+    public ResponseEntity<String> deleteEventByUserAndEventId(@RequestHeader(name = "Authorization") String authorizationHeader, @PathVariable int id) {
+        if (authorizationHeader != null && authorizationHeader.startsWith("Bearer ")) {
+            String token = authorizationHeader.substring(7);
+            try {
+                eventService.deleteEventByUserEmailAndEventId(token, (int) id);
+                return ResponseEntity.ok("Evento eliminato correttamente per l'utente autenticato.");
+            } catch (Exception e) {
+                return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Errore durante l'eliminazione dell'evento: " + e.getMessage());
+            }
+        } else {
+            throw new IllegalArgumentException("Bearer token non trovato nell'header Authorization");
+        }
     }
 }

@@ -2,8 +2,12 @@ package com.epicode.events_new.Security;
 
 import com.epicode.events_new.Entity.User;
 import com.epicode.events_new.Exception.UnauthorizedException;
+import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.MalformedJwtException;
+import io.jsonwebtoken.UnsupportedJwtException;
 import io.jsonwebtoken.security.Keys;
+import io.jsonwebtoken.security.SignatureException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -35,16 +39,25 @@ public class JwtTool {
         }
     }
 
-    public String getEmailFromToken(String token) {
-        String email = Jwts.parser()
-                .verifyWith(Keys.hmacShaKeyFor(secret.getBytes()))
-                .build()
-                .parseSignedClaims(token)
-                .getPayload()
-                .getSubject();
-
-        return email;
+    public String getEmailFromToken(String token) throws UnauthorizedException {
+        try {
+            return Jwts.parser()
+                    .verifyWith(Keys.hmacShaKeyFor(secret.getBytes()))
+                    .build()
+                    .parseSignedClaims(token)
+                    .getPayload()
+                    .getSubject();
+        } catch (ExpiredJwtException e) {
+            throw new UnauthorizedException("Token scaduto, effettua di nuovo il login!");
+        } catch (MalformedJwtException | UnsupportedJwtException | IllegalArgumentException e) {
+            throw new UnauthorizedException("Token JWT non valido!");
+        } catch (SignatureException e) {
+            throw new UnauthorizedException("Errore di firma del token!");
+        } catch (Exception e) {
+            throw new UnauthorizedException("Errore inatteso durante la verifica del token!");
+        }
     }
+
 
 
 }
