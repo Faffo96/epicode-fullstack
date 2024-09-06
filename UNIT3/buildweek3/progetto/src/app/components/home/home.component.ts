@@ -16,12 +16,12 @@ export class HomeComponent implements OnInit {
 
   constructor(private PostsSrv: PostService, private commentSrv: CommentService) {
     this.PostsSrv.posts$.subscribe((data) => {
-      this.posts = data;
+      this.posts = data.reverse(); // Inverti l'ordine dei post
     });
     this.commentSrv.comments$.subscribe((data) => {
       this.comments = data;
     });
-
+  
     // Carica i dati all'inizio
     this.PostsSrv.loadPosts();
     this.commentSrv.loadComments();

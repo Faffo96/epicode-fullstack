@@ -8,7 +8,7 @@
     },
     {
       "email": "fabioscar96@gmail.com",
-      "password": "$2b$10$wSTsfhO7kBt.ac2xtscWceGkiL8NcgNdrZE.Gr9X974ZDVXyyLEKa",
+      "password": "$2a$10$b7wEm0DLaPHwGHsJfAPppemIgaroebYj63Cj.tYkssks4alRdvRmy",
       "name": "Fabio Scaramozzino",
       "id": 2
     },
@@ -41,21 +41,15 @@
       "password": "$2a$10$cBfzmxIiG/vxfpiyDQ6Kiuf2vG5gh.W0MjtbLCupZLlGy3faAzF.K",
       "name": "Davide Azzurri",
       "id": 7
+    },
+    {
+      "email": "fabioscar96@example.com",
+      "password": "$2a$10$b7wEm0DLaPHwGHsJfAPppemIgaroebYj63Cj.tYkssks4alRdvRmy",
+      "name": "Fabio Scaramozzino",
+      "id": 8
     }
   ],
   "posts": [
-    {
-      "title": "sium",
-      "body": "Primo post funzionantee!",
-      "userId": 2,
-      "id": 1
-    },
-    {
-      "title": "Benvenuti a tutti sul nostro EPIC FORUM!",
-      "body": "Scriveteci cosa ne pensate, lasciate un like ed un commento. Siate rispettosi e interagite il più possibile!!",
-      "userId": 1,
-      "id": 2
-    },
     {
       "title": "Nuove frontiere dell'Intelligenza Artificiale",
       "body": "Discutiamo delle ultime scoperte e delle prospettive future nell'ambito dell'IA.",
@@ -199,6 +193,18 @@
       "body": "Tutorial su come utilizzare TensorFlow per la creazione e l'addestramento di reti neurali per problemi di machine learning e deep learning.",
       "userId": 5,
       "id": 25
+    },
+    {
+      "title": "Benvenuti a tutti sul nostro EPIC FORUM!",
+      "body": "Scriveteci cosa ne pensate, lasciate un like ed un commento. Siate rispettosi e interagite il più possibile!!",
+      "userId": 1,
+      "id": 2
+    },
+    {
+      "title": "Nuovo post!",
+      "body": "NewPost!",
+      "userId": 2,
+      "id": 27
     }
   ],
   "likes": [
@@ -213,34 +219,27 @@
       "id": 4
     },
     {
-      "postId": 1,
-      "userId": 1,
-      "id": 5
+      "postId": 26,
+      "userId": 2,
+      "id": 10
+    },
+    {
+      "postId": 3,
+      "userId": 2,
+      "id": 11
     },
     {
       "postId": 2,
       "userId": 2,
-      "id": 6
+      "id": 12
     },
     {
-      "postId": 1,
+      "postId": 27,
       "userId": 2,
-      "id": 7
+      "id": 13
     }
   ],
   "comments": [
-    {
-      "body": "Interessante!",
-      "userId": 4,
-      "postId": 1,
-      "id": 3
-    },
-    {
-      "body": "Questo post mi ha ispirato!",
-      "userId": 5,
-      "postId": 1,
-      "id": 4
-    },
     {
       "body": "Buon lavoro!",
       "userId": 2,
@@ -308,12 +307,6 @@
       "id": 18
     },
     {
-      "body": "ce l'abbiamo fatta",
-      "userId": 1,
-      "postId": 1,
-      "id": 19
-    },
-    {
       "body": "\nPenso che l'Intelligenza Artificiale sia una delle tecnologie più affascinanti e promettenti del nostro tempo. La sua capacità di apprendere dai dati, adattarsi e risolvere problemi complessi offre molteplici opportunità in vari settori, dall'assistenza sanitaria alla finanza, dalla produzione all'arte. Tuttavia, è importante affrontare con attenzione le sfide etiche, sociali e di sicurezza che possono sorgere con l'implementazione dell'IA, garantendo sempre un uso responsabile e etico di questa potente tecnologia.",
       "userId": 1,
       "postId": 26,
@@ -324,6 +317,18 @@
       "userId": 6,
       "postId": 3,
       "id": 21
+    },
+    {
+      "body": "Wow!",
+      "userId": 2,
+      "postId": 25,
+      "id": 22
+    },
+    {
+      "body": "Wow",
+      "userId": 2,
+      "postId": 27,
+      "id": 23
     }
   ]
 }

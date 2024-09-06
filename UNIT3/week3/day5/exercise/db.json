@@ -418,6 +418,205 @@
         }
       ],
       "id": 2
+    },
+    {
+      "email": "fabioscarr96@gmail.com",
+      "password": "$2a$10$FZwFAHbbBwpKWw7NhNerceXbDZICInKVtlKJN1SRHnqbmvSYU2NG6",
+      "firstName": "Fabio",
+      "lastName": "Scaramozzino",
+      "gender": "Male",
+      "language": "Italiano",
+      "profileImg": null,
+      "biography": "Me",
+      "username": "Suarez999",
+      "favorites": [
+        {
+          "adult": false,
+          "backdrop_path": "/n2y7T8wJVjJ8yLhQXQgNCpsC3ga.jpg",
+          "genre_ids": [
+            10751,
+            16,
+            35
+          ],
+          "id": 811367,
+          "original_language": "en",
+          "original_title": "22 vs. Earth",
+          "overview": "Prima degli eventi raccontati nel film \"Soul\" della Pixar, 22, che si rifiuta di andare sulla Terra, arruola una banda di altre 5 nuove anime e prova a fomentare una ribellione. Tuttavia, le attività di 22 e della sua combriccola conducono a risultati inaspettati e l'insurrezione si conclude con una rivelazione sorprendente sul significato della vita.",
+          "popularity": 886.638,
+          "poster_path": "/A5aMLpqnvF3IfJ9RRnLwntIMtrm.jpg",
+          "release_date": "2021-04-30",
+          "title": "22 contro la Terra",
+          "video": false,
+          "vote_average": 7.1,
+          "vote_count": 96
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/5Zv5KmgZzdIvXz2KC3n0MyecSNL.jpg",
+          "genre_ids": [
+            28,
+            53,
+            80
+          ],
+          "id": 634528,
+          "original_language": "en",
+          "original_title": "The Marksman",
+          "overview": "",
+          "popularity": 721.108,
+          "poster_path": "/6vcDalR50RWa309vBH1NLmG2rjQ.jpg",
+          "release_date": "2021-01-15",
+          "title": "The Marksman",
+          "video": false,
+          "vote_average": 7.4,
+          "vote_count": 491
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/xPpXYnCWfjkt3zzE0dpCNME1pXF.jpg",
+          "genre_ids": [
+            16,
+            28,
+            12,
+            14,
+            18
+          ],
+          "id": 635302,
+          "original_language": "ja",
+          "original_title": "劇場版「鬼滅の刃」無限列車編",
+          "overview": "Enmu, recentemente liberato dalle celle Muzan, si propone di attaccare un misterioso treno in movimento. Nel corso dell'attacco, il demone consuma molti passeggeri. Tanjiro Kamado viene in soccorso, ma questo treno in movimento trasporta più di un cattivo demone da combattere.",
+          "popularity": 1039.805,
+          "poster_path": "/m9cn5mhW519QKr1YGpGxNWi98VJ.jpg",
+          "release_date": "2020-10-16",
+          "title": "Demon Slayer - The Movie: Mugen Train",
+          "video": false,
+          "vote_average": 8.4,
+          "vote_count": 1034
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/lHhc60NXYzswU4TvKSo45nY9Jzs.jpg",
+          "genre_ids": [
+            16,
+            35,
+            10751,
+            12
+          ],
+          "id": 726684,
+          "original_language": "fr",
+          "original_title": "Miraculous World : Shanghai, la légende de Ladydragon",
+          "overview": "",
+          "popularity": 1019.449,
+          "poster_path": "/tf9nWFyJ745mBFkXZtPWabDYBR3.jpg",
+          "release_date": "2021-04-04",
+          "title": "Miraculous World : Shanghai, la légende de Ladydragon",
+          "video": false,
+          "vote_average": 7.8,
+          "vote_count": 339
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/dIWwZW7dJJtqC6CgWzYkNVKIUm8.jpg",
+          "genre_ids": [
+            10749,
+            16,
+            18
+          ],
+          "id": 372058,
+          "original_language": "ja",
+          "original_title": "君の名は。",
+          "overview": "Mitsuha è una studentessa che vive in una piccola città rurale e desidera trasferirsi a Tokyo, nella grande metropoli dove ogni sogno si può realizzare. Taki è uno studente di liceo che vive proprio a Tokyo, ha un lavoro part-time in un ristorante italiano, ma vorrebbe lavorare nel campo dell’arte o dell’architettura. Una notte, Mitsuha sogna di essere un giovane uomo, si ritrova in una stanza che non conosce, ha nuovi amici e lo skyline di Tokyo si apre dinnanzi al suo sguardo. Nello stesso momento Taki sogna di essere una ragazzina che vive in una piccola città di montagna che non ha mai visitato. Ma quale sarà il segreto che si cela dietro questi strani sogni incrociati?",
+          "popularity": 84.171,
+          "poster_path": "/z26TZXh7lqrRVCIy1HXTTz3Fu2X.jpg",
+          "release_date": "2016-08-26",
+          "title": "Your Name.",
+          "video": false,
+          "vote_average": 8.6,
+          "vote_count": 7478
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/Ab8mkHmkYADjU7wQiOkia9BzGvS.jpg",
+          "genre_ids": [
+            16,
+            10751,
+            14
+          ],
+          "id": 129,
+          "original_language": "ja",
+          "original_title": "千と千尋の神隠し",
+          "overview": "La piccola Chihiro non sopporta l'idea di traslocare e di perdere i propri amici, ma non può far niente per impedirlo. Proprio quando la famiglia è in viaggio verso la nuova casa, il padre imbocca una strada sterrata che termina davanti a un tunnel misterioso. I genitori sceglieranno di attraversarlo nonostante le rimostranze di Chihiro, per giungere a un parco dei divertimenti abbandonato, almeno apparentemente.",
+          "popularity": 59.022,
+          "poster_path": "/3PV6lq9BNmoyyDXr5tdNeeESEMn.jpg",
+          "release_date": "2001-07-20",
+          "title": "La città incantata",
+          "video": false,
+          "vote_average": 8.5,
+          "vote_count": 11363
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/TU9NIjwzjoKPwQHoHshkFcQUCG.jpg",
+          "genre_ids": [
+            35,
+            53,
+            18
+          ],
+          "id": 496243,
+          "original_language": "ko",
+          "original_title": "기생충",
+          "overview": "Tutta la famiglia di Ki-taek è senza lavoro. Ki-taek è particolarmente interessata allo stile di vita della ricchissima famiglia Park. Un giorno, suo figlio riesce a farsi assumere dai Park e le due famiglie si ritrovano così intrecciate da una serie di eventi incontrollabili.",
+          "popularity": 100.563,
+          "poster_path": "/dJFTwh20N23ZeSDIaCkOZTNoGn1.jpg",
+          "release_date": "2019-05-30",
+          "title": "Parasite",
+          "video": false,
+          "vote_average": 8.5,
+          "vote_count": 11416
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/6ELCZlTA5lGUops70hKdB83WJxH.jpg",
+          "genre_ids": [
+            28,
+            14,
+            12
+          ],
+          "id": 460465,
+          "original_language": "en",
+          "original_title": "Mortal Kombat",
+          "overview": "Un pugile fallito scopre un segreto di famiglia che lo conduce ad un torneo mistico chiamato Mortal Kombat. Qui incontra un gruppo di guerrieri che combattono fino alla morte per salvare i regni dal malvagio stregone Shang Tsung.",
+          "popularity": 1909.664,
+          "poster_path": "/iW03OMEI3htIAV1P8FwM867PLIj.jpg",
+          "release_date": "2021-04-07",
+          "title": "Mortal Kombat",
+          "video": false,
+          "vote_average": 7.6,
+          "vote_count": 2659
+        },
+        {
+          "adult": false,
+          "backdrop_path": "/hJuDvwzS0SPlsE6MNFOpznQltDZ.jpg",
+          "genre_ids": [
+            16,
+            12,
+            14,
+            10751,
+            28
+          ],
+          "id": 527774,
+          "original_language": "en",
+          "original_title": "Raya and the Last Dragon",
+          "overview": "A Kumandra, terra divisa in cinque regioni che insieme formano un drago, i draghi non esistono più e una forza malvagia e oscura ha preso il loro posto. Raya, una guerriera forte e coraggiosa, decide di partire per un viaggio alla ricerca dell’ultimo drago in grado di salvare il regno. Nella sua avventura incontrerà Sisu, un drago ispirato agli spiriti d’acqua e rimasto intrappolato nel corpo di un essere umano. Raya lo aiuterà a tornare ad essere un vero drago e insieme proveranno a salvare la terra.",
+          "popularity": 895.896,
+          "poster_path": "/zDgV6rPCqAUDOtfKvvxExOiR2om.jpg",
+          "release_date": "2021-03-03",
+          "title": "Raya e l'ultimo drago",
+          "video": false,
+          "vote_average": 8.2,
+          "vote_count": 2908
+        }
+      ],
+      "id": 3
     }
   ],
   "genres": [

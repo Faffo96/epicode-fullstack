@@ -17,7 +17,7 @@ import { User } from 'src/app/models/user.interface';
   templateUrl: './postcard.component.html',
   styleUrls: ['./postcard.component.scss']
 })
-export class PostcardComponent {
+export class PostcardComponent implements OnInit {
   @Input() post!: Post;
   postComments: Comment[] = [];
   user!: AuthData | null;
@@ -37,22 +37,25 @@ export class PostcardComponent {
     private userSrv: UsersService,
     private commentSrv: CommentService
   ) {
-    this.authsrv.user$.subscribe((data) => {
-      this.user = data;
-      console.log('User data from auth service:', this.user); // Debug
-    });
     
-  
-    this.likeSrv.likes$.subscribe((data) => {
-      this.likes = data;
-      this.updateUserLikes();
-      this.getLikeCount();
-    });
-  
-    this.getComments();
-    this.loadSelectedUser();
 
   }
+
+ngOnInit(): void {
+  this.authsrv.user$.subscribe((data) => {
+    this.user = data;
+    console.log('User data from auth service:', this.user); // Debug
+  });
+
+  this.likeSrv.likes$.subscribe((data) => {
+    this.likes = data;
+    this.updateUserLikes();
+    this.getLikeCount();
+  });
+
+  this.getComments();
+  this.loadSelectedUser();
+}
 
   private updateUserLikes() {
     console.log('User:', this.user); // Verifica il valore di this.user
